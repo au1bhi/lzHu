@@ -69,8 +69,9 @@ author_profile: true
         border: 1px solid var(--global-border-color, #e0e0e0);
         border-radius: 8px;
         padding: 0.75rem 1rem;
-        background-color: rgba(248, 249, 251, 0.92);
-        transition: background-color 0.2s ease;
+        background-color: var(--global-bg-color, #ffffff);
+        box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+        transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
     }
 
     .cf-metric__label {
@@ -117,8 +118,9 @@ author_profile: true
     }
 
     html[data-theme="dark"] .cf-metric {
-        background-color: rgba(255, 255, 255, 0.04);
-        border-color: var(--global-dark-border-color, rgba(255, 255, 255, 0.08));
+        background-color: var(--global-bg-color, #1f2937);
+        border-color: var(--global-dark-border-color, rgba(255, 255, 255, 0.12));
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
     }
 
     html[data-theme="dark"] .chart-card {
