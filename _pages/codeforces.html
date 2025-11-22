@@ -37,8 +37,8 @@ author_profile: true
             <canvas id="cf-verdict-chart" height="260"></canvas>
         </div>
         <div class="chart-card">
-            <h3>Language Usage</h3>
-            <canvas id="cf-language-chart" height="260"></canvas>
+            <h3>Difficulty Breakdown</h3>
+            <canvas id="cf-difficulty-chart" height="260"></canvas>
         </div>
         <div class="chart-card">
             <h3>Accepted Tags Focus</h3>
@@ -56,7 +56,7 @@ author_profile: true
 
     .cf-status {
         font-style: italic;
-        color: #555;
+        color: var(--global-text-color, #555);
     }
 
     .cf-metrics {
@@ -66,22 +66,23 @@ author_profile: true
     }
 
     .cf-metric {
-        border: 1px solid #e0e0e0;
+        border: 1px solid var(--global-border-color, #e0e0e0);
         border-radius: 8px;
         padding: 0.75rem 1rem;
-        background-color: #f8f9fb;
+        background-color: rgba(248, 249, 251, 0.92);
+        transition: background-color 0.2s ease;
     }
 
     .cf-metric__label {
         display: block;
         font-size: 0.85rem;
-        color: #666;
+        color: var(--global-text-color-light, #666);
     }
 
     .cf-metric__value {
         font-size: 1.5rem;
         font-weight: 600;
-        color: #111;
+        color: var(--global-text-color, #111);
     }
 
     .chart-grid {
@@ -91,27 +92,39 @@ author_profile: true
     }
 
     .chart-card {
-        position: relative;
-        border: 1px solid #dfe3eb;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        border: 1px solid var(--global-border-color, #dfe3eb);
         border-radius: 12px;
-        padding: 1rem 1rem 1.5rem;
-        background-color: #fff;
+        padding: 1rem;
+        background-color: var(--global-bg-color, #ffffff);
         box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
         min-height: 320px;
+        transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
     }
 
     .chart-card h3 {
-        margin-bottom: 0.75rem;
+        margin: 0;
         font-size: 1.1rem;
+        color: var(--global-text-color, #111);
     }
 
     .chart-card canvas {
-        position: absolute;
-        inset: 2.75rem 1rem 1rem 1rem;
-        width: auto !important;
-        height: auto !important;
-        max-width: calc(100% - 2rem);
-        max-height: calc(100% - 3.75rem);
+        flex: 1 1 auto;
+        width: 100% !important;
+        max-height: 260px;
+    }
+
+    html[data-theme="dark"] .cf-metric {
+        background-color: rgba(255, 255, 255, 0.04);
+        border-color: var(--global-dark-border-color, rgba(255, 255, 255, 0.08));
+    }
+
+    html[data-theme="dark"] .chart-card {
+        background-color: var(--global-bg-color, #1f2937);
+        border-color: var(--global-dark-border-color, rgba(255, 255, 255, 0.1));
+        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
     }
 </style>
 
@@ -127,7 +140,7 @@ author_profile: true
 
         const ratingCtx = document.getElementById("cf-rating-chart");
         const verdictCtx = document.getElementById("cf-verdict-chart");
-        const languageCtx = document.getElementById("cf-language-chart");
+        const difficultyCtx = document.getElementById("cf-difficulty-chart");
         const tagCtx = document.getElementById("cf-tag-chart");
 
         const userInfoUrl = `https://codeforces.com/api/user.info?handles=${handle}`;
@@ -187,20 +200,78 @@ author_profile: true
                 const totalSubmissions = submissions.length;
                 const solvedProblemIds = new Set();
                 const verdictCounts = new Map();
-                const languageCounts = new Map();
                 const tagCounts = new Map();
+                const difficultyBuckets = new Map();
+
+                const verdictColors = {
+                    OK: "#10b981",
+                    WRONG_ANSWER: "#ef4444",
+                    TIME_LIMIT_EXCEEDED: "#fb923c",
+                    MEMORY_LIMIT_EXCEEDED: "#14b8a6",
+                    RUNTIME_ERROR: "#6366f1",
+                    COMPILATION_ERROR: "#facc15",
+                    SKIPPED: "#94a3b8",
+                    CHALLENGED: "#f59e0b",
+                    PARTIAL: "#22d3ee",
+                    IDLENESS_LIMIT_EXCEEDED: "#7c3aed",
+                    PRESENTATION_ERROR: "#8b5cf6",
+                    HACK_SUCCESSFUL: "#f472b6",
+                    HACK_UNSUCCESSFUL: "#c084fc"
+                };
+
+                const getDifficultyBucket = (rating) => {
+                    if (typeof rating !== "number" || Number.isNaN(rating)) {
+                        return "Unrated";
+                    }
+                    if (rating < 1200) return "<1200";
+                    if (rating < 1400) return "1200-1399";
+                    if (rating < 1600) return "1400-1599";
+                    if (rating < 1800) return "1600-1799";
+                    if (rating < 2000) return "1800-1999";
+                    if (rating < 2200) return "2000-2199";
+                    if (rating < 2400) return "2200-2399";
+                    return "2400+";
+                };
+
+                const difficultyOrder = [
+                    "<1200",
+                    "1200-1399",
+                    "1400-1599",
+                    "1600-1799",
+                    "1800-1999",
+                    "2000-2199",
+                    "2200-2399",
+                    "2400+",
+                    "Unrated"
+                ];
 
                 submissions.forEach((submission) => {
                     const verdict = submission.verdict || "UNKNOWN";
                     verdictCounts.set(verdict, (verdictCounts.get(verdict) || 0) + 1);
 
-                    const languageRaw = submission.programmingLanguage || "Unknown";
-                    const language = languageRaw.replace(/\s*\(.*?\)/g, "").trim() || "Unknown";
-                    languageCounts.set(language, (languageCounts.get(language) || 0) + 1);
+                    const problem = submission.problem || {};
+                    const rating = Number.isFinite(problem.rating) ? problem.rating : undefined;
+                    const problemKey = (problem.contestId && problem.index)
+                        ? `${problem.contestId}-${problem.index}`
+                        : undefined;
+                    const bucket = getDifficultyBucket(rating);
+                    if (!difficultyBuckets.has(bucket)) {
+                        difficultyBuckets.set(bucket, {
+                            attempted: new Set(),
+                            solved: new Set()
+                        });
+                    }
+                    const bucketEntry = difficultyBuckets.get(bucket);
+                    if (problemKey) {
+                        bucketEntry.attempted.add(problemKey);
+                    }
 
                     if (verdict === "OK") {
-                        const problemId = `${submission.problem.contestId}-${submission.problem.index}`;
-                        solvedProblemIds.add(problemId);
+                        const solvedKey = problemKey || `${submission.id}`;
+                        if (problemKey) {
+                            bucketEntry.solved.add(problemKey);
+                        }
+                        solvedProblemIds.add(solvedKey);
                         (submission.problem.tags || []).forEach((tag) => {
                             tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1);
                         });
@@ -212,6 +283,8 @@ author_profile: true
 
                 const ratingLabels = ratingHistory.map((entry) => toDateLabel(entry.ratingUpdateTimeSeconds));
                 const ratingValues = ratingHistory.map((entry) => entry.newRating);
+                const ratingChanges = ratingHistory.map((entry) => entry.newRating - entry.oldRating);
+                const ratingPointColors = ratingChanges.map((delta) => (delta >= 0 ? "#10b981" : "#f97316"));
 
                 if (ratingHistory.length > 0) {
                     buildChart(ratingCtx, {
@@ -222,12 +295,24 @@ author_profile: true
                                 {
                                     label: "Rating",
                                     data: ratingValues,
-                                    borderColor: "#2563eb",
-                                    backgroundColor: "rgba(37, 99, 235, 0.16)",
+                                    borderColor: "#10b981",
+                                    borderWidth: 2,
+                                    segment: {
+                                        borderColor: (ctx) => {
+                                            const index = ctx.p0DataIndex + 1;
+                                            if (index >= ratingChanges.length) {
+                                                return "#10b981";
+                                            }
+                                            return ratingChanges[index] >= 0 ? "#10b981" : "#f97316";
+                                        }
+                                    },
+                                    backgroundColor: "rgba(16, 185, 129, 0.16)",
                                     tension: 0.25,
                                     fill: true,
-                                    pointRadius: 3,
-                                    pointBackgroundColor: "#1d4ed8",
+                                    pointRadius: 4,
+                                    pointHoverRadius: 5,
+                                    pointBackgroundColor: ratingPointColors,
+                                    pointBorderColor: ratingPointColors,
                                     pointBorderWidth: 0
                                 }
                             ]
@@ -259,6 +344,7 @@ author_profile: true
 
                 const verdictEntries = Array.from(verdictCounts.entries()).sort((a, b) => b[1] - a[1]);
                 if (verdictEntries.length > 0) {
+                    const defaultVerdictPalette = paletteCycle("green", verdictEntries.length);
                     buildChart(verdictCtx, {
                         type: "doughnut",
                         data: {
@@ -266,7 +352,7 @@ author_profile: true
                             datasets: [
                                 {
                                     data: verdictEntries.map(([, count]) => count),
-                                    backgroundColor: paletteCycle("green", verdictEntries.length),
+                                    backgroundColor: verdictEntries.map(([verdict], index) => verdictColors[verdict] || defaultVerdictPalette[index]),
                                     borderWidth: 0
                                 }
                             ]
@@ -281,28 +367,41 @@ author_profile: true
                     });
                 }
 
-                const languageEntries = Array.from(languageCounts.entries())
-                    .sort((a, b) => b[1] - a[1])
-                    .slice(0, 8);
-                if (languageEntries.length > 0) {
-                    buildChart(languageCtx, {
+                const difficultyLabels = difficultyOrder.filter((label) => difficultyBuckets.has(label));
+                if (difficultyLabels.length > 0) {
+                    const solvedByBucket = difficultyLabels.map((label) => difficultyBuckets.get(label).solved.size);
+                    const attemptedByBucket = difficultyLabels.map((label) => difficultyBuckets.get(label).attempted.size);
+
+                    buildChart(difficultyCtx, {
                         type: "bar",
                         data: {
-                            labels: languageEntries.map(([language]) => language),
+                            labels: difficultyLabels,
                             datasets: [
                                 {
-                                    label: "Submissions",
-                                    data: languageEntries.map(([, count]) => count),
-                                    backgroundColor: paletteCycle("blue", languageEntries.length)
+                                    label: "Solved Problems",
+                                    data: solvedByBucket,
+                                    backgroundColor: "#22c55e"
+                                },
+                                {
+                                    label: "Attempted Problems",
+                                    data: attemptedByBucket,
+                                    backgroundColor: "#0ea5e9"
                                 }
                             ]
                         },
                         options: {
                             responsive: true,
                             maintainAspectRatio: false,
+                            plugins: {
+                                tooltip: {
+                                    callbacks: {
+                                        label: (context) => `${context.dataset.label}: ${context.parsed.y}`
+                                    }
+                                }
+                            },
                             scales: {
                                 x: { ticks: { autoSkip: false } },
-                                y: { beginAtZero: true }
+                                y: { beginAtZero: true, ticks: { precision: 0 } }
                             }
                         }
                     });
