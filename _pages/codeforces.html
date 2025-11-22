@@ -1,0 +1,349 @@
+---
+layout: single
+title: "Codeforces Analytics"
+permalink: /codeforces/
+author_profile: true
+---
+
+{% include base_path %}
+
+<div class="codeforces-dashboard">
+    <p id="cf-status" class="cf-status">Loading Codeforces data...</p>
+    <div class="cf-metrics" id="cf-metrics">
+        <div class="cf-metric">
+            <span class="cf-metric__label">Current Rating</span>
+            <span class="cf-metric__value" id="cf-current-rating">--</span>
+        </div>
+        <div class="cf-metric">
+            <span class="cf-metric__label">Peak Rating</span>
+            <span class="cf-metric__value" id="cf-max-rating">--</span>
+        </div>
+        <div class="cf-metric">
+            <span class="cf-metric__label">Total Submissions</span>
+            <span class="cf-metric__value" id="cf-total-submissions">--</span>
+        </div>
+        <div class="cf-metric">
+            <span class="cf-metric__label">Problems Solved</span>
+            <span class="cf-metric__value" id="cf-solved-count">--</span>
+        </div>
+    </div>
+    <div class="chart-grid">
+        <div class="chart-card">
+            <h3>Rating Trend</h3>
+            <canvas id="cf-rating-chart" height="260"></canvas>
+        </div>
+        <div class="chart-card">
+            <h3>Verdict Distribution</h3>
+            <canvas id="cf-verdict-chart" height="260"></canvas>
+        </div>
+        <div class="chart-card">
+            <h3>Language Usage</h3>
+            <canvas id="cf-language-chart" height="260"></canvas>
+        </div>
+        <div class="chart-card">
+            <h3>Accepted Tags Focus</h3>
+            <canvas id="cf-tag-chart" height="260"></canvas>
+        </div>
+    </div>
+</div>
+
+<style>
+    .codeforces-dashboard {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .cf-status {
+        font-style: italic;
+        color: #555;
+    }
+
+    .cf-metrics {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 1rem;
+    }
+
+    .cf-metric {
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 0.75rem 1rem;
+        background-color: #f8f9fb;
+    }
+
+    .cf-metric__label {
+        display: block;
+        font-size: 0.85rem;
+        color: #666;
+    }
+
+    .cf-metric__value {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #111;
+    }
+
+    .chart-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .chart-card {
+        position: relative;
+        border: 1px solid #dfe3eb;
+        border-radius: 12px;
+        padding: 1rem 1rem 1.5rem;
+        background-color: #fff;
+        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+        min-height: 320px;
+    }
+
+    .chart-card h3 {
+        margin-bottom: 0.75rem;
+        font-size: 1.1rem;
+    }
+
+    .chart-card canvas {
+        position: absolute;
+        inset: 2.75rem 1rem 1rem 1rem;
+        width: auto !important;
+        height: auto !important;
+        max-width: calc(100% - 2rem);
+        max-height: calc(100% - 3.75rem);
+    }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+<script>
+    (function () {
+        const handle = "Au1Bhi";
+        const statusEl = document.getElementById("cf-status");
+        const currentRatingEl = document.getElementById("cf-current-rating");
+        const maxRatingEl = document.getElementById("cf-max-rating");
+        const totalSubmissionsEl = document.getElementById("cf-total-submissions");
+        const solvedCountEl = document.getElementById("cf-solved-count");
+
+        const ratingCtx = document.getElementById("cf-rating-chart");
+        const verdictCtx = document.getElementById("cf-verdict-chart");
+        const languageCtx = document.getElementById("cf-language-chart");
+        const tagCtx = document.getElementById("cf-tag-chart");
+
+        const userInfoUrl = `https://codeforces.com/api/user.info?handles=${handle}`;
+        const ratingUrl = `https://codeforces.com/api/user.rating?handle=${handle}`;
+        const statusUrl = `https://codeforces.com/api/user.status?handle=${handle}&from=1&count=1000`;
+
+        const palettes = {
+            blue: ["#2563eb", "#1d4ed8", "#3b82f6", "#60a5fa", "#93c5fd", "#bfdbfe"],
+            green: ["#047857", "#059669", "#10b981", "#34d399", "#6ee7b7", "#a7f3d0"],
+            slate: ["#0f172a", "#1e293b", "#334155", "#475569", "#64748b", "#94a3b8"]
+        };
+
+        const fetchJson = async (url) => {
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error(`Request failed: ${response.status}`);
+            }
+            const payload = await response.json();
+            if (payload.status !== "OK") {
+                throw new Error(payload.comment || "Codeforces API returned an error");
+            }
+            return payload.result;
+        };
+
+        const toDateLabel = (unixSeconds) => {
+            return new Date(unixSeconds * 1000).toLocaleDateString(undefined, { year: "numeric", month: "short" });
+        };
+
+        const buildChart = (ctx, config) => new Chart(ctx, config);
+
+        const paletteCycle = (paletteName, count) => {
+            const base = palettes[paletteName] || palettes.blue;
+            const colors = [];
+            for (let i = 0; i < count; i += 1) {
+                colors.push(base[i % base.length]);
+            }
+            return colors;
+        };
+
+        const init = async () => {
+            if (typeof Chart === "undefined") {
+                statusEl.textContent = "Failed to load data: Chart library unavailable";
+                console.error("Chart.js failed to load.");
+                return;
+            }
+            try {
+                const [userInfo, ratingHistory, submissions] = await Promise.all([
+                    fetchJson(userInfoUrl),
+                    fetchJson(ratingUrl),
+                    fetchJson(statusUrl)
+                ]);
+
+                const profile = userInfo[0] || {};
+                currentRatingEl.textContent = profile.rating ?? "Unrated";
+                maxRatingEl.textContent = profile.maxRating ?? "Unrated";
+
+                const totalSubmissions = submissions.length;
+                const solvedProblemIds = new Set();
+                const verdictCounts = new Map();
+                const languageCounts = new Map();
+                const tagCounts = new Map();
+
+                submissions.forEach((submission) => {
+                    const verdict = submission.verdict || "UNKNOWN";
+                    verdictCounts.set(verdict, (verdictCounts.get(verdict) || 0) + 1);
+
+                    const languageRaw = submission.programmingLanguage || "Unknown";
+                    const language = languageRaw.replace(/\s*\(.*?\)/g, "").trim() || "Unknown";
+                    languageCounts.set(language, (languageCounts.get(language) || 0) + 1);
+
+                    if (verdict === "OK") {
+                        const problemId = `${submission.problem.contestId}-${submission.problem.index}`;
+                        solvedProblemIds.add(problemId);
+                        (submission.problem.tags || []).forEach((tag) => {
+                            tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1);
+                        });
+                    }
+                });
+
+                totalSubmissionsEl.textContent = totalSubmissions;
+                solvedCountEl.textContent = solvedProblemIds.size;
+
+                const ratingLabels = ratingHistory.map((entry) => toDateLabel(entry.ratingUpdateTimeSeconds));
+                const ratingValues = ratingHistory.map((entry) => entry.newRating);
+
+                if (ratingHistory.length > 0) {
+                    buildChart(ratingCtx, {
+                        type: "line",
+                        data: {
+                            labels: ratingLabels,
+                            datasets: [
+                                {
+                                    label: "Rating",
+                                    data: ratingValues,
+                                    borderColor: "#2563eb",
+                                    backgroundColor: "rgba(37, 99, 235, 0.16)",
+                                    tension: 0.25,
+                                    fill: true,
+                                    pointRadius: 3,
+                                    pointBackgroundColor: "#1d4ed8",
+                                    pointBorderWidth: 0
+                                }
+                            ]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: { display: false },
+                                tooltip: {
+                                    callbacks: {
+                                        title: (items) => items[0]?.label ?? "",
+                                        label: (context) => `Rating: ${context.parsed.y}`
+                                    }
+                                }
+                            },
+                            scales: {
+                                x: {
+                                    ticks: { maxRotation: 0, autoSkip: true, maxTicksLimit: 8 }
+                                },
+                                y: {
+                                    beginAtZero: false,
+                                    ticks: { precision: 0 }
+                                }
+                            }
+                        }
+                    });
+                }
+
+                const verdictEntries = Array.from(verdictCounts.entries()).sort((a, b) => b[1] - a[1]);
+                if (verdictEntries.length > 0) {
+                    buildChart(verdictCtx, {
+                        type: "doughnut",
+                        data: {
+                            labels: verdictEntries.map(([verdict]) => verdict),
+                            datasets: [
+                                {
+                                    data: verdictEntries.map(([, count]) => count),
+                                    backgroundColor: paletteCycle("green", verdictEntries.length),
+                                    borderWidth: 0
+                                }
+                            ]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: { position: "bottom" }
+                            }
+                        }
+                    });
+                }
+
+                const languageEntries = Array.from(languageCounts.entries())
+                    .sort((a, b) => b[1] - a[1])
+                    .slice(0, 8);
+                if (languageEntries.length > 0) {
+                    buildChart(languageCtx, {
+                        type: "bar",
+                        data: {
+                            labels: languageEntries.map(([language]) => language),
+                            datasets: [
+                                {
+                                    label: "Submissions",
+                                    data: languageEntries.map(([, count]) => count),
+                                    backgroundColor: paletteCycle("blue", languageEntries.length)
+                                }
+                            ]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            scales: {
+                                x: { ticks: { autoSkip: false } },
+                                y: { beginAtZero: true }
+                            }
+                        }
+                    });
+                }
+
+                const tagEntries = Array.from(tagCounts.entries())
+                    .sort((a, b) => b[1] - a[1])
+                    .slice(0, 10);
+                if (tagEntries.length > 0) {
+                    buildChart(tagCtx, {
+                        type: "bar",
+                        data: {
+                            labels: tagEntries.map(([tag]) => tag),
+                            datasets: [
+                                {
+                                    label: "Accepted Count",
+                                    data: tagEntries.map(([, count]) => count),
+                                    backgroundColor: paletteCycle("slate", tagEntries.length)
+                                }
+                            ]
+                        },
+                        options: {
+                            indexAxis: "y",
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            scales: {
+                                x: { beginAtZero: true },
+                                y: { ticks: { autoSkip: false } }
+                            }
+                        }
+                    });
+                }
+
+                const lastUpdated = new Date().toLocaleString();
+                statusEl.textContent = `Last updated: ${lastUpdated}`;
+            } catch (err) {
+                statusEl.textContent = `Failed to load data: ${err.message}`;
+                console.error(err);
+            }
+        };
+
+        init();
+    })();
+</script>
