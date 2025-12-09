@@ -14,19 +14,18 @@ Profile
 * **Hu Lizhong**, 20 years old, aspiring full-stack developer
 * Based in China
 * Phone: [redacted] · Email: admin@au1bhi.com · QQ: [redacted] · WeChat: [redacted]
-* Height: 181 cm · Weight: 76 kg · Ethnicity: Han · Marital status: Single
 
 Education
 ======
 * **Slippery Rock University**, Management Information Systems (B.S.), 2023.07 – 2027.06
-* **Quanzhou University of Information Engineering**, International Education College, Software Engineering (Sino-foreign cooperation) (B.S.), 2023.07 – 2027.06
+* **Quanzhou University of Information Engineering**, International Education College, Software Engineering (Sino-American cooperative program) (B.S.), 2023.07 – 2027.06
 * **Academy Europe Open University**, Master of Business Administration (online), awarded June 27, 2025
 * **[redacted]**, [redacted], awarded June 27, 2025
 
 Campus Leadership & Experience
 ======
 * **ACM Algorithm Society**, Organizer, 2024.09 – 2025.09  
-  Led day-to-day operations, planned and hosted "International Education ACM" and "Coastal Alliance" programming contests spanning five partner universities， strengthening intercollegiate technical exchange opportunities.
+  Led day-to-day operations, planned and hosted "International Education ACM" and "Coastal Alliance" programming contests spanning seven partner universities， strengthening intercollegiate technical exchange opportunities.
 * **International Education College**, Deputy Director, Learning Department, 2024.09 – 2025.09  
   Supported faculty lecture series and competition events, coordinated student participation, and fostered an academic atmosphere across the college.
 * **ACM-ICPC Training Team**, Coordinator, 2024.09 – present  
@@ -66,8 +65,7 @@ Proficiency Overview
 ======
 * Advanced: C++, algorithms & data structures
 * Proficient: Python, Java, Flask, Ruoyi, Docker, Git, Linux, SQL
-* Intermediate: JavaScript, MongoDB
-* Beginner: Go back-end development
+* Intermediate: JavaScript, MongoDB, Go back-end development
 
 Job Preferences
 ======
