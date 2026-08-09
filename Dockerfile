@@ -1,5 +1,5 @@
 # Base image: Ruby with necessary dependencies for Jekyll
-FROM ruby:3.2@sha256:ac6163e0df9e592059ea56d69d416d68ff2e04d53d8f33ac5ead02f5523f03cd
+FROM ruby:4.0@sha256:c400c1e41e8ad2276c82529ff9fd552cdb339a84e761c9d57d2d7f582122fa6e
 
 # Install dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
