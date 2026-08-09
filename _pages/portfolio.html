@@ -1,0 +1,14 @@
+---
+layout: archive
+title: "Portfolio"
+permalink: /portfolio/
+author_profile: true
+---
+
+{% include base_path %}
+
+This archive collects selected contest materials and results. Files are provided for reference and are not a substitute for the official contest statements or rules.
+
+{% for post in site.portfolio %}
+  {% include archive-single.html %}
+{% endfor %}

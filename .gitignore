@@ -1,0 +1,34 @@
+# Ignore the contents of the _site directory and other cache directories
+_site/
+.sass-cache/
+
+# Ignore the directory for local files during development
+local/
+
+# Dependency directories (lockfiles remain tracked for reproducible builds)
+node_modules
+
+# Ignore the vendor file at root level and bundle for alternative installation
+/vendor/
+.bundle/
+
+# Ignore folders related to IDEs
+.vscode/
+.claude/
+
+# Never commit local secrets, credentials, private keys, or databases
+.env
+.env.*
+!.env.example
+credentials.json
+secrets.yml
+secrets.yaml
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.sqlite
+*.sqlite3
+*.db
