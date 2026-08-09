@@ -10,7 +10,7 @@ group :jekyll_plugins do
 end
 
 gem 'github-pages'
-gem 'connection_pool', '2.5.0'
+gem 'connection_pool', '3.0.2'
 
 # Security floors for transitive dependencies used by the GitHub Pages stack.
 gem 'activesupport', '>= 8.1.3.1', '< 9'
