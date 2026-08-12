@@ -9,6 +9,8 @@ redirect_from:
 
 {% include base_path %}
 
+[Download CV (PDF)](/assets/pdf/Lizhong_Hu_CV.pdf){: .btn .btn--primary }
+
 Profile
 ======
 Software Engineering undergraduate in a Sino-American dual-degree program jointly operated by Quanzhou University of Information Engineering and Slippery Rock University. Interested in algorithms, software systems, information retrieval, and reliable intelligent systems, with experience in competitive programming, back-end development, Linux/Docker infrastructure, and programming-contest system maintenance.

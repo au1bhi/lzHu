@@ -12,6 +12,15 @@ node_modules
 /vendor/
 .bundle/
 
+# LaTeX CV build output (the published copy under assets/pdf is tracked)
+cv-latex/*.aux
+cv-latex/*.fdb_latexmk
+cv-latex/*.fls
+cv-latex/*.log
+cv-latex/*.out
+cv-latex/*.pdf
+cv-latex/*.synctex.gz
+
 # Ignore folders related to IDEs
 .vscode/
 .claude/

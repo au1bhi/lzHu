@@ -1,0 +1,105 @@
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=0.55in]{geometry}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[hidelinks]{hyperref}
+
+\hypersetup{
+  pdftitle={Lizhong Hu - Curriculum Vitae},
+  pdfauthor={Lizhong Hu},
+  pdfsubject={Academic curriculum vitae},
+  pdfcreator={LaTeX}
+}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlist[itemize]{leftmargin=1.25em,itemsep=0.5pt,topsep=1pt,parsep=0pt,partopsep=0pt}
+\titleformat{\section}{\normalsize\bfseries}{}{0pt}{}[\vspace{-2pt}\titlerule]
+\titlespacing*{\section}{0pt}{5pt}{2.5pt}
+\renewcommand{\arraystretch}{1.03}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\newcommand{\entry}[2]{%
+  \begin{tabularx}{\textwidth}{@{}Y>{\raggedleft\arraybackslash}p{0.29\textwidth}@{}}
+    \textbf{#1} & \textit{#2}
+  \end{tabularx}\vspace{-1.5pt}
+}
+
+\begin{document}
+
+\begin{center}
+  {\LARGE\bfseries Lizhong Hu}\par
+  \vspace{2pt}
+  \small
+  \href{https://au1bhi.com}{Website}
+  \enspace$\vert$\enspace
+  \href{mailto:admin@au1bhi.com}{Email}
+  \enspace$\vert$\enspace
+  \href{https://github.com/au1bhi}{GitHub}
+  \enspace$\vert$\enspace
+  \href{https://codeforces.com/profile/Au1Bhi}{Codeforces}
+  \enspace$\vert$\enspace
+  \href{https://www.linkedin.com/in/lizhong-hu-686b9b34a}{LinkedIn}
+\end{center}
+\vspace{-5pt}
+
+\section{Profile}
+Software Engineering undergraduate in a Sino-American dual-degree program jointly operated by Quanzhou University of Information Engineering and Slippery Rock University. Interested in algorithms, software systems, information retrieval, and reliable intelligent systems, with experience in competitive programming, back-end development, Linux/Docker infrastructure, and programming-contest system maintenance.
+
+\section{Research Interests}
+Algorithms and Data Structures; Software and Distributed Systems; Information Retrieval and Retrieval-Augmented Generation; Reliable and Intelligent Information Systems.
+
+\section{Education}
+\begin{tabularx}{\textwidth}{@{}>{\small\bfseries}Y>{\small\itshape\raggedleft\arraybackslash}p{0.21\textwidth}@{}}
+  Quanzhou University of Information Engineering \& Slippery Rock University & 2023--2027 (expected)
+\end{tabularx}\vspace{-1.5pt}
+\begin{tabularx}{\textwidth}{@{}Y>{\raggedleft\arraybackslash}p{0.23\textwidth}@{}}
+  \textbf{Quanzhou University of Information Engineering} & GPA: 3.10/4.00 \\
+  \multicolumn{2}{@{}l@{}}{Software Engineering (Sino-foreign Cooperation)} \\
+  \textbf{Slippery Rock University} & GPA: 3.583/4.000 \\
+  \multicolumn{2}{@{}l@{}}{Bachelor of Science in Information Systems}
+\end{tabularx}
+\vspace{1pt}
+{\footnotesize\itshape Four-year Sino-American 4+0 dual-degree undergraduate program conducted in China and officially recognized by the Ministry of Education of China.}
+
+\section{Selected Projects}
+\entry{Personal Knowledge Question-Answering System with RAG}{Undergraduate Thesis, Ongoing}
+Developing a personal knowledge question-answering system using FastAPI and retrieval-augmented generation, with a focus on document retrieval, knowledge grounding, and LLM-based response generation.
+
+\entry{DOMjudge / Xboard Infrastructure Maintenance}{Sep 2024--Present}
+Containerized and maintain a DOMjudge environment for university programming training and competitions; administer an Xboard VPS for reliable remote contestant access using Linux and Docker.
+
+\entry{ETi+ Back-End API Development}{Mar 2025--Apr 2025}
+Built authentication, data aggregation, and testing APIs using Python, Flask, PostgreSQL, and MongoDB; introduced automated Postman regression testing for pre-deployment verification.
+
+\section{Technical Experience}
+\entry{Chinese Computer Federation (CCF) --- NOI-Pre Project Tester}{Jul 2024--Oct 2024}
+Authored test cases for official NOI-Pre problems, validated solutions through targeted submissions, and delivered feedback on solution correctness and judge behavior.
+
+\entry{Aichi-Nagoya 2026 Asian Games --- Incoming TOC Operator}{Sep 2026--Oct 2026}
+Selected for technical operations support during the 20th Asian Games Aichi-Nagoya 2026.
+
+\section{Competitive Programming \& Awards}
+\begin{itemize}
+  \item \textbf{2026 CCPC Fujian Invitational} --- First Blood on Problem A; recorded the contest's first accepted solution to Problem A.
+  \item \textbf{49th ICPC Asia Kunming Regional} --- Onsite Contestant, 2024.
+  \item \textbf{Fujian Provincial Collegiate Programming Contest (Python, Group B)} --- First Prize, 2024.
+  \item \textbf{15th Fujian Province Software and Information Technology Professional Talent Competition}\\
+    National Finalist; Outstanding Award, 2024.
+\end{itemize}
+
+\section{Technical Skills}
+\textbf{Languages \& Algorithms:} C++, Python, Java, JavaScript, Go; algorithms and data structures, competitive programming.\\
+\textbf{Back-End \& Data:} FastAPI, Flask, RuoYi, PostgreSQL, MongoDB, MySQL, REST API design and integration.\\
+\textbf{Systems \& DevOps:} Linux, Docker, Git, SQL tooling, DOMjudge deployment and infrastructure maintenance.\\
+\textbf{Information Retrieval \& AI Systems:} Retrieval-Augmented Generation (RAG), LLM API integration, prompt design.
+
+\end{document}
