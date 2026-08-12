@@ -12,7 +12,7 @@ site_theme               : "default"
 title                    : "Lizhong Hu"
 title_separator          : "-"
 name                     : &name "Lizhong Hu"
-description              : &description "Personal site for theoretical computer science, competitive programming, and contest materials."
+description              : &description "Academic profile covering algorithms, software systems, information retrieval, and selected technical work."
 url                      : https://au1bhi.com
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -26,7 +26,7 @@ author:
   avatar           : "profile.jpg"
   name             : "Lizhong Hu"
   pronouns         : # example: "she/her"  
-  bio              : "Researcher focusing on theoretical computer science and competitive programming."
+  bio              : "Software Engineering undergraduate interested in algorithms, software systems, and information retrieval."
   location         : "China"
   employer         :
   uri              : "https://au1bhi.com"

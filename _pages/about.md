@@ -9,23 +9,24 @@ redirect_from:
 
 # Hi, I'm Lizhong Hu.
 
-I am interested in theoretical computer science and competitive programming. This site is a place for my CV, selected work, and notes from problem solving.
+I am a Software Engineering undergraduate in a Sino-American dual-degree program jointly operated by Quanzhou University of Information Engineering and Slippery Rock University. My interests include algorithms, software systems, information retrieval, and reliable intelligent systems.
 
 ## Focus
 
-- Algorithms, data structures, and rigorous problem solving
-- Competitive programming and contest preparation
-- Clear, reproducible technical work
+- Algorithms and data structures
+- Software and distributed systems
+- Information retrieval and retrieval-augmented generation
+- Reliable and intelligent information systems
 
 ## What you'll find here
 
-- A concise [CV](/cv/) with education, experience, and competition records
-- A small [contest archive](/portfolio/) for selected materials
+- An academic [CV](/cv/) with education, projects, technical experience, and competition records
+- A [contest archive](/portfolio/) containing selected contest materials
 - A live [Codeforces dashboard](/codeforces/) built from public contest data
 
 ## Recent highlight
 
-At the 2026 CCPC Fujian Invitational, I achieved the first accepted solution for Problem A.
+At the 2026 CCPC Fujian Invitational, I recorded the contest's first accepted solution to Problem A.
 
 ## Contact and code
 

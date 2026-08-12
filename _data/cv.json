@@ -1,151 +1,130 @@
 {
   "basics": {
-    "name": "Your Sidebar Name",
+    "name": "Lizhong Hu",
     "email": "admin@au1bhi.com",
-    "website": "https://academicpages.github.io",
-    "summary": "Currently employed at Red Brick University. Short biography for the left-hand sidebar",
+    "website": "https://au1bhi.com",
+    "summary": "Software Engineering undergraduate interested in algorithms, software systems, and information retrieval.",
     "location": {
       "address": "",
       "postalCode": "",
-      "city": "Earth",
-      "countryCode": "US",
+      "city": "China",
+      "countryCode": "",
       "region": ""
     },
     "profiles": [
       {
-        "network": "Google Scholar",
-        "username": "",
-        "url": "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
-      },
-      {
-        "network": "ORCID",
-        "username": "",
-        "url": "https://orcid.org/yourorcidurl"
-      },
-      {
         "network": "GitHub",
-        "username": "academicpages",
-        "url": "https://github.com/academicpages"
+        "username": "au1bhi",
+        "url": "https://github.com/au1bhi"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "lizhong-hu-686b9b34a",
+        "url": "https://www.linkedin.com/in/lizhong-hu-686b9b34a"
       }
     ]
   },
-  "work": [],
+  "work": [
+    {
+      "company": "Aichi-Nagoya 2026 Asian Games",
+      "position": "Incoming TOC Operator",
+      "website": "",
+      "startDate": "Sep 2026",
+      "endDate": "Oct 2026",
+      "summary": "Selected for technical operations support during the 20th Asian Games Aichi-Nagoya 2026.",
+      "highlights": []
+    },
+    {
+      "company": "Chinese Computer Federation (CCF)",
+      "position": "NOI-Pre Project Tester",
+      "website": "",
+      "startDate": "Jul 2024",
+      "endDate": "Oct 2024",
+      "summary": "Authored test cases for official NOI-Pre problems, validated solutions through targeted submissions, and delivered feedback reports on correctness and judge behavior.",
+      "highlights": []
+    }
+  ],
   "education": [
     {
-      "institution": "GitHub University",
-      "area": "Ph.D in Version Control Theory",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2018",
-      "gpa": null,
+      "institution": "Quanzhou University of Information Engineering",
+      "area": "Software Engineering (Sino-foreign Cooperation)",
+      "studyType": "Dual-Degree Sino-American Undergraduate Program conducted in China",
+      "startDate": "2023",
+      "endDate": "2027 (expected)",
+      "gpa": "3.1/4.0",
       "courses": []
     },
     {
-      "institution": "GitHub University",
-      "area": "M.S. in Jekyll",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2014",
-      "gpa": null,
-      "courses": []
-    },
-    {
-      "institution": "GitHub University",
-      "area": "B.S. in GitHub",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2012",
-      "gpa": null,
+      "institution": "Slippery Rock University",
+      "area": "Bachelor of Science in Information Systems",
+      "studyType": "Dual-Degree Sino-American Undergraduate Program conducted in China",
+      "startDate": "2023",
+      "endDate": "2027 (expected)",
+      "gpa": "3.583/4.000",
       "courses": []
     }
   ],
-  "skills": [],
+  "skills": [
+    {
+      "name": "Languages & Algorithms",
+      "level": "",
+      "keywords": ["C++", "Python", "Java", "JavaScript", "Go", "algorithms and data structures", "competitive programming"]
+    },
+    {
+      "name": "Back-End & Data",
+      "level": "",
+      "keywords": ["FastAPI", "Flask", "RuoYi", "PostgreSQL", "MongoDB", "MySQL", "REST API design and integration"]
+    },
+    {
+      "name": "Systems & DevOps",
+      "level": "",
+      "keywords": ["Linux", "Docker", "Git", "SQL tooling", "DOMjudge deployment and infrastructure maintenance"]
+    },
+    {
+      "name": "Information Retrieval & AI Systems",
+      "level": "",
+      "keywords": ["Retrieval-Augmented Generation (RAG)", "LLM API integration", "prompt design"]
+    }
+  ],
   "languages": [],
-  "interests": [],
+  "interests": [
+    {"name": "Algorithms and Data Structures", "keywords": []},
+    {"name": "Software and Distributed Systems", "keywords": []},
+    {"name": "Information Retrieval and Retrieval-Augmented Generation", "keywords": []},
+    {"name": "Reliable and Intelligent Information Systems", "keywords": []}
+  ],
   "references": [],
-  "publications": [
-    {
-      "name": "Paper Title Number 1",
-      "publisher": "Journal 1",
-      "releaseDate": "2009-10-01",
-      "website": "https://academicpages.github.io/files/paper1.pdf",
-      "summary": "This paper is about the number 1. The number 2 is left for future work."
-    },
-    {
-      "name": "Paper Title Number 2",
-      "publisher": "Journal 1",
-      "releaseDate": "2010-10-01",
-      "website": "https://academicpages.github.io/files/paper2.pdf",
-      "summary": "This paper is about the number 2. The number 3 is left for future work."
-    },
-    {
-      "name": "Paper Title Number 3",
-      "publisher": "Journal 1",
-      "releaseDate": "2015-10-01",
-      "website": "https://academicpages.github.io/files/paper3.pdf",
-      "summary": "This paper is about the number 3. The number 4 is left for future work."
-    },
-    {
-      "name": "Paper Title Number 4",
-      "publisher": "GitHub Journal of Bugs",
-      "releaseDate": "2024-02-17",
-      "website": "https://academicpages.github.io/files/paper3.pdf",
-      "summary": "This paper is about fixing template issue #693."
-    }
-  ],
-  "presentations": [
-    {
-      "name": "Talk 1 on Relevant Topic in Your Field",
-      "event": "UC San Francisco, Department of Testing",
-      "date": "2012-03-01",
-      "location": "San Francisco, CA, USA",
-      "description": ""
-    },
-    {
-      "name": "Tutorial 1 on Relevant Topic in Your Field",
-      "event": "UC-Berkeley Institute for Testing Science",
-      "date": "2013-03-01",
-      "location": "Berkeley, CA, USA",
-      "description": ""
-    },
-    {
-      "name": "Talk 2 on Relevant Topic in Your Field",
-      "event": "London School of Testing",
-      "date": "2014-02-01",
-      "location": "London, UK",
-      "description": ""
-    },
-    {
-      "name": "Conference Proceeding talk 3 on Relevant Topic in Your Field",
-      "event": "Testing Institute of America 2014 Annual Conference",
-      "date": "2014-03-01",
-      "location": "Los Angeles, CA, USA",
-      "description": ""
-    }
-  ],
-  "teaching": [
-    {
-      "course": "Teaching experience 1",
-      "institution": "University 1, Department",
-      "date": "2014-01-01",
-      "role": "Undergraduate course",
-      "description": ""
-    },
-    {
-      "course": "Teaching experience 2",
-      "institution": "University 1, Department",
-      "date": "2015-01-01",
-      "role": "Workshop",
-      "description": ""
-    }
-  ],
+  "publications": [],
+  "presentations": [],
+  "teaching": [],
   "portfolio": [
     {
-      "name": "Portfolio item number 1",
-      "category": "portfolio",
-      "date": "",
+      "name": "Personal Knowledge Question-Answering System with RAG",
+      "category": "selected project",
+      "date": "Ongoing",
       "url": "",
-      "description": "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
+      "description": "Developing an undergraduate graduation project for personal knowledge question answering using FastAPI and retrieval-augmented generation, with a focus on document retrieval, knowledge grounding, and LLM-based response generation."
+    },
+    {
+      "name": "ETi+ Back-End API Development",
+      "category": "selected project",
+      "date": "2025",
+      "url": "",
+      "description": "Built authentication, data-aggregation, and testing APIs using Flask, PostgreSQL, and MongoDB, with automated Postman regression runs for pre-deployment checks."
+    },
+    {
+      "name": "EVE Online Community Back-End System",
+      "category": "selected project",
+      "date": "2023–2025",
+      "url": "",
+      "description": "Re-architected a RuoYi-based community platform and developed data-query, moderation, and workflow tools for community managers and content creators."
+    },
+    {
+      "name": "DOMjudge/Xboard Infrastructure Maintenance",
+      "category": "selected project",
+      "date": "2024–Present",
+      "url": "",
+      "description": "Deployed a containerized DOMjudge environment and maintain it for campus training and contests; administer an Xboard VPS for remote contestant access."
     }
   ]
 }

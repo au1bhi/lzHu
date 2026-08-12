@@ -8,11 +8,14 @@
 #      Markdown formatted page while the second is generated using JSON.
 
 main:
-  - title: "Contest Archive"
-    url: /portfolio/
+  - title: "Home"
+    url: /
 
   - title: "CV"
     url: /cv/
+
+  - title: "Contest Archive"
+    url: /portfolio/
 
   - title: "Codeforces"
     url: /codeforces/
