@@ -5,6 +5,7 @@
 \usepackage{lmodern}
 \usepackage[a4paper,margin=0.5in]{geometry}
 \usepackage{microtype}
+\usepackage{ragged2e}
 \usepackage{enumitem}
 \usepackage{titlesec}
 \usepackage{tabularx}
@@ -27,14 +28,30 @@
 \renewcommand{\arraystretch}{1.03}
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 
+% Size the date column to its content so long titles retain usable space.
+\newlength{\entrydatewidth}
 \newcommand{\entry}[2]{%
-  \par\addvspace{1.5pt}\noindent
-  \begin{tabularx}{\textwidth}{@{}Y>{\raggedleft\arraybackslash}p{0.29\textwidth}@{}}
-    \textbf{#1} & \textit{#2}
-  \end{tabularx}\par\nobreak\vspace{-1pt}
+  \par\addvspace{2pt}\noindent
+  \if\relax\detokenize{#2}\relax
+    \textbf{#1}\par
+  \else
+    \settowidth{\entrydatewidth}{{\small #2}}%
+    \begin{tabularx}{\textwidth}{@{}Y@{\hspace{1em}}>{\raggedleft\arraybackslash}p{\entrydatewidth}@{}}
+      \textbf{#1} & {\small #2}
+    \end{tabularx}\par
+  \fi
+  \nobreak\vspace{-1pt}
+}
+
+% Keep wrapped skills visually attached to their labels.
+\newcommand{\skillrow}[2]{%
+  \par\noindent\hangindent=1em\hangafter=1\textbf{#1} #2\par
 }
 
 \begin{document}
+\RaggedRight
+\setlength{\emergencystretch}{1em}
+\hyphenpenalty=10000
 
 \begin{center}
   {\LARGE\bfseries Lizhong Hu}\par
@@ -42,7 +59,7 @@
   \small
   \href{https://au1bhi.com}{Website}
   \enspace$\vert$\enspace
-  \href{mailto:admin@au1bhi.com}{Email}
+  \href{mailto:admin@au1bhi.com}{admin@au1bhi.com}
   \enspace$\vert$\enspace
   \href{https://github.com/au1bhi}{GitHub}
   \enspace$\vert$\enspace
@@ -53,10 +70,10 @@
 \vspace{-5pt}
 
 \section{Profile}
-Software Engineering undergraduate in a Sino-American dual-degree program jointly operated by Quanzhou University of Information Engineering and Slippery Rock University. Interested in algorithms, software systems, information retrieval, and reliable intelligent systems, with experience in competitive programming, back-end development, Linux/Docker infrastructure, and live sports broadcast technical operations.
+Software Engineering undergraduate in a Sino-American dual-degree program, with experience in back-end development, RAG systems, Linux/Docker infrastructure, and live sports broadcast support.
 
 \section{Research Interests}
-Intelligent Software Engineering; Programming Support and Online Judge Systems; Algorithms and Data Structures; Information Retrieval and Retrieval-Augmented Generation.
+Algorithms and Data Structures; Software Systems; Information Retrieval and Retrieval-Augmented Generation.
 
 \section{Education}
 \begin{tabularx}{\textwidth}{@{}Y>{\raggedleft\arraybackslash}p{0.23\textwidth}@{}}
@@ -66,25 +83,30 @@ Intelligent Software Engineering; Programming Support and Online Judge Systems; 
   Information Systems, Bachelor of Science (BS) & GPA: 3.583/4.000
 \end{tabularx}
 \vspace{1pt}
-{\footnotesize\itshape Four-year Sino-American 4+0 dual-degree undergraduate program conducted in China and officially recognized by the Ministry of Education of China.}
+{\footnotesize\itshape Sino-American 4+0 dual-degree program conducted in China; approved by the Ministry of Education of China.}
 
 \section{Selected Projects}
 \entry{NoteLLM: Personal Learning QA System with Verifiable RAG}{Ongoing}
 \textit{Undergraduate thesis}
 \begin{itemize}
-  \item Architected a verifiable RAG backend using FastAPI, PostgreSQL, and \texttt{pgvector} for cosine-similarity retrieval, with page-aware extraction and overlapping chunking across PDF, Markdown, and TXT files.
-  \item Enforced hallucination guardrails via server-side citation validation against candidate chunks and source excerpt persistence; achieved 100\% Recall@5 and a 97.1\% citation match rate in benchmark evaluations.
+  \item Built a RAG backend using FastAPI, PostgreSQL, and \texttt{pgvector} for cosine-similarity retrieval, with page-aware extraction and overlapping chunking across PDF, Markdown, and TXT files.
+  \item Validated citations against retrieved chunks and stored source excerpts. A single baseline on 7 synthetic documents and 34 questions recorded 100\% source-level Recall@5 and 97.1\% automatic citation-to-source match.
 \end{itemize}
 
-\entry{DOMjudge \& Privacy-Oriented Network Infrastructure}{Sep 2024--Present}
+\entry{DOMjudge Online Judge Deployment \& Operations}{Sep 2024--Present}
 \begin{itemize}
-  \item Maintain a containerized DOMjudge for university contests; built a Cloudflare Worker subscription generator with ISP-aware routing and a dual-stack egress architecture routing IPv6 via WARP alongside native IPv4, with automated deployment and CDN speed testing.
+  \item Maintain containerized DOMjudge for campus training and programming contests.
 \end{itemize}
 
-\entry{ETi+ Smart Community Digital Governance Platform}{Mar 2025--Apr 2025}
+\entry{Proxy Subscription Management \& Dual-Stack Egress Automation}{}
 \begin{itemize}
-  \item Engineered a hybrid persistence backend using PostgreSQL for landlord credit scoring and anomaly auditing, alongside MongoDB for high-throughput WeChat chat stream logging.
-  \item Developed Flask REST APIs automating WeChat community moderation, regex nickname compliance checks, batch data ingestion, and automated Postman regression testing suites.
+  \item Built a Cloudflare Worker subscription generator with ISP ASN-based routing and CDN speed testing; automated WARP IPv6/native IPv4 egress deployment and verification.
+\end{itemize}
+
+\entry{ETIPlus: Community Governance \& WeChat Group Management Backend}{Mar 2025--Apr 2025}
+\begin{itemize}
+  \item Built a Flask backend with PostgreSQL for landlord credit scoring and anomaly audits, and MongoDB for WeChat message storage.
+  \item Developed APIs for group moderation, regex nickname checks, and batch imports;\linebreak automated regression checks with Postman.
 \end{itemize}
 
 \section{Technical Experience}
@@ -113,15 +135,17 @@ In collaboration with China Computer Federation (CCF).
 \section{Competitive Programming \& Awards}
 \begin{itemize}
   \item \textbf{2026 National Invitational of CCPC (Fujian), The 13th Fujian Collegiate Programming Contest} --- First accepted solution to Problem A.
-  \item \textbf{The 2024 ICPC Asia Kunming Regional Contest} --- Onsite Contestant, 2024.
+  \item \textbf{The 2024 ICPC Asia Kunming Regional Contest} --- Honorable Medal, 2024.
   % Official event name: https://www.lanqiao.cn/cup-fifteen/
   \item \textbf{\href{https://www.lanqiao.cn/cup-fifteen/}{15th Lanqiao Cup}} --- First Prize, Fujian Provincial Round, Python Programming (University Group B), 2024.
 \end{itemize}
 
 \section{Technical Skills}
-\textbf{Languages \& Algorithms:} C++, Python, Java, JavaScript, Go; algorithms and data structures, competitive programming.\\
-\textbf{Back-End \& Data:} FastAPI, Flask, RuoYi, PostgreSQL, MongoDB, MySQL, REST API design and integration.\\
-\textbf{Systems \& DevOps:} Linux, Docker, Git, SQL tooling, DOMjudge deployment, Cloudflare Workers/CDN/DNS, WARP egress routing.\\
-\textbf{Information Retrieval \& AI Systems:} Retrieval-Augmented Generation (RAG), LLM API integration, prompt design.
+\skillrow{Languages \& Algorithms:}{C++, Python, Java, JavaScript, Go; algorithms and data structures.}
+\skillrow{Back-End \& Data:}{FastAPI, Flask, RuoYi, PostgreSQL, MongoDB, MySQL, REST API design and integration.}
+\skillrow{Systems \& DevOps:}{Linux, Docker, Git, DOMjudge, Cloudflare Workers/CDN/DNS, WARP routing.}
+\skillrow{Information Retrieval \& AI:}{Retrieval-Augmented Generation (RAG), LLM API integration, prompt design.}
+\skillrow{AI Coding Tools:}{Familiar with Codex, Claude Code, and Antigravity CLI; repository instructions, shared Skills, parallel subagent review, and test/build validation.}
+\skillrow{Contest Authoring Tools:}{Familiar with Polygon (Codeforces) and Nowcoder; problem preparation, test data, and solution verification.}
 
 \end{document}

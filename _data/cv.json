@@ -3,7 +3,7 @@
     "name": "Lizhong Hu",
     "email": "admin@au1bhi.com",
     "website": "https://au1bhi.com",
-    "summary": "Software Engineering undergraduate interested in algorithms, software systems, and information retrieval.",
+    "summary": "Software Engineering undergraduate in a Sino-American dual-degree program, with experience in back-end development, RAG systems, Linux/Docker infrastructure, and live sports broadcast support.",
     "location": {
       "address": "",
       "postalCode": "",
@@ -90,9 +90,25 @@
       "name": "Information Retrieval & AI Systems",
       "level": "",
       "keywords": ["Retrieval-Augmented Generation (RAG)", "LLM API integration", "prompt design"]
+    },
+    {
+      "name": "AI Coding Tools",
+      "level": "Familiar",
+      "keywords": ["Codex", "Claude Code", "Antigravity CLI", "AGENTS.md / CLAUDE.md project instructions", "shared Skills configuration", "task decomposition and parallel subagent review", "test, static-check, and build validation"]
+    },
+    {
+      "name": "Contest Authoring & Judging Tools",
+      "level": "Familiar",
+      "keywords": ["Polygon (Codeforces)", "Nowcoder problem-setting platform", "problem preparation", "test-data management", "solution verification"]
     }
   ],
   "awards": [
+    {
+      "title": "Honorable Medal",
+      "date": "2024",
+      "awarder": "The 2024 ICPC Asia Kunming Regional Contest",
+      "summary": "Awarded to Hu Lizhong, Quanzhou University of Information Engineering, as stated on the Certificate of Achievement. The contest was held at Yunnan University, 30 November–1 December 2024."
+    },
     {
       "title": "First Prize — Fujian Provincial Round, Python Programming (University Group B)",
       "date": "2024",
@@ -116,15 +132,15 @@
       "name": "NoteLLM: Personal Learning Question-Answering System with Verifiable RAG",
       "category": "selected project",
       "date": "Ongoing",
-      "url": "",
-      "description": "Architected an end-to-end verifiable RAG system using FastAPI, async SQLAlchemy, and PostgreSQL with pgvector for cosine-similarity retrieval, processing PDF, Markdown, and TXT materials. Designed page-aware extraction, overlapping chunking, and grounded-mode server-side citation verification against candidate text chunks to mitigate hallucinations while persisting verbatim source excerpts and page indices for full auditability. Built an automated benchmark evaluation pipeline recording 100.0% Recall@5, a 97.1% citation-source match rate, and 339 ms mean retrieval latency."
+      "url": "https://github.com/au1bhi/NoteLLM",
+      "description": "Built a FastAPI backend with async SQLAlchemy, PostgreSQL, and pgvector for document retrieval across PDF, Markdown, and TXT files. Implemented page-aware extraction, overlapping chunking, server-side citation validation, and source excerpt storage. A single baseline run on 7 synthetic documents and 34 fixed questions recorded 100% source-level Recall@5, 97.1% automatic citation-to-source match, and 339 ms mean retrieval latency. Source-level retrieval and citation-source matching are evaluated against expected source files, not answer accuracy."
     },
     {
-      "name": "ETi+ Smart Community Digital Governance Platform",
+      "name": "ETIPlus: Community Governance & WeChat Group Management Backend",
       "category": "selected project",
       "date": "2025",
       "url": "",
-      "description": "Engineered a dual-database backend architecture: leveraged PostgreSQL for relational governance logic (landlord credit scoring rules, leaderboard rankings, address mapping, and anomaly audits) alongside MongoDB for high-throughput WeChat chat streams. Developed RESTful APIs automating community group moderation, regex nickname compliance audits, batch Excel/CSV data ingestion, and Postman automated regression testing suites."
+      "description": "Built a Flask backend using PostgreSQL for landlord credit scoring, rankings, and anomaly audits, and MongoDB for WeChat message storage. Developed APIs for group moderation, regex nickname checks, and Excel/CSV imports; automated regression checks with Postman."
     },
     {
       "name": "EVE Online Community Back-End System",
@@ -134,11 +150,18 @@
       "description": "Re-architected a RuoYi-based community platform and developed data-query, moderation, and workflow tools for community managers and content creators."
     },
     {
-      "name": "DOMjudge & Privacy-Oriented Network Infrastructure",
+      "name": "DOMjudge Online Judge Deployment & Operations",
       "category": "selected project",
       "date": "2024–Present",
       "url": "",
-      "description": "Deployed a containerized DOMjudge environment and maintain it for campus training and contests. Built a Cloudflare Worker subscription generator with ISP ASN-based routing, multi-protocol output, and automated CDN speed testing. Engineered a dual-stack egress architecture routing IPv6 through Cloudflare WARP while preserving native IPv4, with idempotent deployment scripts and end-to-end verification tooling."
+      "description": "Maintain a containerized DOMjudge environment for campus training and programming contests."
+    },
+    {
+      "name": "Proxy Subscription Management & Dual-Stack Egress Automation",
+      "category": "selected project",
+      "date": "",
+      "url": "",
+      "description": "Built a Cloudflare Worker subscription generator with ISP ASN-based routing, Clash/V2Ray output, and CDN speed testing. Configured IPv6 egress through Cloudflare WARP alongside native IPv4, with deployment scripts and backup/restore tooling."
     }
   ]
 }

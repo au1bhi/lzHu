@@ -9,11 +9,12 @@ redirect_from:
 
 {% include base_path %}
 
-[Download CV (PDF)](/assets/pdf/Lizhong_Hu_CV.pdf){: .btn .btn--primary }
+[English CV (PDF)](/assets/pdf/Lizhong_Hu_CV.pdf){: .btn .btn--primary }
+[中文简历（PDF）](/assets/pdf/Lizhong_Hu_CV_zh.pdf){: .btn .btn--primary }
 
 ## Profile
 
-Software Engineering undergraduate in a Sino-American dual-degree program jointly operated by Quanzhou University of Information Engineering and Slippery Rock University. Interested in algorithms, software systems, information retrieval, and reliable intelligent systems, with experience in competitive programming, back-end development, Linux/Docker infrastructure, and live sports broadcast technical operations.
+Software Engineering undergraduate in a Sino-American dual-degree program, with experience in back-end development, RAG systems, Linux/Docker infrastructure, and live sports broadcast support.
 
 ## Research Interests
 
@@ -41,19 +42,29 @@ Software Engineering undergraduate in a Sino-American dual-degree program jointl
 
 * **NoteLLM: Personal Learning Question-Answering System with Verifiable RAG**<br>
   *FastAPI & Retrieval-Augmented Generation | Ongoing (Undergraduate Thesis)*<br>
-  Architected an end-to-end verifiable RAG system using FastAPI, async SQLAlchemy, and PostgreSQL with pgvector for cosine-similarity retrieval across PDF, Markdown, and TXT materials. Designed page-aware extraction, overlapping chunking, and grounded-mode server-side citation verification against candidate text chunks to mitigate hallucinations while persisting verbatim source excerpts and page indices for full auditability. Built an automated benchmark evaluation pipeline recording 100.0% Recall@5, a 97.1% citation-source match rate, and 339 ms mean retrieval latency.
+  * Built a FastAPI backend with async SQLAlchemy, PostgreSQL, and pgvector for document retrieval across PDF, Markdown, and TXT files.
+  * Implemented page-aware extraction, overlapping chunking, server-side citation validation, and source excerpt storage.
+  * A single baseline run on 7 synthetic documents and 34 fixed questions recorded 100% source-level Recall@5, 97.1% automatic citation-to-source match, and 339 ms mean retrieval latency. [Evaluation report](https://github.com/au1bhi/NoteLLM/blob/master/docs/evaluation/latest-results.md).
 
-* **ETi+ Smart Community Digital Governance Platform**<br>
+  Source-level Recall@5 measures whether the expected source appears among the top five chunks; citation-to-source match measures whether an answer has at least one validated citation from the expected source. These are synthetic-set metrics, not answer accuracy or general-domain performance.
+
+* **ETIPlus: Community Governance & WeChat Group Management Backend**<br>
   *Python & Flask | Mar 2025 – Apr 2025*<br>
-  Engineered a dual-database backend architecture: leveraged PostgreSQL for relational governance logic (landlord credit scoring rules, leaderboard rankings, address mapping, and anomaly audits) alongside MongoDB for high-throughput WeChat chat stream logging. Developed RESTful APIs automating community group moderation, regex nickname compliance audits, batch Excel/CSV data ingestion, and Postman automated regression testing suites.
+  * Built a Flask backend using PostgreSQL for landlord credit scoring, rankings, and anomaly audits, and MongoDB for WeChat message storage.
+  * Developed APIs for group moderation, regex nickname checks, and Excel/CSV imports; automated regression checks with Postman.
 
 * **EVE Online Community Back-End System**<br>
   *Java & RuoYi | Oct 2023 – Apr 2025*<br>
-  Re-architected a RuoYi-based community platform and developed data-query, moderation, and workflow tools for community managers and content creators.
+  * Re-architected a RuoYi-based community platform and developed data-query, moderation, and workflow tools for community managers and content creators.
 
-* **DOMjudge & Privacy-Oriented Network Infrastructure**<br>
+* **DOMjudge Online Judge Deployment & Operations**<br>
   *Linux & Docker | Sep 2024 – Present*<br>
-  Deployed a containerized DOMjudge environment and maintain it for campus training and contests. Built a Cloudflare Worker subscription generator (~1,200 lines) with ISP ASN-based routing, multi-protocol output (Clash/V2Ray), and automated CDN speed testing. Engineered a dual-stack egress architecture that routes IPv6 traffic through Cloudflare WARP while preserving native IPv4 egress, with idempotent Python deployment scripts, database-level backup/restore, and end-to-end verification tooling.
+  * Maintain a containerized DOMjudge environment for campus training and programming contests.
+
+* **Proxy Subscription Management & Dual-Stack Egress Automation**<br>
+  *Cloudflare Workers & Python*<br>
+  * Built a Cloudflare Worker subscription generator with ISP ASN-based routing, Clash/V2Ray output, and CDN speed testing.
+  * Configured IPv6 egress through Cloudflare WARP alongside native IPv4, with deployment scripts and backup/restore tooling.
 
 ## Technical Experience
 
@@ -77,8 +88,8 @@ Software Engineering undergraduate in a Sino-American dual-degree program jointl
   Recorded the contest's first accepted solution to Problem A; this is a problem-level distinction, not an overall placement.
 
 * **[The 2024 ICPC Asia Kunming Regional Contest](https://icpc.pku.edu.cn/docs/20241102162338084775.pdf)**<br>
-  *Onsite Contestant | 2024*<br>
-  Represented the university at the onsite regional contest in Kunming.
+  *Honorable Medal | 2024*<br>
+  Awarded Honorable Medal at The 2024 ICPC Asia Kunming Regional Contest, representing Quanzhou University of Information Engineering.
 
 * **[15th Lanqiao Cup](https://www.lanqiao.cn/cup-fifteen/)**<br>
   *First Prize | Fujian Provincial Round | Python Programming, University Group B | 2024*<br>
@@ -96,9 +107,9 @@ Software Engineering undergraduate in a Sino-American dual-degree program jointl
 
 * **University ICPC/CCPC training team**<br>
   *Coordinator | Sep 2024 – Present*<br>
-  Coordinate university recruitment and training for ICPC and CCPC competitors; supported logistics and team selection for the The 2024 ICPC Asia Kunming Regional Contest.
+  Coordinate university recruitment and training for ICPC and CCPC competitors; supported logistics and team selection for The 2024 ICPC Asia Kunming Regional Contest.
 
-* **[2025年度第六届全国大学生算法设计与编程挑战赛（春季赛）](https://new.saikr.com/vse/adpc/2025/spring)**<br>
+* **[2025年度第六届大学生算法设计与编程挑战赛（春季赛）](https://new.saikr.com/vse/adpc/2025/spring)**<br>
   *Problem Setter | Spring 2025*<br>
   Contributed to problem design, solution validation, difficulty calibration, and editorial review.
 
@@ -111,3 +122,7 @@ Software Engineering undergraduate in a Sino-American dual-degree program jointl
 * **Systems & DevOps**: Linux, Docker, Git, SQL tooling, DOMjudge deployment, Cloudflare Workers/CDN/DNS, WARP egress routing
 
 * **Information Retrieval & AI Systems**: Retrieval-Augmented Generation (RAG), LLM API integration, prompt design
+
+* **AI Coding Tools**: Familiar with Codex, Claude Code, and Antigravity CLI for development and debugging; configure repository instructions and shared Skills, coordinate subagents for parallel code review, and validate changes through tests, static checks, and builds. Use AGENTS.md / CLAUDE.md for project context and conventions, shared skill directories for task guidance, and pytest, Ruff/type checks, Docker Compose, and browser checks for validation.
+
+* **Contest Authoring & Judging Tools**: Familiar with Polygon (Codeforces) and Nowcoder’s problem-setting platform for problem preparation, test-data management, and solution verification.

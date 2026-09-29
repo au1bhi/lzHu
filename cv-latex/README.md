@@ -7,16 +7,17 @@ cd cv-latex
 latexmk -pdf -interaction=nonstopmode -halt-on-error cv.tex
 cp cv.pdf ../assets/pdf/Lizhong_Hu_CV.pdf
 
-# Build Chinese version (XeLaTeX required for Chinese font support):
-xelatex -interaction=nonstopmode -halt-on-error cv-zh.tex
+# Build Chinese version (XeLaTeX and SimSun/SimHei/FangSong/KaiTi fonts required):
+latexmk -xelatex -interaction=nonstopmode -halt-on-error cv-zh.tex
 cp cv-zh.pdf ../assets/pdf/Lizhong_Hu_CV_zh.pdf
+cp cv-zh.pdf ../assets/pdf/胡力中_简历.pdf
 ```
 
 To remove local auxiliary files after copying the PDF:
 
 ```bash
 latexmk -C cv.tex
-rm -f cv-zh.aux cv-zh.log cv-zh.out
+latexmk -C cv-zh.tex
 ```
 
 The copied PDFs are published by Jekyll at `/assets/pdf/Lizhong_Hu_CV.pdf` and `/assets/pdf/Lizhong_Hu_CV_zh.pdf`.
