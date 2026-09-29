@@ -79,3 +79,11 @@ TOC 职位未查到官方中文职衔，保留本人确认的 TOC Operator。ACM
 ## ICPC 昆明个人奖项证书核对
 
 用户提供的 The 2024 ICPC Asia Kunming Certificate Hu Lizhong PDF 为图像型证书，已渲染并目视核对。Certificate of Achievement 正文写明获颁人 Hu Lizhong、学校 Quanzhou University of Information Engineering、奖项 **Honorable Medal**、赛事 **The 2024 ICPC Asia Kunming Regional Contest**，举办地点及日期为 Yunnan University, 30 November–1 December, 2024。网页、JSON 和中英文 PDF 均照录 Honorable Medal，替换原 Onsite Contestant / 现场赛参赛选手，不改写成 Honorable Mention 或自行拟定中文奖项名称。证书原件未复制到公开站点。
+
+### VPS 项目的用途与工程范围
+
+现采用“基于 Cloudflare 与 VPS 的网络接入系统 / Cloudflare & VPS Network Access System”，替换功能罗列式旧标题。名称是对个人基础设施项目的描述，不是厂商官方产品名。依据 `worker.js`、`docs/deploy-warp-egress.md`、`docs/warp-egress.md` 及部署脚本与回归测试：项目涵盖代理连接配置分发、节点选择、VPS 出口配置、可重复部署和验证。测试包括保留既有配置、路由顺序和配置冲突处理。未声称具备企业级规模、自动故障切换、集中控制台或已量化的可用性提升。
+
+### 隐私导向的项目表述
+
+按本人要求，项目标题调整为“面向隐私的个人网络管理系统 / Privacy-Oriented Personal Network Management System”。“面向隐私”表达个人项目的设计目标；描述仍保留代理配置、节点选择、IPv4/IPv6 分流及运维验证等实际功能，不据标题宣称匿名性、端到端加密、零日志、安全认证或法律合规结论。

@@ -61,10 +61,10 @@ Software Engineering undergraduate in a Sino-American dual-degree program, with 
   *Linux & Docker | Sep 2024 – Present*<br>
   * Maintain a containerized DOMjudge environment for campus training and programming contests.
 
-* **Proxy Subscription Management & Dual-Stack Egress Automation**<br>
-  *Cloudflare Workers & Python*<br>
-  * Built a Cloudflare Worker subscription generator with ISP ASN-based routing, Clash/V2Ray output, and CDN speed testing.
-  * Configured IPv6 egress through Cloudflare WARP alongside native IPv4, with deployment scripts and backup/restore tooling.
+* **Privacy-Oriented Personal Network Management System**<br>
+  *Personal infrastructure project | Cloudflare Workers, Linux & Python*<br>
+  * Built a Cloudflare Workers service to distribute proxy connection profiles in Clash/V2Ray formats, with ISP ASN-based node selection, cached configuration, and CDN speed testing.
+  * Automated VPS egress configuration using Python, routing IPv6 through WARP alongside native IPv4. Added configuration backups, repeatable deployment, connectivity checks, and regression tests for routing conflicts and preservation of existing settings.
 
 ## Technical Experience
 
