@@ -84,7 +84,7 @@
     {
       "name": "Systems & DevOps",
       "level": "",
-      "keywords": ["Linux", "Docker", "Git", "SQL tooling", "DOMjudge deployment", "Xboard and 3x-ui administration", "Cloudflare DNS/CDN"]
+      "keywords": ["Linux", "Docker", "Git", "SQL tooling", "DOMjudge deployment", "Cloudflare Workers/CDN/DNS", "WARP egress routing"]
     },
     {
       "name": "Information Retrieval & AI Systems",
@@ -113,18 +113,18 @@
   "teaching": [],
   "portfolio": [
     {
-      "name": "Personal Knowledge Question-Answering System with RAG",
+      "name": "NoteLLM: Personal Learning Question-Answering System with Verifiable RAG",
       "category": "selected project",
       "date": "Ongoing",
       "url": "",
-      "description": "Developing an undergraduate graduation project for personal knowledge question answering using FastAPI and retrieval-augmented generation, with a focus on document retrieval, knowledge grounding, and LLM-based response generation."
+      "description": "Architected an end-to-end verifiable RAG system using FastAPI, async SQLAlchemy, and PostgreSQL with pgvector for cosine-similarity retrieval, processing PDF, Markdown, and TXT materials. Designed page-aware extraction, overlapping chunking, and grounded-mode server-side citation verification against candidate text chunks to mitigate hallucinations while persisting verbatim source excerpts and page indices for full auditability. Built an automated benchmark evaluation pipeline recording 100.0% Recall@5, a 97.1% citation-source match rate, and 339 ms mean retrieval latency."
     },
     {
-      "name": "ETi+ Back-End API Development",
+      "name": "ETi+ Smart Community Digital Governance Platform",
       "category": "selected project",
       "date": "2025",
       "url": "",
-      "description": "Built authentication, data-aggregation, and testing APIs using Flask, PostgreSQL, and MongoDB, with automated Postman regression runs for pre-deployment checks."
+      "description": "Engineered a dual-database backend architecture: leveraged PostgreSQL for relational governance logic (landlord credit scoring rules, leaderboard rankings, address mapping, and anomaly audits) alongside MongoDB for high-throughput WeChat chat streams. Developed RESTful APIs automating community group moderation, regex nickname compliance audits, batch Excel/CSV data ingestion, and Postman automated regression testing suites."
     },
     {
       "name": "EVE Online Community Back-End System",
@@ -134,11 +134,11 @@
       "description": "Re-architected a RuoYi-based community platform and developed data-query, moderation, and workflow tools for community managers and content creators."
     },
     {
-      "name": "DOMjudge/Xboard/3x-ui/Cloudflare Infrastructure",
+      "name": "DOMjudge & Privacy-Oriented Network Infrastructure",
       "category": "selected project",
       "date": "2024–Present",
       "url": "",
-      "description": "Deployed a containerized DOMjudge environment and maintain it for campus training and contests; administer an Xboard VPS and 3x-ui proxy panel for remote contestant access, with Cloudflare for DNS and CDN."
+      "description": "Deployed a containerized DOMjudge environment and maintain it for campus training and contests. Built a Cloudflare Worker subscription generator with ISP ASN-based routing, multi-protocol output, and automated CDN speed testing. Engineered a dual-stack egress architecture routing IPv6 through Cloudflare WARP while preserving native IPv4, with idempotent deployment scripts and end-to-end verification tooling."
     }
   ]
 }

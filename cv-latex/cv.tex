@@ -3,7 +3,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
-\usepackage[a4paper,margin=0.55in]{geometry}
+\usepackage[a4paper,margin=0.5in]{geometry}
 \usepackage{microtype}
 \usepackage{enumitem}
 \usepackage{titlesec}
@@ -23,12 +23,12 @@
 \setlength{\parskip}{0pt}
 \setlist[itemize]{leftmargin=1.25em,itemsep=0.5pt,topsep=1pt,parsep=0pt,partopsep=0pt}
 \titleformat{\section}{\normalsize\bfseries}{}{0pt}{}[\vspace{-2pt}\titlerule]
-\titlespacing*{\section}{0pt}{5pt}{2.5pt}
+\titlespacing*{\section}{0pt}{4pt}{2pt}
 \renewcommand{\arraystretch}{1.03}
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 
 \newcommand{\entry}[2]{%
-  \par\addvspace{2pt}\noindent
+  \par\addvspace{1.5pt}\noindent
   \begin{tabularx}{\textwidth}{@{}Y>{\raggedleft\arraybackslash}p{0.29\textwidth}@{}}
     \textbf{#1} & \textit{#2}
   \end{tabularx}\par\nobreak\vspace{-1pt}
@@ -69,20 +69,22 @@ Intelligent Software Engineering; Programming Support and Online Judge Systems; 
 {\footnotesize\itshape Four-year Sino-American 4+0 dual-degree undergraduate program conducted in China and officially recognized by the Ministry of Education of China.}
 
 \section{Selected Projects}
-\entry{Personal Knowledge Question-Answering System with RAG}{Ongoing}
+\entry{NoteLLM: Personal Learning QA System with Verifiable RAG}{Ongoing}
 \textit{Undergraduate thesis}
 \begin{itemize}
-  \item Developing a FastAPI-based personal knowledge question-answering system using retrieval-augmented generation, with document retrieval, knowledge grounding, and LLM-based responses.
+  \item Architected a verifiable RAG backend using FastAPI, PostgreSQL, and \texttt{pgvector} for cosine-similarity retrieval, with page-aware extraction and overlapping chunking across PDF, Markdown, and TXT files.
+  \item Enforced hallucination guardrails via server-side citation validation against candidate chunks and source excerpt persistence; achieved 100\% Recall@5 and a 97.1\% citation match rate in benchmark evaluations.
 \end{itemize}
 
-\entry{DOMjudge / Xboard / 3x-ui / Cloudflare Infrastructure}{Sep 2024--Present}
+\entry{DOMjudge \& Privacy-Oriented Network Infrastructure}{Sep 2024--Present}
 \begin{itemize}
-  \item Maintain a containerized DOMjudge environment for university training and contests; administer Xboard and 3x-ui for remote access, with Cloudflare DNS/CDN and Linux/Docker infrastructure.
+  \item Maintain a containerized DOMjudge for university contests; built a Cloudflare Worker subscription generator with ISP-aware routing and a dual-stack egress architecture routing IPv6 via WARP alongside native IPv4, with automated deployment and CDN speed testing.
 \end{itemize}
 
-\entry{ETi+ Back-End API Development}{Mar 2025--Apr 2025}
+\entry{ETi+ Smart Community Digital Governance Platform}{Mar 2025--Apr 2025}
 \begin{itemize}
-  \item Built authentication, data aggregation, and testing APIs with Flask, PostgreSQL, and MongoDB; automated pre-deployment regression checks with Postman.
+  \item Engineered a hybrid persistence backend using PostgreSQL for landlord credit scoring and anomaly auditing, alongside MongoDB for high-throughput WeChat chat stream logging.
+  \item Developed Flask REST APIs automating WeChat community moderation, regex nickname compliance checks, batch data ingestion, and automated Postman regression testing suites.
 \end{itemize}
 
 \section{Technical Experience}
@@ -119,7 +121,7 @@ In collaboration with China Computer Federation (CCF).
 \section{Technical Skills}
 \textbf{Languages \& Algorithms:} C++, Python, Java, JavaScript, Go; algorithms and data structures, competitive programming.\\
 \textbf{Back-End \& Data:} FastAPI, Flask, RuoYi, PostgreSQL, MongoDB, MySQL, REST API design and integration.\\
-\textbf{Systems \& DevOps:} Linux, Docker, Git, SQL tooling, DOMjudge deployment, Xboard and 3x-ui administration, Cloudflare DNS/CDN.\\
+\textbf{Systems \& DevOps:} Linux, Docker, Git, SQL tooling, DOMjudge deployment, Cloudflare Workers/CDN/DNS, WARP egress routing.\\
 \textbf{Information Retrieval \& AI Systems:} Retrieval-Augmented Generation (RAG), LLM API integration, prompt design.
 
 \end{document}

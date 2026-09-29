@@ -39,21 +39,21 @@ Software Engineering undergraduate in a Sino-American dual-degree program jointl
 
 ## Selected Projects
 
-* **Personal Knowledge Question-Answering System with RAG**<br>
-  *FastAPI & Retrieval-Augmented Generation | Ongoing*<br>
-  Developing an undergraduate graduation project for personal knowledge question answering, with a focus on document retrieval, knowledge grounding, and LLM-based response generation.
+* **NoteLLM: Personal Learning Question-Answering System with Verifiable RAG**<br>
+  *FastAPI & Retrieval-Augmented Generation | Ongoing (Undergraduate Thesis)*<br>
+  Architected an end-to-end verifiable RAG system using FastAPI, async SQLAlchemy, and PostgreSQL with pgvector for cosine-similarity retrieval across PDF, Markdown, and TXT materials. Designed page-aware extraction, overlapping chunking, and grounded-mode server-side citation verification against candidate text chunks to mitigate hallucinations while persisting verbatim source excerpts and page indices for full auditability. Built an automated benchmark evaluation pipeline recording 100.0% Recall@5, a 97.1% citation-source match rate, and 339 ms mean retrieval latency.
 
-* **ETi+ Back-End API Development**<br>
+* **ETi+ Smart Community Digital Governance Platform**<br>
   *Python & Flask | Mar 2025 – Apr 2025*<br>
-  Built authentication, data-aggregation, and testing APIs using Flask, PostgreSQL, and MongoDB, with automated Postman regression runs for pre-deployment checks.
+  Engineered a dual-database backend architecture: leveraged PostgreSQL for relational governance logic (landlord credit scoring rules, leaderboard rankings, address mapping, and anomaly audits) alongside MongoDB for high-throughput WeChat chat stream logging. Developed RESTful APIs automating community group moderation, regex nickname compliance audits, batch Excel/CSV data ingestion, and Postman automated regression testing suites.
 
 * **EVE Online Community Back-End System**<br>
   *Java & RuoYi | Oct 2023 – Apr 2025*<br>
   Re-architected a RuoYi-based community platform and developed data-query, moderation, and workflow tools for community managers and content creators.
 
-* **DOMjudge / Xboard / 3x-ui / Cloudflare Infrastructure**<br>
+* **DOMjudge & Privacy-Oriented Network Infrastructure**<br>
   *Linux & Docker | Sep 2024 – Present*<br>
-  Deployed a containerized DOMjudge environment and maintain it for campus training and contests; administer an Xboard VPS and 3x-ui proxy panel for remote contestant access, with Cloudflare providing DNS and CDN.
+  Deployed a containerized DOMjudge environment and maintain it for campus training and contests. Built a Cloudflare Worker subscription generator (~1,200 lines) with ISP ASN-based routing, multi-protocol output (Clash/V2Ray), and automated CDN speed testing. Engineered a dual-stack egress architecture that routes IPv6 traffic through Cloudflare WARP while preserving native IPv4 egress, with idempotent Python deployment scripts, database-level backup/restore, and end-to-end verification tooling.
 
 ## Technical Experience
 
@@ -108,6 +108,6 @@ Software Engineering undergraduate in a Sino-American dual-degree program jointl
 
 * **Back-End & Data**: FastAPI, Flask, RuoYi, PostgreSQL, MongoDB, MySQL, REST API design and integration
 
-* **Systems & DevOps**: Linux, Docker, Git, SQL tooling, DOMjudge deployment, Xboard and 3x-ui administration, Cloudflare DNS/CDN
+* **Systems & DevOps**: Linux, Docker, Git, SQL tooling, DOMjudge deployment, Cloudflare Workers/CDN/DNS, WARP egress routing
 
 * **Information Retrieval & AI Systems**: Retrieval-Augmented Generation (RAG), LLM API integration, prompt design
