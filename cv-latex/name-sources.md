@@ -15,7 +15,7 @@
 | 美国合作院校及学位 | **Slippery Rock University**；**Information Systems, Bachelor of Science (BS)**，采用[学校专业目录](https://catalog.sru.edu/undergraduate/business/school-of-business/information-systems-bs/)的写法。个人就读专业以成绩单为最终依据。 |
 | 软件工程合作项目 | 教育部名称为“泉州信息工程学院与美国宾州滑石大学合作举办软件工程专业本科教育项目”，批准书编号 MOE35US2A20181938N；[教育部项目列表](https://jsj.moe.gov.cn/n2/7001/7001/1917.shtml)。[校方介绍](https://sie.qzuie.edu.cn/index.php?c=show&id=34&s=news)说明 4+0 双学位培养；英文项目描述属于翻译，不宣称是官方英文项目名。 |
 | 中科鑫睿 | 中文全称见[公司官网](https://www.sinotechxinrui.com/)；**Sinotech Xinrui (Beijing) Co., Ltd.** 见[BFE 官方合作伙伴目录](https://www.bfe.tv/en/losungen-produkte/ksc-partner)，未将该目录等同于英文工商注册证明。 |
-| CMG-IMP | **China Media Group-International Media Port (CMG-IMP)**；[亚奥理事会公告](https://oca.asia/news/7336-cmg-imp-outlines-broadcasting-plans-for-20th-asian-games.html)。作为项目主转播机构列示，不推断与中科鑫睿的公司隶属关系。 |
+| CMG-IMP | **China Media Group-International Media Port (CMG-IMP)**；[亚奥理事会公告](https://oca.asia/news/7336-cmg-imp-outlines-broadcasting-plans-for-20th-asian-games.html)。作为项目主转播机构列示，不推断与中科鑫睿的公司隶属关系。中科鑫睿作为任职单位、本人参与转播技术保障的情况由本人确认；未找到本届赛事中该公司的具体合同层级或承包范围的公开证明，不称其为 CMG-IMP 子公司或一级分包商。 |
 | CCF / NOI-Pre | **China Computer Federation (CCF)** 见[CCF 官网](https://www.ccf.org.cn/en/About_CCF/)；[码蹄集项目页面](https://www.matiji.net/exam/noi)确认 NOI-Pre 题库及合作背景。Problem Tester 是对本人“验题人员”工作的英文描述，未声称是 CCF 官方职衔。 |
 
 ## 赛事与场馆
