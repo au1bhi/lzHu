@@ -20,7 +20,7 @@
 
 ## 赛事与场馆
 
-- **2026 National Invitational of CCPC (Fujian), The 13th Fujian Collegiate Programming Contest**：采用[赛事页面](https://codeforces.com/gym/106565)英文标题；[正式题册](https://codeforces.com/gym/106565/attachments/download/37939/official.pdf)列有中文全称。替换 2026 CCPC Fujian Invitational。个人成绩用 First accepted solution to Problem A 描述，不把 First Blood 当作独立官方奖项。
+- **2026 National Invitational of CCPC (Fujian), The 13th Fujian Collegiate Programming Contest**：采用[赛事页面](https://codeforces.com/gym/106565)英文标题；[正式题册](https://codeforces.com/gym/106565/attachments/download/37939/official.pdf)列有中文全称。替换 2026 CCPC Fujian Invitational。网页沿用描述性写法 First accepted solution to Problem A；单页 PDF 依据本人确认收录官方奖项名称“最快解题奖”（对应国际赛事 First to Solve 概念，英文为 First to Solve Award (Problem A)）。
 - **The 2024 ICPC Asia Kunming Regional Contest**：采用[组委会报名指南](https://icpc.pku.edu.cn/docs/20241102162338084775.pdf)给出的英文赛事名，替换 49th ICPC Asia Kunming Regional。
 - **第十五届蓝桥杯全国软件和信息技术专业人才大赛**：见[赛事官网](https://www.lanqiao.cn/cup-fifteen/)；英文品牌 **Lanqiao Cup** 见[官方英文页面](https://guojisai.lanqiao.cn/register.html)。福建省赛、Python 程序设计大学 B 组一等奖由本人确认；英文组别文字是对应翻译。
 - **20th Asian Games Aichi-Nagoya 2026**、**Gifu Nagaragawa Stadium**：见[组委会英文赛程](https://www.aichi-nagoya2026.org/files/common/0212%E7%AB%B6%E6%8A%80%E3%82%B9%E3%82%B1%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E5%A4%89%E6%9B%B4/English/Session%20Schedule%20for%20the%2020th%20Asian%20Games.pdf)，保留原写法。

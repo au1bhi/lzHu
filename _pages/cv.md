@@ -84,7 +84,7 @@ Software Engineering undergraduate in a Sino-American dual-degree program, with 
 ## Competitive Programming & Awards
 
 * **[2026 National Invitational of CCPC (Fujian), The 13th Fujian Collegiate Programming Contest](https://codeforces.com/gym/106565)**<br>
-  *First accepted solution to Problem A | 2026*<br>
+  *First to Solve Award (Problem A) | 2026*<br>
   Recorded the contest's first accepted solution to Problem A; this is a problem-level distinction, not an overall placement.
 
 * **[The 2024 ICPC Asia Kunming Regional Contest](https://icpc.pku.edu.cn/docs/20241102162338084775.pdf)**<br>
