@@ -1,0 +1,141 @@
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[a4paper,margin=0.5in]{geometry}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[hidelinks]{hyperref}
+
+% XeLaTeX Chinese support
+\usepackage{xeCJK}
+\setCJKmainfont[AutoFakeBold=true]{SimSun}
+\setCJKsansfont[AutoFakeBold=true]{SimHei}
+\setCJKmonofont[AutoFakeBold=true]{FangSong}
+\setCJKfamilyfont{zhsong}[AutoFakeBold=true]{SimSun}
+\setCJKfamilyfont{zhhei}[AutoFakeBold=true]{SimHei}
+\setCJKfamilyfont{zhfs}[AutoFakeBold=true]{FangSong}
+\setCJKfamilyfont{zhkai}[AutoFakeBold=true]{KaiTi}
+
+\usepackage{fontspec}
+\setmainfont{Latin Modern Roman}
+\setsansfont{Latin Modern Sans}
+\setmonofont{Latin Modern Mono}
+
+\hypersetup{
+  pdftitle={胡力中 - 个人简历},
+  pdfauthor={胡力中},
+  pdfsubject={个人简历},
+  pdfcreator={XeLaTeX}
+}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\linespread{1.04}\selectfont
+
+\setlist[itemize]{leftmargin=1.25em,itemsep=0.6pt,topsep=1.2pt,parsep=0pt,partopsep=0pt}
+\titleformat{\section}{\normalsize\bfseries\sffamily}{}{0pt}{}[\vspace{-2pt}\titlerule]
+\titlespacing*{\section}{0pt}{4.5pt}{2pt}
+\renewcommand{\arraystretch}{1.03}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\newcommand{\entry}[2]{%
+  \par\addvspace{2pt}\noindent
+  \begin{tabularx}{\textwidth}{@{}Y>{\raggedleft\arraybackslash}p{0.25\textwidth}@{}}
+    \textbf{#1} & \textit{#2}
+  \end{tabularx}\par\nobreak\vspace{-1pt}
+}
+
+\begin{document}
+
+\begin{center}
+  {\LARGE\bfseries 胡力中}\par
+  \vspace{2.5pt}
+  \small
+  \href{https://au1bhi.com}{个人网站}
+  \enspace$\vert$\enspace
+  \href{mailto:admin@au1bhi.com}{邮箱}
+  \enspace$\vert$\enspace
+  \href{https://github.com/au1bhi}{GitHub}
+  \enspace$\vert$\enspace
+  \href{https://codeforces.com/profile/Au1Bhi}{Codeforces}
+  \enspace$\vert$\enspace
+  \href{https://www.linkedin.com/in/lizhong-hu-686b9b34a}{LinkedIn}
+\end{center}
+\vspace{-4pt}
+
+\section{个人简介}
+泉州信息工程学院与美国滑石大学中美双学位软件工程专业本科生。专注于算法、软件系统、信息检索与可靠智能系统，在程序设计竞赛、后端开发、Linux/Docker 基础设施运维以及大型国际体育赛事现场转播保障方面具有扎实的实战经验。
+
+\section{研究兴趣}
+智能软件工程；在线评测系统与编程支持系统；算法与数据结构；信息检索与检索增强生成（RAG）。
+
+\section{教育经历}
+\begin{tabularx}{\textwidth}{@{}Y>{\raggedleft\arraybackslash}p{0.24\textwidth}@{}}
+  \textbf{泉州信息工程学院} & \textit{2023--2027（预计）} \\
+  软件工程（中外合作办学） & GPA: 3.10/4.00 \\[0.5pt]
+  \multicolumn{2}{@{}l@{}}{\textbf{美国滑石大学（Slippery Rock University）}} \\
+  信息系统，理学学士（BS） & GPA: 3.583/4.000
+\end{tabularx}
+\vspace{1pt}
+{\footnotesize\itshape 中美 4+0 双学位联合培养本科项目，全程在中国完成培养，经中华人民共和国教育部正式批准认可。}
+
+\section{精选项目}
+\entry{NoteLLM：基于可验证 RAG 的个人学习问答系统}{进行中}
+\textit{本科毕业设计}
+\begin{itemize}
+  \item 基于 FastAPI、PostgreSQL 与 \texttt{pgvector} 构建可验证的 RAG 后端，实现余弦相似度检索，支持 PDF、Markdown 与 TXT 文档的按页提取与重叠滑动窗口分块。
+  \item 在资料可信模式下实施服务端引用二阶校验与原文摘录持久化，从架构上抑制幻觉；基准测试实现 Recall@5 100\%、引用匹配率 97.1\%。
+\end{itemize}
+
+\entry{DOMjudge 与注重隐私的网络基础设施}{2024 年 9 月至今}
+\begin{itemize}
+  \item 运维容器化 DOMjudge 集群用于校内集训与竞赛；开发 Cloudflare Worker 订阅生成器实现基于 ISP ASN 的智能路由，并设计双栈出口架构（IPv6 经 WARP 隧道、IPv4 保持原生出口），配套自动化部署与 CDN 测速工具。
+\end{itemize}
+
+\entry{\mbox{e体+} 社区数字化治理综合管理平台}{2025 年 3--4 月}
+\begin{itemize}
+  \item 设计异构双数据库持久化架构：PostgreSQL 支撑房东信用赋分与异常审计等结构化业务，MongoDB 存储高吞吐微信群聊消息流水。
+  \item 基于 Flask 开发 RESTful API，自动化微信群管治理（正则昵称合规检查）、批量数据导入与 Postman 自动化回归测试流水线。
+\end{itemize}
+
+\section{技术实践}
+% Names: https://www.sinotechxinrui.com/ and https://www.bfe.tv/en/losungen-produkte/ksc-partner
+% Host broadcaster: https://oca.asia/news/7336-cmg-imp-outlines-broadcasting-plans-for-20th-asian-games.html
+\entry{中科鑫睿（北京）技术有限公司}{2026 年 9 月 7--22 日}
+\textit{技术运行中心（TOC）操作员 | 日本岐阜}\\
+\textbf{保障项目：}第 20 届爱知·名古屋亚运会 2026 —— 转播技术支持保障。\\
+足球项目，岐阜长良川竞技场（Gifu Nagaragawa Stadium）\\
+\textbf{主转播机构：}中央广播电视总台国际传媒港（CMG-IMP）。
+\begin{itemize}
+  \item 赛前配合转播团队检查机房设备供电、内通通话质量以及主备路转播高清信号链路。
+  \item 赛中负责 TOC 核心机房信号实时监看与技术保障，在连续 16 天的赛期保障中提供全程驻场支持。
+  \item 协助主转播团队工程师通过接收机替换与衰减测试快速排查定位光发射机故障；赛后完成模块更换与全链路验证，恢复监看画面。
+\end{itemize}
+
+% Project: https://www.matiji.net/exam/noi
+% CCF name: https://www.ccf.org.cn/
+\entry{\href{https://www.matiji.net/exam/noi}{NOI-Pre 题库 —— 码蹄集}}{2024 年 7--10 月}
+\textit{测试员（Problem Tester）}\\
+与中国计算机学会（CCF）合作。
+\begin{itemize}
+  \item 测试 NOI-Pre 编程题目；构造边界测试用例，通过定向提交验证标准题解正确性，排查并反馈测试数据与判题结果中的缺陷。
+\end{itemize}
+
+\section{程序设计竞赛与获奖}
+\begin{itemize}
+  \item \textbf{2026 CCPC 全国邀请赛（福建）暨第 13 届福建省大学生程序设计竞赛} —— A 题全场首个通过（一血 / First Accepted）。
+  \item \textbf{2024 ICPC 亚洲区域赛（昆明站）} —— 现场赛参赛选手（Onsite Contestant），2024。
+  % Official event name: https://www.lanqiao.cn/cup-fifteen/
+  \item \textbf{\href{https://www.lanqiao.cn/cup-fifteen/}{第十五届蓝桥杯全国软件和信息技术专业人才大赛}} —— 福建省赛 Python 程序设计大学 B 组一等奖，2024。
+\end{itemize}
+
+\section{技术技能}
+\textbf{编程语言与算法：}C++、Python、Java、JavaScript、Go；算法与数据结构、竞争性程序设计。\\
+\textbf{后端与数据存储：}FastAPI、Flask、RuoYi、PostgreSQL、MongoDB、MySQL、REST API 架构设计与系统集成。\\
+\textbf{系统与运维：}Linux、Docker、Git、SQL 工具链、DOMjudge 部署、Cloudflare Workers/CDN/DNS、WARP 出口路由。\\
+\textbf{信息检索与 AI 系统：}检索增强生成（RAG）、大语言模型 API 深度集成、Prompt 设计。
+
+\end{document}
