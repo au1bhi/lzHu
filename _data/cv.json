@@ -78,7 +78,7 @@
     {
       "name": "Systems & DevOps",
       "level": "",
-      "keywords": ["Linux", "Docker", "Git", "SQL tooling", "DOMjudge deployment and infrastructure maintenance"]
+      "keywords": ["Linux", "Docker", "Git", "SQL tooling", "DOMjudge deployment", "Xboard and 3x-ui administration", "Cloudflare DNS/CDN"]
     },
     {
       "name": "Information Retrieval & AI Systems",
@@ -120,11 +120,11 @@
       "description": "Re-architected a RuoYi-based community platform and developed data-query, moderation, and workflow tools for community managers and content creators."
     },
     {
-      "name": "DOMjudge/Xboard Infrastructure Maintenance",
+      "name": "DOMjudge/Xboard/3x-ui/Cloudflare Infrastructure",
       "category": "selected project",
       "date": "2024–Present",
       "url": "",
-      "description": "Deployed a containerized DOMjudge environment and maintain it for campus training and contests; administer an Xboard VPS for remote contestant access."
+      "description": "Deployed a containerized DOMjudge environment and maintain it for campus training and contests; administer an Xboard VPS and 3x-ui proxy panel for remote contestant access, with Cloudflare for DNS and CDN."
     }
   ]
 }

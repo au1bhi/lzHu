@@ -44,8 +44,8 @@ Selected Projects
   Built authentication, data-aggregation, and testing APIs using Flask, PostgreSQL, and MongoDB, with automated Postman regression runs for pre-deployment checks.
 * **EVE Online Community Back-End System**, Java & RuoYi, Oct 2023 – Apr 2025<br>
   Re-architected a RuoYi-based community platform and developed data-query, moderation, and workflow tools for community managers and content creators.
-* **DOMjudge/Xboard Infrastructure Maintenance**, Linux & Docker, Sep 2024 – Present<br>
-  Deployed a containerized DOMjudge environment and maintain it for campus training and contests; administer an Xboard VPS for remote contestant access.
+* **DOMjudge / Xboard / 3x-ui / Cloudflare Infrastructure**, Linux & Docker, Sep 2024 – Present<br>
+  Deployed a containerized DOMjudge environment and maintain it for campus training and contests; administer an Xboard VPS and 3x-ui proxy panel for remote contestant access, with Cloudflare providing DNS and CDN.
 
 Work / Technical Experience
 ======
@@ -60,10 +60,8 @@ Competitive Programming & Awards
   Recorded the contest's first accepted solution to Problem A; this is a problem-level distinction, not an overall placement.
 * **49th ICPC Asia Kunming Regional**, Onsite Contestant, 2024<br>
   Represented the university at the onsite regional contest in Kunming.
-* **15th Fujian Province Software and Information Technology Professional Talent Competition**, National Finalist / Outstanding Award, 2024<br>
-  Advanced to the national final and received an Outstanding Award.
-* **Fujian Provincial Collegiate Programming Contest (Python, Group B)**, First Prize, 2024<br>
-  Received First Prize in the provincial Group B competition.
+* **15th Fujian Province Software and Information Technology Professional Talent Competition (Fujian Provincial Collegiate Programming Contest, Python, Group B)**, First Prize, 2024<br>
+  Received First Prize in the provincial Python Group B competition and advanced to the national final.
 
 Leadership & Activities
 ======
@@ -80,5 +78,5 @@ Technical Skills
 ======
 * **Languages & Algorithms**: C++, Python, Java, JavaScript, Go; algorithms and data structures, competitive programming
 * **Back-End & Data**: FastAPI, Flask, RuoYi, PostgreSQL, MongoDB, MySQL, REST API design and integration
-* **Systems & DevOps**: Linux, Docker, Git, SQL tooling, DOMjudge deployment and infrastructure maintenance
+* **Systems & DevOps**: Linux, Docker, Git, SQL tooling, DOMjudge deployment, Xboard and 3x-ui administration, Cloudflare DNS/CDN
 * **Information Retrieval & AI Systems**: Retrieval-Augmented Generation (RAG), LLM API integration, prompt design
