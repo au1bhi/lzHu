@@ -28,9 +28,10 @@
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 
 \newcommand{\entry}[2]{%
+  \par\addvspace{2pt}\noindent
   \begin{tabularx}{\textwidth}{@{}Y>{\raggedleft\arraybackslash}p{0.29\textwidth}@{}}
     \textbf{#1} & \textit{#2}
-  \end{tabularx}\vspace{-1.5pt}
+  \end{tabularx}\par\nobreak\vspace{-1pt}
 }
 
 \begin{document}
@@ -52,7 +53,7 @@
 \vspace{-5pt}
 
 \section{Profile}
-Software Engineering undergraduate in a Sino-American dual-degree program jointly operated by Quanzhou University of Information Engineering and Slippery Rock University. Interested in algorithms, software systems, information retrieval, and reliable intelligent systems, with experience in competitive programming, back-end development, Linux/Docker infrastructure, and programming-contest system maintenance.
+Software Engineering undergraduate in a Sino-American dual-degree program jointly operated by Quanzhou University of Information Engineering and Slippery Rock University. Interested in algorithms, software systems, information retrieval, and reliable intelligent systems, with experience in competitive programming, back-end development, Linux/Docker infrastructure, and live sports broadcast technical operations.
 
 \section{Research Interests}
 Intelligent Software Engineering; Programming Support and Online Judge Systems; Algorithms and Data Structures; Information Retrieval and Retrieval-Augmented Generation.
@@ -62,33 +63,56 @@ Intelligent Software Engineering; Programming Support and Online Judge Systems; 
   \textbf{Quanzhou University of Information Engineering} & \textit{2023--2027 (expected)} \\
   Software Engineering (Sino-foreign Cooperation) & GPA: 3.10/4.00 \\[0.5pt]
   \multicolumn{2}{@{}l@{}}{\textbf{Slippery Rock University}} \\
-  Bachelor of Science in Information Systems & GPA: 3.583/4.000
+  Information Systems, Bachelor of Science (BS) & GPA: 3.583/4.000
 \end{tabularx}
 \vspace{1pt}
 {\footnotesize\itshape Four-year Sino-American 4+0 dual-degree undergraduate program conducted in China and officially recognized by the Ministry of Education of China.}
 
 \section{Selected Projects}
-\entry{Personal Knowledge Question-Answering System with RAG}{Undergraduate Thesis, Ongoing}
-Developing a personal knowledge question-answering system using FastAPI and retrieval-augmented generation, with a focus on document retrieval, knowledge grounding, and LLM-based response generation.
+\entry{Personal Knowledge Question-Answering System with RAG}{Ongoing}
+\textit{Undergraduate thesis}
+\begin{itemize}
+  \item Developing a FastAPI-based personal knowledge question-answering system using retrieval-augmented generation, with document retrieval, knowledge grounding, and LLM-based responses.
+\end{itemize}
 
 \entry{DOMjudge / Xboard / 3x-ui / Cloudflare Infrastructure}{Sep 2024--Present}
-Containerized and maintain a DOMjudge environment for university programming training and competitions; administer an Xboard VPS and 3x-ui proxy panel for reliable remote contestant access, with Cloudflare providing DNS and CDN using Linux and Docker.
+\begin{itemize}
+  \item Maintain a containerized DOMjudge environment for university training and contests; administer Xboard and 3x-ui for remote access, with Cloudflare DNS/CDN and Linux/Docker infrastructure.
+\end{itemize}
 
 \entry{ETi+ Back-End API Development}{Mar 2025--Apr 2025}
-Built authentication, data aggregation, and testing APIs using Python, Flask, PostgreSQL, and MongoDB; introduced automated Postman regression testing for pre-deployment verification.
+\begin{itemize}
+  \item Built authentication, data aggregation, and testing APIs with Flask, PostgreSQL, and MongoDB; automated pre-deployment regression checks with Postman.
+\end{itemize}
 
 \section{Technical Experience}
-\entry{Chinese Computer Federation (CCF) --- NOI-Pre Project Tester}{Jul 2024--Oct 2024}
-Authored test cases for official NOI-Pre problems, validated solutions through targeted submissions, and delivered feedback on solution correctness and judge behavior.
+% Names: https://www.sinotechxinrui.com/ and https://www.bfe.tv/en/losungen-produkte/ksc-partner
+% Host broadcaster: https://oca.asia/news/7336-cmg-imp-outlines-broadcasting-plans-for-20th-asian-games.html
+\entry{Sinotech Xinrui (Beijing) Co., Ltd.}{7--22 Sep 2026}
+\textit{TOC Operator | Gifu, Japan}\\
+20th Asian Games Aichi-Nagoya 2026 --- Football, Gifu Nagaragawa Stadium.\\
+Host broadcaster: China Media Group-International Media Port (CMG-IMP).
+\begin{itemize}
+  \item Checked equipment power, intercom quality, and primary/backup broadcast feeds before matches in coordination with the broadcast team.
+  \item Monitored TOC signals during matches and provided on-site technical support throughout a 16-day assignment.
+  \item Helped engineers isolate an optical-transmitter fault through receiver replacement and attenuation tests; the monitor feed was restored after post-match replacement and end-to-end verification.
+\end{itemize}
 
-\entry{Aichi-Nagoya 2026 Asian Games --- Incoming TOC Operator}{Sep 2026--Oct 2026}
-Selected for technical operations support during the 20th Asian Games Aichi-Nagoya 2026.
+% Project: https://www.matiji.net/exam/noi
+% CCF name: https://www.ccf.org.cn/en/About_CCF/
+\entry{\href{https://www.matiji.net/exam/noi}{NOI-Pre Problem Bank --- Matiji}}{Jul 2024--Oct 2024}
+\textit{Problem Tester}\\
+In collaboration with China Computer Federation (CCF).
+\begin{itemize}
+  \item Tested NOI-Pre programming problems; created test cases, checked solution correctness through targeted submissions, and reported issues with test data and judge results.
+\end{itemize}
 
 \section{Competitive Programming \& Awards}
 \begin{itemize}
-  \item \textbf{2026 CCPC Fujian Invitational} --- First Blood on Problem A; recorded the contest's first accepted solution to Problem A.
-  \item \textbf{49th ICPC Asia Kunming Regional} --- Onsite Contestant, 2024.
-  \item \textbf{15th Fujian Province Software and Information Technology Professional Talent Competition (Fujian Provincial Collegiate Programming Contest, Python, Group B)} --- First Prize, 2024; advanced to the national final.
+  \item \textbf{2026 National Invitational of CCPC (Fujian), The 13th Fujian Collegiate Programming Contest} --- First accepted solution to Problem A.
+  \item \textbf{The 2024 ICPC Asia Kunming Regional Contest} --- Onsite Contestant, 2024.
+  % Official event name: https://www.lanqiao.cn/cup-fifteen/
+  \item \textbf{\href{https://www.lanqiao.cn/cup-fifteen/}{15th Lanqiao Cup}} --- First Prize, Fujian Provincial Round, Python Programming (University Group B), 2024.
 \end{itemize}
 
 \section{Technical Skills}

@@ -26,22 +26,28 @@
   },
   "work": [
     {
-      "company": "Aichi-Nagoya 2026 Asian Games",
-      "position": "Incoming TOC Operator",
-      "website": "",
-      "startDate": "Sep 2026",
-      "endDate": "Oct 2026",
-      "summary": "Selected for technical operations support during the 20th Asian Games Aichi-Nagoya 2026.",
-      "highlights": []
+      "company": "Sinotech Xinrui (Beijing) Co., Ltd. (中科鑫睿（北京）技术有限公司)",
+      "position": "TOC Operator",
+      "website": "https://www.sinotechxinrui.com/",
+      "startDate": "2026-09-07",
+      "endDate": "2026-09-22",
+      "summary": "20th Asian Games Aichi-Nagoya 2026 — football broadcast operations at Gifu Nagaragawa Stadium, Japan. Host broadcaster: China Media Group-International Media Port (CMG-IMP).",
+      "highlights": [
+        "Checked equipment power, intercom quality, and primary/backup broadcast feeds before matches; coordinated signal verification with the broadcast team and outside broadcast van.",
+        "Monitored TOC signals during matches and provided on-site technical support throughout a 16-day football broadcast assignment.",
+        "Helped engineers isolate a monitor-feed fault to an optical transmitter through receiver replacement and attenuation tests; the feed was restored following post-match replacement and end-to-end verification."
+      ]
     },
     {
-      "company": "Chinese Computer Federation (CCF)",
-      "position": "NOI-Pre Project Tester",
-      "website": "",
+      "company": "NOI-Pre Problem Bank — Matiji",
+      "position": "Problem Tester",
+      "website": "https://www.matiji.net/exam/noi",
       "startDate": "Jul 2024",
       "endDate": "Oct 2024",
-      "summary": "Authored test cases for official NOI-Pre problems, validated solutions through targeted submissions, and delivered feedback reports on correctness and judge behavior.",
-      "highlights": []
+      "summary": "NOI-Pre problem bank on Matiji, developed in collaboration with China Computer Federation (CCF) to support informatics education.",
+      "highlights": [
+        "Tested programming problems for the NOI-Pre problem bank on Matiji; created test cases, checked solution correctness through targeted submissions, and reported issues with test data and judge results."
+      ]
     }
   ],
   "education": [
@@ -56,7 +62,7 @@
     },
     {
       "institution": "Slippery Rock University",
-      "area": "Bachelor of Science in Information Systems",
+      "area": "Information Systems, Bachelor of Science (BS)",
       "studyType": "Dual-Degree Sino-American Undergraduate Program conducted in China",
       "startDate": "2023",
       "endDate": "2027 (expected)",
@@ -84,6 +90,14 @@
       "name": "Information Retrieval & AI Systems",
       "level": "",
       "keywords": ["Retrieval-Augmented Generation (RAG)", "LLM API integration", "prompt design"]
+    }
+  ],
+  "awards": [
+    {
+      "title": "First Prize — Fujian Provincial Round, Python Programming (University Group B)",
+      "date": "2024",
+      "awarder": "15th Lanqiao Cup",
+      "summary": "第十五届蓝桥杯全国软件和信息技术专业人才大赛，福建省赛 Python 程序设计大学 B 组一等奖。"
     }
   ],
   "languages": [],

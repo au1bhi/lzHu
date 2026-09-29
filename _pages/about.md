@@ -24,9 +24,11 @@ I am a Software Engineering undergraduate in a Sino-American dual-degree program
 - A [contest archive](/portfolio/) containing selected contest materials
 - A live [Codeforces dashboard](/codeforces/) built from public contest data
 
-## Recent highlight
+## Recent highlights
 
-At the 2026 CCPC Fujian Invitational, I recorded the contest's first accepted solution to Problem A.
+In September 2026, I completed a 16-day TOC Operator assignment with [Sinotech Xinrui (Beijing) Co., Ltd.](https://www.sinotechxinrui.com/), supporting football broadcast operations at the 20th Asian Games Aichi-Nagoya 2026. At Gifu Nagaragawa Stadium, I carried out pre-match signal checks, monitored live feeds, and assisted engineers with optical-link troubleshooting. See my [CV](/cv/) for details.
+
+At the [2026 National Invitational of CCPC (Fujian), The 13th Fujian Collegiate Programming Contest](https://codeforces.com/gym/106565), I recorded the contest's first accepted solution to Problem A.
 
 ## Contact and code
 
