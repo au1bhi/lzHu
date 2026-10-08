@@ -1,0 +1,34 @@
+---
+layout: default
+title: "Network Status"
+permalink: /status/
+excerpt: "IPv4 与 IPv6 节点的实时连接状态和真实检测历史。"
+---
+
+<link rel="stylesheet" href="{{ '/assets/css/network-status.css' | relative_url }}">
+<main class="ns-page" id="network-status" data-endpoint="https://notellm.au1bhi.com/network-status/ip-data">
+  <header class="ns-intro">
+    <div><p class="ns-eyebrow">NETWORK STATUS · IPv4 &amp; IPv6</p><h1>连接状态，一目了然。</h1><p class="ns-muted">来自上海监测点的真实连接结果，逐个查看 IPv4 与 IPv6 节点。</p></div>
+    <button id="ns-refresh" class="ns-button" type="button">↻ 刷新状态</button>
+  </header>
+  <section id="ns-banner" class="ns-banner unknown" aria-live="polite">
+    <span class="ns-icon" aria-hidden="true">◉</span>
+    <div><h2 id="ns-headline">正在读取监测数据</h2><p id="ns-note">获取 IPv4 与 IPv6 的最新检测结果。</p></div>
+  </section>
+  <div class="ns-meta"><span id="ns-updated">等待首次检测</span><span id="ns-connection" role="status">更新中…</span></div>
+  <div class="ns-stats" aria-label="节点概况">
+    <div><span>可用节点</span><strong id="ns-available">—</strong></div>
+    <div><span>检测失败</span><strong id="ns-failed">—</strong></div>
+    <div><span>未检测 / 过期</span><strong id="ns-unknown">—</strong></div>
+  </div>
+  <div class="ns-section-top"><h2>线路与节点</h2><label for="ns-search" class="ns-sr-only">搜索 IPv4 或 IPv6 节点</label><input id="ns-search" type="search" placeholder="搜索节点…"></div>
+  <div id="ns-components"><p class="ns-empty">等待监测结果。所有节点将默认展开显示。</p></div>
+  <div class="ns-legend"><span><i class="ns-swatch operational"></i>可用</span><span><i class="ns-swatch degraded"></i>部分异常</span><span><i class="ns-swatch down"></i>检测失败</span><span><i class="ns-swatch unknown"></i>无记录</span></div>
+  <p id="ns-history-detail" class="ns-caption" aria-live="polite">点击历史色块，查看当日检测样本。</p>
+  <div class="ns-bottom">
+    <section><div class="ns-section-top"><h2>最近状态变化</h2></div><div id="ns-events" class="ns-panel"><p class="ns-empty">等待首次检测。</p></div></section>
+    <aside><div class="ns-section-top"><h2>关于监测</h2></div><div class="ns-panel ns-about"><p>监测位置：阿里云上海。节点通过代理连接 HTTPS 测试目标成功后，才标记为可用。延迟包含代理连接与目标响应时间。</p><p>每轮检测完成后约 60 秒开始下一轮；超过 5 分钟的检测结果会失效。各地运营商、客户端和目标网站的体验可能不同。</p><p>历史保留最近 90 天，可用率按成功与失败的检测样本计算，不代表 SLA。灰色表示没有有效记录。</p><p id="ns-record-start">历史从启用监测后开始积累。</p></div></aside>
+  </div>
+  <noscript><p class="ns-empty">请启用 JavaScript 查看实时节点状态。</p></noscript>
+</main>
+<script src="{{ '/assets/js/network-status.js' | relative_url }}" defer></script>

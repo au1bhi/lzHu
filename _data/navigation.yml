@@ -19,3 +19,6 @@ main:
 
   - title: "Codeforces"
     url: /codeforces/
+
+  - title: "Status"
+    url: /status/
