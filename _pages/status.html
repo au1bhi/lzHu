@@ -25,11 +25,11 @@ excerpt: "IPv4 与 IPv6 节点的实时连接状态和真实检测历史。"
   <div class="ns-section-top"><h2>线路与节点</h2><label for="ns-search" class="ns-sr-only">搜索 IPv4 或 IPv6 节点</label><input id="ns-search" type="search" placeholder="搜索节点…"></div>
   <div id="ns-components"><p class="ns-empty">等待监测结果。所有节点将默认展开显示。</p></div>
   <div class="ns-legend"><span><i class="ns-swatch operational"></i>可用</span><span><i class="ns-swatch degraded"></i>部分异常</span><span><i class="ns-swatch down"></i>检测失败</span><span><i class="ns-swatch unknown"></i>无记录</span></div>
-  <p id="ns-history-detail" class="ns-caption" aria-live="polite">点击历史色块，查看当日检测样本。</p>
+  <p id="ns-history-detail" class="ns-caption" aria-live="polite">点击历史色块，查看当日检测样本（最近 7 天）。</p>
   <div class="ns-bottom">
-    <section><div class="ns-section-top"><h2>最近状态变化</h2></div><div id="ns-events" class="ns-panel"><p class="ns-empty">等待首次检测。</p></div></section>
-    <aside><div class="ns-section-top"><h2>关于监测</h2></div><div class="ns-panel ns-about"><p>监测位置：阿里云上海。节点通过代理连接 HTTPS 测试目标成功后，才标记为可用。延迟包含代理连接与目标响应时间。</p><p>每轮检测完成后约 60 秒开始下一轮；超过 5 分钟的检测结果会失效。各地运营商、客户端和目标网站的体验可能不同。</p><p>历史保留最近 90 天，可用率按成功与失败的检测样本计算，不代表 SLA。灰色表示没有有效记录。</p><p id="ns-record-start">历史从启用监测后开始积累。</p></div></aside>
+    <section><div class="ns-section-top"><h2>最近 7 天状态变化</h2></div><div id="ns-events" class="ns-panel"><p class="ns-empty">等待首次检测。</p></div></section>
+    <aside><div class="ns-section-top"><h2>关于监测</h2></div><div class="ns-panel ns-about"><p>监测位置：阿里云上海。节点通过代理连接 HTTPS 测试目标成功后，才标记为可用。延迟包含代理连接与目标响应时间。</p><p>每轮检测完成后约 60 秒开始下一轮；超过 5 分钟的检测结果会失效。各地运营商、客户端和目标网站的体验可能不同。</p><p>历史展示最近 7 天，可用率按成功与失败的检测样本计算，不代表 SLA。灰色表示没有有效记录。</p><p id="ns-record-start">历史从启用监测后开始积累。</p></div></aside>
   </div>
   <noscript><p class="ns-empty">请启用 JavaScript 查看实时节点状态。</p></noscript>
 </div>
-<script src="{{ '/assets/js/network-status.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/network-status.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>

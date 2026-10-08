@@ -4,6 +4,7 @@
   if (!root) return;
   const $ = id => document.getElementById('ns-' + id);
   const allowed = ['native', 'warp'];
+  const historyDays = 7;
   const names = {native: 'IPv4 · 原生线路', warp: 'IPv6 · WARP 线路'};
   const labels = {operational: '运行正常', degraded: '部分异常', down: '检测失败', unknown: '未检测', stale: '数据过期'};
   let latest = null;
@@ -45,11 +46,12 @@
       const section = el('section', undefined, 'ns-component'); section.dataset.group = c.id;
       const head = el('div', undefined, 'ns-component-head');
       const heading = el('div', undefined, 'ns-group-title'); heading.append(el('h3', names[c.id]), pill(state)); head.append(heading);
-      const samples = c.history.reduce((s, d) => s + d.samples, 0);
-      const successful = c.history.reduce((s, d) => s + (Number.isFinite(d.availability) ? d.availability / 100 * d.samples : 0), 0);
+      const history = c.history.slice(-historyDays);
+      const samples = history.reduce((s, d) => s + d.samples, 0);
+      const successful = history.reduce((s, d) => s + (Number.isFinite(d.availability) ? d.availability / 100 * d.samples : 0), 0);
       head.append(el('p', ok + ' / ' + nodes.length + ' 节点可用 · 可用率（检测样本）' + (samples ? (successful / samples * 100).toFixed(2) + '%' : '暂无记录'), 'ns-component-note'));
-      const bars = el('div', undefined, 'ns-bars'); bars.setAttribute('aria-label', names[c.id] + '，最近 90 天检测历史');
-      for (const d of c.history) {
+      const bars = el('div', undefined, 'ns-bars'); bars.setAttribute('aria-label', names[c.id] + '，最近 7 天检测历史');
+      for (const d of history) {
         const bar = el('button', undefined, 'ns-bar ' + (Object.hasOwn(labels, d.state) ? d.state : 'unknown')); bar.type = 'button';
         const description = d.date + ' · ' + (d.samples ? d.availability + '% 可用 · ' + d.samples + ' 个检测样本' : '无有效检测记录');
         bar.title = description; bar.setAttribute('aria-label', description);
@@ -57,7 +59,7 @@
         for (const event of ['click', 'focus', 'pointerenter']) bar.addEventListener(event, show);
         bars.append(bar);
       }
-      head.append(bars); const axis = el('div', undefined, 'ns-axis'); axis.append(el('span', '90 天前'), el('span', '今天')); head.append(axis); section.append(head);
+      head.append(bars); const axis = el('div', undefined, 'ns-axis'); axis.append(el('span', history[0].date), el('span', '今天')); head.append(axis); section.append(head);
       const list = el('div'); list.setAttribute('role', 'table'); list.setAttribute('aria-label', names[c.id] + '节点');
       const rowHead = el('div', undefined, 'ns-node-header'); rowHead.setAttribute('role', 'row');
       for (const title of ['节点', '连接状态', '延迟']) { const cell = el('span', title); cell.setAttribute('role', 'columnheader'); rowHead.append(cell); }
@@ -78,10 +80,12 @@
     $('available').textContent = available; $('failed').textContent = failed; $('unknown').textContent = unknown;
     $('updated').textContent = Number.isFinite(latest.checkedAt) ? '最近检测 ' + date(latest.checkedAt) + '（北京时间）' : '等待首次检测';
     $('events').replaceChildren();
-    for (const e of latest.events.filter(e => allowed.includes(e.component)).slice(0, 20)) {
+    const cutoffDate = groups[0].history.at(-historyDays).date;
+    const cutoff = Date.parse(cutoffDate + 'T00:00:00+08:00');
+    for (const e of latest.events.filter(e => allowed.includes(e.component) && e.at >= cutoff).slice(0, 20)) {
       const card = el('article', undefined, 'ns-event'); card.append(el('time', date(e.at)), el('h3', names[e.component] + ' · ' + (labels[e.state] || labels.unknown)), el('p', e.before ? '检测状态由“' + (labels[e.before] || labels.unknown) + '”变为“' + (labels[e.state] || labels.unknown) + '”。' : '首次观测到此状态；实际发生时间与原因尚未确认。')); $('events').append(card);
     }
-    if (!$('events').children.length) $('events').append(el('p', '尚无 IPv4 / IPv6 状态变化记录。', 'ns-empty'));
+    if (!$('events').children.length) $('events').append(el('p', '最近 7 天暂无 IPv4 / IPv6 状态变化记录。', 'ns-empty'));
     $('record-start').textContent = latest.startedAt ? '记录始于 ' + date(latest.startedAt) + '（北京时间）。' : '历史将在首次完成检测后开始积累。';
   }
   async function refresh() {
