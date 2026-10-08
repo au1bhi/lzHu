@@ -6,7 +6,8 @@
   const allowed = ['native', 'warp'];
   const historySlots = 84;
   const names = {native: 'IPv4 · 原生线路', warp: 'IPv6 · WARP 线路'};
-  const labels = {operational: '运行正常', degraded: '部分异常', down: '检测失败', unknown: '未检测', stale: '数据过期'};
+  const labels = {operational: 'Accept', degraded: 'Partial', down: 'Time Limit Exceed', unknown: 'Skipped', stale: 'Skipped'};
+  const meanings = {operational: '连接检测成功', degraded: '部分节点检测失败', down: '连接检测失败（可能超时或连接错误）', unknown: '无有效检测记录', stale: '检测数据已过期'};
   let latest = null;
   let busy = false;
   const date = time => new Date(time).toLocaleString('zh-CN', {timeZone: 'Asia/Shanghai', hour12: false});
@@ -16,7 +17,7 @@
     if (cls) node.className = cls;
     return node;
   }
-  function pill(state) { return el('span', labels[state] || labels.unknown, 'ns-pill ' + state); }
+  function pill(state) { const node = el('span', labels[state] || labels.unknown, 'ns-pill ' + state); node.title = meanings[state] || meanings.unknown; node.setAttribute('aria-label', (labels[state] || labels.unknown) + '：' + node.title); return node; }
   function valid(data) {
     if (data?.version !== 1 || !Array.isArray(data.components) || !Array.isArray(data.events)) return false;
     return allowed.every(id => data.components.filter(c => c.id === id).length === 1) && data.components.filter(c => allowed.includes(c.id)).every(c =>
@@ -26,7 +27,7 @@
   function stale() { return !Number.isFinite(latest?.checkedAt) || Date.now() - latest.checkedAt >= 7500000 || latest.checkedAt > Date.now() + 30000; }
   function banner(state, note) {
     $('banner').className = 'ns-banner ' + state;
-    $('headline').textContent = state === 'operational' ? 'IPv4 与 IPv6 线路运行正常' : state === 'degraded' ? '部分 IPv4 / IPv6 节点出现异常' : '暂无有效检测数据';
+    $('headline').textContent = state === 'operational' ? 'Accept · IPv4 与 IPv6 线路运行正常' : state === 'degraded' ? 'Partial · 部分 IPv4 / IPv6 节点出现异常' : 'Skipped · 暂无有效检测数据';
     $('note').textContent = note;
   }
   function render() {
@@ -53,7 +54,7 @@
       const bars = el('div', undefined, 'ns-bars'); bars.setAttribute('aria-label', names[c.id] + '，最近 7 天，每格 2 小时，共 84 格');
       for (const d of history) {
         const bar = el('button', undefined, 'ns-bar ' + (Object.hasOwn(labels, d.state) ? d.state : 'unknown')); bar.type = 'button';
-        const description = date(d.startAt) + ' — ' + date(d.endAt) + '（北京时间） · ' + (d.checkedAt ? '检测于 ' + date(d.checkedAt) + ' · ' : '') + (d.samples ? d.availability + '% 可用 · ' + d.samples + ' 个节点检测样本' : '无有效检测记录');
+        const description = (labels[d.state] || labels.unknown) + ' · ' + date(d.startAt) + ' — ' + date(d.endAt) + '（北京时间） · ' + (d.checkedAt ? '检测于 ' + date(d.checkedAt) + ' · ' : '') + (d.samples ? d.availability + '% 可用 · ' + d.samples + ' 个节点检测样本' : '无有效检测记录');
         bar.title = description; bar.setAttribute('aria-label', description);
         const show = () => { $('history-detail').textContent = names[c.id] + ' / ' + description; };
         for (const event of ['click', 'focus', 'pointerenter']) bar.addEventListener(event, show);
@@ -62,7 +63,7 @@
       head.append(bars); const axis = el('div', undefined, 'ns-axis'); axis.append(el('span', date(history[0].startAt)), el('span', '每格 2 小时 · 当前')); head.append(axis); section.append(head);
       const list = el('div'); list.setAttribute('role', 'table'); list.setAttribute('aria-label', names[c.id] + '节点');
       const rowHead = el('div', undefined, 'ns-node-header'); rowHead.setAttribute('role', 'row');
-      for (const title of ['节点', '连接状态', '延迟']) { const cell = el('span', title); cell.setAttribute('role', 'columnheader'); rowHead.append(cell); }
+      for (const title of ['节点', '连接状态', '延迟']) { const cell = el('span', title); cell.setAttribute('role', 'columnheader'); if (title === '延迟') cell.title = latest.latencyMode === 'unified' ? 'Clash/Mihomo URL Test · 统一延迟 · 上海监测点' : '上海监测点 URL Test；统一延迟模式尚未确认'; rowHead.append(cell); }
       list.append(rowHead);
       const matching = nodes.filter(n => (n.name + names[c.id]).toLowerCase().includes(term));
       for (const n of matching) {
@@ -78,6 +79,7 @@
     const state = states.some(s => ['degraded', 'down'].includes(s)) ? 'degraded' : states.every(s => s === 'operational') ? 'operational' : 'unknown';
     banner(state, expired ? '检测数据缺失或超过 2 小时 5 分钟，请以客户端的实际连接为准。' : '依据上海监测点的实际连接结果。不同网络与客户端的体验可能不同。');
     $('available').textContent = available; $('failed').textContent = failed; $('unknown').textContent = unknown;
+    $('latency-mode').textContent = latest.latencyMode === 'unified' ? '延迟使用 Clash/Mihomo URL Test 的统一延迟模式，目标为 gstatic HTTPS 204；以同一连接的第二次请求计时，第二次请求失败时内核可能回退到首次请求。结果来自上海监测点，与本地客户端可能不同。' : '当前检测结果尚未确认使用统一延迟；请等待下一轮检测。延迟来自上海监测点，与本地客户端可能不同。';
     $('updated').textContent = Number.isFinite(latest.checkedAt) ? '最近检测 ' + date(latest.checkedAt) + '（北京时间）' : '等待首次检测';
     $('events').replaceChildren();
     const cutoff = groups[0].probeHistory[0].startAt;

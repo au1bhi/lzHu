@@ -55,7 +55,7 @@
 .ns-group-title { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
 .ns-page .ns-component-note { font-size: 0.8em; color: var(--ns-muted); margin: 5px 0 12px; }
 .ns-pill { display: inline-flex; align-items: center; gap: 6px; color: var(--ns-muted); font-size: 0.82em; white-space: nowrap; }
-.ns-pill:before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--ns-gray); }
+.ns-pill:before { content: ''; flex-shrink: 0; width: 6px; height: 6px; border-radius: 50%; background: var(--ns-gray); }
 .ns-pill.operational { color: var(--ns-green); }
 .ns-pill.operational:before { background: var(--ns-green); }
 .ns-pill.degraded { color: var(--ns-amber); }
@@ -69,12 +69,12 @@
 .ns-bar.down, .ns-swatch.down { background: #c45552; }
 .ns-page .ns-bar:hover { filter: brightness(0.8); }
 .ns-axis { display: flex; justify-content: space-between; color: var(--ns-muted); font-size: 0.7em; margin-top: 6px; }
-.ns-node-header, .ns-node { display: grid; grid-template-columns: minmax(0, 1fr) 105px 75px; gap: 12px; align-items: center; padding: 11px 10px; border-bottom: 1px solid var(--ns-line); font-size: 0.85em; }
+.ns-node-header, .ns-node { display: grid; grid-template-columns: minmax(0, 1fr) 155px 75px; gap: 12px; align-items: center; padding: 11px 10px; border-bottom: 1px solid var(--ns-line); font-size: 0.85em; }
 .ns-node-header { background: var(--global-thead-color); font-size: 0.75em; }
 .ns-node-header > :last-child { text-align: right; }
 .ns-node-name { overflow-wrap: anywhere; min-width: 0; }
 .ns-node-latency { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; color: var(--ns-muted); }
-.ns-node .ns-pill { font-size: 0.9em; }
+.ns-node .ns-pill { font-size: 0.9em; font-family: var(--font-mono); white-space: normal; line-height: 1.4; }
 .ns-legend { display: flex; gap: 16px; flex-wrap: wrap; color: var(--ns-muted); font-size: 0.75em; }
 .ns-swatch { display: inline-block; width: 8px; height: 8px; border-radius: 1px; background: var(--ns-line); margin-right: 5px; }
 .ns-page .ns-caption { color: var(--ns-muted); font-size: 0.75em; min-height: 22px; margin-top: 10px; }
@@ -103,7 +103,7 @@
   .ns-page input[type=search] { width: 140px; }
   .ns-bars { gap: 1px; }
   .ns-page .ns-bar { height: 22px; }
-  .ns-node-header, .ns-node { grid-template-columns: minmax(0, 1fr) 75px 57px; gap: 6px; padding: 10px 6px; font-size: 0.82em; }
+  .ns-node-header, .ns-node { grid-template-columns: minmax(0, 1fr) 112px 52px; gap: 6px; padding: 10px 6px; font-size: 0.82em; }
   .ns-node .ns-pill { font-size: 0.9em; gap: 4px; }
   .ns-legend { gap: 12px; }
 }
