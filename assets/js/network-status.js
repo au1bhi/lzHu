@@ -23,7 +23,7 @@
       Array.isArray(c.nodes) && c.nodes.length <= 512 && c.nodes.every(n => typeof n.name === 'string' && n.name.length <= 160 && Object.hasOwn(labels, n.state)) &&
       Array.isArray(c.history) && c.history.length === 90 && c.history.every(d => typeof d.date === 'string' && Number.isFinite(d.samples) && d.samples >= 0));
   }
-  function stale() { return !Number.isFinite(latest?.checkedAt) || Date.now() - latest.checkedAt >= 300000 || latest.checkedAt > Date.now() + 30000; }
+  function stale() { return !Number.isFinite(latest?.checkedAt) || Date.now() - latest.checkedAt >= 7500000 || latest.checkedAt > Date.now() + 30000; }
   function banner(state, note) {
     $('banner').className = 'ns-banner ' + state;
     $('headline').textContent = state === 'operational' ? 'IPv4 与 IPv6 线路运行正常' : state === 'degraded' ? '部分 IPv4 / IPv6 节点出现异常' : '暂无有效检测数据';
@@ -76,7 +76,7 @@
       section.append(list); $('components').append(section);
     }
     const state = states.some(s => ['degraded', 'down'].includes(s)) ? 'degraded' : states.every(s => s === 'operational') ? 'operational' : 'unknown';
-    banner(state, expired ? '检测数据缺失或超过 5 分钟，请以客户端的实际连接为准。' : '依据上海监测点的实际连接结果。不同网络与客户端的体验可能不同。');
+    banner(state, expired ? '检测数据缺失或超过 2 小时 5 分钟，请以客户端的实际连接为准。' : '依据上海监测点的实际连接结果。不同网络与客户端的体验可能不同。');
     $('available').textContent = available; $('failed').textContent = failed; $('unknown').textContent = unknown;
     $('updated').textContent = Number.isFinite(latest.checkedAt) ? '最近检测 ' + date(latest.checkedAt) + '（北京时间）' : '等待首次检测';
     $('events').replaceChildren();
@@ -97,7 +97,7 @@
       if (!response.ok) throw new Error('Unavailable');
       const data = await response.json();
       if (!valid(data)) throw new Error('Invalid status');
-      latest = data; render(); $('connection').textContent = '每 60 秒自动刷新';
+      latest = data; render(); $('connection').textContent = '每两小时探测 · 自动同步结果';
     } catch {
       $('connection').textContent = '更新失败，稍后自动重试';
       if (latest) render();
