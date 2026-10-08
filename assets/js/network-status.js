@@ -10,6 +10,8 @@
   const meanings = {operational: '连接检测成功', degraded: '部分节点检测失败', down: '连接检测失败（可能超时或连接错误）', unknown: '无有效检测记录', stale: '检测数据已过期'};
   let latest = null;
   let busy = false;
+  let eventLimit = 20;
+  const expandedEvents = new Set();
   const date = time => new Date(time).toLocaleString('zh-CN', {timeZone: 'Asia/Shanghai', hour12: false});
   function el(tag, text, cls) {
     const node = document.createElement(tag);
@@ -29,6 +31,66 @@
     $('banner').className = 'ns-banner ' + state;
     $('headline').textContent = state === 'operational' ? 'Accept · IPv4 与 IPv6 线路运行正常' : state === 'degraded' ? 'Partial · 部分 IPv4 / IPv6 节点出现异常' : 'Skipped · 暂无有效检测数据';
     $('note').textContent = note;
+  }
+  function eventCounts(summary) {
+    if (!summary || !['total', 'available', 'failed', 'unknown'].every(k => Number.isFinite(summary[k]) && summary[k] >= 0)) return null;
+    return '共 ' + summary.total + ' 个节点：Accept ' + summary.available + '，Time Limit Exceed ' + summary.failed + '，Skipped ' + summary.unknown;
+  }
+  function changeDescription(change) {
+    const name = typeof change.name === 'string' ? change.name : '未命名节点';
+    if (change.kind === 'removed') return name + '：已移出监控（上轮 ' + (labels[change.before] || labels.unknown) + '）';
+    if (change.kind === 'added') return name + '：新纳入监控 → ' + (labels[change.state] || labels.unknown);
+    return name + '：' + (labels[change.before] || labels.unknown) + ' → ' + (labels[change.state] || labels.unknown) + (change.state === 'operational' && Number.isFinite(change.delayMs) ? ' · ' + change.delayMs + ' ms' : '');
+  }
+  function renderEvents(cutoff) {
+    $('events').replaceChildren();
+    const events = latest.events.filter(e => e && allowed.includes(e.component) && Number.isFinite(e.at) && e.at >= cutoff).sort((a, b) => b.at - a.at);
+    for (const e of events.slice(0, eventLimit)) {
+      const card = el('article', undefined, 'ns-event');
+      const time = el('time', date(e.at) + '（北京时间）'); time.dateTime = new Date(e.at).toISOString();
+      const verdict = (e.before ? (labels[e.before] || labels.unknown) + ' → ' : '') + (labels[e.state] || labels.unknown);
+      card.append(time, el('h3', names[e.component] + ' · ' + verdict + (e.reason === 'node-change' ? ' · 节点状态变化' : '')));
+      const summary = eventCounts(e.summary);
+      if (!summary) {
+        card.append(el('p', e.before ? '本次检测观察到线路由“' + (labels[e.before] || labels.unknown) + '”变为“' + (labels[e.state] || labels.unknown) + '”。' : '首次观察到此线路状态。'));
+        card.append(el('p', '这条旧记录仅保存了线路总体状态，未保存受影响节点、数量和当时延迟；无法还原逐节点明细。', 'ns-event-context'));
+      } else {
+        card.append(el('p', '本轮检测：' + summary + '。', 'ns-event-summary'));
+        const previous = eventCounts(e.previousSummary);
+        if (previous) card.append(el('p', '上轮检测：' + previous + '。', 'ns-event-context'));
+        const failed = Array.isArray(e.failedNodes) ? e.failedNodes.filter(n => typeof n === 'string') : [];
+        const unknown = Array.isArray(e.unknownNodes) ? e.unknownNodes.filter(n => typeof n === 'string') : [];
+        const changes = Array.isArray(e.changes) ? e.changes.filter(c => c && typeof c.name === 'string') : [];
+        const recovered = changes.filter(c => c.kind === 'changed' && c.before === 'down' && c.state === 'operational');
+        if (failed.length) card.append(el('p', '本轮检测失败：' + failed.slice(0, 3).join('、') + (failed.length > 3 ? '等 ' + failed.length + ' 个节点' : '') + '。'));
+        if (recovered.length) card.append(el('p', '本轮恢复成功：' + recovered.slice(0, 3).map(c => c.name).join('、') + (recovered.length > 3 ? '等 ' + recovered.length + ' 个节点' : '') + '。'));
+        if (!failed.length && e.state === 'operational') card.append(el('p', '本轮所有节点均通过连接检测。'));
+        const details = el('details', undefined, 'ns-event-details');
+        const key = e.component + ':' + e.at; details.open = expandedEvents.has(key);
+        details.addEventListener('toggle', () => { if (details.open) expandedEvents.add(key); else expandedEvents.delete(key); });
+        details.append(el('summary', '查看节点变化与检测细节' + (e.changeCount ? '（' + e.changeCount + ' 项变化）' : '')));
+        if (changes.length) {
+          const list = el('ul', undefined, 'ns-event-list'); for (const change of changes) list.append(el('li', changeDescription(change))); details.append(list);
+          if (e.changeCount > changes.length) details.append(el('p', '本次共 ' + e.changeCount + ' 项变化，列出前 ' + changes.length + ' 项。'));
+        } else details.append(el('p', e.previousSummary ? '没有逐节点状态变化；延迟数值变化不会单独产生事件。' : e.reason === 'first-observation' ? '这是该线路的首次观测，尚无上一轮逐节点结果用于对比。' : '旧记录未保存上一轮逐节点结果，本条仅补充同一轮快照可确认的检测结果。'));
+        if (failed.length) details.append(el('p', '本轮失败节点：' + failed.join('、') + '。'));
+        if (unknown.length) details.append(el('p', '本轮无有效结果：' + unknown.join('、') + '。'));
+        const latency = e.latency;
+        if (latency && latency.samples > 0 && ['minMs', 'medianMs', 'maxMs'].every(k => Number.isFinite(latency[k]))) {
+          const mode = latency.mode === 'unified' ? 'Mihomo 统一延迟' : latency.mode === 'connection' ? '包含连接建立的 URL Test' : '测速模式未确认';
+          details.append(el('p', '本轮延迟：中位数 ' + latency.medianMs + ' ms，范围 ' + latency.minMs + '–' + latency.maxMs + ' ms（' + latency.samples + ' 个 Accept 节点；' + mode + '）。'));
+        } else details.append(el('p', '本轮没有可统计的成功节点延迟。'));
+        if (Number.isFinite(e.previousAt) && e.previousAt < e.at) details.append(el('p', '观测对比时间：' + date(e.previousAt) + ' → ' + date(e.at) + '（北京时间）。状态差异在这两次检测之间被发现，实际发生时刻尚未确认。'));
+        details.append(el('p', '监测点：阿里云上海；每两小时检测一次。事件时间是检测观测时间，失败原因需进一步确认。', 'ns-event-context'));
+        card.append(details);
+      }
+      $('events').append(card);
+    }
+    if (!events.length) $('events').append(el('p', '最近 7 天暂无 IPv4 / IPv6 状态变化记录。', 'ns-empty'));
+    if (events.length > eventLimit) {
+      const more = el('button', '加载更多状态变化（还有 ' + (events.length - eventLimit) + ' 条）', 'ns-button ns-events-more'); more.type = 'button';
+      more.addEventListener('click', () => { const firstNew = eventLimit; eventLimit += 20; renderEvents(cutoff); const card = $('events').querySelectorAll('.ns-event')[firstNew]; if (card) { card.tabIndex = -1; card.focus({preventScroll: true}); } }); $('events').append(more);
+    }
   }
   function render() {
     if (!latest) return;
@@ -81,12 +143,7 @@
     $('available').textContent = available; $('failed').textContent = failed; $('unknown').textContent = unknown;
     $('latency-mode').textContent = latest.latencyMode === 'unified' ? '延迟使用 Clash/Mihomo URL Test 的统一延迟模式，目标为 gstatic HTTPS 204；以同一连接的第二次请求计时，第二次请求失败时内核可能回退到首次请求。结果来自上海监测点，与本地客户端可能不同。' : '当前检测结果尚未确认使用统一延迟；请等待下一轮检测。延迟来自上海监测点，与本地客户端可能不同。';
     $('updated').textContent = Number.isFinite(latest.checkedAt) ? '最近检测 ' + date(latest.checkedAt) + '（北京时间）' : '等待首次检测';
-    $('events').replaceChildren();
-    const cutoff = groups[0].probeHistory[0].startAt;
-    for (const e of latest.events.filter(e => allowed.includes(e.component) && e.at >= cutoff).slice(0, 20)) {
-      const card = el('article', undefined, 'ns-event'); card.append(el('time', date(e.at)), el('h3', names[e.component] + ' · ' + (labels[e.state] || labels.unknown)), el('p', e.before ? '检测状态由“' + (labels[e.before] || labels.unknown) + '”变为“' + (labels[e.state] || labels.unknown) + '”。' : '首次观测到此状态；实际发生时间与原因尚未确认。')); $('events').append(card);
-    }
-    if (!$('events').children.length) $('events').append(el('p', '最近 7 天暂无 IPv4 / IPv6 状态变化记录。', 'ns-empty'));
+    renderEvents(groups[0].probeHistory[0].startAt);
     $('record-start').textContent = latest.startedAt ? '记录始于 ' + date(latest.startedAt) + '（北京时间）。' : '历史将在首次完成检测后开始积累。';
   }
   async function refresh() {

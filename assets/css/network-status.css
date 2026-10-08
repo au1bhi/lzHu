@@ -84,6 +84,14 @@
 .ns-event:first-child { padding-top: 0; }
 .ns-event time { display: block; color: var(--ns-muted); font-size: 0.75em; margin-bottom: 6px; }
 .ns-event h3 { font-size: 0.9em; }
+.ns-event .ns-event-summary { font-family: var(--font-sans); font-weight: 600; }
+.ns-event .ns-event-context { font-size: 0.78em; color: var(--ns-muted); }
+.ns-event-details { margin-top: 10px; }
+.ns-event-details summary { cursor: pointer; font-size: 0.82em; color: var(--global-link-color); overflow-wrap: anywhere; }
+.ns-event-list { padding-left: 20px; margin: 10px 0; font-size: 0.8em; }
+.ns-event-list li { margin-bottom: 6px; overflow-wrap: anywhere; }
+.ns-event p { overflow-wrap: anywhere; }
+.ns-events-more { margin-top: 14px; }
 .ns-event p { font-family: var(--font-serif); font-size: 0.85em; margin-top: 5px; }
 .ns-about p { font-family: var(--font-serif); color: var(--ns-muted); font-size: 0.9em; margin-bottom: 12px; }
 .ns-about p:last-child { margin: 0; }
