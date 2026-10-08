@@ -62,7 +62,7 @@
 .ns-pill.degraded:before { background: var(--ns-amber); }
 .ns-pill.down { color: var(--ns-red); }
 .ns-pill.down:before { background: var(--ns-red); }
-.ns-bars { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 3px; }
+.ns-bars { display: grid; grid-template-columns: repeat(84, minmax(0, 1fr)); gap: 2px; }
 .ns-page .ns-bar { padding: 0; margin: 0; height: 24px; min-width: 0; border: 0; border-radius: 1px; background: var(--ns-line); cursor: pointer; }
 .ns-bar.operational, .ns-swatch.operational { background: #29936a; }
 .ns-bar.degraded, .ns-swatch.degraded { background: #c89540; }
@@ -101,7 +101,7 @@
   .ns-stats { gap: 12px; margin-bottom: 26px; }
   .ns-stats span { font-size: 0.75em; }
   .ns-page input[type=search] { width: 140px; }
-  .ns-bars { gap: 2px; }
+  .ns-bars { gap: 1px; }
   .ns-page .ns-bar { height: 22px; }
   .ns-node-header, .ns-node { grid-template-columns: minmax(0, 1fr) 75px 57px; gap: 6px; padding: 10px 6px; font-size: 0.82em; }
   .ns-node .ns-pill { font-size: 0.9em; gap: 4px; }

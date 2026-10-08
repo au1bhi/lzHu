@@ -80,7 +80,7 @@ The site is designed for GitHub Pages. Push the verified `master` branch to the 
 
 ## Network Status
 
-`/status/` 展示原生 IPv4 和 WARP IPv6 的实时健康状态、每个节点的状态与延迟、7 天真实检测历史和对应状态变化。所有节点默认展开；搜索只筛选节点，不改变总体统计。数据来自上海监测点，不代表每个用户所在地的连接体验。
+`/status/` 展示原生 IPv4 和 WARP IPv6 的实时健康状态、每个节点的状态与延迟、7 天真实检测历史（84 格，每格两小时，显示区间内最后一次实际探测结果）和对应状态变化。所有节点默认展开；搜索只筛选节点，不改变总体统计。数据来自上海监测点，不代表每个用户所在地的连接体验。
 
 页面读取 `https://notellm.au1bhi.com/network-status/ip-data` 的公开脱敏数据，无需前端密钥。该服务已允许本站域名及 `http://127.0.0.1:4000` / `http://localhost:4000` 的跨域读取。刷新失败会提示重试；服务器每两小时探测一次，页面刷新只同步保存的结果；超过两小时五分钟的数据不再显示为可用。页面资源在 `assets/css/network-status.css` 和 `assets/js/network-status.js`，入口在 `_pages/status.html`。
 
