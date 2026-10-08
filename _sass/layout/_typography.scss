@@ -1,0 +1,55 @@
+/* Claude-inspired reading / interface / code pairing; self-hosted OFL faces. */
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("../fonts/source-sans-3-roman.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 200 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("../fonts/source-sans-3-italic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 200 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Source Serif 4";
+  src: url("../fonts/source-serif-4-roman.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 200 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Source Serif 4";
+  src: url("../fonts/source-serif-4-italic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 200 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Source Code Pro";
+  src: url("../fonts/source-code-pro-roman.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 200 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Source Code Pro";
+  src: url("../fonts/source-code-pro-italic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 200 900;
+  font-display: swap;
+}
+:root {
+  --font-sans: #{$sans-serif};
+  --font-serif: #{$serif};
+  --font-mono: #{$monospace};
+}
+body { font-optical-sizing: auto; }
+.masthead, .sidebar, .page__footer, .page__meta, .page__taxonomy,
+.pagination, .breadcrumbs, .codeforces-dashboard, button, input, select, textarea {
+  font-family: $sans-serif;
+}
+.page__content { line-height: 1.65; }
+pre, code, kbd, samp { font-family: $monospace; }

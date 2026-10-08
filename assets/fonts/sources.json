@@ -1,0 +1,44 @@
+[
+  {
+    "repository": "source-serif",
+    "commit": "80d3f8894c09c937bebfa9011247d2e1c79fd6f4",
+    "files": [
+      [
+        "source-serif-4-roman.woff2",
+        429100
+      ],
+      [
+        "source-serif-4-italic.woff2",
+        346688
+      ]
+    ]
+  },
+  {
+    "repository": "source-sans",
+    "commit": "87b37a2daaed80fcb8e8ccb0085c4d72ddade12e",
+    "files": [
+      [
+        "source-sans-3-roman.woff2",
+        170188
+      ],
+      [
+        "source-sans-3-italic.woff2",
+        137996
+      ]
+    ]
+  },
+  {
+    "repository": "source-code-pro",
+    "commit": "803b7e23ec97ae58b6232ea76519a76d428ba268",
+    "files": [
+      [
+        "source-code-pro-roman.woff2",
+        90124
+      ],
+      [
+        "source-code-pro-italic.woff2",
+        75316
+      ]
+    ]
+  }
+]

@@ -171,7 +171,10 @@ author_profile: true
             return new Date(unixSeconds * 1000).toLocaleDateString(undefined, { year: "numeric", month: "short" });
         };
 
-        const buildChart = (ctx, config) => new Chart(ctx, config);
+        const buildChart = (ctx, config) => {
+            Chart.defaults.font.family = getComputedStyle(document.documentElement).getPropertyValue('--font-sans').trim();
+            return new Chart(ctx, config);
+        };
 
         const paletteCycle = (paletteName, count) => {
             const base = palettes[paletteName] || palettes.blue;
@@ -189,6 +192,7 @@ author_profile: true
                 return;
             }
             try {
+                await document.fonts.ready;
                 const [userInfo, ratingHistory, submissions] = await Promise.all([
                     fetchJson(userInfoUrl),
                     fetchJson(ratingUrl),

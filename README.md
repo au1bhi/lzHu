@@ -83,3 +83,7 @@ The site is designed for GitHub Pages. Push the verified `master` branch to the 
 `/status/` 展示原生 IPv4 和 WARP IPv6 的实时健康状态、每个节点的状态与延迟、90 天真实检测历史和对应状态变化。所有节点默认展开；搜索只筛选节点，不改变总体统计。数据来自上海监测点，不代表每个用户所在地的连接体验。
 
 页面读取 `https://notellm.au1bhi.com/network-status/ip-data` 的公开脱敏数据，无需前端密钥。该服务已允许本站域名及 `http://127.0.0.1:4000` / `http://localhost:4000` 的跨域读取。刷新失败会提示重试；超过五分钟的数据不再显示为可用。页面资源在 `assets/css/network-status.css` 和 `assets/js/network-status.js`，入口在 `_pages/status.html`。
+
+## Typography
+
+全站参考 Claude / Anthropic 的 sans、serif、mono 搭配：标题、导航和数据界面使用 Source Sans 3，正文使用 Source Serif 4，代码使用 Source Code Pro；本机若有对应 Anthropic 字体则优先使用。开源替代字体以原始 WOFF2 文件自托管，使用 `font-display: swap`，中文设置对应的本机字体回退。字体来源、固定版本与许可证见 [字体说明](assets/fonts/README.md)。Status 使用原站的页面布局和主题变量，并随全站明暗主题切换。
