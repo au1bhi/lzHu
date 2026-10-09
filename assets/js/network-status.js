@@ -116,7 +116,18 @@
       const bars = el('div', undefined, 'ns-bars'); bars.setAttribute('aria-label', names[c.id] + '，最近 7 天，每格 2 小时，共 84 格');
       for (const d of history) {
         const bar = el('button', undefined, 'ns-bar ' + (Object.hasOwn(labels, d.state) ? d.state : 'unknown')); bar.type = 'button';
-        const description = (labels[d.state] || labels.unknown) + ' · ' + date(d.startAt) + ' — ' + date(d.endAt) + '（北京时间） · ' + (d.checkedAt ? '检测于 ' + date(d.checkedAt) + ' · ' : '') + (d.samples ? d.availability + '% 可用 · ' + d.samples + ' 个节点检测样本' : '无有效检测记录');
+        let detail;
+        if (d.samples) detail = d.availability + '% 可用 · ' + d.samples + ' 个节点检测样本';
+        else if (d.monitorError && Number.isFinite(d.monitorError.at)) {
+          const stages = {cadence: '保存探测计划', configuration: '读取探测配置', measurement: '执行探测', 'snapshot-write': '保存检测结果', 'history-write': '保存历史记录'};
+          const reasons = {timeout: '操作超时', 'controller-unavailable': '探测控制器不可用', 'invalid-inventory': '节点清单无效', 'oversized-response': '控制器响应超出限制', 'storage-error': '文件存储异常'};
+          bar.classList.add('monitor-error');
+          detail = '监控任务异常，本轮没有有效结果 · 异常记录于 ' + date(d.monitorError.at) + ' · ' + (stages[d.monitorError.stage] || '旧日志未记录失败环节') + ' · ' + (reasons[d.monitorError.reason] || '具体原因未确认');
+        } else if (d.startAt <= Date.now() && Date.now() < d.endAt && !d.checkedAt) {
+          detail = '等待本轮检测结果' + (Number.isFinite(latest.nextCheckAt) && latest.nextCheckAt >= Date.now() && latest.nextCheckAt < d.endAt ? ' · 预计 ' + date(latest.nextCheckAt) + ' 开始探测' : '');
+        } else if (d.checkedAt) detail = '本轮已运行，但没有取得可判定的节点结果';
+        else detail = '该时间区间未保存检测记录';
+        const description = (labels[d.state] || labels.unknown) + ' · ' + date(d.startAt) + ' — ' + date(d.endAt) + '（北京时间） · ' + (d.checkedAt ? '检测于 ' + date(d.checkedAt) + ' · ' : '') + detail;
         bar.title = description; bar.setAttribute('aria-label', description);
         const show = () => { $('history-detail').textContent = names[c.id] + ' / ' + description; };
         for (const event of ['click', 'focus', 'pointerenter']) bar.addEventListener(event, show);
