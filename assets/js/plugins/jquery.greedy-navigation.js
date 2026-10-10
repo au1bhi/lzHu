@@ -15,7 +15,11 @@ var breaks = [];
 
 function updateNav() {
 
-  var availableSpace = $btn.hasClass('hidden') ? $nav.width() : $nav.width() - $btn.width() - 30;
+  $vlinks.addClass('is-measuring');
+  var buttonSpace = $btn.outerWidth() + 30;
+  $nav[0].style.setProperty('--nav-toggle-space', buttonSpace + 'px');
+
+  var availableSpace = $btn.hasClass('hidden') ? $nav.width() : $nav.width() - buttonSpace;
 
   // The visible list is overflowing the nav
   if ($vlinks.width() > availableSpace) {
@@ -27,7 +31,7 @@ function updateNav() {
       // Move item to the hidden list
       $vlinks.children("*:not(.persist)").last().prependTo($hlinks);
 
-      availableSpace = $btn.hasClass("hidden") ? $nav.width() : $nav.width() - $btn.width() - 30;
+      availableSpace = $nav.width() - buttonSpace;
 
       // Show the dropdown btn
       $btn.removeClass("hidden");
@@ -57,6 +61,8 @@ function updateNav() {
 
   // Keep counter updated
   $btn.attr("count", breaks.length);
+  $nav.toggleClass('has-hidden-links', breaks.length > 0);
+  $vlinks.removeClass('is-measuring');
 
   // update masthead height and the body/sidebar top padding
   var mastheadHeight = $('.masthead').height();

@@ -203,11 +203,17 @@
   }
 
   .visible-links {
-    display: table;
+    display: flex;
+    align-items: center;
+    width: 100%;
 
     li {
-      display: table-cell;
-      vertical-align: middle;
+      flex: 1 0 0;
+      min-width: max-content;
+
+      &.persist {
+        flex: 0 0 auto;
+      }
 
       &:first-child {
         font-weight: bold;
@@ -227,7 +233,9 @@
 
     #theme-toggle {
       a {
-        width: 25px;
+        width: 2.5rem;
+        padding-right: 0;
+        padding-left: 0;
         display: flex;
         justify-content: center;
         cursor: pointer;
@@ -236,6 +244,9 @@
 
     a {
       position: relative;
+      width: max-content;
+      margin: 0 auto;
+      padding: 0.5rem 1rem;
 
       &:before {
         content: "";
@@ -258,6 +269,19 @@
                 transform: scaleX(1); /* reveal*/
       }
     }
+  }
+
+  // Measure intrinsic link widths before deciding which links to collapse.
+  .visible-links.is-measuring {
+    width: max-content;
+
+    li {
+      flex: 0 0 auto;
+    }
+  }
+
+  &.has-hidden-links .visible-links:not(.is-measuring) {
+    width: calc(100% - var(--nav-toggle-space));
   }
 
   .hidden-links {
