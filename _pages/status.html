@@ -3,34 +3,34 @@ layout: single
 author_profile: true
 title: "Network Status"
 permalink: /status/
-excerpt: "IPv4 与 IPv6 节点的实时连接状态和真实检测历史。"
+excerpt: "Live IPv4 and IPv6 node connectivity and recorded probe history."
 ---
 
 <link rel="stylesheet" href="{{ '/assets/css/network-status.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 <div class="ns-page" id="network-status" data-endpoint="https://notellm.au1bhi.com/network-status/ip-data">
   <header class="ns-intro">
-    <p class="ns-muted">来自上海监测点的真实连接结果，逐个查看 IPv4 与 IPv6 节点。</p>
-    <button id="ns-refresh" class="ns-button" type="button">↻ 刷新状态</button>
+    <p class="ns-muted">Live connection checks from Shanghai for individual IPv4 and IPv6 nodes.</p>
+    <button id="ns-refresh" class="ns-button" type="button">↻ Refresh</button>
   </header>
   <section id="ns-banner" class="ns-banner unknown" aria-live="polite">
     <span class="ns-icon" aria-hidden="true">◉</span>
-    <div><h2 id="ns-headline">正在读取监测数据</h2><p id="ns-note">获取 IPv4 与 IPv6 的最新检测结果。</p></div>
+    <div><h2 id="ns-headline">Loading monitoring data</h2><p id="ns-note">Fetching the latest IPv4 and IPv6 probe results.</p></div>
   </section>
-  <div class="ns-meta"><span id="ns-updated">等待首次检测</span><span id="ns-connection" role="status">更新中…</span></div>
-  <div class="ns-stats" aria-label="节点概况">
+  <div class="ns-meta"><span id="ns-updated">Awaiting the first probe</span><span id="ns-connection" role="status">Updating…</span></div>
+  <div class="ns-stats" aria-label="Node overview">
     <div><span>Accept</span><strong id="ns-available">—</strong></div>
     <div><span>Time Limit Exceed</span><strong id="ns-failed">—</strong></div>
     <div><span>Skipped</span><strong id="ns-unknown">—</strong></div>
   </div>
-  <div class="ns-section-top"><h2>线路与节点</h2><label for="ns-search" class="ns-sr-only">搜索 IPv4 或 IPv6 节点</label><input id="ns-search" type="search" placeholder="搜索节点…"></div>
-  <div id="ns-components"><p class="ns-empty">等待监测结果。所有节点将默认展开显示。</p></div>
-  <div class="ns-legend"><span><i class="ns-swatch operational"></i>Accept</span><span><i class="ns-swatch degraded"></i>Partial</span><span><i class="ns-swatch down"></i>Time Limit Exceed</span><span><i class="ns-swatch unknown"></i>Skipped</span><span><i class="ns-swatch monitor-error"></i>监控任务异常</span></div>
-  <p class="ns-caption">柱高表示可用率，颜色由红经黄渐变至绿：100% 为满高纯绿，0% 无填充、以红色底线标记。灰色与条纹表示无有效结果。</p>
-  <p id="ns-history-detail" class="ns-caption" aria-live="polite">点击历史柱，查看该两小时区间的检测结果（最近 7 天，共 84 格）。</p>
+  <div class="ns-section-top"><h2>Routes and nodes</h2><label for="ns-search" class="ns-sr-only">Search IPv4 or IPv6 nodes</label><input id="ns-search" type="search" placeholder="Search nodes…"></div>
+  <div id="ns-components"><p class="ns-empty">Waiting for probe results. All nodes are shown by default.</p></div>
+  <div class="ns-legend"><span><i class="ns-swatch operational"></i>Accept</span><span><i class="ns-swatch degraded"></i>Partial</span><span><i class="ns-swatch down"></i>Time Limit Exceed</span><span><i class="ns-swatch unknown"></i>Skipped</span><span><i class="ns-swatch monitor-error"></i>Monitor error</span></div>
+  <p class="ns-caption">Bar height represents availability. Colors range from red through yellow to green: 100% is a full green bar; 0% has no fill and a red baseline. Gray and striped bars indicate missing results.</p>
+  <p id="ns-history-detail" class="ns-caption" aria-live="polite">Select a history bar to view results for that two-hour interval (84 intervals over the last 7 days).</p>
   <div class="ns-bottom">
-    <section><div class="ns-section-top"><h2>最近 7 天状态变化</h2></div><p class="ns-caption">记录线路状态与逐节点变化，可展开查看受影响节点、检测数量、延迟及上轮对照。事件时间采用北京时间。</p><div id="ns-events" class="ns-panel"><p class="ns-empty">等待首次检测。</p></div></section>
-    <aside><div class="ns-section-top"><h2>关于监测</h2></div><div class="ns-panel ns-about"><p>监测位置：阿里云上海。节点通过代理连接 HTTPS 测试目标成功后，才标记为可用。</p><p id="ns-latency-mode">正在读取本轮延迟的测速模式。</p><p>服务器每两小时探测一次；超过 2 小时 5 分钟的检测结果会失效。页面刷新只读取最近一次探测结果，不触发额外探测。各地运营商、客户端和目标网站的体验可能不同。</p><p>历史展示最近 7 天的 84 个区块，每格代表两小时，以该区间最后一次实际探测结果显示柱高与颜色。可用率按成功与失败的节点检测样本计算，不代表 SLA。灰色表示尚未检测或没有有效记录，条纹灰色表示监控任务异常；点击历史柱可查看具体说明。</p><p>状态采用判题风格：Accept 表示成功，Partial 表示部分异常，Time Limit Exceed 表示连接检测失败（包括超时或连接错误），Skipped 表示无记录或结果过期。</p><p id="ns-record-start">历史从启用监测后开始积累。</p></div></aside>
+    <section><div class="ns-section-top"><h2>Status changes in the last 7 days</h2></div><p class="ns-caption">Route and node changes, with expandable probe counts, affected nodes, latency, and previous results. All times are in China Standard Time (UTC+8).</p><div id="ns-events" class="ns-panel"><p class="ns-empty">Awaiting the first probe.</p></div></section>
+    <aside><div class="ns-section-top"><h2>About this monitor</h2></div><div class="ns-panel ns-about"><p>Monitoring location: Alibaba Cloud, Shanghai. A node is marked available only after a successful connection to the HTTPS test target through its proxy.</p><p id="ns-latency-mode">Loading the latency measurement mode.</p><p>The server probes every two hours. Results expire after 2 hours and 5 minutes. Refreshing this page reads the latest saved results without triggering another probe. Your experience may vary by network, client, and destination.</p><p>History covers 84 two-hour intervals over the last 7 days. Each bar shows availability from the last actual probe in that interval. Availability is calculated from successful and failed node checks and does not represent an SLA. Gray means no valid record; striped gray indicates a monitor error. Select a bar for details.</p><p>Status labels follow programming contest verdicts: Accept means success; Partial means some nodes failed; Time Limit Exceed means a failed connection check, including timeouts or connection errors; Skipped means no valid record or expired results.</p><p id="ns-record-start">History accumulates from the time monitoring is enabled.</p></div></aside>
   </div>
-  <noscript><p class="ns-empty">请启用 JavaScript 查看实时节点状态。</p></noscript>
+  <noscript><p class="ns-empty">Enable JavaScript to view live node status.</p></noscript>
 </div>
 <script src="{{ '/assets/js/network-status.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
