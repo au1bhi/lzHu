@@ -117,7 +117,13 @@
       for (const d of history) {
         const bar = el('button', undefined, 'ns-bar ' + (Object.hasOwn(labels, d.state) ? d.state : 'unknown')); bar.type = 'button';
         let detail;
-        if (d.samples) detail = d.availability + '% 可用 · ' + d.samples + ' 个节点检测样本';
+        if (d.samples > 0 && Number.isFinite(d.availability) && d.availability >= 0 && d.availability <= 100) {
+          bar.classList.add('measured');
+          bar.style.setProperty('--ns-bar-height', d.availability + '%');
+          bar.style.setProperty('--ns-bar-color', 'hsl(' + (d.availability * 1.2) + ', 100%, 50%)');
+          if (d.availability === 0) bar.classList.add('zero');
+          detail = d.availability + '% 可用 · ' + d.samples + ' 个节点检测样本';
+        }
         else if (d.monitorError && Number.isFinite(d.monitorError.at)) {
           const stages = {cadence: '保存探测计划', configuration: '读取探测配置', measurement: '执行探测', 'snapshot-write': '保存检测结果', 'history-write': '保存历史记录', 'journal-write': '保存逐轮日志'};
           const reasons = {timeout: '操作超时', 'controller-unavailable': '探测控制器不可用', 'invalid-inventory': '节点清单无效', 'oversized-response': '控制器响应超出限制', 'storage-error': '文件存储异常', 'invalid-json': '响应或配置格式无效', 'controller-authentication': '探测控制器鉴权失败', 'process-interrupted': '监控进程在本轮完成前中断', 'unexpected-error': '执行异常，诊断位置已保存到逐轮日志'};

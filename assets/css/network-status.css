@@ -63,11 +63,15 @@
 .ns-pill.down { color: var(--ns-red); }
 .ns-pill.down:before { background: var(--ns-red); }
 .ns-bars { display: grid; grid-template-columns: repeat(84, minmax(0, 1fr)); gap: 2px; }
-.ns-page .ns-bar { padding: 0; margin: 0; height: 24px; min-width: 0; border: 0; border-radius: 1px; background: var(--ns-line); cursor: pointer; }
+.ns-page .ns-bar { position: relative; padding: 0; margin: 0; height: 32px; min-width: 0; border: 0; border-radius: 1px; background: var(--ns-line); cursor: pointer; }
+.ns-page .ns-bar.measured { background: var(--ns-soft); }
+.ns-bar.measured::after { content: ''; position: absolute; inset: auto 0 0; height: var(--ns-bar-height); background: var(--ns-bar-color); border-radius: 1px; pointer-events: none; }
+/* A zero-height fill still needs a visible, clickable failure marker. */
+.ns-bar.measured.zero::before { content: ''; position: absolute; inset: auto 0 0; border-bottom: 1px solid var(--ns-bar-color); pointer-events: none; }
 .ns-page .ns-bar.monitor-error, .ns-swatch.monitor-error { background: repeating-linear-gradient(135deg, var(--ns-line) 0, var(--ns-line) 2px, var(--ns-gray) 2px, var(--ns-gray) 3px); }
-.ns-bar.operational, .ns-swatch.operational { background: #29936a; }
-.ns-bar.degraded, .ns-swatch.degraded { background: #c89540; }
-.ns-bar.down, .ns-swatch.down { background: #c45552; }
+.ns-swatch.operational { background: #00ff00; }
+.ns-swatch.degraded { background: #ffff00; }
+.ns-swatch.down { background: #ff0000; }
 .ns-page .ns-bar:hover { filter: brightness(0.8); }
 .ns-axis { display: flex; justify-content: space-between; color: var(--ns-muted); font-size: 0.7em; margin-top: 6px; }
 .ns-node-header, .ns-node { display: grid; grid-template-columns: minmax(0, 1fr) 155px 75px; gap: 12px; align-items: center; padding: 11px 10px; border-bottom: 1px solid var(--ns-line); font-size: 0.85em; }
@@ -111,7 +115,7 @@
   .ns-stats span { font-size: 0.75em; }
   .ns-page input[type=search] { width: 140px; }
   .ns-bars { gap: 1px; }
-  .ns-page .ns-bar { height: 22px; }
+  .ns-page .ns-bar { height: 28px; }
   .ns-node-header, .ns-node { grid-template-columns: minmax(0, 1fr) 112px 52px; gap: 6px; padding: 10px 6px; font-size: 0.82em; }
   .ns-node .ns-pill { font-size: 0.9em; gap: 4px; }
   .ns-legend { gap: 12px; }

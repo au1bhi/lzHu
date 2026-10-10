@@ -25,10 +25,11 @@ excerpt: "IPv4 与 IPv6 节点的实时连接状态和真实检测历史。"
   <div class="ns-section-top"><h2>线路与节点</h2><label for="ns-search" class="ns-sr-only">搜索 IPv4 或 IPv6 节点</label><input id="ns-search" type="search" placeholder="搜索节点…"></div>
   <div id="ns-components"><p class="ns-empty">等待监测结果。所有节点将默认展开显示。</p></div>
   <div class="ns-legend"><span><i class="ns-swatch operational"></i>Accept</span><span><i class="ns-swatch degraded"></i>Partial</span><span><i class="ns-swatch down"></i>Time Limit Exceed</span><span><i class="ns-swatch unknown"></i>Skipped</span><span><i class="ns-swatch monitor-error"></i>监控任务异常</span></div>
-  <p id="ns-history-detail" class="ns-caption" aria-live="polite">点击历史色块，查看该两小时区间的检测结果（最近 7 天，共 84 格）。</p>
+  <p class="ns-caption">柱高表示可用率，颜色由红经黄渐变至绿：100% 为满高纯绿，0% 无填充、以红色底线标记。灰色与条纹表示无有效结果。</p>
+  <p id="ns-history-detail" class="ns-caption" aria-live="polite">点击历史柱，查看该两小时区间的检测结果（最近 7 天，共 84 格）。</p>
   <div class="ns-bottom">
     <section><div class="ns-section-top"><h2>最近 7 天状态变化</h2></div><p class="ns-caption">记录线路状态与逐节点变化，可展开查看受影响节点、检测数量、延迟及上轮对照。事件时间采用北京时间。</p><div id="ns-events" class="ns-panel"><p class="ns-empty">等待首次检测。</p></div></section>
-    <aside><div class="ns-section-top"><h2>关于监测</h2></div><div class="ns-panel ns-about"><p>监测位置：阿里云上海。节点通过代理连接 HTTPS 测试目标成功后，才标记为可用。</p><p id="ns-latency-mode">正在读取本轮延迟的测速模式。</p><p>服务器每两小时探测一次；超过 2 小时 5 分钟的检测结果会失效。页面刷新只读取最近一次探测结果，不触发额外探测。各地运营商、客户端和目标网站的体验可能不同。</p><p>历史展示最近 7 天的 84 个区块，每格代表两小时，以该区间最后一次实际探测结果着色。可用率按成功与失败的节点检测样本计算，不代表 SLA。灰色表示尚未检测或没有有效记录，条纹灰色表示监控任务异常；点击色块可查看具体说明。</p><p>状态采用判题风格：Accept 表示成功，Partial 表示部分异常，Time Limit Exceed 表示连接检测失败（包括超时或连接错误），Skipped 表示无记录或结果过期。</p><p id="ns-record-start">历史从启用监测后开始积累。</p></div></aside>
+    <aside><div class="ns-section-top"><h2>关于监测</h2></div><div class="ns-panel ns-about"><p>监测位置：阿里云上海。节点通过代理连接 HTTPS 测试目标成功后，才标记为可用。</p><p id="ns-latency-mode">正在读取本轮延迟的测速模式。</p><p>服务器每两小时探测一次；超过 2 小时 5 分钟的检测结果会失效。页面刷新只读取最近一次探测结果，不触发额外探测。各地运营商、客户端和目标网站的体验可能不同。</p><p>历史展示最近 7 天的 84 个区块，每格代表两小时，以该区间最后一次实际探测结果显示柱高与颜色。可用率按成功与失败的节点检测样本计算，不代表 SLA。灰色表示尚未检测或没有有效记录，条纹灰色表示监控任务异常；点击历史柱可查看具体说明。</p><p>状态采用判题风格：Accept 表示成功，Partial 表示部分异常，Time Limit Exceed 表示连接检测失败（包括超时或连接错误），Skipped 表示无记录或结果过期。</p><p id="ns-record-start">历史从启用监测后开始积累。</p></div></aside>
   </div>
   <noscript><p class="ns-empty">请启用 JavaScript 查看实时节点状态。</p></noscript>
 </div>
