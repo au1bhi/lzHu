@@ -12,7 +12,7 @@
   color: var(--on-accent);
   font-family: $sans-serif;
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
   background: var(--accent);
   border-radius: var(--radius-sm);
@@ -60,9 +60,9 @@
   gap: 0.6rem;
   margin-right: auto;
   color: var(--ink);
-  font-family: $serif;
+  font-family: $sans-serif;
   font-size: 1.125rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: -0.01em;
   text-decoration: none;
   white-space: nowrap;
@@ -97,7 +97,7 @@
   padding: 0.4rem 0.75rem;
   color: var(--ink-2);
   font-size: 0.9375rem;
-  font-weight: 500;
+  font-weight: 400;
   text-decoration: none;
   border-radius: 999px;
   white-space: nowrap;
@@ -356,7 +356,7 @@
   margin: 0 0 0.75rem;
   color: var(--ink-3);
   font-size: 0.6875rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -383,7 +383,7 @@
 
 .toc a.is-active {
   color: var(--accent-ink);
-  font-weight: 600;
+  font-weight: 700;
   border-left-color: var(--accent);
 }
 
@@ -401,7 +401,7 @@
   color: var(--accent-ink);
   font-family: $sans-serif;
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -413,7 +413,7 @@
 .page__lead {
   max-width: 40rem;
   margin: 0.9rem 0 0;
-  color: var(--ink-2);
+  color: var(--ink);
   font-size: 1.1875rem;
   line-height: 1.55;
 }
@@ -534,7 +534,7 @@ h3:hover > .heading-anchor,
 .hero__title {
   margin: 0;
   font-size: clamp(2.5rem, calc(1.5rem + 4.2vw), 4.25rem);
-  font-weight: 560;
+  font-weight: 700;
   line-height: 1.05;
   letter-spacing: -0.028em;
 }
@@ -542,7 +542,7 @@ h3:hover > .heading-anchor,
 .hero__lead {
   max-width: 38rem;
   margin: 1.4rem 0 0;
-  color: var(--ink-2);
+  color: var(--ink);
   font-size: clamp(1.0625rem, calc(1rem + 0.4vw), 1.25rem);
   line-height: 1.6;
 }
@@ -653,7 +653,7 @@ h3:hover > .heading-anchor,
   color: var(--ink-2);
   font-family: $sans-serif;
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -705,9 +705,9 @@ h3:hover > .heading-anchor,
 
 .site-footer__name {
   color: var(--ink);
-  font-family: $serif;
+  font-family: $sans-serif;
   font-size: 1.0625rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .site-footer__credit {
@@ -810,7 +810,8 @@ h3:hover > .heading-anchor,
   content: counter(toc, decimal-leading-zero);
   margin-right: 0.6rem;
   color: var(--ink-3);
-  font-family: $monospace;
+  font-family: $sans-serif;
+  font-variant-numeric: tabular-nums;
   font-size: 0.6875rem;
   transition: color var(--t-fast) ease;
 }
@@ -962,7 +963,7 @@ h3:hover > .heading-anchor,
   display: block;
   color: var(--ink);
   font-size: clamp(1.375rem, calc(1rem + 1.4vw), 1.875rem);
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.015em;
   transition: color var(--t-fast) ease;
@@ -977,7 +978,7 @@ h3:hover > .heading-anchor,
   margin-top: 0.5rem;
   font-family: $sans-serif;
   font-size: 0.9375rem;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.35;
 }
 
@@ -1033,7 +1034,7 @@ h3:hover > .heading-anchor,
   padding: 0 0.6rem;
   color: var(--ink-2);
   font-size: 0.8125rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.02em;
   text-decoration: none;
   border: 1px solid var(--line-strong);
@@ -1047,14 +1048,13 @@ h3:hover > .heading-anchor,
   border-color: var(--accent);
 }
 
-/* Chinese pages: no synthetic italics, slightly more open lines. */
-:lang(zh-Hans) em,
-:lang(zh-Hans) blockquote {
-  font-style: normal;
-}
-
-html:lang(zh-Hans) body {
-  line-height: 1.75;
+/* Chinese headlines: no negative tracking between full-width characters. */
+:lang(zh-Hans) h1,
+:lang(zh-Hans) h2,
+:lang(zh-Hans) h3,
+:lang(zh-Hans) .proof__value,
+:lang(zh-Hans) .card__title {
+  letter-spacing: 0;
 }
 
 html:lang(zh-Hans) .hero__title {
@@ -1065,10 +1065,4 @@ html:lang(zh-Hans) .hero__title {
 .home-about + .focus-list {
   margin-top: 1.75rem;
   border-top: 1px solid var(--line);
-}
-
-:lang(zh-Hans) .timeline__date {
-  font-family: $sans-serif;
-  font-size: 0.8125rem;
-  letter-spacing: 0;
 }

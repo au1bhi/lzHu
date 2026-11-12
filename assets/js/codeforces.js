@@ -227,7 +227,7 @@
     Chart.defaults.plugins.legend.display = false;
     Object.assign(Chart.defaults.plugins.tooltip, {
       backgroundColor: c.ink, titleColor: c.bg, bodyColor: c.bg, padding: 10, cornerRadius: 8,
-      displayColors: false, titleFont: { weight: '600' }, caretSize: 5
+      displayColors: false, titleFont: { weight: 700 }, caretSize: 5
     });
 
     const grid = { color: c.line, drawTicks: false };

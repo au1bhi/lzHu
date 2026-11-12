@@ -23,13 +23,13 @@ figure.highlight pre {
   background: none;
 }
 
-.highlight .c, .highlight .cm, .highlight .c1, .highlight .cs, .highlight .sd { color: var(--syn-comment); font-style: italic; }
+.highlight .c, .highlight .cm, .highlight .c1, .highlight .cs, .highlight .sd { color: var(--syn-comment); font-style: normal; }
 .highlight .k, .highlight .kc, .highlight .kd, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .ow, .highlight .cp { color: var(--syn-keyword); }
 .highlight .kt, .highlight .nc, .highlight .ne, .highlight .gr, .highlight .sr { color: var(--syn-type); }
 .highlight .s, .highlight .sb, .highlight .sc, .highlight .s2, .highlight .sh, .highlight .si, .highlight .sx, .highlight .s1, .highlight .ss, .highlight .gi { color: var(--syn-string); }
 .highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .mo, .highlight .il, .highlight .no, .highlight .se { color: var(--syn-number); }
 .highlight .nf, .highlight .nt, .highlight .nd, .highlight .nb, .highlight .bp, .highlight .nv, .highlight .vc, .highlight .vg, .highlight .vi, .highlight .na { color: var(--syn-name); }
 .highlight .gd { color: var(--bad); }
-.highlight .ge { font-style: italic; }
-.highlight .gs { font-weight: bold; }
-.highlight .gh, .highlight .gu { color: var(--ink-2); font-weight: bold; }
+.highlight .ge { font-style: normal; }
+.highlight .gs { font-weight: 700; }
+.highlight .gh, .highlight .gu { color: var(--ink-2); font-weight: 700; }

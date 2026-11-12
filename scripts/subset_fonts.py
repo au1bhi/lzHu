@@ -13,12 +13,8 @@ UNICODES = ('U+0020-007E,U+00A0-017F,U+02C6,U+02DA,U+02DC,U+2010-2015,U+2018-201
             'U+2026,U+2030,U+2032,U+2033,U+2039,U+203A,U+2044,U+20AC,U+2122,U+2190-2193,U+2196-2199,'
             'U+2212,U+2215,U+2248,U+2260,U+2264,U+2265,U+00D7,U+00F7')
 JOBS = {
-    'source-serif-4-roman.woff2': ('site-serif-roman.woff2', 'Site Serif'),
-    'source-serif-4-italic.woff2': ('site-serif-italic.woff2', 'Site Serif'),
     'source-sans-3-roman.woff2': ('site-sans-roman.woff2', 'Site Sans'),
-    'source-sans-3-italic.woff2': ('site-sans-italic.woff2', 'Site Sans'),
     'source-code-pro-roman.woff2': ('site-mono-roman.woff2', 'Site Mono'),
-    'source-code-pro-italic.woff2': ('site-mono-italic.woff2', 'Site Mono'),
 }
 for source, (target, family) in JOBS.items():
     options = subset.Options()

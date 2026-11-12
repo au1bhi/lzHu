@@ -23,13 +23,10 @@ body {
   margin: 0;
   color: var(--ink);
   background-color: var(--bg);
-  font-family: $serif;
+  font-family: $sans-serif;
   font-size: 1.0625rem;
-  font-optical-sizing: auto;
-  line-height: 1.65;
+  line-height: 1.7;
   text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 ::selection {
@@ -59,8 +56,8 @@ h5,
 h6 {
   margin: 2.2em 0 0.6em;
   color: var(--ink);
-  font-family: $serif;
-  font-weight: 600;
+  font-family: $sans-serif;
+  font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.012em;
   text-wrap: balance;
@@ -105,7 +102,7 @@ small,
 
 strong,
 b {
-  font-weight: 650;
+  font-weight: 700;
 }
 
 a {
@@ -139,7 +136,6 @@ blockquote {
   margin: 1.75em 0;
   padding: 0.1em 0 0.1em 1.25em;
   color: var(--ink-2);
-  font-style: italic;
   border-left: 2px solid var(--accent);
 }
 
@@ -184,7 +180,7 @@ li::marker {
 dt {
   margin-top: 1em;
   font-family: $sans-serif;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 dd {
@@ -273,7 +269,7 @@ td {
 th {
   color: var(--ink-2);
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   white-space: nowrap;
@@ -396,4 +392,13 @@ select:focus {
   width: 1.1em;
   height: 1.1em;
   vertical-align: -0.16em;
+}
+
+/* Emphasis: Chinese has no italic, and a slanted Latin run inside an upright
+   Chinese line looks like a second typeface, so emphasis is upright. */
+em,
+i,
+cite,
+dfn {
+  font-style: normal;
 }

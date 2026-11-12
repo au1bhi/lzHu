@@ -5,12 +5,15 @@
    explicit toggle and for the no-JavaScript system preference.
    ========================================================================== */
 
-/* Claude-inspired reading / interface / code pairing. The self-hosted faces are
-   Latin subsets of Source Serif 4, Source Sans 3 and Source Code Pro, renamed
-   "Site …" as their licence requires (see assets/fonts/README.md). */
-$serif      : "Anthropic Serif", "Tiempos Text", "Site Serif", "Source Serif 4", Georgia, "Noto Serif CJK SC", "Source Han Serif SC", "Songti SC", "STSong", "SimSun", serif;
-$sans-serif : "Anthropic Sans", "Styrene B", "Site Sans", "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans CJK SC", "PingFang SC", "Microsoft YaHei", sans-serif;
-$monospace  : "Anthropic Mono", "Site Mono", "Source Code Pro", ui-monospace, "SFMono-Regular", Consolas, "Noto Sans CJK SC", monospace;
+/* One typeface for all text: a humanist sans for Latin with the system's
+   Chinese sans beside it, so mixed Chinese/English lines share weight and
+   texture. Only two weights are used site-wide: 400 and 700. Every common
+   Chinese system font has exactly these, so Latin and Chinese emphasis match;
+   an in-between weight would render lighter in Latin than in Chinese. Monospace is reserved for code.
+   "Site Sans" / "Site Mono" are Latin subsets of Source Sans 3 and Source Code
+   Pro, renamed as their licence requires (see assets/fonts/README.md). */
+$sans-serif : "Site Sans", "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", sans-serif;
+$monospace  : "Site Mono", "Source Code Pro", ui-monospace, "SFMono-Regular", Consolas, "Noto Sans CJK SC", monospace;
 
 $nav-collapse : 760px;   /* below this the primary navigation becomes a sheet */
 $toc-visible  : 1120px;  /* from this width the section index sits beside content */
@@ -23,37 +26,9 @@ $toc-visible  : 1120px;  /* from this width the section index sits beside conten
   font-display: swap;
 }
 @font-face {
-  font-family: "Site Sans";
-  src: url("../fonts/site-sans-italic.woff2") format("woff2");
-  font-style: italic;
-  font-weight: 300 700;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Site Serif";
-  src: url("../fonts/site-serif-roman.woff2") format("woff2");
-  font-style: normal;
-  font-weight: 300 700;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Site Serif";
-  src: url("../fonts/site-serif-italic.woff2") format("woff2");
-  font-style: italic;
-  font-weight: 300 700;
-  font-display: swap;
-}
-@font-face {
   font-family: "Site Mono";
   src: url("../fonts/site-mono-roman.woff2") format("woff2");
   font-style: normal;
-  font-weight: 300 700;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Site Mono";
-  src: url("../fonts/site-mono-italic.woff2") format("woff2");
-  font-style: italic;
   font-weight: 300 700;
   font-display: swap;
 }
@@ -98,20 +73,20 @@ $toc-visible  : 1120px;  /* from this width the section index sits beside conten
   color-scheme: light;
 
   --font-sans: #{inspect($sans-serif)};
-  --font-serif: #{inspect($serif)};
+  --font-serif: #{inspect($sans-serif)};   /* alias: the site uses one text face */
   --font-mono: #{inspect($monospace)};
 
   /* Surfaces and ink */
   --bg: #faf9f5;
   --bg-raised: #ffffff;
   --bg-sunken: #f2f0e9;
-  --ink: #1c1b19;
-  --ink-2: #57534d;
-  --ink-3: #8a867d;
+  --ink: #171614;
+  --ink-2: #3f3c37;
+  --ink-3: #6b675f;
   --line: #e7e3d9;
   --line-strong: #d0cbbe;
-  --accent: #136f63;
-  --accent-ink: #0f5d53;
+  --accent: #0f665b;
+  --accent-ink: #0b5249;
   --on-accent: #ffffff;
   --masthead-bg: #faf9f5cc;
   --shadow-sm: 0 1px 2px #1c1b190d;
@@ -130,7 +105,7 @@ $toc-visible  : 1120px;  /* from this width the section index sits beside conten
 
   /* Code */
   --code-bg: #f5f3ec;
-  --syn-comment: #8a867d;
+  --syn-comment: #6b675f;
   --syn-keyword: #7a3fb0;
   --syn-string: #2c7a3f;
   --syn-number: #9a5b00;
