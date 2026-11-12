@@ -163,6 +163,7 @@
     $('latency-mode').textContent = latest.latencyMode === 'unified' ? '延迟使用 Clash/Mihomo URL Test 的统一延迟模式，目标为 gstatic HTTPS 204；以同一连接的第二次请求计时，第二次请求失败时内核可能回退到首次请求。结果来自上海监测点，与本地客户端可能不同。' : '当前检测结果尚未确认使用统一延迟；请等待下一轮检测。延迟来自上海监测点，与本地客户端可能不同。';
     $('updated').textContent = Number.isFinite(latest.checkedAt) ? '最近检测 ' + date(latest.checkedAt) + '（北京时间）' : '等待首次检测';
     renderEvents(groups[0].probeHistory[0].startAt);
+    document.dispatchEvent(new CustomEvent('ns:render', {detail: {groups, expired, available, failed, unknown, checkedAt: latest.checkedAt, nextCheckAt: latest.nextCheckAt}}));
     $('record-start').textContent = latest.startedAt ? '记录始于 ' + date(latest.startedAt) + '（北京时间）。' : '历史将在首次完成检测后开始积累。';
   }
   async function refresh() {

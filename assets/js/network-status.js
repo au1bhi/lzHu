@@ -162,6 +162,7 @@
     $('latency-mode').textContent = latest.latencyMode === 'unified' ? 'Latency uses Clash/Mihomo URL Test in unified mode against the gstatic HTTPS 204 endpoint. It times the second request on the same connection; the proxy core may fall back to the first if the second fails. Measurements are from Shanghai and may differ from your client.' : 'Unified latency mode is not confirmed for these results. Please wait for the next probe. Measurements are from Shanghai and may differ from your client.';
     $('updated').textContent = Number.isFinite(latest.checkedAt) ? 'Last probe: ' + date(latest.checkedAt) + ' (UTC+8)' : 'Awaiting the first probe';
     renderEvents(groups[0].probeHistory[0].startAt);
+    document.dispatchEvent(new CustomEvent('ns:render', {detail: {groups, expired, available, failed, unknown, checkedAt: latest.checkedAt, nextCheckAt: latest.nextCheckAt}}));
     $('record-start').textContent = latest.startedAt ? 'Records started: ' + date(latest.startedAt) + ' (UTC+8).' : 'History will accumulate after the first completed probe.';
   }
   async function refresh() {

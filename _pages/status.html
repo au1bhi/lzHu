@@ -11,21 +11,31 @@ lead: "Live connection checks from Shanghai for individual IPv4 and IPv6 nodes."
 
 <link rel="stylesheet" href="{{ '/assets/css/network-status.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 <div class="ns-page" id="network-status" data-endpoint="https://notellm.au1bhi.com/network-status/ip-data">
-  <section id="ns-banner" class="ns-banner unknown" aria-live="polite">
-    <span class="ns-icon" aria-hidden="true">◉</span>
-    <div><h2 id="ns-headline">Loading monitoring data</h2><p id="ns-note">Fetching the latest IPv4 and IPv6 probe results.</p></div>
+  <section class="ns-hero">
+    <div id="ns-banner" class="ns-banner unknown" aria-live="polite">
+      <span class="ns-orb" aria-hidden="true"><i></i></span>
+      <div><h2 id="ns-headline">Loading monitoring data</h2><p id="ns-note">Fetching the latest IPv4 and IPv6 probe results.</p></div>
+    </div>
+    <div class="ns-hero__figure">
+      <strong id="ns-uptime">—</strong>
+      <span>availability over the last 7 days</span>
+    </div>
+    <div class="ns-hero__nodes">
+      <div class="ns-split" id="ns-split" aria-hidden="true"><i class="operational"></i><i class="down"></i><i class="unknown"></i></div>
+      <div class="ns-stats" aria-label="Node overview">
+        <div class="operational"><span>Accept</span><strong id="ns-available">—</strong></div>
+        <div class="down"><span>Time Limit Exceed</span><strong id="ns-failed">—</strong></div>
+        <div><span>Skipped</span><strong id="ns-unknown">—</strong></div>
+        <div class="latency"><span>Median latency</span><strong id="ns-median">—</strong></div>
+      </div>
+    </div>
+    <div class="ns-meta"><span id="ns-updated">Awaiting the first probe</span><span id="ns-next"></span><span id="ns-connection" role="status">Updating…</span><button id="ns-refresh" class="ns-button" type="button">{% include icon.html name="refresh" %} Refresh</button></div>
   </section>
-  <div class="ns-meta"><span id="ns-updated">Awaiting the first probe</span><span id="ns-connection" role="status">Updating…</span><button id="ns-refresh" class="ns-button" type="button">{% include icon.html name="refresh" %} Refresh</button></div>
-  <div class="ns-stats" aria-label="Node overview">
-    <div class="operational"><span>Accept</span><strong id="ns-available">—</strong></div>
-    <div class="down"><span>Time Limit Exceed</span><strong id="ns-failed">—</strong></div>
-    <div><span>Skipped</span><strong id="ns-unknown">—</strong></div>
-  </div>
   <div class="ns-section-top"><h2>Routes and nodes</h2><label for="ns-search" class="ns-sr-only">Search IPv4 or IPv6 nodes</label><input id="ns-search" type="search" placeholder="Search nodes…"></div>
   <div id="ns-components"><p class="ns-empty">Waiting for probe results. All nodes are shown by default.</p></div>
   <div class="ns-legend"><span><i class="ns-swatch operational"></i>Accept</span><span><i class="ns-swatch degraded"></i>Partial</span><span><i class="ns-swatch down"></i>Time Limit Exceed</span><span><i class="ns-swatch unknown"></i>Skipped</span><span><i class="ns-swatch monitor-error"></i>Monitor error</span></div>
-  <p class="ns-caption">Bar height represents availability. Colors range from red through yellow to green: 100% is a full green bar; 0% has no fill and a red baseline. Gray and striped bars indicate missing results.</p>
-  <p id="ns-history-detail" class="ns-caption" aria-live="polite">Select a history bar to view results for that two-hour interval (84 intervals over the last 7 days).</p>
+  <p class="ns-caption">Each bar is one two-hour interval. Green: every node check passed. Amber: some failed, and the solid part shows the share that passed. Red: all failed. Gray or striped: no valid result.</p>
+  <p id="ns-history-detail" class="ns-sr-only" aria-live="polite">Hover over or select a history bar to view that two-hour interval (84 intervals over the last 7 days).</p>
   <div class="ns-bottom">
     <section><div class="ns-section-top"><h2>Status changes in the last 7 days</h2></div><p class="ns-caption">Route and node changes, with expandable probe counts, affected nodes, latency, and previous results. All times are in China Standard Time (UTC+8).</p><div id="ns-events" class="ns-panel"><p class="ns-empty">Awaiting the first probe.</p></div></section>
     <aside><div class="ns-section-top"><h2>About this monitor</h2></div><div class="ns-panel ns-about"><p>Monitoring location: Alibaba Cloud, Shanghai. A node is marked available only after a successful connection to the HTTPS test target through its proxy.</p><p id="ns-latency-mode">Loading the latency measurement mode.</p><p>The server probes every two hours. Results expire after 2 hours and 5 minutes. Refreshing this page reads the latest saved results without triggering another probe. Your experience may vary by network, client, and destination.</p><p>History covers 84 two-hour intervals over the last 7 days. Each bar shows availability from the last actual probe in that interval. Availability is calculated from successful and failed node checks and does not represent an SLA. Gray means no valid record; striped gray indicates a monitor error. Select a bar for details.</p><p>Status labels follow programming contest verdicts: Accept means success; Partial means some nodes failed; Time Limit Exceed means a failed connection check, including timeouts or connection errors; Skipped means no valid record or expired results.</p><p id="ns-record-start">History accumulates from the time monitoring is enabled.</p></div></aside>
@@ -33,3 +43,4 @@ lead: "Live connection checks from Shanghai for individual IPv4 and IPv6 nodes."
   <noscript><p class="ns-empty">Enable JavaScript to view live node status.</p></noscript>
 </div>
 <script src="{{ '/assets/js/network-status.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
+<script src="{{ '/assets/js/network-status-ui.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
