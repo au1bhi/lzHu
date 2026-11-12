@@ -48,6 +48,8 @@ def collect():
                 continue
     # Punctuation and digits likely to appear in future text.
     chars.update('，。、；：？！（）《》〈〉【】「」『』—…·～％＋－／０１２３４５６７８９年月日')
+    # Characters that arrive in live data rather than in the sources (status-page node names).
+    chars.update('优选节点线路原生香港日本新加坡美国台湾韩国英国德国')
     return chars
 
 
