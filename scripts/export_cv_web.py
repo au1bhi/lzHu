@@ -42,6 +42,25 @@ HEADINGS = {
            'awards': 'Competitive Programming & Awards', 'skills': 'Technical Skills'},
 }
 SEPARATORS = {'zh': '｜', 'en': ' | '}
+# Links to the running services, shown on the website only. They are added
+# here rather than in variants.json so the PDF layouts are not affected.
+WEB_LINKS = {
+    'notellm-full': {'resource': {'zh': ['在线访问', 'https://notellm.au1bhi.com'],
+                                  'en': ['Live site', 'https://notellm.au1bhi.com']}},
+    'domjudge': {'url': 'https://judge.au1bhi.com'},
+}
+
+
+def with_web_links(key, item):
+    extra = WEB_LINKS.get(key)
+    if not extra:
+        return item
+    item = dict(item)
+    if 'url' in extra and 'url' not in item:
+        item['url'] = extra['url']
+    if 'resource' in extra:
+        item['resources'] = [extra['resource']] + list(item.get('resources', []))
+    return item
 
 
 def entry(item, language):
@@ -72,7 +91,7 @@ def entry(item, language):
 def profile(data, language):
     full = data['full']
     sections = [{'title': section['title'][language],
-                 'entries': [entry(data['entries'][key], language) for key in section['entries']]}
+                 'entries': [entry(with_web_links(key, data['entries'][key]), language) for key in section['entries']]}
                 for section in full['sections']]
     return {
         'headings': HEADINGS[language],
@@ -86,7 +105,7 @@ def profile(data, language):
         'resources': {'title': full['resources']['title'][language],
                       'entries': [entry(data['entries'][key], language) for key in full['resources']['entries']]},
         # The same entries and skill rows by registry key, for pages that pick individual items.
-        'by_key': {key.replace('-', '_'): entry(data['entries'][key], language)
+        'by_key': {key.replace('-', '_'): entry(with_web_links(key, data['entries'][key]), language)
                    for section in full['sections'] for key in section['entries']},
         'skill_by_key': {key.replace('-', '_'): data['skills'][key][language][1] for key in full['skills']},
     }

@@ -1,6 +1,6 @@
 {%- comment -%} Title block shared by the single and archive layouts. {%- endcomment -%}
 {% if page.title and page.title != "" %}
-<header class="page__header" data-reveal>
+<header class="page__header" data-reveal data-ghost="{{ page.ghost | default: page.title | strip_html | escape }}">
   {% if page.eyebrow %}<p class="page__eyebrow">{{ page.eyebrow }}</p>{% endif %}
   <h1 class="page__title" itemprop="headline">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>
   {% if page.lead %}<p class="page__lead">{{ page.lead }}</p>{% endif %}

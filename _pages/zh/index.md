@@ -33,11 +33,11 @@ highlights:
 {% assign notellm = cv.sections[0].entries[0] %}
 
 <section class="home-section" data-reveal>
-  <h2 class="home-section__label">重点项目</h2>
+  <h2 class="home-section__label">在线项目</h2>
   <div class="home-section__body">
     <article class="project">
       <header class="project__head">
-        <p class="card__kicker">{{ notellm.meta | join: " · " }}</p>
+        <p class="card__kicker">{{ notellm.meta | join: " · " }} · <a href="https://notellm.au1bhi.com" rel="noopener">notellm.au1bhi.com</a></p>
         <h3 class="project__title">{{ notellm.title }}</h3>
         <p class="project__text">{{ notellm.bullets[0].text }}{{ notellm.bullets[1].text }}{{ notellm.bullets[2].text }}</p>
       </header>
@@ -48,9 +48,18 @@ highlights:
       </dl>
       <p class="project__caveat">7 份合成资料、34 道固定问题的单次基线测试。结果仅衡量该合成测试集的检索与引用来源匹配，不代表答案准确率或通用场景性能。</p>
       <p class="project__links">
-        {% for resource in notellm.resources %}<a class="btn btn--small" href="{{ resource.url }}" rel="noopener">{% if forloop.first %}{% include icon.html name="github" %} {% endif %}{{ resource.label }}{% unless forloop.first %} {% include icon.html name="arrow-up-right" %}{% endunless %}</a>{% endfor %}
+        {% for resource in notellm.resources %}<a class="btn btn--small{% if forloop.first %} btn--primary{% endif %}" href="{{ resource.url }}" rel="noopener">{% if resource.url contains "github.com" and forloop.index == 2 %}{% include icon.html name="github" %} {% endif %}{{ resource.label }}{% unless forloop.index == 2 %} {% include icon.html name="arrow-up-right" %}{% endunless %}</a>{% endfor %}
       </p>
     </article>
+    {% assign judge = cv.by_key.domjudge %}
+    <a class="service" href="{{ judge.url }}" rel="noopener">
+      <span class="service__state"><span class="live-dot" aria-hidden="true"></span>运行中</span>
+      <span class="service__body">
+        <span class="service__title">{{ judge.title }}</span>
+        <span class="service__text">{{ judge.bullets[0].text }}</span>
+      </span>
+      <span class="service__host">judge.au1bhi.com {% include icon.html name="arrow-up-right" %}</span>
+    </a>
   </div>
 </section>
 

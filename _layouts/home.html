@@ -10,8 +10,8 @@ layout: default
 <div class="home">
   <section class="hero">
     <canvas class="hero__graph" data-hero-graph aria-hidden="true"></canvas>
-    <figure class="hero__portrait" data-tilt data-reveal style="--i: 1">
-      <img src="{{ author.avatar | prepend: "/images/" | prepend: base_path }}" alt="{{ t.portrait_alt }} {{ author.name }}" width="544" height="544" fetchpriority="high" decoding="async">
+    <figure class="hero__portrait" data-reveal style="--i: 1">
+      <img src="{{ author.avatar | prepend: "/images/" | prepend: base_path }}" alt="{{ t.portrait_alt }} {{ author.name }}" width="560" height="560" fetchpriority="high" decoding="async">
     </figure>
     <div class="hero__text">
       {% if page.eyebrow %}<p class="eyebrow" data-reveal>{{ page.eyebrow }}</p>{% endif %}

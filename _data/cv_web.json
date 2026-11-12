@@ -57,6 +57,10 @@
             "note": "评测口径与局限：Recall@5 检查预期来源是否出现在前五个检索分块中；引用来源匹配率检查回答是否至少包含一条来自预期来源、经校验的引用。结果仅衡量该合成测试集的检索与引用来源匹配，不代表答案准确率或通用场景性能。",
             "resources": [
               {
+                "label": "在线访问",
+                "url": "https://notellm.au1bhi.com"
+              },
+              {
                 "label": "源码",
                 "url": "https://github.com/au1bhi/NoteLLM"
               },
@@ -92,7 +96,8 @@
                 "label": "",
                 "text": "维护 Linux/Docker 容器化 DOMjudge 环境，为校内集训和程序设计竞赛提供在线评测支持。"
               }
-            ]
+            ],
+            "url": "https://judge.au1bhi.com"
           },
           {
             "title": "面向隐私的个人网络管理系统",
@@ -371,6 +376,10 @@
         "note": "评测口径与局限：Recall@5 检查预期来源是否出现在前五个检索分块中；引用来源匹配率检查回答是否至少包含一条来自预期来源、经校验的引用。结果仅衡量该合成测试集的检索与引用来源匹配，不代表答案准确率或通用场景性能。",
         "resources": [
           {
+            "label": "在线访问",
+            "url": "https://notellm.au1bhi.com"
+          },
+          {
             "label": "源码",
             "url": "https://github.com/au1bhi/NoteLLM"
           },
@@ -406,7 +415,8 @@
             "label": "",
             "text": "维护 Linux/Docker 容器化 DOMjudge 环境，为校内集训和程序设计竞赛提供在线评测支持。"
           }
-        ]
+        ],
+        "url": "https://judge.au1bhi.com"
       },
       "network": {
         "title": "面向隐私的个人网络管理系统",
@@ -631,6 +641,10 @@
             "note": "Evaluation scope: Recall@5 checks whether the expected source appears among the top five retrieved chunks; citation-to-source match checks whether an answer includes at least one validated citation from the expected source. Results measure retrieval and citation-source matching on this synthetic set, not answer accuracy or general-domain performance.",
             "resources": [
               {
+                "label": "Live site",
+                "url": "https://notellm.au1bhi.com"
+              },
+              {
                 "label": "Source code",
                 "url": "https://github.com/au1bhi/NoteLLM"
               },
@@ -666,7 +680,8 @@
                 "label": "",
                 "text": "Maintain a Linux/Docker-based DOMjudge environment for campus training and programming contests."
               }
-            ]
+            ],
+            "url": "https://judge.au1bhi.com"
           },
           {
             "title": "Privacy-Oriented Personal Network Management System",
@@ -946,6 +961,10 @@
         "note": "Evaluation scope: Recall@5 checks whether the expected source appears among the top five retrieved chunks; citation-to-source match checks whether an answer includes at least one validated citation from the expected source. Results measure retrieval and citation-source matching on this synthetic set, not answer accuracy or general-domain performance.",
         "resources": [
           {
+            "label": "Live site",
+            "url": "https://notellm.au1bhi.com"
+          },
+          {
             "label": "Source code",
             "url": "https://github.com/au1bhi/NoteLLM"
           },
@@ -981,7 +1000,8 @@
             "label": "",
             "text": "Maintain a Linux/Docker-based DOMjudge environment for campus training and programming contests."
           }
-        ]
+        ],
+        "url": "https://judge.au1bhi.com"
       },
       "network": {
         "title": "Privacy-Oriented Personal Network Management System",

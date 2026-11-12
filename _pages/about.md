@@ -31,11 +31,11 @@ redirect_from:
 {% include base_path %}
 
 <section class="home-section" data-reveal>
-  <h2 class="home-section__label">Featured project</h2>
+  <h2 class="home-section__label">Projects online</h2>
   <div class="home-section__body">
     <article class="project">
       <header class="project__head">
-        <p class="card__kicker">Undergraduate thesis · Ongoing</p>
+        <p class="card__kicker">Undergraduate thesis · Ongoing · <a href="https://notellm.au1bhi.com" rel="noopener">notellm.au1bhi.com</a></p>
         <h3 class="project__title">NoteLLM: Personal Learning Question-Answering System with Verifiable RAG</h3>
         <p class="project__text">A FastAPI backend with async SQLAlchemy, PostgreSQL, and pgvector for document retrieval across PDF, Markdown, and TXT files, with page-aware extraction, overlapping chunking, server-side citation validation, and source excerpt storage.</p>
       </header>
@@ -46,10 +46,19 @@ redirect_from:
       </dl>
       <p class="project__caveat">A single baseline run on 7 synthetic documents and 34 fixed questions. These are synthetic-set metrics, not answer accuracy or general-domain performance.</p>
       <p class="project__links">
+        <a class="btn btn--small btn--primary" href="https://notellm.au1bhi.com" rel="noopener">Open NoteLLM {% include icon.html name="arrow-up-right" %}</a>
         <a class="btn btn--small" href="https://github.com/au1bhi/NoteLLM" rel="noopener">{% include icon.html name="github" %} Source code</a>
         <a class="btn btn--small" href="https://github.com/au1bhi/NoteLLM/blob/master/docs/evaluation/latest-results.md" rel="noopener">Evaluation report {% include icon.html name="arrow-up-right" %}</a>
       </p>
     </article>
+    <a class="service" href="https://judge.au1bhi.com" rel="noopener">
+      <span class="service__state"><span class="live-dot" aria-hidden="true"></span>Online</span>
+      <span class="service__body">
+        <span class="service__title">DOMjudge Online Judge</span>
+        <span class="service__text">A containerized DOMjudge environment I maintain for campus training and programming contests.</span>
+      </span>
+      <span class="service__host">judge.au1bhi.com {% include icon.html name="arrow-up-right" %}</span>
+    </a>
   </div>
 </section>
 

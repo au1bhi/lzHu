@@ -345,46 +345,38 @@ a.card,
   background: currentColor;
 }
 
-/* Portrait: an arch with an offset hairline frame; it leans toward the pointer. */
+/* Portrait: a plain circle with one offset hairline ring. */
 .hero__portrait {
-  width: clamp(9rem, 30vw, 17.5rem);
-  perspective: 900px;
+  width: clamp(8.5rem, 28vw, 16.5rem);
 }
 
 .hero__portrait img {
-  aspect-ratio: 4 / 5;
-  object-position: 62% 50%;
-  border-radius: 999px 999px 1.25rem 1.25rem;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
   box-shadow: var(--shadow-lg);
   animation: none;
-  transform: rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
-  transition: transform 900ms var(--ease-soft);
-  will-change: transform;
 }
 
 .hero__portrait::after {
-  top: 0.9rem;
-  right: -0.9rem;
-  bottom: -0.9rem;
-  left: 0.9rem;
-  border: 1px solid var(--brass-soft);
-  border-color: color-mix(in srgb, var(--brass) 55%, transparent);
-  border-radius: 999px 999px 1.25rem 1.25rem;
+  top: -0.75rem;
+  right: -0.75rem;
+  bottom: -0.75rem;
+  left: -0.75rem;
+  border: 1px solid color-mix(in srgb, var(--brass) 50%, transparent);
+  border-radius: 50%;
   animation: none;
-  transform: translate(calc(var(--tilt-y, 0deg) * -0.6px), calc(var(--tilt-x, 0deg) * 0.6px));
-  transition: transform 1200ms var(--ease-soft);
 }
 
 @media (max-width: 819px) {
   .hero__portrait {
-    width: clamp(7.5rem, 34vw, 10rem);
+    width: clamp(7rem, 30vw, 9rem);
   }
 
   .hero__portrait::after {
-    top: 0.5rem;
-    right: -0.5rem;
-    bottom: -0.5rem;
-    left: 0.5rem;
+    top: -0.45rem;
+    right: -0.45rem;
+    bottom: -0.45rem;
+    left: -0.45rem;
   }
 }
 
@@ -572,11 +564,6 @@ a.card,
     filter: none;
     transform: none;
   }
-
-  .hero__portrait img,
-  .hero__portrait::after {
-    transform: none;
-  }
 }
 
 @media print {
@@ -595,5 +582,230 @@ a.card,
 
   .proof__item:first-child a {
     padding-left: 0;
+  }
+}
+
+/* Faded display type ----------------------------------------------------------
+   Very large lettering that fades into the page, as in the footer signature.
+   It sits behind content as a quiet echo of the page or section it belongs to. */
+
+@mixin ghost-type($strength: 14%) {
+  color: transparent;
+  font-weight: 700;
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--ink) $strength, transparent), transparent 88%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  pointer-events: none;
+  user-select: none;
+}
+
+#main {
+  overflow-x: clip;
+}
+
+/* Page titles: the title repeated at display size behind the header. */
+.page__header {
+  position: relative;
+  isolation: isolate;
+}
+
+.page__header::after {
+  content: attr(data-ghost);
+  position: absolute;
+  right: 0;
+  bottom: 0.35rem;
+  z-index: -1;
+  font-size: clamp(4.25rem, 13vw, 9.5rem);
+  @include ghost-type(10%);
+}
+
+.page__header {
+  padding-top: clamp(1.25rem, 5vw, 3.5rem);
+}
+
+/* On narrow screens the echo sits above the title instead of beside it. */
+@media (max-width: 700px) {
+  .page__header::after {
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: -0.04em;
+  }
+
+  .page__header {
+    padding-top: 3.25rem;
+  }
+}
+
+/* Homepage sections: a large numeral under each label. */
+.home {
+  counter-reset: home-section;
+}
+
+.home-section {
+  counter-increment: home-section;
+}
+
+@media (min-width: 820px) {
+  .home-section::after {
+    content: counter(home-section, decimal-leading-zero);
+    position: absolute;
+    top: 5.75rem;
+    left: -0.04em;
+    font-size: 8.5rem;
+    font-variant-numeric: lining-nums;
+    @include ghost-type(13%);
+  }
+}
+
+/* Results strip: the index numeral echoed large in the corner of each cell. */
+.proof {
+  counter-reset: proof;
+}
+
+.proof__item {
+  position: relative;
+  overflow: hidden;
+  counter-increment: proof;
+}
+
+.proof__item::after {
+  content: counter(proof, decimal-leading-zero);
+  position: absolute;
+  right: 0.5rem;
+  bottom: -0.12em;
+  font-size: clamp(4.5rem, 9vw, 7.5rem);
+  @include ghost-type(9%);
+}
+
+.not-found__code {
+  @include ghost-type(30%);
+  font-size: clamp(7rem, 30vw, 16rem);
+}
+
+/* Solid display type takes a faint vertical gradient, like ink on paper. */
+.hero__title,
+.hero__title .word > span,
+.page__title,
+.cf-metric__value,
+.cf-mini__value,
+.ns-stats strong {
+  color: transparent;
+  background: linear-gradient(180deg, var(--ink) 30%, color-mix(in srgb, var(--ink) 68%, var(--accent)));
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* While remote figures are loading, the placeholder shimmer keeps its own fill. */
+.is-loading .cf-metric__value {
+  background: linear-gradient(100deg, var(--bg-sunken) 30%, color-mix(in srgb, var(--bg-sunken) 40%, var(--bg-raised)) 50%, var(--bg-sunken) 70%);
+  background-size: 300% 100%;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+}
+
+/* Running services ------------------------------------------------------------ */
+
+.project .card__kicker a {
+  color: inherit;
+  text-decoration-color: transparent;
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+
+.project .card__kicker a:hover {
+  color: var(--accent-ink);
+  text-decoration-color: currentColor;
+}
+
+.service {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.5rem 1.5rem;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 1.1rem 1.4rem;
+  color: inherit;
+  text-decoration: none;
+  background-image: linear-gradient(180deg, var(--bg-raised), color-mix(in srgb, var(--bg-raised) 94%, var(--bg-sunken)));
+  border: 1px solid color-mix(in srgb, var(--line) 80%, transparent);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm), inset 0 1px 0 var(--sheen);
+  transition: transform 500ms var(--ease-soft), box-shadow 500ms var(--ease-soft), border-color var(--t-base) ease;
+}
+
+.service:hover {
+  color: inherit;
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
+  box-shadow: var(--shadow-md), inset 0 1px 0 var(--sheen);
+  transform: translateY(-3px);
+}
+
+.service__state {
+  display: inline-flex;
+  align-items: center;
+  color: var(--brass);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.service__title {
+  display: block;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.service__text {
+  display: block;
+  margin-top: 0.15rem;
+  color: var(--ink-2);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.service__host {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--accent-ink);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.service__host .icon {
+  transition: transform 400ms var(--ease-soft);
+}
+
+.service:hover .service__host .icon {
+  transform: translate(2px, -2px);
+}
+
+@media (min-width: 700px) {
+  .service {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+  }
+}
+
+@media print {
+  .page__header::after,
+  .home-section::after,
+  .proof__item::after {
+    display: none;
+  }
+}
+
+/* In the narrow-screen chip row the active chip is filled, so its numeral
+   takes the chip's text colour. */
+@media (max-width: #{$toc-visible - 1px}) {
+  .toc a.is-active::before {
+    color: inherit;
   }
 }

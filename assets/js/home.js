@@ -31,23 +31,6 @@
     }
   }
 
-  /* Portrait leans a few degrees toward the pointer ------------------------- */
-  const portrait = document.querySelector('[data-tilt]');
-  if (portrait && !reducedMotion && window.matchMedia('(hover: hover)').matches) {
-    const hero = portrait.closest('.hero');
-    hero.addEventListener('pointermove', (event) => {
-      const rect = portrait.getBoundingClientRect();
-      const dx = (event.clientX - (rect.left + rect.width / 2)) / window.innerWidth;
-      const dy = (event.clientY - (rect.top + rect.height / 2)) / window.innerHeight;
-      portrait.style.setProperty('--tilt-y', `${Math.max(-7, Math.min(7, dx * 16)).toFixed(2)}deg`);
-      portrait.style.setProperty('--tilt-x', `${Math.max(-7, Math.min(7, -dy * 16)).toFixed(2)}deg`);
-    }, { passive: true });
-    hero.addEventListener('pointerleave', () => {
-      portrait.style.setProperty('--tilt-y', '0deg');
-      portrait.style.setProperty('--tilt-x', '0deg');
-    });
-  }
-
   /* Hero backdrop ---------------------------------------------------------
      A jittered grid graph. A shortest-path search (Dijkstra) spreads from a
      source node; once it has covered the graph, the path to the farthest node

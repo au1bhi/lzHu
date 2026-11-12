@@ -73,7 +73,7 @@ Software Engineering undergraduate in a Sino-American dual-degree program, with 
 
 ## Selected Projects
 
-* **NoteLLM: Personal Learning Question-Answering System with Verifiable RAG**<br>
+* **[NoteLLM: Personal Learning Question-Answering System with Verifiable RAG](https://notellm.au1bhi.com)**<br>
   *FastAPI & Retrieval-Augmented Generation | Ongoing (Undergraduate Thesis)*<br>
   * Built a FastAPI backend with async SQLAlchemy, PostgreSQL, and pgvector for document retrieval across PDF, Markdown, and TXT files.
   * Implemented page-aware extraction, overlapping chunking, server-side citation validation, and source excerpt storage.

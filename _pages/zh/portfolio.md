@@ -1,6 +1,7 @@
 ---
 layout: archive
 title: "竞赛资料"
+ghost: "竞赛"
 permalink: /zh/portfolio/
 lang: zh
 translation: /portfolio/

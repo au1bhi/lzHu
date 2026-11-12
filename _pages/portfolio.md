@@ -1,6 +1,7 @@
 ---
 layout: archive
 title: "Contest Archive"
+ghost: "Archive"
 permalink: /portfolio/
 translation: /zh/portfolio/
 classes: cv
