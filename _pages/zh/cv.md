@@ -38,4 +38,4 @@ lead: "教育、项目、技术实践、竞赛获奖与技术技能，并提供�
   </a>
 </div>
 
-{% include cv-web.html lang="zh" %}
+{% include cv-web.html lang="zh" order="1,0,2" %}

@@ -59,6 +59,18 @@ Software Engineering undergraduate in a Sino-American dual-degree program, with 
 
 *Four-year 4+0 joint undergraduate program conducted in China and officially recognized by the Ministry of Education of China.*
 
+## Technical Experience
+
+* **[Sinotech Xinrui (Beijing) Co., Ltd.](https://www.sinotechxinrui.com/) (中科鑫睿（北京）技术有限公司)**<br>
+  *TOC Operator | Gifu, Japan | 7–22 Sep 2026*<br>
+  **Project:** 20th Asian Games Aichi-Nagoya 2026 — broadcast technical support for football at Gifu Nagaragawa Stadium.<br>
+  **Host broadcaster:** [China Media Group-International Media Port (CMG-IMP)](https://oca.asia/news/7336-cmg-imp-outlines-broadcasting-plans-for-20th-asian-games.html).
+  * Checked equipment power, intercom quality, and primary/backup broadcast feeds before matches; coordinated signal verification with the broadcast team and outside broadcast van.
+  * Monitored TOC signals during matches and provided on-site technical support throughout a 16-day football broadcast assignment.
+  * Helped engineers isolate a monitor-feed fault to an optical transmitter through receiver replacement and attenuation tests; the feed was restored following post-match replacement and end-to-end verification.
+
+{% include cv/matiji.md %}
+
 ## Selected Projects
 
 * **NoteLLM: Personal Learning Question-Answering System with Verifiable RAG**<br>
@@ -80,18 +92,6 @@ Software Engineering undergraduate in a Sino-American dual-degree program, with 
   *Personal infrastructure project | Cloudflare Workers, Linux & Python*<br>
   * Built a Cloudflare Workers service to distribute proxy connection profiles in Clash/V2Ray formats, with ISP ASN-based node selection, cached configuration, and CDN speed testing.
   * Automated VPS egress configuration using Python, routing IPv6 through WARP alongside native IPv4. Added configuration backups, repeatable deployment, connectivity checks, and regression tests for routing conflicts and preservation of existing settings.
-
-## Technical Experience
-
-* **[Sinotech Xinrui (Beijing) Co., Ltd.](https://www.sinotechxinrui.com/) (中科鑫睿（北京）技术有限公司)**<br>
-  *TOC Operator | Gifu, Japan | 7–22 Sep 2026*<br>
-  **Project:** 20th Asian Games Aichi-Nagoya 2026 — broadcast technical support for football at Gifu Nagaragawa Stadium.<br>
-  **Host broadcaster:** [China Media Group-International Media Port (CMG-IMP)](https://oca.asia/news/7336-cmg-imp-outlines-broadcasting-plans-for-20th-asian-games.html).
-  * Checked equipment power, intercom quality, and primary/backup broadcast feeds before matches; coordinated signal verification with the broadcast team and outside broadcast van.
-  * Monitored TOC signals during matches and provided on-site technical support throughout a 16-day football broadcast assignment.
-  * Helped engineers isolate a monitor-feed fault to an optical transmitter through receiver replacement and attenuation tests; the feed was restored following post-match replacement and end-to-end verification.
-
-{% include cv/matiji.md %}
 
 ## Competitive Programming & Awards
 

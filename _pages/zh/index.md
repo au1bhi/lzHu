@@ -9,10 +9,10 @@ hero_title: "你好，我是胡力中。"
 lead: "软件工程本科生，关注算法、后端系统与可验证的检索增强生成。"
 excerpt: "胡力中的个人网站：简历、竞赛资料与 Codeforces 数据。"
 highlights:
-  - value: "Honorable Medal"
-    label: "第49届 ICPC 国际大学生程序设计竞赛亚洲区域赛（昆明）"
-    note: "2024 · 代表泉州信息工程学院参赛"
-    url: "https://icpc.pku.edu.cn/docs/20241102162338084775.pdf"
+  - value: "2026 亚运会"
+    label: "第20届亚洲运动会（爱知·名古屋）现场转播技术支持"
+    note: "TOC Operator，足球转播 · 日本岐阜 16 天"
+    url: "/zh/cv/#section-1"
   - value: "一等奖"
     label: "第十五届蓝桥杯全国软件和信息技术专业人才大赛"
     note: "福建省赛 Python 程序设计大学 B 组 · 2024"
@@ -21,35 +21,16 @@ highlights:
     label: "A 题，2026 CCPC 全国邀请赛（福建）暨第十三届 CCPC 福建省赛"
     note: "单题奖项，不代表总排名"
     url: "https://codeforces.com/gym/106565"
-  - value: "16 天"
-    label: "TOC Operator，第20届亚洲运动会（2026/爱知·名古屋）"
-    note: "日本岐阜，足球转播现场技术支持"
-    url: "/zh/cv/#section-2"
+  - value: "ICPC 亚洲区域赛"
+    label: "Honorable Medal，昆明 2024"
+    note: "代表泉州信息工程学院参赛"
+    url: "https://icpc.pku.edu.cn/docs/20241102162338084775.pdf"
 ---
 
 {% include base_path %}
 {% comment %} Chinese homepage. Facts and wording follow the zh text in cv-latex/variants.json. {% endcomment %}
 {% assign cv = site.data.cv_web.zh %}
 {% assign notellm = cv.sections[0].entries[0] %}
-
-<section class="home-section" data-reveal>
-  <h2 class="home-section__label">简介</h2>
-  <div class="home-section__body">
-    <p class="home-about">{{ cv.profile }}</p>
-  </div>
-</section>
-
-<section class="home-section" data-reveal>
-  <h2 class="home-section__label">关注方向</h2>
-  <div class="home-section__body">
-    <ol class="focus-list">
-      <li>算法与数据结构</li>
-      <li>软件与分布式系统</li>
-      <li>信息检索与可验证的检索增强生成</li>
-      <li>可靠智能信息系统</li>
-    </ol>
-  </div>
-</section>
 
 <section class="home-section" data-reveal>
   <h2 class="home-section__label">重点项目</h2>
@@ -74,6 +55,40 @@ highlights:
 </section>
 
 <section class="home-section" data-reveal>
+  <h2 class="home-section__label">主要经历</h2>
+  <div class="home-section__body">
+    <ol class="timeline">
+      {% assign toc = cv.by_key.toc_full %}{% assign club = cv.by_key.club_full %}{% assign team = cv.by_key.training_full %}{% assign tester = cv.by_key.tester %}
+      <li>
+        <span class="timeline__date">{{ toc.meta | last }} · 日本岐阜</span>
+        <p><strong>第20届亚洲运动会（2026/爱知·名古屋）足球转播现场技术支持。</strong>在<a href="{{ toc.url }}">{{ toc.title }}</a>担任 TOC Operator。{{ toc.bullets[1].text }}{{ toc.bullets[2].text }}{{ toc.bullets[3].text }}</p>
+      </li>
+      <li>
+        <span class="timeline__date">{{ team.meta | last }}</span>
+        <p><strong>竞赛组织、命题与集训队协调。</strong>{{ club.bullets[1].text }}{{ club.bullets[0].text }}{{ team.bullets[0].text }}详见<a href="{{ base_path }}/zh/portfolio/">竞赛资料</a>。</p>
+      </li>
+      <li>
+        <span class="timeline__date">{{ tester.meta | last }}</span>
+        <p><strong><a href="{{ tester.url }}">{{ tester.title }}</a>志愿者验题成员。</strong>{{ tester.bullets[0].text }}{{ tester.bullets[1].text }}</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="home-section" data-reveal>
+  <h2 class="home-section__label">简介</h2>
+  <div class="home-section__body">
+    <p class="home-about">{{ cv.profile }}</p>
+    <ol class="focus-list">
+      <li>算法与数据结构</li>
+      <li>软件与分布式系统</li>
+      <li>信息检索与可验证的检索增强生成</li>
+      <li>可靠智能信息系统</li>
+    </ol>
+  </div>
+</section>
+
+<section class="home-section" data-reveal>
   <h2 class="home-section__label">网站内容</h2>
   <div class="home-section__body card-grid">
     <a class="card" href="{{ base_path }}/zh/cv/">
@@ -82,38 +97,22 @@ highlights:
       <p class="card__text">中英文完整介绍：教育、项目、技术实践、竞赛获奖与技术技能。</p>
       {% include icon.html name="arrow-up-right" class="card__arrow" %}
     </a>
-    <a class="card" href="{{ base_path }}/portfolio/">
+    <a class="card" href="{{ base_path }}/zh/portfolio/">
       <span class="card__kicker">资料</span>
       <h3 class="card__title">竞赛资料</h3>
-      <p class="card__text">部分竞赛参考材料，以及命题、验题与组织记录（英文页面）。</p>
+      <p class="card__text">竞赛获奖、命题与组织、验题记录和部分参考材料。</p>
       {% include icon.html name="arrow-up-right" class="card__arrow" %}
     </a>
-    <a class="card" href="{{ base_path }}/codeforces/">
+    <a class="card" href="{{ base_path }}/zh/codeforces/">
       <span class="card__kicker"><span class="live-dot" aria-hidden="true"></span>实时</span>
       <h3 class="card__title">Codeforces 看板</h3>
-      <p class="card__text">基于公开数据的个人竞赛看板（英文页面）。</p>
+      <p class="card__text">基于公开数据的个人竞赛看板。</p>
       <div class="cf-mini" data-cf-mini="Au1Bhi" data-label="{{ site.data.i18n.zh.rating_label }}" data-snapshot="{{ '/assets/data/codeforces.json' | relative_url }}?v={{ site.time | date: '%s' }}" hidden>
         <p class="cf-mini__figure"><span class="cf-mini__value" data-cf-rating></span><span class="cf-mini__rank" data-cf-rank></span></p>
         <svg class="cf-mini__spark" viewBox="0 0 240 56" preserveAspectRatio="none" role="img" aria-label="Codeforces rating 走势"><path class="cf-mini__area" d=""/><path class="cf-mini__line" d=""/></svg>
       </div>
       {% include icon.html name="arrow-up-right" class="card__arrow" %}
     </a>
-  </div>
-</section>
-
-<section class="home-section" data-reveal>
-  <h2 class="home-section__label">近期经历</h2>
-  <div class="home-section__body">
-    <ol class="timeline">
-      <li>
-        <span class="timeline__date">2026 年 9 月</span>
-        <p>在<a href="https://www.sinotechxinrui.com/">中科鑫睿（北京）技术有限公司</a>担任 TOC Operator，在日本 Gifu Nagaragawa Stadium 保障第20届亚洲运动会（2026/爱知·名古屋）足球转播，完成为期 16 天的现场技术支持：赛前检查设备供电、内通与主备路信号，赛中监看 TOC 信号，并协助工程师排查光链路故障。详见<a href="{{ base_path }}/zh/cv/">简历</a>。</p>
-      </li>
-      <li>
-        <span class="timeline__date">2026</span>
-        <p>在 <a href="https://codeforces.com/gym/106565">2026 中国大学生程序设计竞赛全国邀请赛（福建）暨第十三届 CCPC 福建省大学生程序设计竞赛</a>中获最快解题奖（A 题，单题奖项）。</p>
-      </li>
-    </ol>
   </div>
 </section>
 

@@ -7,10 +7,10 @@ eyebrow: "Software Engineering · Algorithms · Information Retrieval"
 hero_title: "Hi, I’m Lizhong Hu."
 lead: "Software Engineering undergraduate working on algorithms, back-end systems, and verifiable retrieval-augmented generation."
 highlights:
-  - value: "Honorable Medal"
-    label: "The 2024 ICPC Asia Kunming Regional Contest"
-    note: "Representing Quanzhou University of Information Engineering"
-    url: "https://icpc.pku.edu.cn/docs/20241102162338084775.pdf"
+  - value: "Asian Games 2026"
+    label: "On-site broadcast technical support, 20th Asian Games Aichi-Nagoya"
+    note: "TOC Operator for football broadcasts · 16 days in Gifu, Japan"
+    url: "/cv/#technical-experience"
   - value: "First Prize"
     label: "15th Lanqiao Cup, Fujian Provincial Round"
     note: "Python Programming, University Group B · 2024"
@@ -19,35 +19,16 @@ highlights:
     label: "Problem A, 2026 National Invitational of CCPC (Fujian)"
     note: "A problem-level distinction, not an overall placement"
     url: "https://codeforces.com/gym/106565"
-  - value: "16 days"
-    label: "TOC Operator, 20th Asian Games Aichi-Nagoya 2026"
-    note: "Football broadcast technical support in Gifu, Japan"
-    url: "/cv/#technical-experience"
+  - value: "ICPC Asia Regional"
+    label: "Honorable Medal, Kunming 2024"
+    note: "Representing Quanzhou University of Information Engineering"
+    url: "https://icpc.pku.edu.cn/docs/20241102162338084775.pdf"
 redirect_from:
   - /about/
   - /about.html
 ---
 
 {% include base_path %}
-
-<section class="home-section" data-reveal>
-  <h2 class="home-section__label">About</h2>
-  <div class="home-section__body">
-    <p class="home-about">I am a Software Engineering undergraduate in a Sino-American dual-degree program jointly operated by Quanzhou University of Information Engineering and Slippery Rock University. My interests include algorithms, software systems, information retrieval, and reliable intelligent systems.</p>
-  </div>
-</section>
-
-<section class="home-section" data-reveal>
-  <h2 class="home-section__label">Focus</h2>
-  <div class="home-section__body">
-    <ol class="focus-list">
-      <li>Algorithms and data structures</li>
-      <li>Software and distributed systems</li>
-      <li>Information retrieval and retrieval-augmented generation</li>
-      <li>Reliable and intelligent information systems</li>
-    </ol>
-  </div>
-</section>
 
 <section class="home-section" data-reveal>
   <h2 class="home-section__label">Featured project</h2>
@@ -69,6 +50,39 @@ redirect_from:
         <a class="btn btn--small" href="https://github.com/au1bhi/NoteLLM/blob/master/docs/evaluation/latest-results.md" rel="noopener">Evaluation report {% include icon.html name="arrow-up-right" %}</a>
       </p>
     </article>
+  </div>
+</section>
+
+<section class="home-section" data-reveal>
+  <h2 class="home-section__label">Experience</h2>
+  <div class="home-section__body">
+    <ol class="timeline">
+      <li>
+        <span class="timeline__date">September 2026 · Gifu, Japan</span>
+        <p><strong>Broadcast technical support at the 20th Asian Games Aichi-Nagoya 2026.</strong> I completed a 16-day TOC Operator assignment with <a href="https://www.sinotechxinrui.com/">Sinotech Xinrui (Beijing) Co., Ltd.</a>, supporting football broadcast operations at Gifu Nagaragawa Stadium: pre-match signal checks, live-feed monitoring, and assisting engineers with optical-link troubleshooting.</p>
+      </li>
+      <li>
+        <span class="timeline__date">September 2024 – September 2026</span>
+        <p><strong>Contest organizing, problem setting, and team coordination.</strong> Principal organizer and problem setter of the <a href="https://ac.nowcoder.com/acm/contest/112012">ISCPC-AC Cup</a>; helped organize the <a href="https://ac.nowcoder.com/acm/contest/130880">coastal alliance joint contest</a> involving seven partner universities; coordinated the university ICPC/CCPC training team and its participation in eight contests. Details are in the <a href="{{ base_path }}/portfolio/">contest archive</a>.</p>
+      </li>
+      <li>
+        <span class="timeline__date">July – October 2024</span>
+        <p><strong>Volunteer problem tester for the <a href="https://www.matiji.net/exam/noi">Matiji NOI-Pre Problem Bank</a>,</strong> a collaboration between Matiji (码蹄集) and China Computer Federation (CCF): created test cases, checked solution correctness through targeted submissions, and reported issues with test data and judge results.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="home-section" data-reveal>
+  <h2 class="home-section__label">About</h2>
+  <div class="home-section__body">
+    <p class="home-about">I am a Software Engineering undergraduate in a Sino-American dual-degree program jointly operated by Quanzhou University of Information Engineering and Slippery Rock University. My interests include algorithms, software systems, information retrieval, and reliable intelligent systems.</p>
+    <ol class="focus-list">
+      <li>Algorithms and data structures</li>
+      <li>Software and distributed systems</li>
+      <li>Information retrieval and retrieval-augmented generation</li>
+      <li>Reliable and intelligent information systems</li>
+    </ol>
   </div>
 </section>
 
@@ -97,22 +111,6 @@ redirect_from:
       </div>
       {% include icon.html name="arrow-up-right" class="card__arrow" %}
     </a>
-  </div>
-</section>
-
-<section class="home-section" data-reveal>
-  <h2 class="home-section__label">Recent highlights</h2>
-  <div class="home-section__body">
-    <ol class="timeline">
-      <li>
-        <span class="timeline__date">September 2026</span>
-        <p>I completed a 16-day TOC Operator assignment with <a href="https://www.sinotechxinrui.com/">Sinotech Xinrui (Beijing) Co., Ltd.</a>, supporting football broadcast operations at the 20th Asian Games Aichi-Nagoya 2026. At Gifu Nagaragawa Stadium, I carried out pre-match signal checks, monitored live feeds, and assisted engineers with optical-link troubleshooting. See my <a href="{{ base_path }}/cv/">CV</a> for details.</p>
-      </li>
-      <li>
-        <span class="timeline__date">2026</span>
-        <p>At the <a href="https://codeforces.com/gym/106565">2026 National Invitational of CCPC (Fujian), The 13th Fujian Collegiate Programming Contest</a>, I recorded the contest’s first accepted solution to Problem A.</p>
-      </li>
-    </ol>
   </div>
 </section>
 

@@ -19,8 +19,12 @@
 <h2 id="interests">{{ cv.headings.interests }}</h2>
 <p>{{ cv.interests }}</p>
 
-{% for section in cv.sections %}
-<h2 id="section-{{ forloop.index }}">{{ section.title }}</h2>
+{%- comment -%} include.order lists section positions (0-based) to show first-to-last on the web. {%- endcomment -%}
+{% assign order = include.order | default: "0,1,2" | split: "," %}
+{% for position in order %}
+{% assign index = position | plus: 0 %}
+{% assign section = cv.sections[index] %}
+<h2 id="section-{{ index }}">{{ section.title }}</h2>
 <ul>
   {% for item in section.entries %}{% include cv-web-entry.html item=item %}{% endfor %}
 </ul>

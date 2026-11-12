@@ -40,7 +40,7 @@ bundle exec jekyll serve
 
 | Content | Primary file |
 | --- | --- |
-| Homepage | `_pages/about.md` (Chinese: `_pages/zh/index.md`) |
+| Homepage | `_pages/about.md` (Chinese pages: `_pages/zh/`) |
 | CV | `_pages/cv.md` and shared entries in `_includes/cv/` |
 | Chinese CV | `cv-latex/variants.json`, then `python3 scripts/export_cv_web.py` |
 | Codeforces snapshot | `python3 scripts/fetch_codeforces.py` (also refreshed daily by GitHub Actions) |

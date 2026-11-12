@@ -85,6 +85,10 @@ def profile(data, language):
                    for key in full['skills']],
         'resources': {'title': full['resources']['title'][language],
                       'entries': [entry(data['entries'][key], language) for key in full['resources']['entries']]},
+        # The same entries and skill rows by registry key, for pages that pick individual items.
+        'by_key': {key.replace('-', '_'): entry(data['entries'][key], language)
+                   for section in full['sections'] for key in section['entries']},
+        'skill_by_key': {key.replace('-', '_'): data['skills'][key][language][1] for key in full['skills']},
     }
 
 

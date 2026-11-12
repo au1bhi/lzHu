@@ -10,21 +10,25 @@
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const api = (method, query) => `https://codeforces.com/api/${method}?${query}`;
   const submissionLimit = 1000;
+  // Chinese pages (/zh/codeforces/) get Chinese labels; data values stay as published.
+  const zh = document.documentElement.lang.startsWith('zh');
+  const L = (en, cn) => (zh ? cn : en);
+  const dateLocale = zh ? 'zh-CN' : 'en-US';
 
   const verdictLabels = {
-    OK: 'Accepted',
-    WRONG_ANSWER: 'Wrong answer',
-    TIME_LIMIT_EXCEEDED: 'Time limit exceeded',
-    MEMORY_LIMIT_EXCEEDED: 'Memory limit exceeded',
-    RUNTIME_ERROR: 'Runtime error',
-    COMPILATION_ERROR: 'Compilation error',
-    SKIPPED: 'Skipped',
-    CHALLENGED: 'Hacked',
-    PARTIAL: 'Partial',
-    IDLENESS_LIMIT_EXCEEDED: 'Idleness limit exceeded',
-    PRESENTATION_ERROR: 'Presentation error',
-    TESTING: 'Testing',
-    UNKNOWN: 'Unknown'
+    OK: L('Accepted', '通过 (Accepted)'),
+    WRONG_ANSWER: L('Wrong answer', '答案错误'),
+    TIME_LIMIT_EXCEEDED: L('Time limit exceeded', '超时'),
+    MEMORY_LIMIT_EXCEEDED: L('Memory limit exceeded', '超内存'),
+    RUNTIME_ERROR: L('Runtime error', '运行错误'),
+    COMPILATION_ERROR: L('Compilation error', '编译错误'),
+    SKIPPED: L('Skipped', '已跳过'),
+    CHALLENGED: L('Hacked', '被 Hack'),
+    PARTIAL: L('Partial', '部分通过'),
+    IDLENESS_LIMIT_EXCEEDED: L('Idleness limit exceeded', '空闲超时'),
+    PRESENTATION_ERROR: L('Presentation error', '格式错误'),
+    TESTING: L('Testing', '评测中'),
+    UNKNOWN: L('Unknown', '未知')
   };
   const difficultyOrder = ['<1200', '1200-1399', '1400-1599', '1600-1799', '1800-1999', '2000-2199', '2200-2399', '2400+', 'Unrated'];
   const difficultyBucket = (rating) => {
@@ -66,8 +70,8 @@
   };
 
   const capitalise = (text) => (text ? text.replace(/\b\w/g, (c) => c.toUpperCase()) : '');
-  const monthYear = (ms) => new Date(ms).toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
-  const fullDate = (ms) => new Date(ms).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+  const monthYear = (ms) => new Date(ms).toLocaleDateString(dateLocale, { year: 'numeric', month: 'short' });
+  const fullDate = (ms) => new Date(ms).toLocaleDateString(dateLocale, { year: 'numeric', month: 'short', day: 'numeric' });
 
   const dayKey = (date) => `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
   // "GNU G++17 7.3.0" and "C++20 (GCC 13-64)" are both C++ for this purpose.
@@ -108,7 +112,7 @@
     }
     const peak = Math.max(1, ...cells.map((cell) => cell.count));
     const level = (count) => (count === 0 ? 0 : Math.min(4, Math.ceil((count / peak) * 4)));
-    const describe = (cell) => `${cell.count} submission${cell.count === 1 ? '' : 's'} on ${fullDate(cell.date.getTime())}`;
+    const describe = (cell) => L(`${cell.count} submission${cell.count === 1 ? '' : 's'} on ${fullDate(cell.date.getTime())}`, `${fullDate(cell.date.getTime())}：${cell.count} 次提交`);
     // One tab stop for the whole calendar; arrow keys move day by day or week by week.
     let current = cells.length - 1;
     const select = (index) => {
@@ -135,7 +139,7 @@
       grid.append(node);
       if (index % 7 === 0) {
         const month = cell.date.getMonth();
-        const label = el('span', month !== lastMonth && cell.date.getDate() <= 7 ? cell.date.toLocaleDateString('en-US', { month: 'short' }) : '');
+        const label = el('span', month !== lastMonth && cell.date.getDate() <= 7 ? cell.date.toLocaleDateString(dateLocale, { month: 'short' }) : '');
         if (label.textContent) lastMonth = month;
         months.append(label);
       }
@@ -148,7 +152,7 @@
       longest = Math.max(longest, streak);
     }
     const total = active.reduce((sum, cell) => sum + cell.count, 0);
-    $('cf-activity-note').textContent = `${total.toLocaleString('en-US')} submissions on ${active.length} active days in the last 12 months · longest streak ${longest} day${longest === 1 ? '' : 's'}.`;
+    $('cf-activity-note').textContent = L(`${total.toLocaleString('en-US')} submissions on ${active.length} active days in the last 12 months · longest streak ${longest} day${longest === 1 ? '' : 's'}.`, `最近 12 个月共 ${total.toLocaleString('en-US')} 次提交，活跃 ${active.length} 天 · 最长连续 ${longest} 天。`);
   };
 
   const renderContests = () => {
@@ -156,7 +160,7 @@
     body.replaceChildren();
     const recent = model.rating.slice(-8).reverse();
     if (recent.length === 0) {
-      const cell = el('td', 'No rated contests yet.');
+      const cell = el('td', L('No rated contests yet.', '暂无 rated 比赛。'));
       cell.colSpan = 4;
       body.append(el('tr')).append(cell);
       return;
@@ -178,7 +182,7 @@
     const list = $('cf-problems');
     list.replaceChildren();
     if (model.hardest.length === 0) {
-      list.append(el('li', 'No rated solved problems yet.'));
+      list.append(el('li', L('No rated solved problems yet.', '暂无带难度分的已通过题目。')));
       return;
     }
     for (const problem of model.hardest) {
@@ -254,7 +258,7 @@
                 label: (item) => {
                   const r = model.rating[item.dataIndex];
                   const delta = r.delta > 0 ? `+${r.delta}` : `${r.delta}`.replace('-', '−');
-                  return [`Rating ${r.rating} (${delta})`, `Rank ${r.rank} · ${fullDate(r.time)}`];
+                  return [L(`Rating ${r.rating} (${delta})`, `Rating ${r.rating}（${delta}）`), L(`Rank ${r.rank} · ${fullDate(r.time)}`, `排名 ${r.rank} · ${fullDate(r.time)}`)];
                 }
               }
             }
@@ -284,14 +288,14 @@
     });
 
     if (model.verdicts.length > 0) {
-      horizontalBars('cf-verdict-chart', model.verdicts, model.verdicts.map(([label]) => (label === verdictLabels.OK ? c.good : c.ink3)), 'submissions');
+      horizontalBars('cf-verdict-chart', model.verdicts, model.verdicts.map(([label]) => (label === verdictLabels.OK ? c.good : c.ink3)), L('submissions', '次提交'));
     }
     if (model.tags.length > 0) {
-      horizontalBars('cf-tag-chart', model.tags, c.series1, 'accepted submissions');
+      horizontalBars('cf-tag-chart', model.tags, c.series1, L('accepted submissions', '次通过'));
     }
 
     if (model.languages.length > 0) {
-      horizontalBars('cf-language-chart', model.languages, c.series1, 'submissions');
+      horizontalBars('cf-language-chart', model.languages, c.series1, L('submissions', '次提交'));
     }
 
     if (model.difficulty.length > 0) {
@@ -301,14 +305,14 @@
         data: {
           labels: model.difficulty.map((d) => d.label),
           datasets: [
-            { label: 'Solved Problems', data: model.difficulty.map((d) => d.solved), backgroundColor: c.series1, ...bar },
-            { label: 'Attempted Problems', data: model.difficulty.map((d) => d.attempted), backgroundColor: c.series2, ...bar }
+            { label: L('Solved Problems', '已通过题目'), data: model.difficulty.map((d) => d.solved), backgroundColor: c.series1, ...bar },
+            { label: L('Attempted Problems', '尝试过的题目'), data: model.difficulty.map((d) => d.attempted), backgroundColor: c.series2, ...bar }
           ]
         },
         options: {
           responsive: true, maintainAspectRatio: false,
           interaction: { mode: 'index', intersect: false },
-          plugins: { tooltip: { displayColors: true, boxWidth: 8, boxHeight: 8, boxPadding: 4, callbacks: { title: (items) => `Difficulty ${items[0].label}` } } },
+          plugins: { tooltip: { displayColors: true, boxWidth: 8, boxHeight: 8, boxPadding: 4, callbacks: { title: (items) => L(`Difficulty ${items[0].label}`, `难度 ${items[0].label}`) } } },
           scales: {
             x: { grid: noGrid, border, ticks: { autoSkip: false, maxRotation: 45 } },
             y: { beginAtZero: true, grid, border, ticks: { precision: 0, padding: 8 } }
@@ -358,7 +362,7 @@
     const sortedVerdicts = Array.from(verdictCounts.entries()).sort((a, b) => b[1] - a[1]);
     const verdicts = sortedVerdicts.slice(0, 6).map(([verdict, count]) => [verdictLabels[verdict] || capitalise(verdict.replace(/_/g, ' ').toLowerCase()), count]);
     const rest = sortedVerdicts.slice(6).reduce((sum, [, count]) => sum + count, 0);
-    if (rest > 0) verdicts.push(['Other', rest]);
+    if (rest > 0) verdicts.push([L('Other', '其他'), rest]);
 
     return {
       profile,
@@ -386,7 +390,7 @@
     let details = card.querySelector('.chart-data');
     if (!details) {
       details = el('details', undefined, 'chart-data');
-      details.append(el('summary', 'View data as table'));
+      details.append(el('summary', L('View data as table', '以表格查看数据')));
       card.append(details);
     }
     const table = el('table');
@@ -423,16 +427,16 @@
     number($('cf-solved-count'), model.solved);
     $('cf-current-rank').textContent = capitalise(profile.rank);
     $('cf-max-rank').textContent = capitalise(profile.maxRank);
-    $('cf-submission-note').textContent = model.total >= submissionLimit ? `Most recent ${submissionLimit.toLocaleString('en-US')}` : `${model.accepted.toLocaleString('en-US')} accepted`;
-    $('cf-solved-note').textContent = 'Distinct problems';
-    if (model.rating.length > 0) $('cf-rating-note').textContent = `Rating after each of ${model.rating.length} rated contests.`;
+    $('cf-submission-note').textContent = model.total >= submissionLimit ? L(`Most recent ${submissionLimit.toLocaleString('en-US')}`, `最近 ${submissionLimit.toLocaleString('en-US')} 次`) : L(`${model.accepted.toLocaleString('en-US')} accepted`, `其中 ${model.accepted.toLocaleString('en-US')} 次通过`);
+    $('cf-solved-note').textContent = L('Distinct problems', '按题目去重');
+    if (model.rating.length > 0) $('cf-rating-note').textContent = L(`Rating after each of ${model.rating.length} rated contests.`, `共 ${model.rating.length} 场 rated 比赛后的 rating 变化。`);
 
     const contests = model.rating;
     number($('cf-contest-count'), contests.length);
     if (contests.length > 0) {
       const best = contests.reduce((a, b) => (b.rank < a.rank ? b : a));
       const gain = contests.reduce((a, b) => (b.delta > a.delta ? b : a));
-      $('cf-contest-note').textContent = `Since ${monthYear(contests[0].time)}`;
+      $('cf-contest-note').textContent = L(`Since ${monthYear(contests[0].time)}`, `自 ${monthYear(contests[0].time)} 起`);
       number($('cf-best-rank'), best.rank);
       $('cf-best-rank-note').textContent = best.contest;
       $('cf-best-gain').textContent = signed(gain.delta);
@@ -442,16 +446,16 @@
       $('cf-best-gain').textContent = '—';
     }
     $('cf-accept-rate').textContent = model.total > 0 ? `${((model.accepted / model.total) * 100).toFixed(1)}%` : '—';
-    $('cf-accept-note').textContent = `${model.accepted.toLocaleString('en-US')} of ${model.total.toLocaleString('en-US')} submissions`;
+    $('cf-accept-note').textContent = L(`${model.accepted.toLocaleString('en-US')} of ${model.total.toLocaleString('en-US')} submissions`, `${model.total.toLocaleString('en-US')} 次提交中通过 ${model.accepted.toLocaleString('en-US')} 次`);
 
     renderActivity();
     renderContests();
     renderProblems();
-    dataTable('cf-rating-chart', ['Contest', 'Date', 'Rank', 'Change', 'Rating'], contests.map((r) => [r.contest, fullDate(r.time), r.rank, signed(r.delta), r.rating]));
-    dataTable('cf-verdict-chart', ['Verdict', 'Submissions'], model.verdicts);
-    dataTable('cf-difficulty-chart', ['Difficulty', 'Solved', 'Attempted'], model.difficulty.map((d) => [d.label, d.solved, d.attempted]));
-    dataTable('cf-tag-chart', ['Tag', 'Accepted submissions'], model.tags);
-    dataTable('cf-language-chart', ['Language', 'Submissions'], model.languages);
+    dataTable('cf-rating-chart', [L('Contest', '比赛'), L('Date', '日期'), L('Rank', '排名'), L('Change', '变化'), 'Rating'], contests.map((r) => [r.contest, fullDate(r.time), r.rank, signed(r.delta), r.rating]));
+    dataTable('cf-verdict-chart', [L('Verdict', '评测结果'), L('Submissions', '提交数')], model.verdicts);
+    dataTable('cf-difficulty-chart', [L('Difficulty', '难度'), L('Solved', '已通过'), L('Attempted', '尝试过')], model.difficulty.map((d) => [d.label, d.solved, d.attempted]));
+    dataTable('cf-tag-chart', [L('Tag', '标签'), L('Accepted submissions', '通过的提交数')], model.tags);
+    dataTable('cf-language-chart', [L('Language', '语言'), L('Submissions', '提交数')], model.languages);
     draw();
   };
 
@@ -464,7 +468,7 @@
   const init = async () => {
     if (typeof Chart === 'undefined') {
       dashboard.classList.remove('is-loading');
-      setStatus('error', 'Failed to load data: Chart library unavailable');
+      setStatus('error', L('Failed to load data: Chart library unavailable', '数据加载失败：图表库不可用'));
       return;
     }
     let shown = null;      // 'snapshot' | 'live'
@@ -478,7 +482,7 @@
         if (shown) return;
         present(data, true);
         shown = 'snapshot';
-        setStatus('loading', `Showing the snapshot from ${snapshotDate} · checking for live data…`);
+        setStatus('loading', L(`Showing the snapshot from ${snapshotDate} · checking for live data…`, `正在显示 ${snapshotDate} 的数据快照 · 正在尝试获取实时数据…`));
       })
       .catch((error) => console.warn('Codeforces snapshot unavailable:', error.message));
 
@@ -491,14 +495,14 @@
       await document.fonts.ready;
       present({ user: userInfo[0], rating: ratingHistory, submissions }, shown === null);
       shown = 'live';
-      setStatus('ready', `Live data · updated ${new Date().toLocaleString()}`);
+      setStatus('ready', L(`Live data · updated ${new Date().toLocaleString()}`, `实时数据 · 更新于 ${new Date().toLocaleString('zh-CN')}`));
     } catch (error) {
       await snapshot;
       if (shown === 'snapshot') {
-        setStatus('snapshot', `Snapshot from ${snapshotDate} · the live Codeforces API could not be reached from your network`);
+        setStatus('snapshot', L(`Snapshot from ${snapshotDate} · the live Codeforces API could not be reached from your network`, `${snapshotDate} 的数据快照 · 当前网络无法访问 Codeforces 实时接口`));
       } else {
         dashboard.classList.remove('is-loading');
-        setStatus('error', `Failed to load data: ${error.message}`);
+        setStatus('error', L(`Failed to load data: ${error.message}`, `数据加载失败：${error.message}`));
       }
       console.warn('Codeforces live data unavailable:', error.message);
     }

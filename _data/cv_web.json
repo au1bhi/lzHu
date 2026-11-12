@@ -341,6 +341,236 @@
           ]
         }
       ]
+    },
+    "by_key": {
+      "notellm_full": {
+        "title": "NoteLLM：基于可验证 RAG 的个人学习问答系统",
+        "meta": [
+          "本科毕业设计",
+          "进行中"
+        ],
+        "bullets": [
+          {
+            "label": "目标：",
+            "text": "面向个人学习资料提供文档检索问答，保留可核查的引用与原文摘录。"
+          },
+          {
+            "label": "实现：",
+            "text": "使用 FastAPI、异步 SQLAlchemy、PostgreSQL 与 pgvector 实现余弦相似度检索；支持 PDF、Markdown、TXT 的按页提取与重叠分块。"
+          },
+          {
+            "label": "引用验证：",
+            "text": "在服务端验证引用是否来自检索分块，并保存原文摘录以支持来源核查。"
+          },
+          {
+            "label": "评测：",
+            "text": "7 份合成资料、34 道固定问题的单次基线测试：来源级 Recall@5 为 100%，自动引用来源匹配率为 97.1%，平均检索耗时 339 ms。"
+          }
+        ],
+        "url": "https://github.com/au1bhi/NoteLLM",
+        "note": "评测口径与局限：Recall@5 检查预期来源是否出现在前五个检索分块中；引用来源匹配率检查回答是否至少包含一条来自预期来源、经校验的引用。结果仅衡量该合成测试集的检索与引用来源匹配，不代表答案准确率或通用场景性能。",
+        "resources": [
+          {
+            "label": "源码",
+            "url": "https://github.com/au1bhi/NoteLLM"
+          },
+          {
+            "label": "评测报告",
+            "url": "https://github.com/au1bhi/NoteLLM/blob/master/docs/evaluation/latest-results.md"
+          }
+        ]
+      },
+      "eti": {
+        "title": "e体+（ETIPlus）：社区治理与微信群管理平台后端",
+        "meta": [
+          "2025 年 3–4 月"
+        ],
+        "bullets": [
+          {
+            "label": "",
+            "text": "构建 Flask 后端，使用 PostgreSQL 支撑房东信用赋分、排名与异常审计，使用 MongoDB 存储微信群聊消息。"
+          },
+          {
+            "label": "",
+            "text": "开发群管理、正则昵称检查与 Excel/CSV 批量导入 API；使用 Postman 自动执行回归检查。"
+          }
+        ]
+      },
+      "domjudge": {
+        "title": "DOMjudge 在线评测平台部署与运维",
+        "meta": [
+          "2024 年 9 月至今"
+        ],
+        "bullets": [
+          {
+            "label": "",
+            "text": "维护 Linux/Docker 容器化 DOMjudge 环境，为校内集训和程序设计竞赛提供在线评测支持。"
+          }
+        ]
+      },
+      "network": {
+        "title": "面向隐私的个人网络管理系统",
+        "meta": [
+          "个人基础设施项目"
+        ],
+        "bullets": [
+          {
+            "label": "",
+            "text": "基于 Cloudflare Workers 分发 Clash/V2Ray 连接配置，按 ISP ASN 选择节点，提供配置缓存与 CDN 测速。"
+          },
+          {
+            "label": "",
+            "text": "使用 Python 配置 Linux VPS 的 WARP IPv6 与原生 IPv4 分流，配套配置备份、可重复部署、连通性检查与路由冲突回归测试。"
+          }
+        ]
+      },
+      "toc_full": {
+        "title": "中科鑫睿（北京）技术有限公司",
+        "meta": [
+          "TOC Operator",
+          "日本岐阜，16 天现场技术支持",
+          "2026 年 9 月 7–22 日"
+        ],
+        "bullets": [
+          {
+            "label": "",
+            "text": "在日本 Gifu Nagaragawa Stadium 保障第20届亚洲运动会（2026/爱知·名古屋）足球转播，主转播机构为中央广播电视总台国际传媒港（CMG-IMP）。"
+          },
+          {
+            "label": "",
+            "text": "赛前配合转播团队和转播车检查设备供电、内通通话质量及主备路转播信号，并协调信号验证。"
+          },
+          {
+            "label": "",
+            "text": "赛中监看 TOC 信号，并在为期 16 天的足球转播保障期间提供现场技术支持。"
+          },
+          {
+            "label": "",
+            "text": "协助工程师通过接收机替换与衰减测试，将监看信号故障定位至光发射机；赛后经设备更换与全链路验证，监看画面恢复。"
+          }
+        ],
+        "url": "https://www.sinotechxinrui.com/"
+      },
+      "tester": {
+        "title": "码蹄集 NOI-Pre 题库",
+        "meta": [
+          "志愿者验题成员",
+          "2024 年 7–10 月"
+        ],
+        "bullets": [
+          {
+            "label": "",
+            "text": "参与码蹄集与中国计算机学会（CCF）合作题库的编程题测试，构造边界用例，通过定向提交验证题解正确性。"
+          },
+          {
+            "label": "",
+            "text": "排查并反馈测试数据与判题结果缺陷，支持题目质量检查。"
+          }
+        ],
+        "url": "https://www.matiji.net/exam/noi",
+        "resources": [
+          {
+            "label": "志愿者成员展示",
+            "url": "https://www.matiji.net/exam/volunteer"
+          }
+        ]
+      },
+      "club_full": {
+        "title": "ACM 算法社",
+        "meta": [
+          "组织者",
+          "2024 年 9 月–2025 年 9 月"
+        ],
+        "bullets": [
+          {
+            "label": "",
+            "text": "负责算法社日常运作，协助组织环海岸线联盟联合校赛，涉及七所合作高校。"
+          },
+          {
+            "label": "",
+            "text": "“国教AC杯”大学生程序设计竞赛：主要组织者、出题人。"
+          },
+          {
+            "label": "",
+            "text": "2025 泉州信息工程学院软件学院第二届“爱拼会赢”科创节 ACM 算法比赛：组织者之一、出题人之一。"
+          }
+        ],
+        "url": "https://ac.nowcoder.com/acm/contest/130880",
+        "resources": [
+          {
+            "label": "国教AC杯",
+            "url": "https://ac.nowcoder.com/acm/contest/112012"
+          },
+          {
+            "label": "环海岸线联盟联合校赛",
+            "url": "https://ac.nowcoder.com/acm/contest/130880"
+          }
+        ]
+      },
+      "sie": {
+        "title": "国际教育学院学习部",
+        "meta": [
+          "副部长",
+          "2024 年 9 月–2025 年 9 月"
+        ],
+        "bullets": [
+          {
+            "label": "",
+            "text": "协调教师讲座、竞赛活动与学生参与。"
+          }
+        ]
+      },
+      "training_full": {
+        "title": "校 ICPC/CCPC 集训队",
+        "meta": [
+          "协调组织",
+          "2024 年 9 月–2026 年 9 月"
+        ],
+        "bullets": [
+          {
+            "label": "",
+            "text": "协调校 ICPC/CCPC 集训队招新、训练与队伍选拔，组织本校队伍参赛事务。"
+          }
+        ],
+        "event_intro": "本校队伍参赛组织覆盖以下 8 场赛事，按年份列示：",
+        "event_groups": [
+          {
+            "year": 2026,
+            "text": "2026年ICPC国际大学生程序设计竞赛全国邀请赛（南昌）；2026年中国大学生程序设计竞赛全国邀请赛（福建）暨第十三届CCPC福建省大学生程序设计竞赛；2026年中国大学生程序设计竞赛（CCPC）贵州省赛暨全国邀请赛。"
+          },
+          {
+            "year": 2025,
+            "text": "2025年CCPC全国邀请赛（南昌）暨第二届CCPC江西省大学生程序设计竞赛；2025 ICPC Asia EC 网络预选赛；2025 CCPC 网络赛；2025年ICPC贵州省大学生程序设计竞赛。"
+          },
+          {
+            "year": 2024,
+            "text": "第49届ICPC国际大学生程序设计竞赛亚洲区域赛（昆明）。"
+          }
+        ]
+      },
+      "setter": {
+        "title": "第六届大学生算法设计与编程挑战赛（春季赛）",
+        "meta": [
+          "出题人之一",
+          "2025 年春季"
+        ],
+        "bullets": [
+          {
+            "label": "",
+            "text": "作为出题人之一，参与题目设计、题解验证、难度校准与题解审阅。"
+          }
+        ],
+        "url": "https://new.saikr.com/vse/adpc/2025/spring"
+      }
+    },
+    "skill_by_key": {
+      "languages_full": "C++、Python；算法与数据结构、程序设计竞赛。",
+      "backend_full": "FastAPI、Flask、异步 SQLAlchemy、PostgreSQL/pgvector、MongoDB；REST API 设计与系统集成。",
+      "systems_full": "Linux、Docker、Git、SQL 工具链、DOMjudge 部署、Cloudflare Workers/CDN/DNS、WARP 出口路由。",
+      "rag": "RAG、大语言模型 API 集成、Prompt 设计。",
+      "contest": "熟悉 Polygon（Codeforces）与牛客出题平台；题目准备、测试数据管理和题解验证。",
+      "other_full": "Java、JavaScript、Go、RuoYi、MySQL。",
+      "tools_full": "Codex、Claude Code、Antigravity CLI；配置 AGENTS.md / CLAUDE.md 与共享 Skills，拆分任务并协调子 agent 审查；通过 pytest、Ruff/类型检查、Docker Compose、浏览器检查与构建验证修改。"
     }
   },
   "en": {
@@ -686,6 +916,237 @@
           ]
         }
       ]
+    },
+    "by_key": {
+      "notellm_full": {
+        "title": "NoteLLM: Personal Learning QA with Verifiable RAG",
+        "meta": [
+          "Undergraduate thesis",
+          "Ongoing"
+        ],
+        "bullets": [
+          {
+            "label": "Purpose:",
+            "text": "Document-based learning QA with verifiable citations and stored source excerpts."
+          },
+          {
+            "label": "Implementation:",
+            "text": "Built cosine-similarity retrieval with FastAPI, async SQLAlchemy, PostgreSQL, and pgvector; implemented page-aware extraction and overlapping chunks for PDF, Markdown, and TXT."
+          },
+          {
+            "label": "Citation validation:",
+            "text": "Validated citations against retrieved chunks on the server and stored source excerpts for source verification."
+          },
+          {
+            "label": "Evaluation:",
+            "text": "A single baseline on 7 synthetic documents and 34 fixed questions recorded 100% source-level Recall@5, 97.1% automatic citation-to-source match, and 339 ms mean retrieval latency."
+          }
+        ],
+        "url": "https://github.com/au1bhi/NoteLLM",
+        "note": "Evaluation scope: Recall@5 checks whether the expected source appears among the top five retrieved chunks; citation-to-source match checks whether an answer includes at least one validated citation from the expected source. Results measure retrieval and citation-source matching on this synthetic set, not answer accuracy or general-domain performance.",
+        "resources": [
+          {
+            "label": "Source code",
+            "url": "https://github.com/au1bhi/NoteLLM"
+          },
+          {
+            "label": "Evaluation report",
+            "url": "https://github.com/au1bhi/NoteLLM/blob/master/docs/evaluation/latest-results.md"
+          }
+        ]
+      },
+      "eti": {
+        "title": "ETIPlus: Community Governance & WeChat Management Backend",
+        "meta": [
+          "Mar–Apr 2025"
+        ],
+        "bullets": [
+          {
+            "label": "",
+            "text": "Built a Flask backend with PostgreSQL for landlord credit scoring, rankings, and anomaly audits, and MongoDB for WeChat message storage."
+          },
+          {
+            "label": "",
+            "text": "Developed APIs for group moderation, regex nickname checks, and Excel/CSV imports; automated regression checks with Postman."
+          }
+        ]
+      },
+      "domjudge": {
+        "title": "DOMjudge Online Judge Deployment & Operations",
+        "meta": [
+          "Sep 2024–Present"
+        ],
+        "bullets": [
+          {
+            "label": "",
+            "text": "Maintain a Linux/Docker-based DOMjudge environment for campus training and programming contests."
+          }
+        ]
+      },
+      "network": {
+        "title": "Privacy-Oriented Personal Network Management System",
+        "meta": [
+          "Personal infrastructure project"
+        ],
+        "bullets": [
+          {
+            "label": "",
+            "text": "Built a Cloudflare Workers service for Clash/V2Ray profile distribution, ISP ASN-based node selection, configuration caching, and CDN speed testing."
+          },
+          {
+            "label": "",
+            "text": "Automated Linux VPS egress configuration in Python, using WARP IPv6 alongside native IPv4; added backups, repeatable deployment, connectivity checks, and routing-conflict regression tests."
+          }
+        ]
+      },
+      "toc_full": {
+        "title": "Sinotech Xinrui (Beijing) Co., Ltd.",
+        "meta": [
+          "TOC Operator",
+          "Gifu, Japan",
+          "16-day on-site assignment",
+          "7–22 Sep 2026"
+        ],
+        "bullets": [
+          {
+            "label": "",
+            "text": "Supported football broadcasts at Gifu Nagaragawa Stadium, Japan, for the 20th Asian Games Aichi-Nagoya 2026; host broadcaster: China Media Group-International Media Port (CMG-IMP)."
+          },
+          {
+            "label": "",
+            "text": "Checked equipment power, intercom quality, and primary/backup broadcast feeds before matches; coordinated signal verification with the broadcast team and outside broadcast van."
+          },
+          {
+            "label": "",
+            "text": "Monitored TOC signals during matches and provided on-site technical support throughout the 16-day football broadcast assignment."
+          },
+          {
+            "label": "",
+            "text": "Helped engineers isolate a monitor-feed fault to an optical transmitter through receiver replacement and attenuation tests; the feed was restored after post-match replacement and end-to-end verification."
+          }
+        ],
+        "url": "https://www.sinotechxinrui.com/"
+      },
+      "tester": {
+        "title": "Matiji NOI-Pre Problem Bank",
+        "meta": [
+          "Volunteer Problem Tester",
+          "Jul–Oct 2024"
+        ],
+        "bullets": [
+          {
+            "label": "",
+            "text": "Tested programming problems for Matiji’s NOI-Pre bank, a collaboration with China Computer Federation (CCF); created boundary cases and checked solution correctness through targeted submissions."
+          },
+          {
+            "label": "",
+            "text": "Investigated and reported test-data and judging defects to support problem quality checks."
+          }
+        ],
+        "url": "https://www.matiji.net/exam/noi",
+        "resources": [
+          {
+            "label": "Member showcase",
+            "url": "https://www.matiji.net/exam/volunteer"
+          }
+        ]
+      },
+      "club_full": {
+        "title": "ACM Algorithm Club",
+        "meta": [
+          "Organizer",
+          "Sep 2024–Sep 2025"
+        ],
+        "bullets": [
+          {
+            "label": "",
+            "text": "Managed day-to-day club operations and helped organize the coastal alliance joint contest, involving seven partner universities."
+          },
+          {
+            "label": "",
+            "text": "ISCPC-AC Cup collegiate programming contest: principal organizer and problem setter."
+          },
+          {
+            "label": "",
+            "text": "2025 QUIE-Software School ACM Algorithm Contest (2nd Aipin Huiying Science & Technology Festival): one of the organizers and problem setters."
+          }
+        ],
+        "url": "https://ac.nowcoder.com/acm/contest/130880",
+        "resources": [
+          {
+            "label": "ISCPC-AC Cup",
+            "url": "https://ac.nowcoder.com/acm/contest/112012"
+          },
+          {
+            "label": "Coastal alliance joint contest",
+            "url": "https://ac.nowcoder.com/acm/contest/130880"
+          }
+        ]
+      },
+      "sie": {
+        "title": "School of International Education",
+        "meta": [
+          "Deputy Director, Learning Department",
+          "Sep 2024–Sep 2025"
+        ],
+        "bullets": [
+          {
+            "label": "",
+            "text": "Coordinated faculty lectures, competition events, and student participation."
+          }
+        ]
+      },
+      "training_full": {
+        "title": "University ICPC/CCPC Training Team",
+        "meta": [
+          "Coordinator",
+          "Sep 2024–Sep 2026"
+        ],
+        "bullets": [
+          {
+            "label": "",
+            "text": "Coordinated university ICPC/CCPC team recruitment, training, selection, and participation logistics."
+          }
+        ],
+        "event_intro": "Supported university team participation in the following eight contests, grouped by year:",
+        "event_groups": [
+          {
+            "year": 2026,
+            "text": "The 2026 ICPC China Nanchang National Invitational Programming Contest; 2026 National Invitational of CCPC (Fujian), The 13th Fujian Collegiate Programming Contest; 2026 CCPC Guizhou Provincial Contest and National Invitational."
+          },
+          {
+            "year": 2025,
+            "text": "2025 CCPC National Invitational (Nanchang) and the 2nd Jiangxi Provincial Collegiate Programming Contest; 2025 ICPC Asia EC Online Preliminary Contest; 2025 CCPC Online Contest; The 2025 ICPC China Guizhou Provincial Programming Contest."
+          },
+          {
+            "year": 2024,
+            "text": "The 2024 ICPC Asia Kunming Regional Contest."
+          }
+        ]
+      },
+      "setter": {
+        "title": "6th College Algorithm Design & Programming Challenge (Spring)",
+        "meta": [
+          "One of the problem setters",
+          "Spring 2025"
+        ],
+        "bullets": [
+          {
+            "label": "",
+            "text": "As one of the problem setters, contributed to problem design, solution validation, difficulty calibration, and editorial review."
+          }
+        ],
+        "url": "https://new.saikr.com/vse/adpc/2025/spring"
+      }
+    },
+    "skill_by_key": {
+      "languages_full": "C++, Python; algorithms and data structures, competitive programming.",
+      "backend_full": "FastAPI, Flask, async SQLAlchemy, PostgreSQL/pgvector, MongoDB; REST API design and integration.",
+      "systems_full": "Linux, Docker, Git, SQL tooling, DOMjudge deployment, Cloudflare Workers/CDN/DNS, WARP egress routing.",
+      "rag": "RAG, LLM API integration, prompt design.",
+      "contest": "Familiar with Polygon (Codeforces) and Nowcoder; problem preparation, test-data management, and solution verification.",
+      "other_full": "Java, JavaScript, Go, RuoYi, MySQL.",
+      "tools_full": "Codex, Claude Code, Antigravity CLI; configure AGENTS.md / CLAUDE.md and shared Skills, decompose tasks, and coordinate subagent review. Validate changes with pytest, Ruff/type checks, Docker Compose, browser checks, and builds."
     }
   }
 }
