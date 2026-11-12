@@ -537,7 +537,7 @@ a.card:hover .card__arrow {
   font-family: $sans-serif;
   font-variant-numeric: tabular-nums;
   font-size: clamp(4rem, 18vw, 8rem);
-  font-weight: 400;
+  font-weight: $weight-text;
   line-height: 1;
   letter-spacing: -0.04em;
 }
@@ -1052,7 +1052,7 @@ a.card:hover .card__arrow {
   margin: 0.2rem 0 0;
   color: var(--ink-2);
   font-size: 0.8125rem;
-  font-weight: 400;
+  font-weight: $weight-text;
   line-height: 1.35;
 }
 

@@ -1,11 +1,11 @@
 [
   {
-    "repository": "source-sans",
-    "commit": "87b37a2daaed80fcb8e8ccb0085c4d72ddade12e",
+    "repository": "source-serif",
+    "commit": "80d3f8894c09c937bebfa9011247d2e1c79fd6f4",
     "files": [
       [
-        "source-sans-3-roman.woff2",
-        170188
+        "source-serif-4-roman.woff2",
+        429100
       ]
     ]
   },

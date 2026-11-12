@@ -5,25 +5,43 @@
    explicit toggle and for the no-JavaScript system preference.
    ========================================================================== */
 
-/* One typeface for all text: a humanist sans for Latin with the system's
-   Chinese sans beside it, so mixed Chinese/English lines share weight and
-   texture. Only two weights are used site-wide: 400 and 700. Every common
-   Chinese system font has exactly these, so Latin and Chinese emphasis match;
-   an in-between weight would render lighter in Latin than in Chinese. Monospace is reserved for code.
-   "Site Sans" / "Site Mono" are Latin subsets of Source Sans 3 and Source Code
-   Pro, renamed as their licence requires (see assets/fonts/README.md). */
-$sans-serif : "Site Sans", "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", sans-serif;
-$monospace  : "Site Mono", "Source Code Pro", ui-monospace, "SFMono-Regular", Consolas, "Noto Sans CJK SC", monospace;
+/* One typeface for all text: a serif, for its texture. Latin comes from
+   "Site Serif" (a Latin subset of Source Serif 4) and Chinese from "Site Song"
+   (Noto Serif CJK SC reduced to the characters this site uses), so every
+   visitor sees the same pairing rather than a thin system Songti.
+   Two weights only: $weight-text for running text and 700 for headings and
+   emphasis. Monospace is reserved for code. See assets/fonts/README.md. */
+$serif      : "Site Serif", "Site Song", "Source Serif 4", "Noto Serif CJK SC", "Source Han Serif SC", "Songti SC", "STSong", "SimSun", Georgia, serif;
+$sans-serif : $serif;   /* alias: interface text uses the same face as reading text */
+$monospace  : "Site Mono", "Source Code Pro", ui-monospace, "SFMono-Regular", Consolas, monospace;
+$weight-text: 450;      /* slightly above regular so strokes stay solid on light backgrounds */
 
 $nav-collapse : 760px;   /* below this the primary navigation becomes a sheet */
 $toc-visible  : 1120px;  /* from this width the section index sits beside content */
 
 @font-face {
-  font-family: "Site Sans";
-  src: url("../fonts/site-sans-roman.woff2") format("woff2");
+  font-family: "Site Serif";
+  src: url("../fonts/site-serif-roman.woff2") format("woff2");
   font-style: normal;
   font-weight: 300 700;
   font-display: swap;
+}
+/* Chinese: Medium serves every text weight, Bold serves headings. */
+@font-face {
+  font-family: "Site Song";
+  src: url("../fonts/site-song-medium.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 300 599;
+  font-display: swap;
+  unicode-range: U+3000-303F, U+3400-4DBF, U+4E00-9FFF, U+FF00-FFEF;
+}
+@font-face {
+  font-family: "Site Song";
+  src: url("../fonts/site-song-bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600 700;
+  font-display: swap;
+  unicode-range: U+3000-303F, U+3400-4DBF, U+4E00-9FFF, U+FF00-FFEF;
 }
 @font-face {
   font-family: "Site Mono";
@@ -72,8 +90,8 @@ $toc-visible  : 1120px;  /* from this width the section index sits beside conten
 :root {
   color-scheme: light;
 
-  --font-sans: #{inspect($sans-serif)};
-  --font-serif: #{inspect($sans-serif)};   /* alias: the site uses one text face */
+  --font-sans: #{inspect($serif)};   /* alias: the site uses one text face */
+  --font-serif: #{inspect($serif)};
   --font-mono: #{inspect($monospace)};
 
   /* Surfaces and ink */

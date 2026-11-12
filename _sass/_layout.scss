@@ -97,7 +97,7 @@
   padding: 0.4rem 0.75rem;
   color: var(--ink-2);
   font-size: 0.9375rem;
-  font-weight: 400;
+  font-weight: $weight-text;
   text-decoration: none;
   border-radius: 999px;
   white-space: nowrap;
@@ -452,7 +452,7 @@
   margin-left: 0.4em;
   color: var(--ink-3);
   font-family: $sans-serif;
-  font-weight: 400;
+  font-weight: $weight-text;
   text-decoration: none;
   opacity: 0;
   transition: opacity var(--t-fast) ease, color var(--t-fast) ease;

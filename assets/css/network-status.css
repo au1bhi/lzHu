@@ -93,7 +93,7 @@
 .ns-node-header > :last-child { text-align: right; }
 .ns-node-name { overflow-wrap: anywhere; min-width: 0; }
 .ns-node-latency { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; color: var(--ns-muted); }
-.ns-node .ns-pill { font-size: 0.88em; font-weight: 400; font-variant-numeric: tabular-nums; white-space: normal; line-height: 1.4; }
+.ns-node .ns-pill { font-size: 0.88em; font-weight: inherit; font-variant-numeric: tabular-nums; white-space: normal; line-height: 1.4; }
 .ns-component .ns-empty { padding: 16px 20px; border-top: 1px solid var(--ns-line); }
 .ns-legend { display: flex; gap: 16px; flex-wrap: wrap; color: var(--ns-muted); font-size: 0.82em; }
 .ns-swatch { display: inline-block; width: 9px; height: 9px; border-radius: 2px; background: var(--ns-line); margin-right: 6px; }
