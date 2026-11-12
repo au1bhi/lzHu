@@ -19,6 +19,7 @@
           <li><a href="{{ domain }}{{ link.url }}"{% if current %} aria-current="page"{% endif %}>{{ link.title }}</a></li>
         {% endfor %}
       </ul>
+      <span class="masthead__indicator" aria-hidden="true"></span>
     </nav>
     <div class="masthead__actions">
       <a class="lang-switch" href="{{ base_path }}{{ page.translation | default: t.switch_home }}" lang="{{ t.switch_lang }}" hreflang="{{ t.switch_lang }}" title="{{ t.switch_title }}">{{ t.switch_label }}</a>

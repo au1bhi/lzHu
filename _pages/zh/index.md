@@ -21,10 +21,10 @@ highlights:
     label: "A 题，2026 CCPC 全国邀请赛（福建）暨第十三届 CCPC 福建省赛"
     note: "单题奖项，不代表总排名"
     url: "https://codeforces.com/gym/106565"
-  - value: "ICPC 亚洲区域赛"
-    label: "Honorable Medal，昆明 2024"
-    note: "代表泉州信息工程学院参赛"
-    url: "https://icpc.pku.edu.cn/docs/20241102162338084775.pdf"
+  - value: "竞赛组织与命题"
+    label: "“国教AC杯”大学生程序设计竞赛主要组织者、出题人"
+    note: "为三场比赛出题 · 联合校赛涉及七所合作高校"
+    url: "/zh/portfolio/#organizing"
 ---
 
 {% include base_path %}

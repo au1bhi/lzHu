@@ -19,10 +19,10 @@ highlights:
     label: "Problem A, 2026 National Invitational of CCPC (Fujian)"
     note: "A problem-level distinction, not an overall placement"
     url: "https://codeforces.com/gym/106565"
-  - value: "ICPC Asia Regional"
-    label: "Honorable Medal, Kunming 2024"
-    note: "Representing Quanzhou University of Information Engineering"
-    url: "https://icpc.pku.edu.cn/docs/20241102162338084775.pdf"
+  - value: "Contest Organizer"
+    label: "Principal organizer and problem setter, ISCPC-AC Cup"
+    note: "Problem setter for three contests · joint contest with seven partner universities"
+    url: "/portfolio/#problem-setting--organizing"
 redirect_from:
   - /about/
   - /about.html

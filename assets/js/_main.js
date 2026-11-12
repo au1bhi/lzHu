@@ -87,6 +87,60 @@ if (masthead && menuToggle) {
   window.matchMedia("(min-width: 760px)").addEventListener("change", () => setOpen(false));
 }
 
+/* Navigation indicator: one line that glides to the hovered link ------------ */
+
+const navList = document.querySelector(".masthead__nav");
+const indicator = document.querySelector(".masthead__indicator");
+if (navList && indicator) {
+  const currentLink = navList.querySelector('a[aria-current="page"]');
+  const moveTo = (link) => {
+    if (!link) {
+      indicator.style.setProperty("--ind-o", "0");
+      return;
+    }
+    const inset = 12;
+    indicator.style.setProperty("--ind-x", `${link.offsetLeft + inset}px`);
+    indicator.style.setProperty("--ind-w", `${Math.max(0, link.offsetWidth - inset * 2)}px`);
+    indicator.style.setProperty("--ind-o", "1");
+  };
+  const settle = () => moveTo(currentLink);
+  for (const link of navList.querySelectorAll("a")) {
+    link.addEventListener("pointerenter", () => moveTo(link));
+    link.addEventListener("focus", () => moveTo(link));
+    link.addEventListener("blur", settle);
+  }
+  navList.addEventListener("pointerleave", settle);
+  window.addEventListener("resize", settle, { passive: true });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(settle);
+  settle();
+  navList.classList.add("has-indicator");
+}
+
+/* Pointer light: surfaces read --mx/--my to place a soft highlight ----------- */
+
+if (window.matchMedia("(hover: hover)").matches) {
+  const lit = ".card, .project, .cf-metric, .chart-card, .archive__item, .proof__item a";
+  let lightQueued = false;
+  let lastEvent = null;
+  document.addEventListener(
+    "pointermove",
+    (event) => {
+      lastEvent = event;
+      if (lightQueued) return;
+      lightQueued = true;
+      requestAnimationFrame(() => {
+        lightQueued = false;
+        const surface = lastEvent.target instanceof Element ? lastEvent.target.closest(lit) : null;
+        if (!surface) return;
+        const rect = surface.getBoundingClientRect();
+        surface.style.setProperty("--mx", `${lastEvent.clientX - rect.left}px`);
+        surface.style.setProperty("--my", `${lastEvent.clientY - rect.top}px`);
+      });
+    },
+    { passive: true }
+  );
+}
+
 /* Scroll reveal ----------------------------------------------------------- */
 
 // Elements already on screen keep their CSS entrance; those below the fold are

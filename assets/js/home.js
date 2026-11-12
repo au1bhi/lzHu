@@ -5,6 +5,49 @@
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const token = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
 
+  /* Headline: each word (each character in Chinese) rises from its baseline --- */
+  const title = document.querySelector('[data-split]');
+  if (title && !reducedMotion) {
+    const text = title.textContent.trim();
+    const chinese = /[\u4e00-\u9fff]/.test(text);
+    const parts = chinese ? Array.from(text) : text.split(/(\s+)/);
+    title.setAttribute('aria-label', text);
+    title.textContent = '';
+    let index = 0;
+    for (const part of parts) {
+      if (/^\s+$/.test(part)) {
+        title.append(document.createTextNode(' '));
+        continue;
+      }
+      const word = document.createElement('span');
+      word.className = 'word';
+      word.setAttribute('aria-hidden', 'true');
+      const inner = document.createElement('span');
+      inner.textContent = part;
+      inner.style.setProperty('--w', index);
+      index += 1;
+      word.append(inner);
+      title.append(word);
+    }
+  }
+
+  /* Portrait leans a few degrees toward the pointer ------------------------- */
+  const portrait = document.querySelector('[data-tilt]');
+  if (portrait && !reducedMotion && window.matchMedia('(hover: hover)').matches) {
+    const hero = portrait.closest('.hero');
+    hero.addEventListener('pointermove', (event) => {
+      const rect = portrait.getBoundingClientRect();
+      const dx = (event.clientX - (rect.left + rect.width / 2)) / window.innerWidth;
+      const dy = (event.clientY - (rect.top + rect.height / 2)) / window.innerHeight;
+      portrait.style.setProperty('--tilt-y', `${Math.max(-7, Math.min(7, dx * 16)).toFixed(2)}deg`);
+      portrait.style.setProperty('--tilt-x', `${Math.max(-7, Math.min(7, -dy * 16)).toFixed(2)}deg`);
+    }, { passive: true });
+    hero.addEventListener('pointerleave', () => {
+      portrait.style.setProperty('--tilt-y', '0deg');
+      portrait.style.setProperty('--tilt-x', '0deg');
+    });
+  }
+
   /* Hero backdrop ---------------------------------------------------------
      A jittered grid graph. A shortest-path search (Dijkstra) spreads from a
      source node; once it has covered the graph, the path to the farthest node
