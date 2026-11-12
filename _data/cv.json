@@ -40,13 +40,19 @@
     },
     {
       "company": "NOI-Pre Problem Bank — Matiji",
-      "position": "Problem Tester",
+      "position": "Volunteer Problem Tester",
       "website": "https://www.matiji.net/exam/noi",
       "startDate": "Jul 2024",
       "endDate": "Oct 2024",
       "summary": "NOI-Pre problem bank on Matiji, developed in collaboration with China Computer Federation (CCF) to support informatics education.",
       "highlights": [
         "Tested programming problems for the NOI-Pre problem bank on Matiji; created test cases, checked solution correctness through targeted submissions, and reported issues with test data and judge results."
+      ],
+      "relatedLinks": [
+        {
+          "label": "Volunteer member showcase",
+          "url": "https://www.matiji.net/exam/volunteer"
+        }
       ]
     }
   ],
@@ -54,7 +60,7 @@
     {
       "institution": "Quanzhou University of Information Engineering",
       "area": "Software Engineering (Sino-foreign Cooperation)",
-      "studyType": "Dual-Degree Sino-American Undergraduate Program conducted in China",
+      "studyType": "Dual-Degree Sino-American Undergraduate Program conducted in China (in progress; expected graduation 2027)",
       "startDate": "2023",
       "endDate": "2027 (expected)",
       "gpa": "3.1/4.0",
@@ -63,7 +69,7 @@
     {
       "institution": "Slippery Rock University",
       "area": "Information Systems, Bachelor of Science (BS)",
-      "studyType": "Dual-Degree Sino-American Undergraduate Program conducted in China",
+      "studyType": "Dual-Degree Sino-American Undergraduate Program conducted in China (in progress; expected graduation 2027)",
       "startDate": "2023",
       "endDate": "2027 (expected)",
       "gpa": "3.583/4.000",
@@ -74,32 +80,74 @@
     {
       "name": "Languages & Algorithms",
       "level": "",
-      "keywords": ["C++", "Python", "Java", "JavaScript", "Go", "algorithms and data structures", "competitive programming"]
+      "keywords": [
+        "C++",
+        "Python",
+        "Java",
+        "JavaScript",
+        "Go",
+        "algorithms and data structures",
+        "competitive programming"
+      ]
     },
     {
       "name": "Back-End & Data",
       "level": "",
-      "keywords": ["FastAPI", "Flask", "RuoYi", "PostgreSQL", "MongoDB", "MySQL", "REST API design and integration"]
+      "keywords": [
+        "FastAPI",
+        "Flask",
+        "RuoYi",
+        "PostgreSQL",
+        "MongoDB",
+        "MySQL",
+        "REST API design and integration"
+      ]
     },
     {
       "name": "Systems & DevOps",
       "level": "",
-      "keywords": ["Linux", "Docker", "Git", "SQL tooling", "DOMjudge deployment", "Cloudflare Workers/CDN/DNS", "WARP egress routing"]
+      "keywords": [
+        "Linux",
+        "Docker",
+        "Git",
+        "SQL tooling",
+        "DOMjudge deployment",
+        "Cloudflare Workers/CDN/DNS",
+        "WARP egress routing"
+      ]
     },
     {
       "name": "Information Retrieval & AI Systems",
       "level": "",
-      "keywords": ["Retrieval-Augmented Generation (RAG)", "LLM API integration", "prompt design"]
+      "keywords": [
+        "Retrieval-Augmented Generation (RAG)",
+        "LLM API integration",
+        "prompt design"
+      ]
     },
     {
       "name": "AI Coding Tools",
       "level": "Familiar",
-      "keywords": ["Codex", "Claude Code", "Antigravity CLI", "AGENTS.md / CLAUDE.md project instructions", "shared Skills configuration", "task decomposition and parallel subagent review", "test, static-check, and build validation"]
+      "keywords": [
+        "Codex",
+        "Claude Code",
+        "Antigravity CLI",
+        "AGENTS.md / CLAUDE.md project instructions",
+        "shared Skills configuration",
+        "task decomposition and parallel subagent review",
+        "test, static-check, and build validation"
+      ]
     },
     {
       "name": "Contest Authoring & Judging Tools",
       "level": "Familiar",
-      "keywords": ["Polygon (Codeforces)", "Nowcoder problem-setting platform", "problem preparation", "test-data management", "solution verification"]
+      "keywords": [
+        "Polygon (Codeforces)",
+        "Nowcoder problem-setting platform",
+        "problem preparation",
+        "test-data management",
+        "solution verification"
+      ]
     }
   ],
   "awards": [
@@ -118,10 +166,22 @@
   ],
   "languages": [],
   "interests": [
-    {"name": "Algorithms and Data Structures", "keywords": []},
-    {"name": "Software and Distributed Systems", "keywords": []},
-    {"name": "Information Retrieval and Retrieval-Augmented Generation", "keywords": []},
-    {"name": "Reliable and Intelligent Information Systems", "keywords": []}
+    {
+      "name": "Algorithms and Data Structures",
+      "keywords": []
+    },
+    {
+      "name": "Software and Distributed Systems",
+      "keywords": []
+    },
+    {
+      "name": "Information Retrieval and Retrieval-Augmented Generation",
+      "keywords": []
+    },
+    {
+      "name": "Reliable and Intelligent Information Systems",
+      "keywords": []
+    }
   ],
   "references": [],
   "publications": [],
@@ -143,13 +203,6 @@
       "description": "Built a Flask backend using PostgreSQL for landlord credit scoring, rankings, and anomaly audits, and MongoDB for WeChat message storage. Developed APIs for group moderation, regex nickname checks, and Excel/CSV imports; automated regression checks with Postman."
     },
     {
-      "name": "EVE Online Community Back-End System",
-      "category": "selected project",
-      "date": "2023–2025",
-      "url": "",
-      "description": "Re-architected a RuoYi-based community platform and developed data-query, moderation, and workflow tools for community managers and content creators."
-    },
-    {
       "name": "DOMjudge Online Judge Deployment & Operations",
       "category": "selected project",
       "date": "2024–Present",
@@ -162,6 +215,25 @@
       "date": "",
       "url": "",
       "description": "Built a Cloudflare Workers service to distribute proxy connection profiles in Clash/V2Ray formats, with ISP ASN-based node selection, cached configuration, and CDN speed testing. Automated VPS egress configuration using Python, routing IPv6 through WARP alongside native IPv4. Added configuration backups, repeatable deployment, connectivity checks, and regression tests for routing conflicts and preservation of existing settings."
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "University ICPC/CCPC Training Team",
+      "position": "Coordinator",
+      "startDate": "2024-09",
+      "summary": "Coordinated university ICPC/CCPC team recruitment, training, selection, and participation logistics.",
+      "highlights": [
+        "Supported university team participation: The 2026 ICPC China Nanchang National Invitational Programming Contest.",
+        "Supported university team participation: 2025 CCPC National Invitational (Nanchang) and the 2nd Jiangxi Provincial Collegiate Programming Contest.",
+        "Supported university team participation: 2026 National Invitational of CCPC (Fujian), The 13th Fujian Collegiate Programming Contest.",
+        "Supported university team participation: 2025 ICPC Asia EC Online Preliminary Contest.",
+        "Supported university team participation: 2025 CCPC Online Contest.",
+        "Supported university team participation: 2026 CCPC Guizhou Provincial Contest and National Invitational.",
+        "Supported university team participation: The 2025 ICPC China Guizhou Provincial Programming Contest.",
+        "Supported university team participation: The 2024 ICPC Asia Kunming Regional Contest."
+      ],
+      "endDate": "2026-09"
     }
   ]
 }

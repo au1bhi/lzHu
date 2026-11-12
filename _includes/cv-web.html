@@ -1,0 +1,42 @@
+{%- comment -%}
+  Complete profile rendered from _data/cv_web.json, which scripts/export_cv_web.py
+  generates from cv-latex/variants.json. Usage: {% include cv-web.html lang="zh" %}
+  Do not edit the text here; edit the registry and re-run the export.
+{%- endcomment -%}
+{% assign cv = site.data.cv_web[include.lang] %}
+
+<h2 id="profile">{{ cv.headings.profile }}</h2>
+<p>{{ cv.profile }}</p>
+
+<h2 id="education">{{ cv.headings.education }}</h2>
+<ul>
+  {% for school in cv.education.schools %}
+  <li><strong>{{ school.name }}</strong><br><em class="cv-meta"><span class="cv-meta__item">{{ cv.education.period }}</span><span class="cv-meta__item">{{ school.gpa }}</span></em><br>{{ school.degree }}</li>
+  {% endfor %}
+</ul>
+<p><em>{{ cv.education.note }}</em></p>
+
+<h2 id="interests">{{ cv.headings.interests }}</h2>
+<p>{{ cv.interests }}</p>
+
+{% for section in cv.sections %}
+<h2 id="section-{{ forloop.index }}">{{ section.title }}</h2>
+<ul>
+  {% for item in section.entries %}{% include cv-web-entry.html item=item %}{% endfor %}
+</ul>
+{% endfor %}
+
+<h2 id="awards">{{ cv.headings.awards }}</h2>
+<ul>
+  {% for award in cv.awards %}<li>{{ award }}</li>{% endfor %}
+</ul>
+
+<h2 id="skills">{{ cv.headings.skills }}</h2>
+<ul>
+  {% for skill in cv.skills %}<li><strong>{{ skill.label }}</strong><br>{{ skill.text }}</li>{% endfor %}
+</ul>
+
+<h2 id="resources">{{ cv.resources.title }}</h2>
+<ul>
+  {% for item in cv.resources.entries %}{% include cv-web-entry.html item=item %}{% endfor %}
+</ul>

@@ -2,15 +2,38 @@
 layout: archive
 title: "CV"
 permalink: /cv/
-author_profile: true
+classes: cv
+translation: /zh/cv/
+toc: true
+lead: "Education, projects, technical experience, awards, and the complete profile in Chinese and English."
 redirect_from:
   - /resume
 ---
 
 {% include base_path %}
 
-[English CV (PDF)](/assets/pdf/Lizhong_Hu_CV.pdf){: .btn .btn--primary }
-[中文简历（PDF）](/assets/pdf/Lizhong_Hu_CV_zh.pdf){: .btn .btn--primary }
+## 完整介绍 / Complete Profile
+
+中英文完整介绍覆盖网站中的教育、研究方向、项目、技术实践、竞赛获奖、组织活动、技术技能与竞赛资料链接，按内容自然分页，不限制一页 A4。
+
+<div class="download-grid">
+  <a class="download-card" href="{{ base_path }}/assets/pdf/full/Lizhong_Hu_CV_zh.pdf">
+    <span class="download-card__badge">PDF</span>
+    <span class="download-card__body">
+      <span class="download-card__title">中文完整介绍</span>
+      <span class="download-card__note">简体中文 · A4 多页</span>
+    </span>
+    <span class="download-card__icon">{% include icon.html name="download" %}</span>
+  </a>
+  <a class="download-card" href="{{ base_path }}/assets/pdf/full/Lizhong_Hu_CV_en.pdf">
+    <span class="download-card__badge">PDF</span>
+    <span class="download-card__body">
+      <span class="download-card__title">Complete Profile in English</span>
+      <span class="download-card__note">English · Multi-page A4</span>
+    </span>
+    <span class="download-card__icon">{% include icon.html name="download" %}</span>
+  </a>
+</div>
 
 ## Profile
 
@@ -18,10 +41,8 @@ Software Engineering undergraduate in a Sino-American dual-degree program, with 
 
 ## Research Interests
 
-* Algorithms and Data Structures
-* Software and Distributed Systems
-* Information Retrieval and Retrieval-Augmented Generation
-* Reliable and Intelligent Information Systems
+* **Primary interests:** Information Retrieval and Verifiable Retrieval-Augmented Generation
+* **Related interests:** Algorithms and Data Structures; Software and Distributed Systems; Reliable and Intelligent Information Systems
 
 ## Education
 
@@ -29,11 +50,11 @@ Software Engineering undergraduate in a Sino-American dual-degree program, with 
 *Dual-Degree Sino-American Undergraduate Program, 2023–2027 (expected)*
 
 * **Quanzhou University of Information Engineering**<br>
-  Software Engineering (Sino-foreign Cooperation)<br>
+  Software Engineering (Sino-foreign Cooperation; in progress, expected 2027)<br>
   GPA: 3.1/4.0
 
 * **Slippery Rock University**<br>
-  Information Systems, Bachelor of Science (BS)<br>
+  Information Systems, Bachelor of Science (BS; in progress, expected 2027)<br>
   GPA: 3.583/4.000
 
 *Four-year 4+0 joint undergraduate program conducted in China and officially recognized by the Ministry of Education of China.*
@@ -53,13 +74,7 @@ Software Engineering undergraduate in a Sino-American dual-degree program, with 
   * Built a Flask backend using PostgreSQL for landlord credit scoring, rankings, and anomaly audits, and MongoDB for WeChat message storage.
   * Developed APIs for group moderation, regex nickname checks, and Excel/CSV imports; automated regression checks with Postman.
 
-* **EVE Online Community Back-End System**<br>
-  *Java & RuoYi | Oct 2023 – Apr 2025*<br>
-  * Re-architected a RuoYi-based community platform and developed data-query, moderation, and workflow tools for community managers and content creators.
-
-* **DOMjudge Online Judge Deployment & Operations**<br>
-  *Linux & Docker | Sep 2024 – Present*<br>
-  * Maintain a containerized DOMjudge environment for campus training and programming contests.
+{% include cv/domjudge.md %}
 
 * **Encrypted Overlay Network with Dual-Stack Egress Isolation**<br>
   *Personal infrastructure project | Cloudflare Workers, Linux & Python*<br>
@@ -76,42 +91,28 @@ Software Engineering undergraduate in a Sino-American dual-degree program, with 
   * Monitored TOC signals during matches and provided on-site technical support throughout a 16-day football broadcast assignment.
   * Helped engineers isolate a monitor-feed fault to an optical transmitter through receiver replacement and attenuation tests; the feed was restored following post-match replacement and end-to-end verification.
 
-* **[NOI-Pre Problem Bank — Matiji](https://www.matiji.net/exam/noi)**<br>
-  *Problem Tester | Jul 2024 – Oct 2024*<br>
-  A collaboration between Matiji (码蹄集) and China Computer Federation (CCF) supporting informatics education.
-  * Tested programming problems for the NOI-Pre problem bank on Matiji; created test cases, checked solution correctness through targeted submissions, and reported issues with test data and judge results.
+{% include cv/matiji.md %}
 
 ## Competitive Programming & Awards
 
-* **[2026 National Invitational of CCPC (Fujian), The 13th Fujian Collegiate Programming Contest](https://codeforces.com/gym/106565)**<br>
-  *First to Solve Award (Problem A) | 2026*<br>
-  Recorded the contest's first accepted solution to Problem A; this is a problem-level distinction, not an overall placement.
+{% include cv/award-ccpc-fujian.md %}
 
-* **[The 2024 ICPC Asia Kunming Regional Contest](https://icpc.pku.edu.cn/docs/20241102162338084775.pdf)**<br>
-  *Honorable Medal | 2024*<br>
-  Awarded Honorable Medal at The 2024 ICPC Asia Kunming Regional Contest, representing Quanzhou University of Information Engineering.
+{% include cv/award-icpc-kunming.md %}
 
-* **[15th Lanqiao Cup](https://www.lanqiao.cn/cup-fifteen/)**<br>
-  *First Prize | Fujian Provincial Round | Python Programming, University Group B | 2024*<br>
-  第十五届蓝桥杯全国软件和信息技术专业人才大赛，福建省赛 Python 程序设计大学 B 组一等奖。
+{% include cv/award-lanqiao.md %}
 
 ## Leadership & Activities
 
-* **ACM算法社**<br>
-  *Organizer | Sep 2024 – Sep 2025*<br>
-  Managed day-to-day club operations and helped organize the [“国教AC杯”大学生程序设计竞赛](https://ac.nowcoder.com/acm/contest/112012) and [环海岸线联盟联合校赛](https://ac.nowcoder.com/acm/contest/130880), involving seven partner universities.
+{% include cv/acm-club.md %}
 
 * **[School of International Education](https://english.qzuie.edu.cn/news-list-schoolsdepartments.html)**<br>
   *Deputy Director, Learning Department | Sep 2024 – Sep 2025*<br>
   Coordinated faculty lecture series, competition events, and student participation.
 
-* **University ICPC/CCPC training team**<br>
-  *Coordinator | Sep 2024 – Present*<br>
-  Coordinate university recruitment and training for ICPC and CCPC competitors; supported logistics and team selection for The 2024 ICPC Asia Kunming Regional Contest.
+{% include cv/training-team.md %}
 
-* **[2025年度第六届大学生算法设计与编程挑战赛（春季赛）](https://new.saikr.com/vse/adpc/2025/spring)**<br>
-  *Problem Setter | Spring 2025*<br>
-  Contributed to problem design, solution validation, difficulty calibration, and editorial review.
+
+{% include cv/problem-setting-spring-2025.md %}
 
 ## Technical Skills
 
@@ -123,6 +124,6 @@ Software Engineering undergraduate in a Sino-American dual-degree program, with 
 
 * **Information Retrieval & AI Systems**: Retrieval-Augmented Generation (RAG), LLM API integration, prompt design
 
-* **AI Coding Tools**: Familiar with Codex, Claude Code, and Antigravity CLI for development and debugging; configure repository instructions and shared Skills, coordinate subagents for parallel code review, and validate changes through tests, static checks, and builds. Use AGENTS.md / CLAUDE.md for project context and conventions, shared skill directories for task guidance, and pytest, Ruff/type checks, Docker Compose, and browser checks for validation.
+* **Development Tools & Validation**: Codex, Claude Code, and Antigravity CLI; configure AGENTS.md / CLAUDE.md and shared Skills, decompose tasks, and coordinate subagent review. Validate changes with pytest, Ruff/type checks, Docker Compose, browser checks, and builds.
 
-* **Contest Authoring & Judging Tools**: Familiar with Polygon (Codeforces) and Nowcoder’s problem-setting platform for problem preparation, test-data management, and solution verification.
+{% include cv/contest-tools.md %}

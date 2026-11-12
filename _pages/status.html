@@ -1,25 +1,22 @@
 ---
 layout: single
-author_profile: true
 title: "Network Status"
 permalink: /status/
+wide: true
 excerpt: "Live IPv4 and IPv6 node connectivity and recorded probe history."
+lead: "Live connection checks from Shanghai for individual IPv4 and IPv6 nodes."
 ---
 
 <link rel="stylesheet" href="{{ '/assets/css/network-status.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 <div class="ns-page" id="network-status" data-endpoint="https://notellm.au1bhi.com/network-status/ip-data">
-  <header class="ns-intro">
-    <p class="ns-muted">Live connection checks from Shanghai for individual IPv4 and IPv6 nodes.</p>
-    <button id="ns-refresh" class="ns-button" type="button">↻ Refresh</button>
-  </header>
   <section id="ns-banner" class="ns-banner unknown" aria-live="polite">
     <span class="ns-icon" aria-hidden="true">◉</span>
     <div><h2 id="ns-headline">Loading monitoring data</h2><p id="ns-note">Fetching the latest IPv4 and IPv6 probe results.</p></div>
   </section>
-  <div class="ns-meta"><span id="ns-updated">Awaiting the first probe</span><span id="ns-connection" role="status">Updating…</span></div>
+  <div class="ns-meta"><span id="ns-updated">Awaiting the first probe</span><span id="ns-connection" role="status">Updating…</span><button id="ns-refresh" class="ns-button" type="button">{% include icon.html name="refresh" %} Refresh</button></div>
   <div class="ns-stats" aria-label="Node overview">
-    <div><span>Accept</span><strong id="ns-available">—</strong></div>
-    <div><span>Time Limit Exceed</span><strong id="ns-failed">—</strong></div>
+    <div class="operational"><span>Accept</span><strong id="ns-available">—</strong></div>
+    <div class="down"><span>Time Limit Exceed</span><strong id="ns-failed">—</strong></div>
     <div><span>Skipped</span><strong id="ns-unknown">—</strong></div>
   </div>
   <div class="ns-section-top"><h2>Routes and nodes</h2><label for="ns-search" class="ns-sr-only">Search IPv4 or IPv6 nodes</label><input id="ns-search" type="search" placeholder="Search nodes…"></div>

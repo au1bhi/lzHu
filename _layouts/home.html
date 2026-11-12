@@ -1,0 +1,49 @@
+---
+layout: default
+---
+
+{% include base_path %}
+{% assign author = site.author %}
+{% assign lang = page.lang | default: "en" %}
+{% assign t = site.data.i18n[lang] %}
+
+<div class="home">
+  <section class="hero">
+    <canvas class="hero__graph" data-hero-graph aria-hidden="true"></canvas>
+    <figure class="hero__portrait" data-reveal style="--i: 1">
+      <img src="{{ author.avatar | prepend: "/images/" | prepend: base_path }}" alt="{{ t.portrait_alt }} {{ author.name }}" width="544" height="544" fetchpriority="high" decoding="async">
+    </figure>
+    <div class="hero__text">
+      {% if page.eyebrow %}<p class="eyebrow" data-reveal>{{ page.eyebrow }}</p>{% endif %}
+      <h1 class="hero__title" data-reveal style="--i: 1">{{ page.hero_title | default: author.name }}</h1>
+      {% if page.lead %}<p class="hero__lead" data-reveal style="--i: 2">{{ page.lead }}</p>{% endif %}
+      <div class="hero__actions" data-reveal style="--i: 3">
+        <a class="btn btn--primary" href="{{ base_path }}{{ t.cv_url }}">{{ t.view_cv }} {% include icon.html name="arrow-right" %}</a>
+        {% if author.github %}<a class="btn" href="https://github.com/{{ author.github }}" rel="me noopener">{% include icon.html name="github" %} GitHub</a>{% endif %}
+        {% if author.email %}<a class="btn" href="mailto:{{ author.email }}">{% include icon.html name="mail" %} {{ t.email }}</a>{% endif %}
+      </div>
+      <ul class="hero__meta" data-reveal style="--i: 4">
+        {% if author.location %}<li>{% include icon.html name="location" %}{{ t.location }}</li>{% endif %}
+        {% if author.linkedin %}<li><a href="https://www.linkedin.com/in/{{ author.linkedin }}" rel="me noopener">{% include icon.html name="linkedin" %} LinkedIn</a></li>{% endif %}
+      </ul>
+    </div>
+  </section>
+
+  {% if page.highlights %}
+  <ul class="proof" aria-label="Selected results">
+    {% for item in page.highlights %}
+    <li class="proof__item" data-reveal style="--i: {{ forloop.index | plus: 3 }}">
+      <a href="{{ item.url }}"{% if item.url contains '://' %} rel="noopener"{% endif %}>
+        <span class="proof__value">{{ item.value }}</span>
+        <span class="proof__label">{{ item.label }}</span>
+        <span class="proof__note">{{ item.note }}</span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+
+  {{ content }}
+</div>
+
+<script src="{{ '/assets/js/home.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>

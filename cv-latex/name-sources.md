@@ -24,16 +24,16 @@
 - **The 2024 ICPC Asia Kunming Regional Contest**：采用[组委会报名指南](https://icpc.pku.edu.cn/docs/20241102162338084775.pdf)给出的英文赛事名，替换 49th ICPC Asia Kunming Regional。
 - **第十五届蓝桥杯全国软件和信息技术专业人才大赛**：见[赛事官网](https://www.lanqiao.cn/cup-fifteen/)；英文品牌 **Lanqiao Cup** 见[官方英文页面](https://guojisai.lanqiao.cn/register.html)。福建省赛、Python 程序设计大学 B 组一等奖由本人确认；英文组别文字是对应翻译。
 - **20th Asian Games Aichi-Nagoya 2026**、**Gifu Nagaragawa Stadium**：见[组委会英文赛程](https://www.aichi-nagoya2026.org/files/common/0212%E7%AB%B6%E6%8A%80%E3%82%B9%E3%82%B1%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E5%A4%89%E6%9B%B4/English/Session%20Schedule%20for%20the%2020th%20Asian%20Games.pdf)，保留原写法。
-- **“国教AC杯”大学生程序设计竞赛**：采用[本人提供的牛客赛事页面](https://ac.nowcoder.com/acm/contest/112012)名称，页面日期为 2025-06-16，并使用缩写 IESCPC。
+- **“国教AC杯”大学生程序设计竞赛**：采用[本人提供的牛客赛事页面](https://ac.nowcoder.com/acm/contest/112012)名称，页面日期为 2025-06-16，页面曾使用缩写 IESCPC；当前英文名称以用户确认的 ISCPC-AC Cup 为准。
 - **环海岸线联盟联合校赛**：采用[本人提供的牛客赛事页面](https://ac.nowcoder.com/acm/contest/130880) HTML 标题中的名称。网页提取工具未能读取正文，通过直接读取公开 HTML 核实标题。仓库 [CACPC-1st.pdf](../files/CACPC-1st.pdf) 属于合并冠名题册，档案链接按题册原名列出；简历中按本人确认的两个独立赛事分别列出。
 - **2025年度第六届大学生算法设计与编程挑战赛（春季赛）**：严格采用[赛事主页](https://new.saikr.com/vse/adpc/2025/spring)标题及正文举办通知中的名称。部分组委会[报名通知](https://m.saikr.com/contest/notice_detail/28165)和[获奖公告](https://m.saikr.com/contest/notice_detail/31309)含“全国”，来源存在两种写法；统一以主页面为准，不将其中一种称作唯一官方名称。保留中文，不编造官方英文译名；赛氪为发布平台，不等同于赛事名称。
 - **2025 泉州信息工程学院软件学院第二届“爱拼会赢”科创节 ACM 算法比赛**：使用仓库 [contest-54320-z.pdf](../files/contest-54320-z.pdf) 页眉原名，修正赛事资料链接的泛称。
 
 ## 技术与个人项目
 
-以下写法与维护者或产品官网一致，保留：[DOMjudge](https://www.domjudge.org/)、[Xboard](https://github.com/cedar2025/Xboard/)、[3x-ui](https://github.com/MHSanaei/3x-ui/blob/main/docs/content/docs/en/guide/index.mdx)、[RuoYi](https://ruoyi.vip/)、[FastAPI](https://fastapi.tiangolo.com/)、[Flask](https://flask.palletsprojects.com/)、[PostgreSQL](https://www.postgresql.org/)、[MongoDB](https://www.mongodb.com/)、[MySQL](https://www.mysql.com/)、[Postman](https://www.postman.com/)、[Docker](https://www.docker.com/)、[Cloudflare](https://www.cloudflare.com/)、[EVE Online](https://www.eveonline.com/)。3x-ui 的旧文档亦使用 3X-UI，当前指南采用 3x-ui。
+以下写法与维护者或产品官网一致，保留：[DOMjudge](https://www.domjudge.org/)、[Xboard](https://github.com/cedar2025/Xboard/)、[3x-ui](https://github.com/MHSanaei/3x-ui/blob/main/docs/content/docs/en/guide/index.mdx)、[RuoYi](https://ruoyi.vip/)、[FastAPI](https://fastapi.tiangolo.com/)、[Flask](https://flask.palletsprojects.com/)、[PostgreSQL](https://www.postgresql.org/)、[MongoDB](https://www.mongodb.com/)、[MySQL](https://www.mysql.com/)、[Postman](https://www.postman.com/)、[Docker](https://www.docker.com/)、[Cloudflare](https://www.cloudflare.com/)。3x-ui 的旧文档亦使用 3X-UI，当前指南采用 3x-ui。
 
-Python、Java、Go、Git 的拼写分别核对其官方网站；C++、JavaScript、Linux、SQL、REST、RAG、LLM 等通用技术名称保留常用标准写法，不附加未经提供的版本、认证或熟练度等级。个人 RAG 系统、EVE Online 社区后端及基础设施维护的项目标题属于工作内容描述，不声称为官方产品名称或厂商任职。
+Python、Java、Go、Git 的拼写分别核对其官方网站；C++、JavaScript、Linux、SQL、REST、RAG、LLM 等通用技术名称保留常用标准写法，不附加未经提供的版本、认证或熟练度等级。个人 RAG 系统及基础设施维护的项目标题属于工作内容描述，不声称为官方产品名称或厂商任职。
 
 ## 本人确认与未核实项目
 
@@ -87,3 +87,51 @@ TOC 职位未查到官方中文职衔，保留本人确认的 TOC Operator。ACM
 ### 隐私导向的项目表述
 
 按本人要求，项目标题调整为“面向隐私的个人网络管理系统 / Privacy-Oriented Personal Network Management System”。“面向隐私”表达个人项目的设计目标；描述仍保留代理配置、节点选择、IPv4/IPv6 分流及运维验证等实际功能，不据标题宣称匿名性、端到端加密、零日志、安全认证或法律合规结论。
+
+### 校内赛事组织与命题职责补充
+
+本人补充确认：2025 泉州信息工程学院软件学院第二届“爱拼会赢”科创节 ACM 算法比赛为“组织者之一、出题人之一”；国教AC杯为“主要组织者、出题人”。中英文分别使用 “one of the organizers and problem setters” 与 “principal organizer and problem setter”。国教AC杯的主要组织者职责不自动扩展为环海岸线联盟联合校赛的主要组织者职责；后者沿用协助组织、涉及七所合作高校的既有描述。题册链接提供赛事参考资料，个人职责依据本人确认。
+
+## 集训队参赛组织涉及赛事（2026-10-08 核对）
+
+用户确认以下赛事属于校 ICPC/CCPC 集训队参赛组织经历。描述限定为本校队伍招新、集训、选拔和参赛事务协调，不写成全国或省级赛事组委会任职。完整中英文 CV 逐项列出；投递版使用保留年份、系列与地点的简写，以便控制篇幅。
+
+| 中文名称 | 英文名称 | 核对来源 |
+| --- | --- | --- |
+| 2026年ICPC国际大学生程序设计竞赛全国邀请赛（南昌） | The 2026 ICPC China Nanchang National Invitational Programming Contest | [赛事资料](https://icpc.global/regionals/results/2025) |
+| 2025年CCPC全国邀请赛（南昌）暨第二届CCPC江西省大学生程序设计竞赛 | 2025 CCPC National Invitational (Nanchang) and the 2nd Jiangxi Provincial Collegiate Programming Contest | [赛事资料](https://qoj.ac/download.php?id=14511&type=statement) |
+| 2026年中国大学生程序设计竞赛全国邀请赛（福建）暨第十三届CCPC福建省大学生程序设计竞赛 | 2026 National Invitational of CCPC (Fujian), The 13th Fujian Collegiate Programming Contest | [赛事资料](https://codeforces.com/gym/106565/attachments/download/37939/official.pdf) |
+| 2025 ICPC Asia EC 网络预选赛 | 2025 ICPC Asia EC Online Preliminary Contest | [赛事资料](https://icpc.pku.edu.cn/ssxx/1119_icpcbjzb_169379.htm) |
+| 2025 CCPC 网络赛 | 2025 CCPC Online Contest | [赛事资料](https://ccpc.io/) |
+| 2026年中国大学生程序设计竞赛（CCPC）贵州省赛暨全国邀请赛 | 2026 CCPC Guizhou Provincial Contest and National Invitational | [赛事资料](https://news.gzu.edu.cn/2026/0609/c18521a275565/page.htm) |
+| 2025年ICPC贵州省大学生程序设计竞赛 | The 2025 ICPC China Guizhou Provincial Programming Contest | [赛事资料](https://icpc.global/regionals/finder/ChinaGuizhouProvincial-2026) |
+
+南昌 ICPC 邀请赛采用 ICPC 官方赛事目录英文注册名；[ICPC 北京总部承办名单](https://icpc.pku.edu.cn/tzgg/8c95fbb776444c08be4ef1a5bf6bdc98.htm)确认 2026 年江西师范大学承办全国邀请赛，[参赛高校官方报道](https://bkjy.ucas.edu.cn/index.php/xwzx/7910-2026-icpc%20title%3D)确认南昌邀请赛名称和举办地点。未将其误写成 2026 年南昌区域赛或 CCPC 南昌邀请赛。
+
+2025 年 CCPC 南昌试题册采用“2025 年 CCPC 全国邀请赛（南昌）暨江西省赛”；[参赛高校西华大学报道](https://cs.xhu.edu.cn/84/12/c10299a230418/page.htm)确认江西省赛为第二届。福建赛事沿用官方试题册中英文标题。2025 年 CCPC 官网公告标题为“2025 CCPC 网络赛通知”，CV 采用“2025 CCPC 网络赛”，不将网络赛改写为线下全国赛。ICPC Asia EC 网络预选赛、CCPC 网络赛、CCPC 南昌与贵州赛事未取得独立官方英文长标题的部分使用描述性英文译名，不宣称为官方英文注册名。
+
+按用户要求，EVE 社区后端项目已从网页 CV、CV JSON、双语内容源及所有当前发布 PDF 中删除，后续更新不得自动恢复该项目。
+
+## 集训队时间与国教AC杯英文名称（用户于 2026-10-08 确认）
+
+校 ICPC/CCPC 集训队协调组织经历为 2024 年 9 月至 2026 年 9 月（Sep 2024–Sep 2026），已结束，英文职责使用过去时。国教AC杯英文名统一采用 **ISCPC-AC Cup**，替换此前的 Guojiao AC Cup 描述性译名；中文赛事名称和个人组织、出题职责保持原记录。
+
+## 科创节赛事英文名称（用户于 2026-10-08 确认）
+
+该赛事英文名称中的学院标识统一为 **QUIE-Software School**，替换此前的 QZU Software School。该修正适用于科创节赛事名称及相关经历描述，学校教育经历继续保留完整英文名称 Quanzhou University of Information Engineering。
+
+## 第六届大学生算法设计与编程挑战赛职责（用户于 2026-10-08 确认）
+
+2025 年春季赛职责为“出题人之一”（One of the problem setters）；中英文标题、职责描述和发布 PDF 均须保留共同命题的范围，不改写为唯一或主要出题人。
+
+## 完整版结构修复（2026-10-08）
+
+两校学位均为在读，预计 2027 年毕业；中文版保留 Information Systems 英文专业名，并附中文释义“信息系统”。集训队赛事按年份分组，8 场均表述为本校队伍参赛组织。NoteLLM 的合成评测范围、指标定义、结果与资料链接全部保留。赛事档案集中提供材料，个人职责只在组织经历中完整描述。技术分组依据已展示项目调整，不新增熟练度等级、人数、题数、用户规模或成绩。
+
+## 码蹄集风采展示链接（2026-10-09）
+
+用户提供[码蹄集风采展示页面](https://www.matiji.net/exam/volunteer)，加入现有 NOI-Pre 题库验题经历的相关资料链接。页面标题为“码蹄集-风采展示”；本次可读取内容显示“暂无志愿者”，未取得胡力中的个人展示条目。该链接不作为新增个人职衔、获奖或任职时间的证明，既有验题职责和时间沿用用户此前确认。链接名称采用“码蹄集风采展示 / Matiji volunteer showcase”（英文为描述性译名），在完整介绍、算法教育培训与升学版本中提供。
+
+## 码蹄集志愿者成员身份（用户于 2026-10-09 进一步确认）
+
+用户明确确认本人为风采展示中的成员，名单中泉州信息工程学院对应成员即本人。简历据本人确认，将既有 NOI-Pre 验题经历明确为“志愿者验题成员 / Volunteer Problem Tester”，链接标注为“志愿者成员展示 / Volunteer member showcase”。此前页面抓取未返回个人条目属于读取限制，不用于否定本人确认的成员身份；本次未独立读取到具体条目。个人验题工作日期仍沿用既有 2024 年 7–10 月，不推断志愿者身份的额外起止时间。

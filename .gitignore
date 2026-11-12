@@ -8,18 +8,22 @@ local/
 # Dependency directories (lockfiles remain tracked for reproducible builds)
 node_modules
 
+# Python bytecode caches
+__pycache__/
+
 # Ignore the vendor file at root level and bundle for alternative installation
 /vendor/
 .bundle/
 
 # LaTeX CV build output (the published copy under assets/pdf is tracked)
-cv-latex/*.aux
-cv-latex/*.fdb_latexmk
-cv-latex/*.fls
-cv-latex/*.log
-cv-latex/*.out
-cv-latex/*.pdf
-cv-latex/*.synctex.gz
+cv-latex/**/*.aux
+cv-latex/**/*.fdb_latexmk
+cv-latex/**/*.fls
+cv-latex/**/*.log
+cv-latex/**/*.out
+cv-latex/**/*.pdf
+cv-latex/**/*.xdv
+cv-latex/**/*.synctex.gz
 
 # Ignore folders related to IDEs
 .vscode/

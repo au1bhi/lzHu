@@ -1,26 +1,34 @@
 {% include base_path %}
+{% assign lang = page.lang | default: "en" %}
+{% assign t = site.data.i18n[lang] %}
+{% if lang == "zh" %}{% assign nav = site.data.navigation.main_zh %}{% else %}{% assign nav = site.data.navigation.main %}{% endif %}
 
-<div class="masthead">
-  <div class="masthead__inner-wrap">
-    <div class="masthead__menu">
-      <nav id="site-nav" class="greedy-nav">
-        <button><span class="navicon"></span></button>
-        <ul class="visible-links">
-          <li class="masthead__menu-item masthead__menu-item--lg persist"><a href="{{ base_path }}/">{{ site.title }}</a></li>
-          {% for link in site.data.navigation.main %}
-            {% if link.url contains 'http' %}
-              {% assign domain = '' %}
-            {% else %}
-              {% assign domain = base_path %}
-            {% endif %}
-            <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
-          {% endfor %}
-          <li id="theme-toggle" class="masthead__menu-item persist tail">
-            <a role="button" aria-labelledby="theme-icon"><i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true" title="toggle theme"></i></a>
-          </li>
-        </ul>
-        <ul class="hidden-links hidden"></ul>
-      </nav>
+<header class="masthead" data-masthead>
+  <div class="masthead__inner">
+    <a class="masthead__brand" href="{{ base_path }}{{ t.home_url }}"><span class="masthead__mark" aria-hidden="true"></span>{{ site.title }}</a>
+    <nav id="site-nav" class="masthead__nav" aria-label="Primary">
+      <ul>
+        {% for link in nav %}
+          {% if link.url contains 'http' %}{% assign domain = '' %}{% else %}{% assign domain = base_path %}{% endif %}
+          {% assign current = false %}
+          {% if link.url == page.url %}
+            {% assign current = true %}
+          {% elsif link.url != '/' and link.url != '/zh/' and page.url contains link.url %}
+            {% assign current = true %}
+          {% endif %}
+          <li><a href="{{ domain }}{{ link.url }}"{% if current %} aria-current="page"{% endif %}>{{ link.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+    <div class="masthead__actions">
+      <a class="lang-switch" href="{{ base_path }}{{ page.translation | default: t.switch_home }}" lang="{{ t.switch_lang }}" hreflang="{{ t.switch_lang }}" title="{{ t.switch_title }}">{{ t.switch_label }}</a>
+      <button id="theme-toggle" class="icon-btn theme-toggle" type="button" aria-label="{{ t.theme }}" title="{{ t.theme }}">
+        {% include icon.html name="sun" class="icon--sun" %}{% include icon.html name="moon" class="icon--moon" %}
+      </button>
+      <button class="icon-btn masthead__menu-btn" type="button" aria-label="{{ t.menu }}" aria-expanded="false" aria-controls="site-nav" data-menu-toggle>
+        <span class="menu-bars" aria-hidden="true"></span>
+      </button>
     </div>
   </div>
-</div>
+  <div class="masthead__progress" aria-hidden="true"></div>
+</header>

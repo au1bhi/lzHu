@@ -1,0 +1,16 @@
+{%- assign item = include.item -%}
+<li>
+  <strong>{% if item.url %}<a href="{{ item.url }}">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %}</strong>
+  {% if item.meta.size > 0 %}<br><em class="cv-meta">{% for part in item.meta %}<span class="cv-meta__item">{{ part }}</span>{% endfor %}</em>{% endif %}
+  <ul>
+    {% for bullet in item.bullets %}<li>{% if bullet.label != "" %}<strong>{{ bullet.label }}</strong> {% endif %}{{ bullet.text }}</li>{% endfor %}
+  </ul>
+  {% if item.note %}<p class="cv-note">{{ item.note }}</p>{% endif %}
+  {% if item.event_groups %}
+  <p class="cv-note">{{ item.event_intro }}</p>
+  <ul>
+    {% for group in item.event_groups %}<li><strong>{{ group.year }}</strong> {{ group.text }}</li>{% endfor %}
+  </ul>
+  {% endif %}
+  {% if item.resources %}<p class="cv-links">{% for resource in item.resources %}<a href="{{ resource.url }}">{{ resource.label }}</a>{% unless forloop.last %} · {% endunless %}{% endfor %}</p>{% endif %}
+</li>

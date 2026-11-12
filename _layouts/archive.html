@@ -12,13 +12,15 @@ layout: default
   {% endunless %}
 {% endif %}
 
-<div id="main" role="main">
-  {% include sidebar.html %}
-
-  <div class="archive">
+<div class="shell{% if page.wide %} shell--wide{% endif %}{% if page.toc %} shell--toc{% endif %}">
+  <div class="page archive">
     {% unless page.header.overlay_color or page.header.overlay_image %}
-      <h1 class="page__title">{{ page.title }}</h1>
+      {% include page-header.html %}
     {% endunless %}
-    {{ content }}
+    <div class="page__content">
+      {{ content }}
+    </div>
   </div>
+
+  {% include page-toc.html %}
 </div>

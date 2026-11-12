@@ -1,0 +1,182 @@
+/* ==========================================================================
+   DESIGN TOKENS
+   Typefaces, colour roles, spacing and motion shared by every page.
+   Dark values are declared once in the mixin and applied both for the
+   explicit toggle and for the no-JavaScript system preference.
+   ========================================================================== */
+
+/* Claude-inspired reading / interface / code pairing. The self-hosted faces are
+   Latin subsets of Source Serif 4, Source Sans 3 and Source Code Pro, renamed
+   "Site …" as their licence requires (see assets/fonts/README.md). */
+$serif      : "Anthropic Serif", "Tiempos Text", "Site Serif", "Source Serif 4", Georgia, "Noto Serif CJK SC", "Source Han Serif SC", "Songti SC", "STSong", "SimSun", serif;
+$sans-serif : "Anthropic Sans", "Styrene B", "Site Sans", "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans CJK SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+$monospace  : "Anthropic Mono", "Site Mono", "Source Code Pro", ui-monospace, "SFMono-Regular", Consolas, "Noto Sans CJK SC", monospace;
+
+$nav-collapse : 760px;   /* below this the primary navigation becomes a sheet */
+$toc-visible  : 1120px;  /* from this width the section index sits beside content */
+
+@font-face {
+  font-family: "Site Sans";
+  src: url("../fonts/site-sans-roman.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Site Sans";
+  src: url("../fonts/site-sans-italic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 300 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Site Serif";
+  src: url("../fonts/site-serif-roman.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Site Serif";
+  src: url("../fonts/site-serif-italic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 300 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Site Mono";
+  src: url("../fonts/site-mono-roman.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Site Mono";
+  src: url("../fonts/site-mono-italic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@mixin dark-tokens {
+  color-scheme: dark;
+
+  --bg: #151412;
+  --bg-raised: #1d1c19;
+  --bg-sunken: #0f0e0d;
+  --ink: #ebe8e0;
+  --ink-2: #b3afa5;
+  --ink-3: #807c73;
+  --line: #2e2c28;
+  --line-strong: #44413a;
+  --accent: #6ccdbd;
+  --accent-ink: #84d8ca;
+  --on-accent: #0b1f1c;
+  --masthead-bg: #151412cc;
+  --shadow-sm: 0 1px 2px #00000040;
+  --shadow-md: 0 1px 2px #00000033, 0 12px 28px -12px #000000a6;
+  --shadow-lg: 0 2px 4px #00000033, 0 24px 48px -16px #000000bf;
+
+  --ok: #6fcf97;
+  --warn: #e9bd6f;
+  --bad: #f19a94;
+
+  --chart-1: #3987e5;
+  --chart-2: #d95926;
+  --chart-good: #0ca30c;
+
+  --code-bg: #1b1a17;
+  --syn-comment: #7f7b72;
+  --syn-keyword: #c9a6f2;
+  --syn-string: #9fd39a;
+  --syn-number: #e9bd6f;
+  --syn-name: #8ab8f0;
+  --syn-type: #f19a94;
+}
+
+:root {
+  color-scheme: light;
+
+  --font-sans: #{inspect($sans-serif)};
+  --font-serif: #{inspect($serif)};
+  --font-mono: #{inspect($monospace)};
+
+  /* Surfaces and ink */
+  --bg: #faf9f5;
+  --bg-raised: #ffffff;
+  --bg-sunken: #f2f0e9;
+  --ink: #1c1b19;
+  --ink-2: #57534d;
+  --ink-3: #8a867d;
+  --line: #e7e3d9;
+  --line-strong: #d0cbbe;
+  --accent: #136f63;
+  --accent-ink: #0f5d53;
+  --on-accent: #ffffff;
+  --masthead-bg: #faf9f5cc;
+  --shadow-sm: 0 1px 2px #1c1b190d;
+  --shadow-md: 0 1px 2px #1c1b190a, 0 12px 28px -14px #1c1b1933;
+  --shadow-lg: 0 2px 4px #1c1b190a, 0 24px 48px -18px #1c1b1947;
+
+  /* Status */
+  --ok: #1f7a4a;
+  --warn: #8f5b10;
+  --bad: #b83a37;
+
+  /* Data visualisation */
+  --chart-1: #2a78d6;
+  --chart-2: #eb6834;
+  --chart-good: #0ca30c;
+
+  /* Code */
+  --code-bg: #f5f3ec;
+  --syn-comment: #8a867d;
+  --syn-keyword: #7a3fb0;
+  --syn-string: #2c7a3f;
+  --syn-number: #9a5b00;
+  --syn-name: #1f5fae;
+  --syn-type: #b83a37;
+
+  /* Shape, rhythm, motion */
+  --radius-sm: 6px;
+  --radius: 10px;
+  --radius-lg: 16px;
+  --w-page: 72rem;
+  --w-prose: 46rem;
+  --gutter: 1.25rem;
+  --masthead-h: 3.75rem;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --t-fast: 140ms;
+  --t-base: 240ms;
+  --t-slow: 640ms;
+
+  /* Names kept for page-level styles written against the previous theme. */
+  --global-bg-color: var(--bg-raised);
+  --global-text-color: var(--ink);
+  --global-text-color-light: var(--ink-2);
+  --global-border-color: var(--line);
+  --global-dark-border-color: var(--line-strong);
+  --global-footer-bg-color: var(--bg-sunken);
+  --global-thead-color: var(--bg-sunken);
+  --global-link-color: var(--accent-ink);
+  --global-link-color-hover: var(--accent);
+  --global-code-background-color: var(--code-bg);
+  --global-code-text-color: var(--ink);
+}
+
+:root[data-theme="dark"] {
+  @include dark-tokens;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    @include dark-tokens;
+  }
+}
+
+@media (min-width: 720px) {
+  :root {
+    --gutter: 2rem;
+  }
+}

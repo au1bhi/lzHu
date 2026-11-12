@@ -1,0 +1,7 @@
+{%- comment -%} Section index; assets/js/_main.js fills it from the page's h2 headings. {%- endcomment -%}
+{% if page.toc %}
+<aside class="toc" data-toc hidden>
+  {% assign lang = page.lang | default: "en" %}<p class="toc__title" id="toc-title">{{ site.data.i18n[lang].toc }}</p>
+  <nav aria-labelledby="toc-title"><ol></ol></nav>
+</aside>
+{% endif %}

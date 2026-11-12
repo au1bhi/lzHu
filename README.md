@@ -40,11 +40,13 @@ bundle exec jekyll serve
 
 | Content | Primary file |
 | --- | --- |
-| Homepage | `_pages/about.md` |
-| CV | `_pages/cv.md` |
+| Homepage | `_pages/about.md` (Chinese: `_pages/zh/index.md`) |
+| CV | `_pages/cv.md` and shared entries in `_includes/cv/` |
+| Chinese CV | `cv-latex/variants.json`, then `python3 scripts/export_cv_web.py` |
+| Codeforces snapshot | `python3 scripts/fetch_codeforces.py` (also refreshed daily by GitHub Actions) |
 | CV JSON data | `_data/cv.json` |
 | Navigation | `_data/navigation.yml` |
-| Contest archive entries | `_portfolio/` |
+| Contest archive page | `_pages/portfolio.md` (PDF list in `_portfolio/`) |
 | Site identity and public profiles | `_config.yml` |
 
 Keep `_pages/cv.md` and `_data/cv.json` aligned. After editing the Markdown CV, run:
@@ -57,7 +59,7 @@ The script updates the JSON data and can optionally start a local Jekyll server.
 
 ## Mathematics
 
-MathJax is loaded site-wide. In Markdown, use `\(...\)` for inline math and `$$...$$` for display math:
+MathJax is loaded on demand for pages whose text contains TeX delimiters. In Markdown, use `\(...\)` for inline math and `$$...$$` for display math:
 
 ```markdown
 The running time is \(O(n \log n)\).

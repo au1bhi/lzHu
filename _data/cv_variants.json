@@ -1,0 +1,34 @@
+[
+  {
+    "id": "international",
+    "name_zh": "外企",
+    "name_en": "International Companies",
+    "focus_zh": "后端项目、国际现场协作与技术支持",
+    "pdf_zh": "/assets/pdf/variants/international/Lizhong_Hu_CV_zh.pdf",
+    "pdf_en": "/assets/pdf/variants/international/Lizhong_Hu_CV_en.pdf"
+  },
+  {
+    "id": "training",
+    "name_zh": "算法教育培训",
+    "name_en": "Algorithm Education & Training",
+    "focus_zh": "验题命题、集训组织与在线评测",
+    "pdf_zh": "/assets/pdf/variants/training/Lizhong_Hu_CV_zh.pdf",
+    "pdf_en": "/assets/pdf/variants/training/Lizhong_Hu_CV_en.pdf"
+  },
+  {
+    "id": "engineering",
+    "name_zh": "工程",
+    "name_en": "Engineering",
+    "focus_zh": "后端实现、数据库与基础设施验证",
+    "pdf_zh": "/assets/pdf/variants/engineering/Lizhong_Hu_CV_zh.pdf",
+    "pdf_en": "/assets/pdf/variants/engineering/Lizhong_Hu_CV_en.pdf"
+  },
+  {
+    "id": "academic",
+    "name_zh": "升学",
+    "name_en": "Graduate Study",
+    "focus_zh": "研究兴趣、毕业设计方法与评测",
+    "pdf_zh": "/assets/pdf/variants/academic/Lizhong_Hu_CV_zh.pdf",
+    "pdf_en": "/assets/pdf/variants/academic/Lizhong_Hu_CV_en.pdf"
+  }
+]

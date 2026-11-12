@@ -22,3 +22,21 @@ main:
 
   - title: "Status"
     url: /status/
+
+# Navigation shown on Chinese pages (front matter `lang: zh`). The contest
+# archive, Codeforces and status pages exist in English only.
+main_zh:
+  - title: "首页"
+    url: /zh/
+
+  - title: "简历"
+    url: /zh/cv/
+
+  - title: "竞赛资料"
+    url: /portfolio/
+
+  - title: "Codeforces"
+    url: /codeforces/
+
+  - title: "状态"
+    url: /status/

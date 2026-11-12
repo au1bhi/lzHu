@@ -1,5 +1,5 @@
 {
-	"name": "OOjs UI icon academic-progressive",
+	"name": "Lizhong Hu",
 	"icons": [
 		{
 			"src": "/images/favicon-192x192.png",
@@ -11,5 +11,8 @@
 			"sizes": "512x512",
 			"type": "image/png"
 		}
-	]
+	],
+	"short_name": "Lizhong Hu",
+	"theme_color": "#136f63",
+	"background_color": "#faf9f5"
 }

@@ -1,0 +1,135 @@
+/* ==========================================================================
+   MOTION
+   Entrance, scroll reveal and page/theme transitions. Everything here is an
+   enhancement: content is readable with animation, JavaScript or both off.
+   ========================================================================== */
+
+/* Above the fold: a CSS-only entrance that needs no script. */
+[data-reveal] {
+  animation: rise var(--t-slow) var(--ease-out) backwards;
+  animation-delay: calc(var(--i, 0) * 70ms);
+}
+
+/* Below the fold: the script parks elements here until they scroll into view. */
+.reveal {
+  opacity: 0;
+  transform: translateY(1rem);
+  animation: none;
+}
+
+.reveal.is-in {
+  opacity: 1;
+  transform: none;
+  transition: opacity var(--t-slow) var(--ease-out), transform var(--t-slow) var(--ease-out);
+  transition-delay: calc(var(--i, 0) * 70ms);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+}
+
+/* Cross-page navigation: the masthead holds still while content cross-fades. */
+@view-transition {
+  navigation: auto;
+}
+
+.masthead {
+  view-transition-name: masthead;
+}
+
+#main {
+  view-transition-name: main;
+}
+
+::view-transition-old(main) {
+  animation: vt-out 160ms ease both;
+}
+
+::view-transition-new(main) {
+  animation: vt-in 380ms var(--ease-out) both;
+}
+
+@keyframes vt-out {
+  to {
+    opacity: 0;
+    transform: translateY(-0.4rem);
+  }
+}
+
+@keyframes vt-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.6rem);
+  }
+}
+
+/* Theme change: the new palette expands from the toggle button. */
+.theme-switching::view-transition-old(root),
+.theme-switching::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+.theme-switching::view-transition-new(root) {
+  z-index: 1;
+  animation: theme-reveal 620ms var(--ease-in-out) both;
+}
+
+/* Fold the named regions back into the root snapshot so one reveal covers the page. */
+.theme-switching .masthead,
+.theme-switching #main,
+.theme-switching .masthead__nav a::after {
+  view-transition-name: none;
+}
+
+@keyframes theme-reveal {
+  from {
+    clip-path: circle(0 at var(--theme-x, 100%) var(--theme-y, 0));
+  }
+  to {
+    clip-path: circle(var(--theme-r, 150vmax) at var(--theme-x, 100%) var(--theme-y, 0));
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  @view-transition {
+    navigation: none;
+  }
+
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
+
+@media print {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

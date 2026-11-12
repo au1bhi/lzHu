@@ -1,0 +1,5 @@
+{%- comment -%} Public profile links from site.author, shared by the hero and footer. {%- endcomment -%}
+{% assign author = site.author %}
+{% if author.email %}<li><a href="mailto:{{ author.email }}">{% include icon.html name="mail" %}<span>{{ author.email }}</span></a></li>{% endif %}
+{% if author.github %}<li><a href="https://github.com/{{ author.github }}" rel="me noopener">{% include icon.html name="github" %}<span>GitHub</span></a></li>{% endif %}
+{% if author.linkedin %}<li><a href="https://www.linkedin.com/in/{{ author.linkedin }}" rel="me noopener">{% include icon.html name="linkedin" %}<span>LinkedIn</span></a></li>{% endif %}

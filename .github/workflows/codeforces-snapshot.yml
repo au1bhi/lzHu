@@ -1,0 +1,41 @@
+name: Refresh Codeforces snapshot
+
+# Keeps assets/data/codeforces.json current so the dashboard and homepage
+# have data even when visitors cannot reach the Codeforces API directly.
+on:
+  schedule:
+    - cron: '17 21 * * *'   # daily, 05:17 China Standard Time
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: codeforces-snapshot
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+
+    - name: Fetch public Codeforces data
+      run: python3 scripts/fetch_codeforces.py
+
+    - name: Commit the snapshot if it changed
+      run: |
+        if git diff --quiet -- assets/data/codeforces.json; then
+          echo "No change."
+          exit 0
+        fi
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git add assets/data/codeforces.json
+        git commit -m "Refresh Codeforces snapshot"
+        git push
