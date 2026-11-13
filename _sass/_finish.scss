@@ -312,13 +312,15 @@ a.card,
 .hero__title .word {
   display: inline-block;
   overflow: hidden;
-  padding-bottom: 0.14em;
-  margin-bottom: -0.14em;
+  padding-bottom: 0.24em;
+  margin-bottom: -0.24em;
   vertical-align: bottom;
 }
 
 .hero__title .word > span {
   display: inline-block;
+  padding-bottom: 0.2em;
+  margin-bottom: -0.2em;
   animation: word-rise 1100ms var(--ease-soft) backwards;
   animation-delay: calc(120ms + var(--w, 0) * 70ms);
 }
@@ -539,14 +541,14 @@ a.card,
 .site-footer__wordmark {
   max-width: var(--w-page);
   margin: 0 auto !important;
-  padding: 3rem var(--gutter) 0;
+  padding: 3rem var(--gutter) 0.22em;
   color: transparent;
   font-size: clamp(3.5rem, 13vw, 10.5rem);
   font-weight: 700;
   line-height: 0.9;
   letter-spacing: -0.04em;
   white-space: nowrap;
-  background: linear-gradient(180deg, color-mix(in srgb, var(--ink) 16%, transparent), transparent 92%);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--ink) 16%, transparent), transparent 96%);
   -webkit-background-clip: text;
   background-clip: text;
   user-select: none;
