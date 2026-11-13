@@ -12,16 +12,16 @@ redirect_from:
 
 {% include base_path %}
 
-## 完整介绍 / Complete Profile
+## Complete Profile
 
-中英文完整介绍覆盖网站中的教育、研究方向、项目、技术实践、竞赛获奖、组织活动、技术技能与竞赛资料链接，按内容自然分页，不限制一页 A4。
+The complete profile covers education, research interests, projects, technical experience, contest awards, leadership and skills, in separate Chinese and English PDFs.
 
 <div class="download-grid">
   <a class="download-card" href="{{ base_path }}/assets/pdf/full/Lizhong_Hu_CV_zh.pdf">
     <span class="download-card__badge">PDF</span>
     <span class="download-card__body">
       <span class="download-card__title">中文完整介绍</span>
-      <span class="download-card__note">简体中文 · A4 多页</span>
+      <span class="download-card__note">简体中文 · PDF</span>
     </span>
     <span class="download-card__icon">{% include icon.html name="download" %}</span>
   </a>
@@ -29,7 +29,7 @@ redirect_from:
     <span class="download-card__badge">PDF</span>
     <span class="download-card__body">
       <span class="download-card__title">Complete Profile in English</span>
-      <span class="download-card__note">English · Multi-page A4</span>
+      <span class="download-card__note">English · PDF</span>
     </span>
     <span class="download-card__icon">{% include icon.html name="download" %}</span>
   </a>
