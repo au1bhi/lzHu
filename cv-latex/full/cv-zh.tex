@@ -2,7 +2,7 @@
 % Edit the bilingual content source, then regenerate.
 \documentclass[10pt,a4paper]{article}
 
-\usepackage[a4paper,top=17mm,bottom=19mm,left=19mm,right=19mm,footskip=9mm]{geometry}
+\usepackage[a4paper,top=17mm,bottom=19mm,left=19mm,right=19mm,footskip=8mm]{geometry}
 \usepackage{fontspec}
 \usepackage[AutoFakeBold=false]{xeCJK}
 \usepackage{xcolor}
@@ -17,42 +17,46 @@
 \usepackage{lastpage}
 \usepackage{hyperref}
 
-% Colours follow the website's light theme.
-\definecolor{ink}{HTML}{171614}
-\definecolor{inkii}{HTML}{3F3C37}
-\definecolor{inkiii}{HTML}{6B675F}
-\definecolor{rule}{HTML}{D0CBBE}
-\definecolor{accent}{HTML}{0F665B}
-\definecolor{brass}{HTML}{8A6A3B}
+\definecolor{ink}{HTML}{111111}
+\definecolor{inkii}{HTML}{3A3A3A}
+\definecolor{inkiii}{HTML}{6A6A6A}
+\definecolor{rule}{HTML}{8C8C8C}
 
-\setmainfont{TeX Gyre Pagella}[Numbers=Lining]
-\setCJKmainfont{Noto Serif CJK SC}[BoldFont={Noto Serif CJK SC Bold}]
+% Fonts are found through OPENTYPEFONTS, which scripts/compile_cv.py points
+% at cv-latex/fonts/.
+\setmainfont{SourceSerif4SmText-Regular.otf}[
+  BoldFont=SourceSerif4SmText-Bold.otf,
+  Numbers=Lining,
+  ItalicFont=SourceSerif4SmText-Regular.otf]
+\newfontfamily\namefont{SourceSerif4Subhead-Bold.otf}[Numbers=Lining,BoldFont=SourceSerif4Subhead-Bold.otf]
+\setCJKmainfont{Noto Serif CJK SC Medium}[BoldFont={Noto Serif CJK SC Bold}]
 \xeCJKsetup{CJKecglue={\hskip 0.2em plus 0.08em minus 0.04em}}
+\newcommand{\spaced}[1]{\xeCJKsetup{CJKglue={\hskip 0.14em}}#1}
 
 \hypersetup{
   colorlinks=true,
   linkcolor=ink,
-  urlcolor=accent,
+  urlcolor=ink,
   pdftitle={胡力中 - 完整介绍},
   pdfauthor={胡力中},
   pdfsubject={完整介绍},
   pdfcreator={XeLaTeX}
 }
 
-\renewcommand{\normalsize}{\fontsize{10.4}{16.4}\selectfont}
-\renewcommand{\small}{\fontsize{9}{13.6}\selectfont}
-\renewcommand{\footnotesize}{\fontsize{9}{13.6}\selectfont}
+\renewcommand{\normalsize}{\fontsize{10.3}{16.2}\selectfont}
+\renewcommand{\small}{\fontsize{8.8}{13.4}\selectfont}
+\renewcommand{\footnotesize}{\fontsize{8.8}{13.4}\selectfont}
 \normalsize
 \AtBeginDocument{\color{ink}}
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
-\setlist[itemize]{leftmargin=1.1em,labelsep=0.5em,itemsep=1.6pt,topsep=2.5pt,parsep=0pt,partopsep=0pt,
-  label={\raisebox{0.18em}{\color{brass}\rule{0.32em}{0.32em}}}}
+\setlist[itemize]{leftmargin=1.05em,labelsep=0.5em,itemsep=1.6pt,topsep=2.5pt,parsep=0pt,partopsep=0pt,
+  label={\raisebox{0.2em}{\rule{0.28em}{0.28em}}}}
 
-% Section headings: accent colour, spaced capitals (or spaced Chinese), hairline.
-\titleformat{\section}{\fontsize{11}{14}\selectfont\bfseries\color{accent}}{}{0pt}{\spaced}
-  [{\vspace{1.5pt}\color{rule}\titlerule[0.5pt]}]
+% Section headings: bold, spaced capitals (or spaced Chinese), a grey hairline.
+\titleformat{\section}{\fontsize{10.8}{14}\selectfont\bfseries}{}{0pt}{\spaced}
+  [{\vspace{1pt}\color{rule}\titlerule[0.4pt]}]
 \titlespacing*{\section}{0pt}{11pt}{5pt}
 \renewcommand{\arraystretch}{1.12}
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
@@ -60,16 +64,16 @@
 % Quiet secondary text in place of italics (the site uses no italics).
 \newcommand{\subtle}[1]{\leavevmode{\color{inkii}#1}}
 
-% Entry heading: title in bold, date in brass on the right.
+% Entry heading: title in bold, date in grey on the right.
 \newlength{\entrydatewidth}
 \newcommand{\entry}[2]{%
   \par\addvspace{6pt}\Needspace{4\baselineskip}\noindent
   \if\relax\detokenize{#2}\relax
-    {\hypersetup{urlcolor=ink}\textbf{#1}}\par
+    \textbf{#1}\par
   \else
-    \settowidth{\entrydatewidth}{{\small #2}}%
+    \settowidth{\entrydatewidth}{{\small #2}}\addtolength{\entrydatewidth}{1.5pt}%
     \begin{tabularx}{\textwidth}{@{}Y@{\hspace{1.2em}}>{\raggedleft\arraybackslash}p{\entrydatewidth}@{}}
-      {\hypersetup{urlcolor=ink}\textbf{#1}} & \leavevmode{\small\color{brass}#2}
+      \textbf{#1} & \leavevmode{\small\color{inkii}#2}
     \end{tabularx}\par
   \fi
   \nobreak\vspace{-0.5pt}
@@ -83,23 +87,19 @@
   \end{tabularx}\par\vspace{1pt}
 }
 
-% Footer: name and page count in quiet ink.
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
 \fancyfoot[L]{\small\color{inkiii}胡力中\enspace\textperiodcentered\enspace 完整介绍}
 \fancyfoot[R]{\small\color{inkiii}\thepage\,/\,\pageref*{LastPage}}
 
-% Spaced section titles in Chinese.
-\newcommand{\spaced}[1]{\xeCJKsetup{CJKglue={\hskip 0.14em}}#1}
-
 \begin{document}
 \RaggedRight
 \setlength{\emergencystretch}{1em}
-{\fontsize{25}{29}\selectfont\bfseries 胡力中}\hspace{0.6em}{\fontsize{13}{16}\selectfont\color{inkiii}Lizhong Hu}\par
-\vspace{5pt}{\small\color{inkii}\href{https://au1bhi.com}{au1bhi.com}\enspace{\color{brass}\textperiodcentered}\enspace \href{mailto:admin@au1bhi.com}{admin@au1bhi.com}\enspace{\color{brass}\textperiodcentered}\enspace \href{https://github.com/au1bhi}{GitHub}\enspace{\color{brass}\textperiodcentered}\enspace \href{https://codeforces.com/profile/Au1Bhi}{Codeforces}\enspace{\color{brass}\textperiodcentered}\enspace \href{https://www.linkedin.com/in/lizhong-hu-686b9b34a}{LinkedIn}}\par
-\vspace{6pt}{\color{brass}\rule{2.2em}{0.8pt}}\par
-\vspace{-2pt}
+{\namefont\bfseries\fontsize{25}{29}\selectfont 胡力中}\hspace{0.6em}{\fontsize{13}{16}\selectfont\color{inkiii}Lizhong Hu}\par
+\vspace{5pt}{\small\color{inkii}\href{https://au1bhi.com}{au1bhi.com}\enspace\textperiodcentered\enspace \href{mailto:admin@au1bhi.com}{admin@au1bhi.com}\enspace\textperiodcentered\enspace \href{https://github.com/au1bhi}{GitHub}\enspace\textperiodcentered\enspace \href{https://codeforces.com/profile/Au1Bhi}{Codeforces}\enspace\textperiodcentered\enspace \href{https://www.linkedin.com/in/lizhong-hu-686b9b34a}{LinkedIn}}\par
+\vspace{6pt}{\color{ink}\rule{\textwidth}{0.7pt}}\par
+\vspace{-4pt}
 \Needspace{6\baselineskip}
 \section{个人简介}
 中美 4+0 双学位软件工程专业本科生，预计 2027 年毕业。具有后端开发、信息检索与 RAG 系统、Linux/Docker 基础设施运维、竞赛命题验题、集训组织及体育赛事现场转播技术支持经验。

@@ -2,99 +2,111 @@
 % Edit the bilingual content source, then regenerate.
 \documentclass[10pt,a4paper]{article}
 
-\usepackage[a4paper,margin=0.5in]{geometry}
-\usepackage{microtype}
+\usepackage[a4paper,top=10mm,bottom=9mm,left=13mm,right=13mm,footskip=8mm]{geometry}
+\usepackage{fontspec}
+\usepackage[AutoFakeBold=false]{xeCJK}
+\usepackage{xcolor}
+\usepackage[protrusion=true]{microtype}
 \usepackage{ragged2e}
 \usepackage{enumitem}
 \usepackage{titlesec}
 \usepackage{tabularx}
 \usepackage{array}
-\usepackage[hidelinks]{hyperref}
+\usepackage{needspace}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{hyperref}
 
-% XeLaTeX Chinese support
-\usepackage{xeCJK}
-\setCJKmainfont[AutoFakeBold=true]{SimSun}
-\setCJKsansfont[AutoFakeBold=true]{SimHei}
-\setCJKmonofont[AutoFakeBold=true]{FangSong}
-\setCJKfamilyfont{zhsong}[AutoFakeBold=true]{SimSun}
-\setCJKfamilyfont{zhhei}[AutoFakeBold=true]{SimHei}
-\setCJKfamilyfont{zhfs}[AutoFakeBold=true]{FangSong}
-\setCJKfamilyfont{zhkai}[AutoFakeBold=true]{KaiTi}
+\definecolor{ink}{HTML}{111111}
+\definecolor{inkii}{HTML}{3A3A3A}
+\definecolor{inkiii}{HTML}{6A6A6A}
+\definecolor{rule}{HTML}{8C8C8C}
 
-\usepackage{fontspec}
-\setmainfont{Latin Modern Roman}
-\setsansfont{Latin Modern Sans}
-\setmonofont{Latin Modern Mono}
+% Fonts are found through OPENTYPEFONTS, which scripts/compile_cv.py points
+% at cv-latex/fonts/.
+\setmainfont{SourceSerif4SmText-Regular.otf}[
+  BoldFont=SourceSerif4SmText-Bold.otf,
+  Numbers=Lining,
+  ItalicFont=SourceSerif4SmText-Regular.otf]
+\newfontfamily\namefont{SourceSerif4Subhead-Bold.otf}[Numbers=Lining,BoldFont=SourceSerif4Subhead-Bold.otf]
+\setCJKmainfont{Noto Serif CJK SC Medium}[BoldFont={Noto Serif CJK SC Bold}]
+\xeCJKsetup{CJKecglue={\hskip 0.2em plus 0.08em minus 0.04em}}
+\newcommand{\spaced}[1]{\xeCJKsetup{CJKglue={\hskip 0.14em}}#1}
 
 \hypersetup{
+  colorlinks=true,
+  linkcolor=ink,
+  urlcolor=ink,
   pdftitle={胡力中 - 外企简历},
   pdfauthor={胡力中},
   pdfsubject={外企简历},
   pdfcreator={XeLaTeX}
 }
 
-\pagestyle{empty}
+\renewcommand{\normalsize}{\fontsize{10.0}{14.3}\selectfont}
+\renewcommand{\small}{\fontsize{8.8}{12.58}\selectfont}
+\renewcommand{\footnotesize}{\fontsize{8.8}{12.58}\selectfont}
+\normalsize
+\AtBeginDocument{\color{ink}}
+
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
-\linespread{1.04}\selectfont
+\setlist[itemize]{leftmargin=1.05em,labelsep=0.5em,itemsep=0.4pt,topsep=1pt,parsep=0pt,partopsep=0pt,
+  label={\raisebox{0.2em}{\rule{0.28em}{0.28em}}}}
 
-\setlist[itemize]{leftmargin=1.25em,itemsep=0.6pt,topsep=1.2pt,parsep=0pt,partopsep=0pt}
-\titleformat{\section}{\normalsize\bfseries\sffamily}{}{0pt}{}[\vspace{-2pt}\titlerule]
-\titlespacing*{\section}{0pt}{4.5pt}{2pt}
-\renewcommand{\arraystretch}{1.03}
+% Section headings: bold, spaced capitals (or spaced Chinese), a grey hairline.
+\titleformat{\section}{\fontsize{10.0}{14.3}\selectfont\bfseries}{}{0pt}{\spaced}
+  [{\vspace{1pt}\color{rule}\titlerule[0.4pt]}]
+\titlespacing*{\section}{0pt}{5pt}{2pt}
+\renewcommand{\arraystretch}{1.02}
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 
-% Size the date column to its content so long titles retain usable space.
+% Quiet secondary text in place of italics (the site uses no italics).
+\newcommand{\subtle}[1]{\leavevmode{\color{inkii}#1}}
+
+% Entry heading: title in bold, date in grey on the right.
 \newlength{\entrydatewidth}
 \newcommand{\entry}[2]{%
   \par\addvspace{3pt}\noindent
   \if\relax\detokenize{#2}\relax
     \textbf{#1}\par
   \else
-    \settowidth{\entrydatewidth}{{\small #2}}%
-    \begin{tabularx}{\textwidth}{@{}Y@{\hspace{1em}}>{\raggedleft\arraybackslash}p{\entrydatewidth}@{}}
-      \textbf{#1} & {\small #2}
+    \settowidth{\entrydatewidth}{{\small #2}}\addtolength{\entrydatewidth}{1.5pt}%
+    \begin{tabularx}{\textwidth}{@{}Y@{\hspace{1.2em}}>{\raggedleft\arraybackslash}p{\entrydatewidth}@{}}
+      \textbf{#1} & \leavevmode{\small\color{inkii}#2}
     \end{tabularx}\par
   \fi
-  \nobreak\vspace{0pt}
+  \nobreak\vspace{-0.5pt}
 }
 
-% Keep wrapped skills visually attached to their labels.
 \newcommand{\skillrow}[2]{%
-  \par\noindent\hangindent=1em\hangafter=1\textbf{#1} #2\par
+  \par\noindent\hangindent=1em\hangafter=1\textbf{#1：}#2\par
 }
 
+\pagestyle{empty}
 
-\usepackage{xcolor}
-\definecolor{cvaccent}{HTML}{234E70}
-\renewcommand{\normalsize}{\fontsize{10.5}{13.6}\selectfont}
-\linespread{1}\selectfont
-\titleformat{\section}{\normalsize\bfseries\color{cvaccent}}{}{0pt}{}[\vspace{-1pt}\titlerule]
-\titlespacing*{\section}{0pt}{6pt}{3pt}
 \begin{document}
 \RaggedRight
 \setlength{\emergencystretch}{1em}
-\begin{center}
-{\fontsize{23}{25}\selectfont\bfseries\color{cvaccent} 胡力中}\par
-\vspace{2pt}\small
-\href{https://au1bhi.com}{个人网站}\enspace$\vert$\enspace\href{mailto:admin@au1bhi.com}{admin@au1bhi.com}\enspace$\vert$\enspace\href{https://github.com/au1bhi}{GitHub}\enspace$\vert$\enspace\href{https://codeforces.com/profile/Au1Bhi}{Codeforces}\enspace$\vert$\enspace\href{https://www.linkedin.com/in/lizhong-hu-686b9b34a}{LinkedIn}
-\par\vspace{4pt}{\small\bfseries\color{cvaccent} 后端开发 · 双学位背景 · 日本现场技术支持}
-\end{center}
-\vspace{-4pt}
+{\namefont\bfseries\fontsize{20}{22}\selectfont 胡力中}\hspace{0.6em}{\fontsize{13}{16}\selectfont\color{inkiii}Lizhong Hu}\par
+\vspace{2pt}{\small\color{inkii}\href{https://au1bhi.com}{au1bhi.com}\enspace\textperiodcentered\enspace \href{mailto:admin@au1bhi.com}{admin@au1bhi.com}\enspace\textperiodcentered\enspace \href{https://github.com/au1bhi}{GitHub}\enspace\textperiodcentered\enspace \href{https://codeforces.com/profile/Au1Bhi}{Codeforces}\enspace\textperiodcentered\enspace \href{https://www.linkedin.com/in/lizhong-hu-686b9b34a}{LinkedIn}}\par
+\vspace{3pt}{\small\bfseries 后端开发 · 双学位背景 · 日本现场技术支持}\par
+\vspace{3pt}{\color{ink}\rule{\textwidth}{0.7pt}}\par
+\vspace{-8pt}
 \section{个人简介}
 中美 4+0 双学位软件工程本科生，预计 2027 年毕业。面向外企软件开发与后端实习岗位，具有 Python 后端、RAG 文档检索、Linux/Docker 运维及日本赛事现场技术支持经验。
 
 \section{教育经历}
 \begin{tabularx}{\textwidth}{@{}Y>{\raggedleft\arraybackslash}p{0.24\textwidth}@{}}
-  \textbf{泉州信息工程学院} & \textit{2023--2027（预计）} \\
+  \textbf{泉州信息工程学院} & \subtle{2023--2027（预计）} \\
   软件工程（中外合作办学） & GPA: 3.10/4.00 \\[0.5pt]
   \multicolumn{2}{@{}l@{}}{\textbf{美国宾州滑石大学（Slippery Rock University）}} \\
   信息系统（Information Systems），理学学士（在读，预计 2027） & GPA: 3.583/4.000
 \end{tabularx}
-{\footnotesize\itshape 中美 4+0 双学位联合培养本科项目，全程在中国完成培养，经中华人民共和国教育部正式批准认可。}
+\par\vspace{2pt}{\footnotesize\color{inkiii}中美 4+0 双学位联合培养本科项目，全程在中国完成培养，经中华人民共和国教育部正式批准认可。}
 \section{精选开发项目}
 \entry{\href{https://github.com/au1bhi/NoteLLM}{NoteLLM：基于可验证 RAG 的个人学习问答系统}}{进行中}
-\textit{本科毕业设计}
+\subtle{本科毕业设计}
 \begin{itemize}
   \item 基于 FastAPI、异步 SQLAlchemy、PostgreSQL 与 pgvector 构建后端，实现余弦相似度检索；支持 PDF、Markdown、TXT 的按页提取与重叠分块。
   \item 在服务端校验引用是否来自检索分块并保存原文摘录，支持问答结果的来源核查。
@@ -106,7 +118,7 @@
 \end{itemize}
 \section{国际现场技术支持}
 \entry{中科鑫睿（北京）技术有限公司}{2026 年 9 月 7–22 日}
-\textit{TOC Operator｜日本岐阜，16 天现场技术支持}
+\subtle{TOC Operator｜日本岐阜，16 天现场技术支持}
 \begin{itemize}
   \item 在日本 Gifu Nagaragawa Stadium 保障第20届亚洲运动会（2026/爱知·名古屋）足球转播，主转播机构为中央广播电视总台国际传媒港（CMG-IMP）。
   \item 配合转播团队开展赛前供电、内通与主备信号检查，赛中监看 TOC 信号；协助工程师通过接收机替换与衰减测试定位光发射机故障，赛后经更换与全链路验证恢复画面。
@@ -130,8 +142,8 @@
   \item 第十五届蓝桥杯全国软件和信息技术专业人才大赛：福建省赛 Python 程序设计大学 B 组一等奖，2024。
 \end{itemize}
 \section{技术技能}
-\skillrow{编程与算法：}{C++、Python、Java、JavaScript、Go；算法与数据结构。}
-\skillrow{后端与数据库：}{FastAPI、Flask、RuoYi、PostgreSQL、MongoDB、MySQL；REST API 设计与系统集成。}
-\skillrow{系统与运维：}{Linux、Docker、Git、DOMjudge、Cloudflare Workers/CDN/DNS、WARP 出口路由。}
-\skillrow{开发验证：}{熟悉 Codex、Claude Code、Antigravity CLI；结合测试、静态检查与构建验证修改。}
+\skillrow{编程与算法}{C++、Python、Java、JavaScript、Go；算法与数据结构。}
+\skillrow{后端与数据库}{FastAPI、Flask、RuoYi、PostgreSQL、MongoDB、MySQL；REST API 设计与系统集成。}
+\skillrow{系统与运维}{Linux、Docker、Git、DOMjudge、Cloudflare Workers/CDN/DNS、WARP 出口路由。}
+\skillrow{开发验证}{熟悉 Codex、Claude Code、Antigravity CLI；结合测试、静态检查与构建验证修改。}
 \end{document}

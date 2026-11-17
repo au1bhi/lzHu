@@ -9,6 +9,8 @@ import tempfile
 
 from native_build import build_lock, require_native, run_checked, refuse_blocked_tasks
 
+FONT_DIR = Path(__file__).resolve().parents[1] / 'cv-latex' / 'fonts'
+
 
 @contextmanager
 def compiled_cv(source: Path, language: str):
@@ -19,13 +21,15 @@ def compiled_cv(source: Path, language: str):
         workspace = Path(tempfile.mkdtemp(prefix=f"{key}-", dir=cache))
         try:
             shutil.copyfile(source, workspace / source.name)
-            # Sources that load fontspec (Chinese, and the complete profiles in
-            # both languages) need XeLaTeX; the English application CVs use pdfLaTeX.
+            # The generated CVs load fontspec and need XeLaTeX; plain sources
+            # without it (such as cv-latex/cv.tex) still build with pdfLaTeX.
             xelatex = language == 'zh' or r'\usepackage{fontspec}' in source.read_text()
             run_checked(['latexmk', '-norc', '-xelatex' if xelatex else '-pdf',
                          '-interaction=nonstopmode', '-halt-on-error', source.name],
                         cwd=workspace, timeout=180, capture_output=True,
-                        env=dict(os.environ, TMPDIR=str(workspace)))
+                        env=dict(os.environ, TMPDIR=str(workspace),
+                                 # Bundled CV fonts first; the trailing colon keeps TeX's defaults.
+                                 OPENTYPEFONTS=str(FONT_DIR) + '//:'))
             yield workspace / f'{source.stem}.pdf'
         except BaseException:
             # Preserve failed diagnostics; never recursively clean a workspace
