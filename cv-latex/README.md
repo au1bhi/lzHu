@@ -49,7 +49,7 @@ python3 scripts/build_cv_variants.py
 python3 scripts/build_cv_variants.py --compile --audience engineering --language zh
 ```
 
-Dependencies: Python 3, latexmk, pdfLaTeX for English, and XeLaTeX with SimSun, SimHei, FangSong, and KaiTi for Chinese. Generated `variants/{audience}/cv-{en,zh}.tex` files should be updated through `variants.json` and the generator. Shared layout and education are rendered by `scripts/build_cv_variants.py`; the original `cv.tex` / `cv-zh.tex` supply the existing font and layout preambles.
+Dependencies: Python 3, latexmk, pdfLaTeX for the English application CVs, and XeLaTeX with SimSun, SimHei, FangSong, and KaiTi for the Chinese application CVs. The complete profiles have their own typography in `scripts/build_cv_full.py` (matching the website: TeX Gyre Pagella with Noto Serif CJK SC, ink text, teal headings and links, brass dates) and compile with XeLaTeX in both languages. Generated `variants/{audience}/cv-{en,zh}.tex` files should be updated through `variants.json` and the generator. Shared layout and education are rendered by `scripts/build_cv_variants.py`; the original `cv.tex` / `cv-zh.tex` supply the existing font and layout preambles.
 
 Generated sources are grouped under `cv-latex/variants/{audience}/`; each directory contains `cv-en.tex` and `cv-zh.tex`. Published PDFs mirror that layout under `/assets/pdf/variants/{audience}/Lizhong_Hu_CV_{en,zh}.pdf`; the Chinese engineering alias is kept inside `variants/engineering/胡力中_工程岗位简历.pdf`. The download table reads `_data/cv_variants.json`. Existing root PDF URLs remain aliases of the complete website profiles.
 

@@ -19,7 +19,10 @@ def compiled_cv(source: Path, language: str):
         workspace = Path(tempfile.mkdtemp(prefix=f"{key}-", dir=cache))
         try:
             shutil.copyfile(source, workspace / source.name)
-            run_checked(['latexmk', '-norc', '-xelatex' if language == 'zh' else '-pdf',
+            # Sources that load fontspec (Chinese, and the complete profiles in
+            # both languages) need XeLaTeX; the English application CVs use pdfLaTeX.
+            xelatex = language == 'zh' or r'\usepackage{fontspec}' in source.read_text()
+            run_checked(['latexmk', '-norc', '-xelatex' if xelatex else '-pdf',
                          '-interaction=nonstopmode', '-halt-on-error', source.name],
                         cwd=workspace, timeout=180, capture_output=True,
                         env=dict(os.environ, TMPDIR=str(workspace)))
