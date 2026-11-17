@@ -37,7 +37,7 @@ The complete profile covers education, research interests, projects, technical e
 
 ## Profile
 
-Software Engineering undergraduate in a Sino-American dual-degree program, with experience in back-end development, RAG systems, Linux/Docker infrastructure, and live sports broadcast support.
+Software Engineering undergraduate in a Sino-American 4+0 dual-degree program (expected graduation: 2027). Worked on site in Japan as a TOC operator for football broadcasts at the 20th Asian Games; built NoteLLM, a RAG question-answering system with verifiable citations, as an undergraduate thesis; organizes collegiate programming contests, sets and tests problems, and coordinates the university ICPC/CCPC team. Experienced in FastAPI/Flask backends and Linux/Docker operations.
 
 ## Research Interests
 
@@ -66,7 +66,7 @@ Software Engineering undergraduate in a Sino-American dual-degree program, with 
   **Project:** 20th Asian Games Aichi-Nagoya 2026 — broadcast technical support for football at Gifu Nagaragawa Stadium.<br>
   **Host broadcaster:** [China Media Group-International Media Port (CMG-IMP)](https://oca.asia/news/7336-cmg-imp-outlines-broadcasting-plans-for-20th-asian-games.html).
   * Checked equipment power, intercom quality, and primary/backup broadcast feeds before matches; coordinated signal verification with the broadcast team and outside broadcast van.
-  * Monitored TOC signals during matches and provided on-site technical support throughout a 16-day football broadcast assignment.
+  * Monitored TOC signals during matches and provided on-site technical support throughout the 16-day assignment.
   * Helped engineers isolate a monitor-feed fault to an optical transmitter through receiver replacement and attenuation tests; the feed was restored following post-match replacement and end-to-end verification.
 
 {% include cv/matiji.md %}

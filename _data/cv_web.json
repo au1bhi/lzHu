@@ -7,7 +7,7 @@
       "awards": "程序设计竞赛与获奖",
       "skills": "技术技能"
     },
-    "profile": "中美 4+0 双学位软件工程专业本科生，预计 2027 年毕业。具有后端开发、信息检索与 RAG 系统、Linux/Docker 基础设施运维、竞赛命题验题、集训组织及体育赛事现场转播技术支持经验。",
+    "profile": "中美 4+0 双学位软件工程专业本科生，预计 2027 年毕业。曾赴日本担任第 20 届亚洲运动会足球转播 TOC 操作员；以毕业设计构建可验证引用的 RAG 问答系统 NoteLLM；组织程序设计竞赛、参与命题与验题，并协调校 ICPC/CCPC 集训队。具备 FastAPI/Flask 后端开发与 Linux/Docker 运维经验。",
     "interests": "主要兴趣：信息检索与可验证的检索增强生成。相关兴趣：算法与数据结构、软件与分布式系统、可靠智能信息系统。",
     "education": {
       "period": "2023–2027（预计）",
@@ -138,7 +138,7 @@
               },
               {
                 "label": "",
-                "text": "赛中监看 TOC 信号，并在为期 16 天的足球转播保障期间提供现场技术支持。"
+                "text": "赛中监看 TOC 信号并提供现场技术支持。"
               },
               {
                 "label": "",
@@ -258,7 +258,7 @@
             "bullets": [
               {
                 "label": "",
-                "text": "作为出题人之一，参与题目设计、题解验证、难度校准与题解审阅。"
+                "text": "参与题目设计、题解验证、难度校准与题解审阅。"
               }
             ],
             "url": "https://new.saikr.com/vse/adpc/2025/spring"
@@ -312,7 +312,7 @@
           "bullets": [
             {
               "label": "",
-              "text": "参考题册；个人组织与出题职责见“组织与活动”。"
+              "text": "参考题册（PDF）。"
             }
           ],
           "url": "/files/contest-54320-z.pdf"
@@ -323,7 +323,7 @@
           "bullets": [
             {
               "label": "",
-              "text": "赛事参考材料；国教AC杯与联合校赛的个人职责见“组织与活动”。"
+              "text": "赛事参考材料（PDF）。"
             }
           ],
           "url": "/files/CACPC-1st.pdf"
@@ -452,7 +452,7 @@
           },
           {
             "label": "",
-            "text": "赛中监看 TOC 信号，并在为期 16 天的足球转播保障期间提供现场技术支持。"
+            "text": "赛中监看 TOC 信号并提供现场技术支持。"
           },
           {
             "label": "",
@@ -567,7 +567,7 @@
         "bullets": [
           {
             "label": "",
-            "text": "作为出题人之一，参与题目设计、题解验证、难度校准与题解审阅。"
+            "text": "参与题目设计、题解验证、难度校准与题解审阅。"
           }
         ],
         "url": "https://new.saikr.com/vse/adpc/2025/spring"
@@ -591,7 +591,7 @@
       "awards": "Competitive Programming & Awards",
       "skills": "Technical Skills"
     },
-    "profile": "Software Engineering undergraduate in a Sino-American 4+0 dual-degree program (expected graduation: 2027). Experience in backend development, information retrieval and verifiable RAG, Linux/Docker operations, contest problem setting/testing and training coordination, and on-site sports broadcast support.",
+    "profile": "Software Engineering undergraduate in a Sino-American 4+0 dual-degree program (expected graduation: 2027). Worked on site in Japan as a TOC operator for football broadcasts at the 20th Asian Games; built NoteLLM, a RAG question-answering system with verifiable citations, as an undergraduate thesis; organizes collegiate programming contests, sets and tests problems, and coordinates the university ICPC/CCPC team. Experienced in FastAPI/Flask backends and Linux/Docker operations.",
     "interests": "Primary interests: information retrieval and verifiable RAG. Related interests: algorithms and data structures; software and distributed systems; reliable intelligent information systems.",
     "education": {
       "period": "2023–2027 (expected)",
@@ -723,7 +723,7 @@
               },
               {
                 "label": "",
-                "text": "Monitored TOC signals during matches and provided on-site technical support throughout the 16-day football broadcast assignment."
+                "text": "Monitored TOC signals during matches and provided on-site technical support."
               },
               {
                 "label": "",
@@ -843,7 +843,7 @@
             "bullets": [
               {
                 "label": "",
-                "text": "As one of the problem setters, contributed to problem design, solution validation, difficulty calibration, and editorial review."
+                "text": "Contributed to problem design, solution validation, difficulty calibration, and editorial review."
               }
             ],
             "url": "https://new.saikr.com/vse/adpc/2025/spring"
@@ -897,7 +897,7 @@
           "bullets": [
             {
               "label": "",
-              "text": "Reference problem booklet; personal responsibilities are described under Leadership & Activities."
+              "text": "Reference problem booklet (PDF)."
             }
           ],
           "url": "/files/contest-54320-z.pdf"
@@ -908,7 +908,7 @@
           "bullets": [
             {
               "label": "",
-              "text": "Contest reference materials; responsibilities for the ISCPC-AC Cup and joint contest are described under Leadership & Activities."
+              "text": "Contest reference materials (PDF)."
             }
           ],
           "url": "/files/CACPC-1st.pdf"
@@ -1038,7 +1038,7 @@
           },
           {
             "label": "",
-            "text": "Monitored TOC signals during matches and provided on-site technical support throughout the 16-day football broadcast assignment."
+            "text": "Monitored TOC signals during matches and provided on-site technical support."
           },
           {
             "label": "",
@@ -1153,7 +1153,7 @@
         "bullets": [
           {
             "label": "",
-            "text": "As one of the problem setters, contributed to problem design, solution validation, difficulty calibration, and editorial review."
+            "text": "Contributed to problem design, solution validation, difficulty calibration, and editorial review."
           }
         ],
         "url": "https://new.saikr.com/vse/adpc/2025/spring"
