@@ -14,13 +14,13 @@ lead: "Contest awards, problem setting and organizing, team coordination, and se
 
 ## Awards
 
+{% include cv/award-worldquant.md %}
+
 {% include cv/award-ccpc-fujian.md %}
 
 {% include cv/award-icpc-kunming.md %}
 
 {% include cv/award-lanqiao.md %}
-
-{% include cv/award-worldquant.md %}
 
 ## Problem setting & organizing
 

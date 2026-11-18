@@ -11,7 +11,7 @@ excerpt: "胡力中的个人网站：简历、竞赛资料与 Codeforces 数据�
 highlights:
   - value: "2026 亚运会"
     label: "第20届亚洲运动会（爱知·名古屋）现场转播技术支持"
-    note: "TOC Operator，足球转播 · 日本岐阜 16 天"
+    note: "TOC Operator，足球转播 · 日本岐阜 · 2026 年 9 月 7–22 日"
     url: "/zh/cv/#section-1"
   - value: "一等奖"
     label: "第十五届蓝桥杯全国软件和信息技术专业人才大赛"

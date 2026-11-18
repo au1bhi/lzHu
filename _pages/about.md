@@ -9,7 +9,7 @@ lead: "Software Engineering undergraduate working on algorithms, back-end system
 highlights:
   - value: "Asian Games 2026"
     label: "On-site broadcast technical support, 20th Asian Games Aichi-Nagoya"
-    note: "TOC Operator for football broadcasts · 16 days in Gifu, Japan"
+    note: "TOC Operator for football broadcasts · Gifu, Japan · 7–22 Sep 2026"
     url: "/cv/#technical-experience"
   - value: "First Prize"
     label: "15th Lanqiao Cup, Fujian Provincial Round"
@@ -68,7 +68,7 @@ redirect_from:
     <ol class="timeline">
       <li>
         <span class="timeline__date">September 2026 · Gifu, Japan</span>
-        <p><strong>Broadcast technical support at the 20th Asian Games Aichi-Nagoya 2026.</strong> I completed a 16-day TOC Operator assignment with <a href="https://www.sinotechxinrui.com/">Sinotech Xinrui (Beijing) Co., Ltd.</a>, supporting football broadcast operations at Gifu Nagaragawa Stadium: pre-match signal checks, live-feed monitoring, and assisting engineers with optical-link troubleshooting.</p>
+        <p><strong>Broadcast technical support at the 20th Asian Games Aichi-Nagoya 2026.</strong> From 7 to 22 September 2026 I worked as a TOC Operator with <a href="https://www.sinotechxinrui.com/">Sinotech Xinrui (Beijing) Co., Ltd.</a>, supporting football broadcast operations at Gifu Nagaragawa Stadium: pre-match signal checks, live-feed monitoring, and assisting engineers with optical-link troubleshooting.</p>
       </li>
       <li>
         <span class="timeline__date">September 2024 – September 2026</span>

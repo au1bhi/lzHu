@@ -66,7 +66,7 @@ Software Engineering undergraduate in a Sino-American 4+0 dual-degree program (e
   **Project:** 20th Asian Games Aichi-Nagoya 2026 — broadcast technical support for football at Gifu Nagaragawa Stadium.<br>
   **Host broadcaster:** [China Media Group-International Media Port (CMG-IMP)](https://oca.asia/news/7336-cmg-imp-outlines-broadcasting-plans-for-20th-asian-games.html).
   * Checked equipment power, intercom quality, and primary/backup broadcast feeds before matches; coordinated signal verification with the broadcast team and outside broadcast van.
-  * Monitored TOC signals during matches and provided on-site technical support throughout the 16-day assignment.
+  * Monitored TOC signals during matches and provided on-site technical support.
   * Helped engineers isolate a monitor-feed fault to an optical transmitter through receiver replacement and attenuation tests; the feed was restored following post-match replacement and end-to-end verification.
 
 {% include cv/matiji.md %}
@@ -95,13 +95,13 @@ Software Engineering undergraduate in a Sino-American 4+0 dual-degree program (e
 
 ## Competitive Programming & Awards
 
+{% include cv/award-worldquant.md %}
+
 {% include cv/award-ccpc-fujian.md %}
 
 {% include cv/award-icpc-kunming.md %}
 
 {% include cv/award-lanqiao.md %}
-
-{% include cv/award-worldquant.md %}
 
 ## Leadership & Activities
 

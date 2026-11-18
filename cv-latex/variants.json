@@ -108,8 +108,8 @@
         }
       ],
       "subtitle": {
-        "zh": "TOC Operator｜日本岐阜，16 天现场技术支持",
-        "en": "TOC Operator | Gifu, Japan | 16-day on-site assignment"
+        "zh": "TOC Operator｜日本岐阜",
+        "en": "TOC Operator | Gifu, Japan"
       }
     },
     "tester": {
@@ -447,8 +447,8 @@
         }
       ],
       "subtitle": {
-        "zh": "TOC Operator｜日本岐阜，16 天现场技术支持",
-        "en": "TOC Operator | Gifu, Japan | 16-day on-site assignment"
+        "zh": "TOC Operator｜日本岐阜",
+        "en": "TOC Operator | Gifu, Japan"
       },
       "url": "https://www.sinotechxinrui.com/"
     },
@@ -663,6 +663,11 @@
   },
   "awards": [
     {
+      "zh": "WorldQuant BRAIN 量化挑战赛（WorldQuant Challenge）：Silver Level（银级），2026 年 11 月。",
+      "en": "WorldQuant Challenge (WorldQuant BRAIN): Silver Level, Nov 2026.",
+      "url": "https://au1bhi.com/files/WorldQuant-Challenge-Silver-Certificate.pdf"
+    },
+    {
       "zh": "2026 中国大学生程序设计竞赛全国邀请赛（福建）暨第十三届 CCPC 福建省大学生程序设计竞赛：最快解题奖（A 题，单题奖项）。",
       "en": "2026 National Invitational of CCPC (Fujian), 13th Fujian Collegiate Programming Contest: First to Solve Award (Problem A; problem-level award)."
     },
@@ -673,11 +678,6 @@
     {
       "zh": "第十五届蓝桥杯全国软件和信息技术专业人才大赛：福建省赛 Python 程序设计大学 B 组一等奖，2024。",
       "en": "15th Lanqiao Cup: First Prize, Fujian Provincial Round, Python Programming (University Group B), 2024."
-    },
-    {
-      "zh": "WorldQuant BRAIN 量化挑战赛（WorldQuant Challenge）：Silver Level（银级），2026。",
-      "en": "WorldQuant Challenge (WorldQuant BRAIN): Silver Level, 2026.",
-      "url": "https://au1bhi.com/files/WorldQuant-Challenge-Silver-Certificate.pdf"
     }
   ],
   "skills": {
@@ -1063,6 +1063,11 @@
   },
   "full_awards": [
     {
+      "zh": "WorldQuant BRAIN 量化挑战赛（WorldQuant Challenge）：Silver Level（银级），2026 年 11 月。",
+      "en": "WorldQuant Challenge (WorldQuant BRAIN): Silver Level, Nov 2026.",
+      "url": "https://au1bhi.com/files/WorldQuant-Challenge-Silver-Certificate.pdf"
+    },
+    {
       "zh": "2026 中国大学生程序设计竞赛全国邀请赛（福建）暨第十三届 CCPC 福建省大学生程序设计竞赛：最快解题奖（A 题，单题奖项）。",
       "en": "2026 National Invitational of CCPC (Fujian), 13th Fujian Collegiate Programming Contest: First to Solve Award (Problem A; problem-level award)."
     },
@@ -1073,11 +1078,6 @@
     {
       "zh": "第十五届蓝桥杯全国软件和信息技术专业人才大赛：福建省赛 Python 程序设计大学 B 组一等奖，2024。",
       "en": "15th Lanqiao Cup: First Prize, Fujian Provincial Round, Python Programming (University Group B), 2024."
-    },
-    {
-      "zh": "WorldQuant BRAIN 量化挑战赛（WorldQuant Challenge）：Silver Level（银级），2026。",
-      "en": "WorldQuant Challenge (WorldQuant BRAIN): Silver Level, 2026.",
-      "url": "https://au1bhi.com/files/WorldQuant-Challenge-Silver-Certificate.pdf"
     }
   ]
 }

@@ -124,7 +124,7 @@
             "title": "中科鑫睿（北京）技术有限公司",
             "meta": [
               "TOC Operator",
-              "日本岐阜，16 天现场技术支持",
+              "日本岐阜",
               "2026 年 9 月 7–22 日"
             ],
             "bullets": [
@@ -268,6 +268,10 @@
     ],
     "awards": [
       {
+        "text": "WorldQuant BRAIN 量化挑战赛（WorldQuant Challenge）：Silver Level（银级），2026 年 11 月。",
+        "url": "https://au1bhi.com/files/WorldQuant-Challenge-Silver-Certificate.pdf"
+      },
+      {
         "text": "2026 中国大学生程序设计竞赛全国邀请赛（福建）暨第十三届 CCPC 福建省大学生程序设计竞赛：最快解题奖（A 题，单题奖项）。"
       },
       {
@@ -275,10 +279,6 @@
       },
       {
         "text": "第十五届蓝桥杯全国软件和信息技术专业人才大赛：福建省赛 Python 程序设计大学 B 组一等奖，2024。"
-      },
-      {
-        "text": "WorldQuant BRAIN 量化挑战赛（WorldQuant Challenge）：Silver Level（银级），2026。",
-        "url": "https://au1bhi.com/files/WorldQuant-Challenge-Silver-Certificate.pdf"
       }
     ],
     "skills": [
@@ -448,7 +448,7 @@
         "title": "中科鑫睿（北京）技术有限公司",
         "meta": [
           "TOC Operator",
-          "日本岐阜，16 天现场技术支持",
+          "日本岐阜",
           "2026 年 9 月 7–22 日"
         ],
         "bullets": [
@@ -719,7 +719,6 @@
             "meta": [
               "TOC Operator",
               "Gifu, Japan",
-              "16-day on-site assignment",
               "7–22 Sep 2026"
             ],
             "bullets": [
@@ -863,6 +862,10 @@
     ],
     "awards": [
       {
+        "text": "WorldQuant Challenge (WorldQuant BRAIN): Silver Level, Nov 2026.",
+        "url": "https://au1bhi.com/files/WorldQuant-Challenge-Silver-Certificate.pdf"
+      },
+      {
         "text": "2026 National Invitational of CCPC (Fujian), 13th Fujian Collegiate Programming Contest: First to Solve Award (Problem A; problem-level award)."
       },
       {
@@ -870,10 +873,6 @@
       },
       {
         "text": "15th Lanqiao Cup: First Prize, Fujian Provincial Round, Python Programming (University Group B), 2024."
-      },
-      {
-        "text": "WorldQuant Challenge (WorldQuant BRAIN): Silver Level, 2026.",
-        "url": "https://au1bhi.com/files/WorldQuant-Challenge-Silver-Certificate.pdf"
       }
     ],
     "skills": [
@@ -1044,7 +1043,6 @@
         "meta": [
           "TOC Operator",
           "Gifu, Japan",
-          "16-day on-site assignment",
           "7–22 Sep 2026"
         ],
         "bullets": [
