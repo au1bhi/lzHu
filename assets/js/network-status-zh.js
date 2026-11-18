@@ -7,7 +7,7 @@
   const $ = id => document.getElementById('ns-' + id);
   const allowed = ['native', 'warp'];
   const historySlots = 84;
-  const names = {native: 'IPv4 · 原生线路', warp: 'IPv6 · WARP 线路'};
+  const names = {native: 'IPv4 · Debian 13 原生线路', warp: 'IPv6 · Debian 13 WARP 线路'};
   const labels = {operational: 'Accept', degraded: 'Partial', down: 'Time Limit Exceed', unknown: 'Skipped', stale: 'Skipped'};
   const meanings = {operational: '连接检测成功', degraded: '部分节点检测失败', down: '连接检测失败（可能超时或连接错误）', unknown: '无有效检测记录', stale: '检测数据已过期'};
   let latest = null;

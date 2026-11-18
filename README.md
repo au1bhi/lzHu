@@ -91,3 +91,9 @@ The site is designed for GitHub Pages. Push the verified `master` branch to the 
 ## Typography
 
 全站参考 Claude / Anthropic 的 sans、serif、mono 搭配：标题、导航和数据界面使用 Source Sans 3，正文使用 Source Serif 4，代码使用 Source Code Pro；本机若有对应 Anthropic 字体则优先使用。开源替代字体以原始 WOFF2 文件自托管，使用 `font-display: swap`，中文设置对应的本机字体回退。字体来源、固定版本与许可证见 [字体说明](assets/fonts/README.md)。Status 使用原站的页面布局和主题变量，并随全站明暗主题切换。
+
+## Network status deployment (2026-11-18)
+
+The English `/status/` and Chinese `/zh/status/` pages describe the current US Debian 13 server's native IPv4 and WARP IPv6 routes. Measurements still originate from the Alibaba Cloud Shanghai probe host, using `https://notellm.au1bhi.com/network-status/ip-data`. No node credentials or server IP addresses are published in the page.
+
+The dedicated monitor inventory has been synchronized with the current VPS Worker configuration, validated by Mihomo, and a fresh probe completed.

@@ -5,7 +5,7 @@
   const $ = id => document.getElementById('ns-' + id);
   const allowed = ['native', 'warp'];
   const historySlots = 84;
-  const names = {native: 'IPv4 · Native routes', warp: 'IPv6 · WARP routes'};
+  const names = {native: 'IPv4 · Debian 13 native routes', warp: 'IPv6 · Debian 13 WARP routes'};
   const labels = {operational: 'Accept', degraded: 'Partial', down: 'Time Limit Exceed', unknown: 'Skipped', stale: 'Skipped'};
   const meanings = {operational: 'Connection check succeeded', degraded: 'Some node checks failed', down: 'Connection check failed (timeout or connection error)', unknown: 'No valid probe record', stale: 'Probe results have expired'};
   let latest = null;
