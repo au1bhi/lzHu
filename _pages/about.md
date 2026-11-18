@@ -107,7 +107,7 @@ redirect_from:
     <a class="card" href="{{ base_path }}/portfolio/">
       <span class="card__kicker">Archive</span>
       <h3 class="card__title">Contest archive</h3>
-      <p class="card__text">Selected contest materials.</p>
+      <p class="card__text">Contest awards, problem setting and organizing, and contest materials.</p>
       {% include icon.html name="arrow-up-right" class="card__arrow" %}
     </a>
     <a class="card" href="{{ base_path }}/codeforces/">

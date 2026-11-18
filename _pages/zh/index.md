@@ -103,7 +103,7 @@ highlights:
     <a class="card" href="{{ base_path }}/zh/cv/">
       <span class="card__kicker">简历</span>
       <h3 class="card__title">完整个人介绍</h3>
-      <p class="card__text">中英文完整介绍：教育、项目、技术实践、竞赛获奖与技术技能。</p>
+      <p class="card__text">中英文完整介绍：教育、项目、实践经历、竞赛获奖与技术技能。</p>
       {% include icon.html name="arrow-up-right" class="card__arrow" %}
     </a>
     <a class="card" href="{{ base_path }}/zh/portfolio/">

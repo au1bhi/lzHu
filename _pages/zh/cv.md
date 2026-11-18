@@ -6,7 +6,7 @@ lang: zh
 translation: /cv/
 classes: cv
 toc: true
-lead: "教育、项目、技术实践、竞赛获奖与技术技能，并提供中英文完整介绍下载。"
+lead: "教育、项目、实践经历、竞赛获奖与技术技能，并提供中英文完整介绍下载。"
 ---
 
 {% include base_path %}

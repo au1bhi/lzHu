@@ -118,7 +118,7 @@
         ]
       },
       {
-        "title": "技术实践",
+        "title": "实践经历",
         "entries": [
           {
             "title": "中科鑫睿（北京）技术有限公司",
@@ -150,7 +150,7 @@
           {
             "title": "码蹄集 NOI-Pre 题库",
             "meta": [
-              "志愿者验题成员",
+              "志愿验题员",
               "2024 年 7–10 月"
             ],
             "bullets": [
@@ -160,7 +160,7 @@
               },
               {
                 "label": "",
-                "text": "排查并反馈测试数据与判题结果缺陷，支持题目质量检查。"
+                "text": "排查并反馈测试数据和判题结果中的问题。"
               }
             ],
             "url": "https://www.matiji.net/exam/noi",
@@ -185,15 +185,15 @@
             "bullets": [
               {
                 "label": "",
-                "text": "负责算法社日常运作，协助组织环海岸线联盟联合校赛，涉及七所合作高校。"
+                "text": "负责算法社日常运作，协助组织七所高校参与的环海岸线联盟联合校赛。"
               },
               {
                 "label": "",
-                "text": "“国教AC杯”大学生程序设计竞赛：主要组织者、出题人。"
+                "text": "“国教AC杯”大学生程序设计竞赛：主要组织者兼命题人。"
               },
               {
                 "label": "",
-                "text": "2025 泉州信息工程学院软件学院第二届“爱拼会赢”科创节 ACM 算法比赛：组织者之一、出题人之一。"
+                "text": "2025 泉州信息工程学院软件学院第二届“爱拼会赢”科创节 ACM 算法比赛：参与组织与命题。"
               }
             ],
             "url": "https://ac.nowcoder.com/acm/contest/130880",
@@ -224,7 +224,7 @@
           {
             "title": "校 ICPC/CCPC 集训队",
             "meta": [
-              "协调组织",
+              "协调人",
               "2024 年 9 月–2026 年 9 月"
             ],
             "bullets": [
@@ -233,7 +233,7 @@
                 "text": "协调校 ICPC/CCPC 集训队招新、训练与队伍选拔，组织本校队伍参赛事务。"
               }
             ],
-            "event_intro": "本校队伍参赛组织覆盖以下 8 场赛事，按年份列示：",
+            "event_intro": "组织本校队伍参加以下 8 场赛事：",
             "event_groups": [
               {
                 "year": 2026,
@@ -252,7 +252,7 @@
           {
             "title": "第六届大学生算法设计与编程挑战赛（春季赛）",
             "meta": [
-              "出题人之一",
+              "命题组成员",
               "2025 年春季"
             ],
             "bullets": [
@@ -474,7 +474,7 @@
       "tester": {
         "title": "码蹄集 NOI-Pre 题库",
         "meta": [
-          "志愿者验题成员",
+          "志愿验题员",
           "2024 年 7–10 月"
         ],
         "bullets": [
@@ -484,7 +484,7 @@
           },
           {
             "label": "",
-            "text": "排查并反馈测试数据与判题结果缺陷，支持题目质量检查。"
+            "text": "排查并反馈测试数据和判题结果中的问题。"
           }
         ],
         "url": "https://www.matiji.net/exam/noi",
@@ -504,15 +504,15 @@
         "bullets": [
           {
             "label": "",
-            "text": "负责算法社日常运作，协助组织环海岸线联盟联合校赛，涉及七所合作高校。"
+            "text": "负责算法社日常运作，协助组织七所高校参与的环海岸线联盟联合校赛。"
           },
           {
             "label": "",
-            "text": "“国教AC杯”大学生程序设计竞赛：主要组织者、出题人。"
+            "text": "“国教AC杯”大学生程序设计竞赛：主要组织者兼命题人。"
           },
           {
             "label": "",
-            "text": "2025 泉州信息工程学院软件学院第二届“爱拼会赢”科创节 ACM 算法比赛：组织者之一、出题人之一。"
+            "text": "2025 泉州信息工程学院软件学院第二届“爱拼会赢”科创节 ACM 算法比赛：参与组织与命题。"
           }
         ],
         "url": "https://ac.nowcoder.com/acm/contest/130880",
@@ -543,7 +543,7 @@
       "training_full": {
         "title": "校 ICPC/CCPC 集训队",
         "meta": [
-          "协调组织",
+          "协调人",
           "2024 年 9 月–2026 年 9 月"
         ],
         "bullets": [
@@ -552,7 +552,7 @@
             "text": "协调校 ICPC/CCPC 集训队招新、训练与队伍选拔，组织本校队伍参赛事务。"
           }
         ],
-        "event_intro": "本校队伍参赛组织覆盖以下 8 场赛事，按年份列示：",
+        "event_intro": "组织本校队伍参加以下 8 场赛事：",
         "event_groups": [
           {
             "year": 2026,
@@ -571,7 +571,7 @@
       "setter": {
         "title": "第六届大学生算法设计与编程挑战赛（春季赛）",
         "meta": [
-          "出题人之一",
+          "命题组成员",
           "2025 年春季"
         ],
         "bullets": [
@@ -754,7 +754,7 @@
               },
               {
                 "label": "",
-                "text": "Investigated and reported test-data and judging defects to support problem quality checks."
+                "text": "Found and reported problems in test data and judging results."
               }
             ],
             "url": "https://www.matiji.net/exam/noi",
@@ -779,7 +779,7 @@
             "bullets": [
               {
                 "label": "",
-                "text": "Managed day-to-day club operations and helped organize the coastal alliance joint contest, involving seven partner universities."
+                "text": "Managed day-to-day club operations and helped organize the coastal alliance joint contest with seven partner universities."
               },
               {
                 "label": "",
@@ -787,7 +787,7 @@
               },
               {
                 "label": "",
-                "text": "2025 QUIE-Software School ACM Algorithm Contest (2nd Aipin Huiying Science & Technology Festival): one of the organizers and problem setters."
+                "text": "2025 QUIE-Software School ACM Algorithm Contest (2nd Aipin Huiying Science & Technology Festival): co-organizer and problem setter."
               }
             ],
             "url": "https://ac.nowcoder.com/acm/contest/130880",
@@ -827,7 +827,7 @@
                 "text": "Coordinated university ICPC/CCPC team recruitment, training, selection, and participation logistics."
               }
             ],
-            "event_intro": "Supported university team participation in the following eight contests, grouped by year:",
+            "event_intro": "Organized university team participation in the following eight contests:",
             "event_groups": [
               {
                 "year": 2026,
@@ -846,7 +846,7 @@
           {
             "title": "6th College Algorithm Design & Programming Challenge (Spring)",
             "meta": [
-              "One of the problem setters",
+              "Problem setter",
               "Spring 2025"
             ],
             "bullets": [
@@ -1078,7 +1078,7 @@
           },
           {
             "label": "",
-            "text": "Investigated and reported test-data and judging defects to support problem quality checks."
+            "text": "Found and reported problems in test data and judging results."
           }
         ],
         "url": "https://www.matiji.net/exam/noi",
@@ -1098,7 +1098,7 @@
         "bullets": [
           {
             "label": "",
-            "text": "Managed day-to-day club operations and helped organize the coastal alliance joint contest, involving seven partner universities."
+            "text": "Managed day-to-day club operations and helped organize the coastal alliance joint contest with seven partner universities."
           },
           {
             "label": "",
@@ -1106,7 +1106,7 @@
           },
           {
             "label": "",
-            "text": "2025 QUIE-Software School ACM Algorithm Contest (2nd Aipin Huiying Science & Technology Festival): one of the organizers and problem setters."
+            "text": "2025 QUIE-Software School ACM Algorithm Contest (2nd Aipin Huiying Science & Technology Festival): co-organizer and problem setter."
           }
         ],
         "url": "https://ac.nowcoder.com/acm/contest/130880",
@@ -1146,7 +1146,7 @@
             "text": "Coordinated university ICPC/CCPC team recruitment, training, selection, and participation logistics."
           }
         ],
-        "event_intro": "Supported university team participation in the following eight contests, grouped by year:",
+        "event_intro": "Organized university team participation in the following eight contests:",
         "event_groups": [
           {
             "year": 2026,
@@ -1165,7 +1165,7 @@
       "setter": {
         "title": "6th College Algorithm Design & Programming Challenge (Spring)",
         "meta": [
-          "One of the problem setters",
+          "Problem setter",
           "Spring 2025"
         ],
         "bullets": [

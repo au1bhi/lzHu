@@ -71,7 +71,7 @@ Software Engineering undergraduate in a Sino-American 4+0 dual-degree program (e
 
 {% include cv/matiji.md %}
 
-## Selected Projects
+## Projects
 
 * **[NoteLLM: Personal Learning Question-Answering System with Verifiable RAG](https://notellm.au1bhi.com)**<br>
   *FastAPI & Retrieval-Augmented Generation | Ongoing (Undergraduate Thesis)*<br>

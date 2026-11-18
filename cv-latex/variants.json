@@ -114,7 +114,7 @@
     },
     "tester": {
       "title": {
-        "zh": "码蹄集 NOI-Pre 题库｜志愿者验题成员",
+        "zh": "码蹄集 NOI-Pre 题库｜志愿验题员",
         "en": "Matiji NOI-Pre Problem Bank | Volunteer Problem Tester"
       },
       "date": {
@@ -127,8 +127,8 @@
           "en": "Tested programming problems for Matiji’s NOI-Pre bank, a collaboration with China Computer Federation (CCF); created boundary cases and checked solution correctness through targeted submissions."
         },
         {
-          "zh": "排查并反馈测试数据与判题结果缺陷，支持题目质量检查。",
-          "en": "Investigated and reported test-data and judging defects to support problem quality checks."
+          "zh": "排查并反馈测试数据和判题结果中的问题。",
+          "en": "Found and reported problems in test data and judging results."
         }
       ],
       "url": "https://www.matiji.net/exam/noi",
@@ -163,13 +163,13 @@
       ],
       "url": "https://new.saikr.com/vse/adpc/2025/spring",
       "subtitle": {
-        "zh": "出题人之一",
-        "en": "One of the problem setters"
+        "zh": "命题组成员",
+        "en": "Problem setter"
       }
     },
     "training": {
       "title": {
-        "zh": "校 ICPC/CCPC 集训队｜协调组织",
+        "zh": "校 ICPC/CCPC 集训队｜协调人",
         "en": "University ICPC/CCPC Training Team | Coordinator"
       },
       "date": {
@@ -182,7 +182,7 @@
           "en": "Coordinated university ICPC/CCPC team recruitment, training, selection, and participation logistics."
         },
         {
-          "zh": "参赛组织覆盖：2026 ICPC 全国邀请赛（南昌）、2025 CCPC 全国邀请赛（南昌）暨江西省赛、2026 CCPC 全国邀请赛（福建）暨福建省赛、2025 ICPC Asia EC 网络预选赛与 CCPC 网络赛、2026 CCPC 贵州省赛暨全国邀请赛、2025 ICPC 贵州省赛、2024 ICPC 昆明区域赛。",
+          "zh": "组织本校队伍参加：2026 ICPC 全国邀请赛（南昌）、2025 CCPC 全国邀请赛（南昌）暨江西省赛、2026 CCPC 全国邀请赛（福建）暨福建省赛、2025 ICPC Asia EC 网络预选赛与 CCPC 网络赛、2026 CCPC 贵州省赛暨全国邀请赛、2025 ICPC 贵州省赛、2024 ICPC 昆明区域赛。",
           "en": "Supported university teams at the 2026 ICPC Nanchang Invitational; 2025 CCPC Nanchang Invitational/Jiangxi Provincial Contest; 2026 CCPC Fujian Invitational/Provincial Contest; 2025 ICPC Asia EC and CCPC online contests; 2026 CCPC Guizhou Provincial Contest/National Invitational; 2025 ICPC Guizhou Provincial Contest; and 2024 ICPC Kunming Regional Contest."
         }
       ]
@@ -198,16 +198,16 @@
       },
       "bullets": [
         {
-          "zh": "负责算法社日常运作，协助组织环海岸线联盟联合校赛，涉及七所合作高校。",
-          "en": "Managed day-to-day club operations and helped organize the coastal alliance joint contest, involving seven partner universities."
+          "zh": "负责算法社日常运作，协助组织七所高校参与的环海岸线联盟联合校赛。",
+          "en": "Managed day-to-day club operations and helped organize the coastal alliance joint contest with seven partner universities."
         },
         {
-          "zh": "“国教AC杯”大学生程序设计竞赛：主要组织者、出题人。",
+          "zh": "“国教AC杯”大学生程序设计竞赛：主要组织者兼命题人。",
           "en": "ISCPC-AC Cup collegiate programming contest: principal organizer and problem setter."
         },
         {
-          "zh": "2025 泉州信息工程学院软件学院第二届“爱拼会赢”科创节 ACM 算法比赛：组织者之一、出题人之一。",
-          "en": "2025 QUIE-Software School ACM Algorithm Contest (2nd Aipin Huiying Science & Technology Festival): one of the organizers and problem setters."
+          "zh": "2025 泉州信息工程学院软件学院第二届“爱拼会赢”科创节 ACM 算法比赛：参与组织与命题。",
+          "en": "2025 QUIE-Software School ACM Algorithm Contest (2nd Aipin Huiying Science & Technology Festival): co-organizer and problem setter."
         }
       ],
       "url": "https://ac.nowcoder.com/acm/contest/130880"
@@ -263,7 +263,7 @@
     },
     "tester-short": {
       "title": {
-        "zh": "码蹄集 NOI-Pre 题库｜志愿者验题成员",
+        "zh": "码蹄集 NOI-Pre 题库｜志愿验题员",
         "en": "Matiji NOI-Pre Problem Bank | Volunteer Problem Tester"
       },
       "date": {
@@ -463,16 +463,16 @@
       },
       "bullets": [
         {
-          "zh": "负责算法社日常运作，协助组织环海岸线联盟联合校赛，涉及七所合作高校。",
-          "en": "Managed day-to-day club operations and helped organize the coastal alliance joint contest, involving seven partner universities."
+          "zh": "负责算法社日常运作，协助组织七所高校参与的环海岸线联盟联合校赛。",
+          "en": "Managed day-to-day club operations and helped organize the coastal alliance joint contest with seven partner universities."
         },
         {
-          "zh": "“国教AC杯”大学生程序设计竞赛：主要组织者、出题人。",
+          "zh": "“国教AC杯”大学生程序设计竞赛：主要组织者兼命题人。",
           "en": "ISCPC-AC Cup collegiate programming contest: principal organizer and problem setter."
         },
         {
-          "zh": "2025 泉州信息工程学院软件学院第二届“爱拼会赢”科创节 ACM 算法比赛：组织者之一、出题人之一。",
-          "en": "2025 QUIE-Software School ACM Algorithm Contest (2nd Aipin Huiying Science & Technology Festival): one of the organizers and problem setters."
+          "zh": "2025 泉州信息工程学院软件学院第二届“爱拼会赢”科创节 ACM 算法比赛：参与组织与命题。",
+          "en": "2025 QUIE-Software School ACM Algorithm Contest (2nd Aipin Huiying Science & Technology Festival): co-organizer and problem setter."
         }
       ],
       "url": "https://ac.nowcoder.com/acm/contest/130880",
@@ -573,18 +573,18 @@
       },
       "bullets": [
         {
-          "zh": "“国教AC杯”大学生程序设计竞赛：主要组织者、出题人。",
+          "zh": "“国教AC杯”大学生程序设计竞赛：主要组织者兼命题人。",
           "en": "ISCPC-AC Cup collegiate programming contest: principal organizer and problem setter."
         },
         {
-          "zh": "2025 泉州信息工程学院软件学院第二届“爱拼会赢”科创节 ACM 算法比赛：组织者之一、出题人之一。",
-          "en": "2025 QUIE-Software School ACM Algorithm Contest (2nd Aipin Huiying Science & Technology Festival): one of the organizers and problem setters."
+          "zh": "2025 泉州信息工程学院软件学院第二届“爱拼会赢”科创节 ACM 算法比赛：参与组织与命题。",
+          "en": "2025 QUIE-Software School ACM Algorithm Contest (2nd Aipin Huiying Science & Technology Festival): co-organizer and problem setter."
         }
       ]
     },
     "training-full": {
       "title": {
-        "zh": "校 ICPC/CCPC 集训队｜协调组织",
+        "zh": "校 ICPC/CCPC 集训队｜协调人",
         "en": "University ICPC/CCPC Training Team | Coordinator"
       },
       "date": {
@@ -598,8 +598,8 @@
         }
       ],
       "event_intro": {
-        "zh": "本校队伍参赛组织覆盖以下 8 场赛事，按年份列示：",
-        "en": "Supported university team participation in the following eight contests, grouped by year:"
+        "zh": "组织本校队伍参加以下 8 场赛事：",
+        "en": "Organized university team participation in the following eight contests:"
       },
       "event_groups": [
         {
@@ -799,18 +799,18 @@
         "en": "International Companies"
       },
       "focus": {
-        "zh": "后端开发 · 双学位背景 · 日本现场技术支持",
-        "en": "Backend Development · Dual-Degree Background · On-Site Support in Japan"
+        "zh": "后端开发 · 中美双学位 · 亚运会转播技术保障",
+        "en": "Backend Development · Sino-American Dual Degree · Asian Games Broadcast Support"
       },
       "profile": {
-        "zh": "中美 4+0 双学位软件工程本科生，预计 2027 年毕业。面向外企软件开发与后端实习岗位，具有 Python 后端、RAG 文档检索、Linux/Docker 运维及日本赛事现场技术支持经验。",
-        "en": "Software Engineering undergraduate in a Sino-American 4+0 dual-degree program, expected to graduate in 2027. Seeking software/backend internships with international teams; experience in Python backend services, RAG retrieval, Linux/Docker operations, and on-site broadcast support in Japan."
+        "zh": "中美 4+0 双学位软件工程专业本科生，预计 2027 年毕业。有 Python 后端、RAG 文档检索和 Linux/Docker 运维经验，曾赴日本参与第 20 届亚运会足球转播技术保障。希望在国际化团队中从事软件开发或后端实习。",
+        "en": "Software Engineering undergraduate in a Sino-American 4+0 dual-degree program, graduating in 2027. Experienced in Python backends, RAG retrieval and Linux/Docker operations; supported Asian Games football broadcasts on site in Japan. Seeking a software or backend internship with an international team."
       },
       "sections": [
         {
           "title": {
-            "zh": "精选开发项目",
-            "en": "Selected Development Projects"
+            "zh": "项目经历",
+            "en": "Projects"
           },
           "entries": [
             "notellm",
@@ -819,8 +819,8 @@
         },
         {
           "title": {
-            "zh": "国际现场技术支持",
-            "en": "International On-Site Technical Support"
+            "zh": "工作经历",
+            "en": "Work Experience"
           },
           "entries": [
             "toc"
@@ -828,8 +828,8 @@
         },
         {
           "title": {
-            "zh": "协作与竞赛组织",
-            "en": "Teamwork & Contest Coordination"
+            "zh": "组织经历",
+            "en": "Leadership & Activities"
           },
           "entries": [
             "training",
@@ -854,14 +854,14 @@
         "en": "Problem Setting & Testing · Training Coordination · Online Judging"
       },
       "profile": {
-        "zh": "中美双学位软件工程本科生，预计 2027 年毕业。面向算法教育内容建设与竞赛训练支持岗位，具有 NOI-Pre 验题、竞赛命题、ICPC/CCPC 集训组织和 DOMjudge 运维经验。",
-        "en": "Software Engineering undergraduate in a Sino-American dual-degree program, expected to graduate in 2027. Interested in algorithm education content and contest-training support; experience in NOI-Pre problem testing, contest problem setting, ICPC/CCPC training coordination, and DOMjudge operations."
+        "zh": "中美双学位软件工程专业本科生，预计 2027 年毕业。为码蹄集 NOI-Pre 题库验题，为大学生程序设计竞赛命题，协调校 ICPC/CCPC 集训队并维护 DOMjudge 评测系统。希望从事算法教育与竞赛培训工作。",
+        "en": "Software Engineering undergraduate in a Sino-American dual-degree program, expected to graduate in 2027. Tests problems for the Matiji NOI-Pre problem bank, sets problems for collegiate programming contests, coordinates the university ICPC/CCPC team and maintains a DOMjudge judge. Interested in algorithm education and contest training."
       },
       "sections": [
         {
           "title": {
-            "zh": "题目内容与质量保障",
-            "en": "Problem Content & Quality Assurance"
+            "zh": "命题与验题",
+            "en": "Problem Setting & Testing"
           },
           "entries": [
             "tester",
@@ -870,8 +870,8 @@
         },
         {
           "title": {
-            "zh": "集训与活动组织",
-            "en": "Training & Event Coordination"
+            "zh": "集训与竞赛组织",
+            "en": "Training & Contest Organization"
           },
           "entries": [
             "training",
@@ -881,8 +881,8 @@
         },
         {
           "title": {
-            "zh": "评测与学习工具项目",
-            "en": "Judging & Learning Tools"
+            "zh": "项目经历",
+            "en": "Projects"
           },
           "entries": [
             "domjudge",
@@ -907,14 +907,14 @@
         "en": "APIs & Databases · Automated Validation · Linux/Docker"
       },
       "profile": {
-        "zh": "中美双学位软件工程本科生，预计 2027 年毕业。面向后端开发与软件工程岗位，具有 FastAPI/Flask 服务、PostgreSQL/MongoDB 数据存储、API 回归检查和 Linux/Docker 基础设施实践经验。",
-        "en": "Software Engineering undergraduate in a Sino-American dual-degree program, expected to graduate in 2027. Backend/software engineering experience in FastAPI/Flask services, PostgreSQL/MongoDB storage, API regression checks, and Linux/Docker infrastructure."
+        "zh": "中美双学位软件工程专业本科生，预计 2027 年毕业。使用 FastAPI/Flask 开发后端服务，熟悉 PostgreSQL/MongoDB 数据存储、API 回归测试和 Linux/Docker 部署。希望从事后端开发工作。",
+        "en": "Software Engineering undergraduate in a Sino-American dual-degree program, expected to graduate in 2027. Builds backend services with FastAPI/Flask, with PostgreSQL/MongoDB storage, API regression testing and Linux/Docker deployment. Seeking a backend development role."
       },
       "sections": [
         {
           "title": {
-            "zh": "后端与系统项目",
-            "en": "Backend & Systems Projects"
+            "zh": "项目经历",
+            "en": "Projects"
           },
           "entries": [
             "eti",
@@ -925,8 +925,8 @@
         },
         {
           "title": {
-            "zh": "现场技术实践",
-            "en": "On-Site Technical Experience"
+            "zh": "工作经历",
+            "en": "Work Experience"
           },
           "entries": [
             "toc"
@@ -947,12 +947,12 @@
         "en": "Graduate Study"
       },
       "focus": {
-        "zh": "信息检索 · 可验证 RAG · 毕业设计评测",
-        "en": "Information Retrieval · Verifiable RAG · Thesis Evaluation"
+        "zh": "信息检索 · 可验证 RAG · 检索评测",
+        "en": "Information Retrieval · Verifiable RAG · Retrieval Evaluation"
       },
       "profile": {
-        "zh": "中美 4+0 双学位软件工程本科生，预计 2027 年毕业。拟继续攻读计算机相关研究生项目，关注信息检索、可验证 RAG 与可靠软件系统；具有毕业设计、后端开发与程序设计竞赛实践。",
-        "en": "Software Engineering undergraduate in a Sino-American 4+0 dual-degree program (expected graduation: 2027). Interested in graduate study in computing, with a focus on information retrieval, verifiable RAG, and reliable software systems. Experience in thesis development, backend projects, and competitive programming."
+        "zh": "中美 4+0 双学位软件工程专业本科生，预计 2027 年毕业。毕业设计为可验证引用的 RAG 问答系统 NoteLLM，研究兴趣为信息检索、可验证 RAG 与可靠软件系统；有后端开发和程序设计竞赛经验。计划攻读计算机相关专业研究生。",
+        "en": "Software Engineering undergraduate in a Sino-American 4+0 dual-degree program (expected graduation: 2027). Undergraduate thesis: NoteLLM, a RAG question-answering system with verifiable citations. Research interests in information retrieval, verifiable RAG and reliable software systems; experienced in backend development and competitive programming. Planning graduate study in computing."
       },
       "interests": {
         "zh": "算法与数据结构；软件与分布式系统；信息检索与检索增强生成；可靠智能信息系统。",
@@ -961,8 +961,8 @@
       "sections": [
         {
           "title": {
-            "zh": "毕业设计与相关项目",
-            "en": "Thesis & Related Projects"
+            "zh": "毕业设计与项目",
+            "en": "Thesis & Projects"
           },
           "entries": [
             "notellm-academic",
@@ -971,8 +971,8 @@
         },
         {
           "title": {
-            "zh": "算法与学术社区实践",
-            "en": "Algorithms & Community Contributions"
+            "zh": "命题与竞赛组织",
+            "en": "Problem Setting & Contest Organization"
           },
           "entries": [
             "tester-short",
@@ -1019,7 +1019,7 @@
       },
       {
         "title": {
-          "zh": "技术实践",
+          "zh": "实践经历",
           "en": "Technical Experience"
         },
         "entries": [
