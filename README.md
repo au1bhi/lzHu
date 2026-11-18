@@ -1,6 +1,6 @@
 # Lizhong Hu — Personal Website
 
-Source for [au1bhi.com](https://au1bhi.com), a lightweight personal website for a CV, selected contest materials, and Codeforces statistics.
+Source for [au1bhi.com](https://au1bhi.com), a lightweight personal website for a CV, contest materials, and Codeforces statistics.
 
 ## What is published
 

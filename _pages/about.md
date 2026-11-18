@@ -31,7 +31,7 @@ redirect_from:
 {% include base_path %}
 
 <section class="home-section" data-reveal>
-  <h2 class="home-section__label">Projects online</h2>
+  <h2 class="home-section__label">Projects</h2>
   <div class="home-section__body">
     <article class="project">
       <header class="project__head">
@@ -72,7 +72,7 @@ redirect_from:
       </li>
       <li>
         <span class="timeline__date">September 2024 – September 2026</span>
-        <p><strong>Contest organizing, problem setting, and team coordination.</strong> Principal organizer and problem setter of the <a href="https://ac.nowcoder.com/acm/contest/112012">ISCPC-AC Cup</a>; helped organize the <a href="https://ac.nowcoder.com/acm/contest/130880">coastal alliance joint contest</a> involving seven partner universities; coordinated the university ICPC/CCPC training team and its participation in eight contests. Details are in the <a href="{{ base_path }}/portfolio/">contest archive</a>.</p>
+        <p><strong>Contest organizing, problem setting, and team coordination.</strong> Principal organizer and problem setter of the <a href="https://ac.nowcoder.com/acm/contest/112012">ISCPC-AC Cup</a>; helped organize the <a href="https://ac.nowcoder.com/acm/contest/130880">coastal alliance joint contest</a> with seven partner universities; coordinated the university ICPC/CCPC training team and its participation in eight contests. Details are in the <a href="{{ base_path }}/portfolio/">contest archive</a>.</p>
       </li>
       <li>
         <span class="timeline__date">July – October 2024</span>
@@ -96,7 +96,7 @@ redirect_from:
 </section>
 
 <section class="home-section" data-reveal>
-  <h2 class="home-section__label">What you’ll find here</h2>
+  <h2 class="home-section__label">On this site</h2>
   <div class="home-section__body card-grid">
     <a class="card" href="{{ base_path }}/cv/">
       <span class="card__kicker">CV</span>

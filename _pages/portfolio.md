@@ -6,7 +6,7 @@ permalink: /portfolio/
 translation: /zh/portfolio/
 classes: cv
 toc: true
-lead: "Contest awards, problem setting and organizing, team coordination, and selected contest materials. These files are reference materials, not academic publications, and are not substitutes for official contest statements or rules."
+lead: "Contest awards, problem setting and organizing, team coordination, and contest materials. The files are for reference only; they are not publications and do not replace official contest statements or rules."
 ---
 
 {% include base_path %}

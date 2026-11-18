@@ -22,8 +22,8 @@ highlights:
     note: "单题奖项，不代表总排名"
     url: "https://codeforces.com/gym/106565"
   - value: "竞赛组织与命题"
-    label: "“国教AC杯”大学生程序设计竞赛主要组织者、出题人"
-    note: "为三场比赛出题 · 联合校赛涉及七所合作高校"
+    label: "“国教AC杯”大学生程序设计竞赛主要组织者兼命题人"
+    note: "为三场比赛命题 · 七所高校参与的联合校赛"
     url: "/zh/portfolio/#organizing"
 ---
 
@@ -33,7 +33,7 @@ highlights:
 {% assign notellm = cv.sections[0].entries[0] %}
 
 <section class="home-section" data-reveal>
-  <h2 class="home-section__label">在线项目</h2>
+  <h2 class="home-section__label">项目</h2>
   <div class="home-section__body">
     <article class="project">
       <header class="project__head">
@@ -78,7 +78,7 @@ highlights:
       </li>
       <li>
         <span class="timeline__date">{{ tester.meta | last }}</span>
-        <p><strong><a href="{{ tester.url }}">{{ tester.title }}</a>志愿者验题成员。</strong>{{ tester.bullets[0].text }}{{ tester.bullets[1].text }}</p>
+        <p><strong><a href="{{ tester.url }}">{{ tester.title }}</a>志愿验题员。</strong>{{ tester.bullets[0].text }}{{ tester.bullets[1].text }}</p>
       </li>
     </ol>
   </div>
