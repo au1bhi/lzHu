@@ -30,7 +30,7 @@ layout: default
   </section>
 
   {% if page.highlights %}
-  <ul class="proof" aria-label="Selected results">
+  <ul class="proof" aria-label="{% if lang == 'zh' %}主要成果{% else %}Key results{% endif %}">
     {% for item in page.highlights %}
     <li class="proof__item" data-reveal style="--i: {{ forloop.index | plus: 3 }}">
       <a href="{{ item.url }}"{% if item.url contains '://' %} rel="noopener"{% endif %}>
