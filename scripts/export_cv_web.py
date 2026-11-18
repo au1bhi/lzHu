@@ -99,7 +99,8 @@ def profile(data, language):
         'interests': full['interests'][language],
         'education': EDUCATION[language],
         'sections': sections,
-        'awards': [award[language] for award in data['full_awards']],
+        'awards': [dict({'text': award[language]}, **({'url': award['url']} if 'url' in award else {}))
+                   for award in data['full_awards']],
         'skills': [{'label': data['skills'][key][language][0].rstrip('：:'), 'text': data['skills'][key][language][1]}
                    for key in full['skills']],
         'resources': {'title': full['resources']['title'][language],

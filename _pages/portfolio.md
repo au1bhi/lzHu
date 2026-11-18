@@ -20,6 +20,8 @@ lead: "Contest awards, problem setting and organizing, team coordination, and se
 
 {% include cv/award-lanqiao.md %}
 
+{% include cv/award-worldquant.md %}
+
 ## Problem setting & organizing
 
 {% include cv/acm-club.md %}

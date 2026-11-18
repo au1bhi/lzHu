@@ -19,7 +19,7 @@ lead: "竞赛获奖、命题与组织、验题和带队参赛记录，以及部�
 
 <h2 id="awards">{{ cv.headings.awards }}</h2>
 <ul>
-  {% for award in cv.awards %}<li>{{ award }}</li>{% endfor %}
+  {% for award in cv.awards %}<li>{% if award.url %}<a href="{{ award.url | replace: 'https://au1bhi.com', '' }}">{{ award.text }}</a>{% else %}{{ award.text }}{% endif %}</li>{% endfor %}
 </ul>
 
 <h2 id="organizing">命题与组织</h2>

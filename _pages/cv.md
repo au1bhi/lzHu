@@ -101,6 +101,8 @@ Software Engineering undergraduate in a Sino-American 4+0 dual-degree program (e
 
 {% include cv/award-lanqiao.md %}
 
+{% include cv/award-worldquant.md %}
+
 ## Leadership & Activities
 
 {% include cv/acm-club.md %}

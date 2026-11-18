@@ -16,10 +16,10 @@ PDF_DIR = ROOT / 'assets' / 'pdf' / 'variants'
 # (size, baseline, space before a section heading) keep each CV readable on
 # exactly one A4 page; the shared black-and-white style is in cv_style.py.
 APPLICATION_LAYOUTS = {
-    'international': {'en': (10.0, 12.4, 5), 'zh': (10.0, 14.3, 5)},
-    'training': {'en': (10.0, 12.4, 5), 'zh': (10.0, 14.3, 5)},
-    'engineering': {'en': (10.2, 12.65, 5), 'zh': (10.2, 14.6, 5)},
-    'academic': {'en': (9.8, 11.8, 4), 'zh': (9.8, 13.6, 4)},
+    'international': {'en': (10.0, 12.1, 5), 'zh': (10.0, 14.0, 5)},
+    'training': {'en': (10.0, 12.4, 5), 'zh': (10.0, 14.0, 5)},
+    'engineering': {'en': (10.2, 12.34, 5), 'zh': (10.2, 14.29, 5)},
+    'academic': {'en': (9.8, 11.8, 4), 'zh': (9.8, 13.31, 4)},
 }
 
 
@@ -129,7 +129,10 @@ def render(data, audience, language):
                                       else 'Competitive Programming & Awards').replace('&', r'\&') + '}\n')
         chunks.append('\\begin{itemize}\n')
         for award in data['awards']:
-            chunks.append('  \\item ' + esc(award[language]) + '\n')
+            text = esc(award[language])
+            if 'url' in award:
+                text = '\\href{' + award['url'] + '}{' + text + '}'
+            chunks.append('  \\item ' + text + '\n')
         chunks.append('\\end{itemize}\n')
 
     if audience == 'training':

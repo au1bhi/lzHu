@@ -267,9 +267,19 @@
       }
     ],
     "awards": [
-      "2026 中国大学生程序设计竞赛全国邀请赛（福建）暨第十三届 CCPC 福建省大学生程序设计竞赛：最快解题奖（A 题，单题奖项）。",
-      "第49届 ICPC 国际大学生程序设计竞赛亚洲区域赛（昆明）：Honorable Medal，2024；代表泉州信息工程学院参赛。",
-      "第十五届蓝桥杯全国软件和信息技术专业人才大赛：福建省赛 Python 程序设计大学 B 组一等奖，2024。"
+      {
+        "text": "2026 中国大学生程序设计竞赛全国邀请赛（福建）暨第十三届 CCPC 福建省大学生程序设计竞赛：最快解题奖（A 题，单题奖项）。"
+      },
+      {
+        "text": "第49届 ICPC 国际大学生程序设计竞赛亚洲区域赛（昆明）：Honorable Medal，2024；代表泉州信息工程学院参赛。"
+      },
+      {
+        "text": "第十五届蓝桥杯全国软件和信息技术专业人才大赛：福建省赛 Python 程序设计大学 B 组一等奖，2024。"
+      },
+      {
+        "text": "WorldQuant BRAIN 量化挑战赛（WorldQuant Challenge）：Silver Level（银级），2026。",
+        "url": "https://au1bhi.com/files/WorldQuant-Challenge-Silver-Certificate.pdf"
+      }
     ],
     "skills": [
       {
@@ -852,9 +862,19 @@
       }
     ],
     "awards": [
-      "2026 National Invitational of CCPC (Fujian), 13th Fujian Collegiate Programming Contest: First to Solve Award (Problem A; problem-level award).",
-      "The 2024 ICPC Asia Kunming Regional Contest: Honorable Medal; represented Quanzhou University of Information Engineering.",
-      "15th Lanqiao Cup: First Prize, Fujian Provincial Round, Python Programming (University Group B), 2024."
+      {
+        "text": "2026 National Invitational of CCPC (Fujian), 13th Fujian Collegiate Programming Contest: First to Solve Award (Problem A; problem-level award)."
+      },
+      {
+        "text": "The 2024 ICPC Asia Kunming Regional Contest: Honorable Medal; represented Quanzhou University of Information Engineering."
+      },
+      {
+        "text": "15th Lanqiao Cup: First Prize, Fujian Provincial Round, Python Programming (University Group B), 2024."
+      },
+      {
+        "text": "WorldQuant Challenge (WorldQuant BRAIN): Silver Level, 2026.",
+        "url": "https://au1bhi.com/files/WorldQuant-Challenge-Silver-Certificate.pdf"
+      }
     ],
     "skills": [
       {
